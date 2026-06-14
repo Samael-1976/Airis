@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "interprete_multilingua",
+    "description": "Trascrive e traduce l'audio catturato in una lingua target.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "lingua_target": {
+          "type": "string",
+          "description": "La lingua in cui tradurre l'audio (es. 'italiano', 'inglese')."
+        }
+      },
+      "required":[]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "function",
+  "function": {
+    "name": "create_notion_page",
+    "description": "Crea una nuova pagina all'interno di un parent (pagina o database) su Notion.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "parent_page_id": {
+          "type": "string",
+          "description": "L'ID della pagina o del database genitore."
+        },
+        "title": {
+          "type": "string",
+          "description": "Il titolo della nuova pagina."
+        },
+        "content": {
+          "type": "string",
+          "description": "Il contenuto testuale iniziale della pagina."
+        }
+      },
+      "required": [
+        "parent_page_id",
+        "title",
+        "content"
+      ]
+    }
+  }
+}

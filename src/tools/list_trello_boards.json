@@ -1,0 +1,12 @@
+{
+  "type": "function",
+  "function": {
+    "name": "list_trello_boards",
+    "description": "Elenca tutte le bacheche Trello associate all'account.",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+}

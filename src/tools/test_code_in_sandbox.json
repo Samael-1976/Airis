@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "test_code_in_sandbox",
+    "description": "Testa la sintassi di un blocco di codice Python nella Sandbox isolata.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "Il codice Python da validare."
+        }
+      },
+      "required": [
+        "code"
+      ]
+    }
+  }
+}

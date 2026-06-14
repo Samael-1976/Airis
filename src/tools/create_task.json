@@ -1,0 +1,32 @@
+{
+  "type": "function",
+  "function": {
+    "name": "create_task",
+    "description": "Crea una nuova attività in una lista di Google Tasks.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "tasklist_id": {
+          "type": "string",
+          "description": "L'ID della lista di destinazione."
+        },
+        "title": {
+          "type": "string",
+          "description": "Il titolo dell'attività."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Note aggiuntive per l'attività."
+        },
+        "due": {
+          "type": "string",
+          "description": "Data di scadenza in formato RFC 3339 (es. '2026-04-01T12:00:00Z')."
+        }
+      },
+      "required": [
+        "tasklist_id",
+        "title"
+      ]
+    }
+  }
+}

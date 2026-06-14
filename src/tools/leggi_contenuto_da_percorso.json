@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "leggi_contenuto_da_percorso",
+    "description": "Legge il contenuto testuale di tutti i file in un percorso o pattern.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path_str": {
+          "type": "string",
+          "description": "Il percorso del file o della cartella da leggere."
+        }
+      },
+      "required": ["path_str"]
+    }
+  }
+}

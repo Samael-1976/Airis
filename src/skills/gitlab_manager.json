@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "gitlab_manager",
+    "description": "Gestisce progetti e issue su GitLab.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Gestisce progetti e issue su GitLab."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

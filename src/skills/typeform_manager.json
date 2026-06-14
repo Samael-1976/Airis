@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "typeform_manager",
+    "description": "Recupera moduli e risposte da Typeform.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Recupera moduli e risposte da Typeform."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

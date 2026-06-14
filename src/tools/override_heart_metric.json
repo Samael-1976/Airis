@@ -1,0 +1,21 @@
+{
+  "type": "function",
+  "function": {
+    "name": "override_heart_metric",
+    "description": "Forza manualmente un valore emotivo nel cuore (Debug/Chirurgia).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": "Il nome del vettore emotivo da sovrascrivere (es. 'affetto')."
+        },
+        "value": {
+          "type": "integer",
+          "description": "Il nuovo valore (0-100)."
+        }
+      },
+      "required": ["key", "value"]
+    }
+  }
+}

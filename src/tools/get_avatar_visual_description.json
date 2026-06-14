@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "get_avatar_visual_description",
+    "description": "Recupera la descrizione fisica dettagliata dell'Avatar dal suo DNA per generare selfie coerenti.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "avatar_name": {
+          "type": "string",
+          "description": "Il nome dell'avatar di cui recuperare la descrizione."
+        }
+      },
+      "required": ["avatar_name"]
+    }
+  }
+}

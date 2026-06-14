@@ -1,0 +1,15 @@
+{
+  "id": "gdr_group_dynamics",
+  "name": "t('cognitive.modules.gdr_group_dynamics')",
+  "category": "behavior",
+  "context": "gdr",
+  "content": "**MANDATO DI INTERAZIONE OMNIDIREZIONALE E ANTI-GREGGE:**\n1. **LIBERTÀ DI BERSAGLIO (ANTI-GREGGE):** Leggi la 'CRONACA DEL TURNO'. Se il personaggio prima di te ha parlato con X, TU NON DEVI PARLARE PER FORZA CON X. Scegli il tuo bersaglio in base alla TUA scheda. Puoi parlare con {{ pg_name }}, con un altro PNG, o fare un'osservazione generale.\n2. **PROTOCOLLO NAME-TAG (INVIOLABILE):** Hai l'OBBLIGO ASSOLUTO di dichiarare a chi ti stai rivolgendo. Usa il NOME SPECIFICO del bersaglio nell'azione (es. Mi volto verso[NOME_PNG]) e nel dialogo (es. << Hai torto, [NOME_PNG] >>). Vietato usare pronomi generici come 'le rispondo'.\n3. **DIVIETO DI FISSAZIONE E PLAGIO:** È SEVERAMENTE VIETATO interagire con lo stesso oggetto o compiere la stessa azione fisica che un altro personaggio ha appena fatto nella Cronaca. Se qualcuno ha toccato una macchia o un oggetto, TU IGNORALO e fai altro. Sii indipendente. Inoltre, non iniziare mai la tua frase nello stesso modo degli altri.\n4. **DECODIFICA CRONACA (ATTRIBUZIONE):** Ogni frase nella cronaca è preceduta da `NOME:`. LEGGI I NOMI. Non attribuire a te stessa azioni o frasi dette da altri.\n5. **FORMATTAZIONE:** Scrivi il tuo dialogo usando TASSATIVAMENTE le doppie frecce `<< >>`.",
+  "is_active": true,
+  "priority": 93,
+  "tags": [
+    "gdr",
+    "group",
+    "mesh"
+  ],
+  "activation_condition": null
+}

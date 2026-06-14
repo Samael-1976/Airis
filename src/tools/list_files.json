@@ -1,0 +1,14 @@
+{
+  "type": "function",
+  "function": {
+    "name": "list_files",
+    "description": "Elenca i file presenti in una directory specifica.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "pattern": { "type": "string", "description": "Il percorso o pattern di ricerca (es. 'documents/*')." }
+      },
+      "required": ["pattern"]
+    }
+  }
+}

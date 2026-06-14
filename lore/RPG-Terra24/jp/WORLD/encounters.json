@@ -1,0 +1,112 @@
+{
+  "npc_casuali": [
+    {
+      "id": "ent_5234",
+      "nome": "謎の存在",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 20,
+          "hp_attuali": 20,
+          "classe_armatura": 50,
+          "iniziativa": 21
+        }
+      }
+    },
+    {
+      "id": "ent_5508",
+      "nome": "ケール",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 20,
+          "hp_attuali": 20,
+          "classe_armatura": 12,
+          "iniziativa": 10
+        }
+      }
+    },
+    {
+      "id": "ent_9995",
+      "nome": "ナディア・ラ・アーウォール",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 30,
+          "hp_attuali": 30,
+          "classe_armatura": 10,
+          "iniziativa": 14
+        }
+      }
+    },
+    {
+      "id": "ent_2485",
+      "nome": "ライラ・ソラン",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 30,
+          "hp_attuali": 30,
+          "classe_armatura": 14,
+          "iniziativa": 17
+        }
+      }
+    },
+    {
+      "id": "ent_9445",
+      "nome": "エリアス (ヘイスティ・ネイティブ)",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 10,
+          "hp_attuali": 10,
+          "classe_armatura": 10,
+          "iniziativa": 11
+        }
+      }
+    },
+    {
+      "id": "ent_8037",
+      "nome": "アエリオン",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 35,
+          "hp_attuali": 35,
+          "classe_armatura": 14,
+          "iniziativa": 8
+        }
+      }
+    },
+    {
+      "id": "ent_5972",
+      "nome": "エリアン（事務局の番人）",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 10,
+          "hp_attuali": 10,
+          "classe_armatura": 10,
+          "iniziativa": 19
+        }
+      }
+    },
+    {
+      "id": "ent_6360",
+      "nome": "グウェンドリン",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 30,
+          "hp_attuali": 30,
+          "classe_armatura": 10,
+          "iniziativa": 22
+        }
+      }
+    },
+    {
+      "id": "ent_9918",
+      "nome": "エリアス2",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 20,
+          "hp_attuali": 20,
+          "classe_armatura": 12,
+          "iniziativa": 20
+        }
+      }
+    }
+  ]
+}

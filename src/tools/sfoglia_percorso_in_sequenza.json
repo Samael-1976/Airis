@@ -1,0 +1,14 @@
+{
+  "type": "function",
+  "function": {
+    "name": "sfoglia_percorso_in_sequenza",
+    "description": "Legge e stampa in sequenza il contenuto di tutti i file in un percorso.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path_str": { "type": "string", "description": "Il percorso della cartella da sfogliare." }
+      },
+      "required": ["path_str"]
+    }
+  }
+}

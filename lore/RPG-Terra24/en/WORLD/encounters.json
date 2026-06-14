@@ -1,0 +1,112 @@
+{
+  "npc_casuali": [
+    {
+      "id": "ent_5234",
+      "nome": "Mysterious Entity",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 20,
+          "hp_attuali": 20,
+          "classe_armatura": 50,
+          "iniziativa": 21
+        }
+      }
+    },
+    {
+      "id": "ent_5508",
+      "nome": "Kael",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 20,
+          "hp_attuali": 20,
+          "classe_armatura": 12,
+          "iniziativa": 10
+        }
+      }
+    },
+    {
+      "id": "ent_9995",
+      "nome": "Nadia La Arwall",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 30,
+          "hp_attuali": 30,
+          "classe_armatura": 10,
+          "iniziativa": 14
+        }
+      }
+    },
+    {
+      "id": "ent_2485",
+      "nome": "Lyra Solan",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 30,
+          "hp_attuali": 30,
+          "classe_armatura": 14,
+          "iniziativa": 17
+        }
+      }
+    },
+    {
+      "id": "ent_9445",
+      "nome": "Elias (Hasty Native)",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 10,
+          "hp_attuali": 10,
+          "classe_armatura": 10,
+          "iniziativa": 11
+        }
+      }
+    },
+    {
+      "id": "ent_8037",
+      "nome": "Aelion",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 35,
+          "hp_attuali": 35,
+          "classe_armatura": 14,
+          "iniziativa": 8
+        }
+      }
+    },
+    {
+      "id": "ent_5972",
+      "nome": "Elian (Keeper of the Secretariat)",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 10,
+          "hp_attuali": 10,
+          "classe_armatura": 10,
+          "iniziativa": 19
+        }
+      }
+    },
+    {
+      "id": "ent_6360",
+      "nome": "Gwendolyn",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 30,
+          "hp_attuali": 30,
+          "classe_armatura": 10,
+          "iniziativa": 22
+        }
+      }
+    },
+    {
+      "id": "ent_9918",
+      "nome": "Elias 2",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 20,
+          "hp_attuali": 20,
+          "classe_armatura": 12,
+          "iniziativa": 20
+        }
+      }
+    }
+  ]
+}

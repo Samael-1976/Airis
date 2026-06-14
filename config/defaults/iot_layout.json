@@ -1,0 +1,20 @@
+{
+  "rooms": [],
+  "automations": [
+    {
+      "id": "ee04acd7-c0c1-41d0-8a58-9fed55f20a98",
+      "name": "New Automation",
+      "deviceId": "8056fa59-ee25-49ee-a0f7-028eb2455300",
+      "action": "",
+      "time": "08:00",
+      "days": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri"
+      ],
+      "enabled": true
+    }
+  ]
+}

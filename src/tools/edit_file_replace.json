@@ -1,0 +1,34 @@
+{
+  "type": "function",
+  "function": {
+    "name": "edit_file_replace",
+    "description": "Sostituisce una stringa di testo all'interno di un file (chirurgia testuale).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path_str": {
+          "type": "string",
+          "description": "Il percorso del file da modificare."
+        },
+        "old_text": {
+          "type": "string",
+          "description": "Il testo esatto da cercare e rimuovere."
+        },
+        "new_text": {
+          "type": "string",
+          "description": "Il nuovo testo da inserire al posto del vecchio."
+        },
+        "motivation": {
+          "type": "string",
+          "description": "La spiegazione della modifica."
+        }
+      },
+      "required": [
+        "path_str",
+        "old_text",
+        "new_text",
+        "motivation"
+      ]
+    }
+  }
+}

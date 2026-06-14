@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "sms_sender",
+    "description": "Invia messaggi SMS tramite Twilio.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Invia messaggi SMS tramite Twilio."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

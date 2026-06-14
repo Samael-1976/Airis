@@ -1,0 +1,23 @@
+{
+  "type": "function",
+  "function": {
+    "name": "send_slack_message",
+    "description": "Invia un messaggio a un canale Slack.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string",
+          "description": "Il testo del messaggio."
+        },
+        "channel_id": {
+          "type": "string",
+          "description": "L'ID del canale Slack (opzionale)."
+        }
+      },
+      "required": [
+        "content"
+      ]
+    }
+  }
+}

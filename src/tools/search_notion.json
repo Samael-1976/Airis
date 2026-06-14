@@ -1,0 +1,15 @@
+{
+  "type": "function",
+  "function": {
+    "name": "search_notion",
+    "description": "Cerca pagine su Notion.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": { "type": "string", "description": "Il titolo della pagina Notion da cercare." },
+        "max_results": { "type": "integer", "description": "Numero massimo di risultati." }
+      },
+      "required": ["query"]
+    }
+  }
+}

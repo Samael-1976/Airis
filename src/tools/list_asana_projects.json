@@ -1,0 +1,14 @@
+{
+  "type": "function",
+  "function": {
+    "name": "list_asana_projects",
+    "description": "Elenca progetti Asana.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "workspace_gid": { "type": "string", "description": "Il GID del workspace Asana." }
+      },
+      "required": ["workspace_gid"]
+    }
+  }
+}

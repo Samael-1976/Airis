@@ -1,0 +1,12 @@
+{
+  "type": "function",
+  "function": {
+    "name": "analizza_emozione_voce",
+    "description": "Analizza il tono e l'emozione dell'ultimo input vocale utente.",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required":[]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "avvia_flashback",
+    "description": "Recupera un ricordo dalla memoria e lo narra come un flashback immersivo.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "La query di ricerca per trovare il ricordo."
+        }
+      },
+      "required": ["query"]
+    }
+  }
+}

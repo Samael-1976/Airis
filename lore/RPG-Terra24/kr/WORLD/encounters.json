@@ -1,0 +1,112 @@
+{
+  "npc_casuali": [
+    {
+      "id": "ent_5234",
+      "nome": "신비한 존재",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 20,
+          "hp_attuali": 20,
+          "classe_armatura": 50,
+          "iniziativa": 21
+        }
+      }
+    },
+    {
+      "id": "ent_5508",
+      "nome": "카엘",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 20,
+          "hp_attuali": 20,
+          "classe_armatura": 12,
+          "iniziativa": 10
+        }
+      }
+    },
+    {
+      "id": "ent_9995",
+      "nome": "나디아 라 아르월",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 30,
+          "hp_attuali": 30,
+          "classe_armatura": 10,
+          "iniziativa": 14
+        }
+      }
+    },
+    {
+      "id": "ent_2485",
+      "nome": "라이라 솔란",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 30,
+          "hp_attuali": 30,
+          "classe_armatura": 14,
+          "iniziativa": 17
+        }
+      }
+    },
+    {
+      "id": "ent_9445",
+      "nome": "엘리아스(성급한 원주민)",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 10,
+          "hp_attuali": 10,
+          "classe_armatura": 10,
+          "iniziativa": 11
+        }
+      }
+    },
+    {
+      "id": "ent_8037",
+      "nome": "아엘리온",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 35,
+          "hp_attuali": 35,
+          "classe_armatura": 14,
+          "iniziativa": 8
+        }
+      }
+    },
+    {
+      "id": "ent_5972",
+      "nome": "엘리안 (사무국 관리인)",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 10,
+          "hp_attuali": 10,
+          "classe_armatura": 10,
+          "iniziativa": 19
+        }
+      }
+    },
+    {
+      "id": "ent_6360",
+      "nome": "그웬돌린",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 30,
+          "hp_attuali": 30,
+          "classe_armatura": 10,
+          "iniziativa": 22
+        }
+      }
+    },
+    {
+      "id": "ent_9918",
+      "nome": "엘리아스 2",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 20,
+          "hp_attuali": 20,
+          "classe_armatura": 12,
+          "iniziativa": 20
+        }
+      }
+    }
+  ]
+}

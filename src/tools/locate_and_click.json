@@ -1,0 +1,21 @@
+{
+  "type": "function",
+  "function": {
+    "name": "locate_and_click",
+    "description": "Cerca un'immagine template sullo schermo e ci clicca sopra se trovata.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "image_path_str": {
+          "type": "string",
+          "description": "Il percorso dell'immagine template da cercare sullo schermo."
+        },
+        "confidence": {
+          "type": "number",
+          "description": "La confidenza richiesta per il match (es. 0.8)."
+        }
+      },
+      "required": ["image_path_str"]
+    }
+  }
+}

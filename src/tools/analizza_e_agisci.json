@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "analizza_e_agisci",
+    "description": "Analizza uno screenshot o un'immagine per identificare elementi tecnici, errori o task e propone azioni operative.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "image_path": {
+          "type": "string",
+          "description": "Il percorso dell'immagine da analizzare (opzionale, se vuoto cattura lo schermo attuale)."
+        }
+      },
+      "required": []
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "post_tweet",
+    "description": "Pubblica un nuovo post (tweet) su X (Twitter).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Il testo del tweet da pubblicare."
+        }
+      },
+      "required": [
+        "text"
+      ]
+    }
+  }
+}

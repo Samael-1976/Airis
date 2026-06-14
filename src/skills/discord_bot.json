@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "discord_bot",
+    "description": "Invia e legge messaggi su canali Discord.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Invia e legge messaggi su canali Discord."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

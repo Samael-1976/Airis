@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "iot_control",
+    "description": "Controlla dispositivi Smart Home (Luci, TV, Clima).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Controlla dispositivi Smart Home (Luci, TV, Clima)."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

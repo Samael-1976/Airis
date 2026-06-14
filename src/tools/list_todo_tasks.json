@@ -1,0 +1,14 @@
+{
+  "type": "function",
+  "function": {
+    "name": "list_todo_tasks",
+    "description": "Elenca task di Microsoft To Do.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "tasklist_id": { "type": "string", "description": "L'ID della lista To Do." }
+      },
+      "required": ["tasklist_id"]
+    }
+  }
+}

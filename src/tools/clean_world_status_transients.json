@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "clean_world_status_transients",
+    "description": "Pulisce gli eventi temporanei dal file di stato del mondo.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "status_file_path_str": {
+          "type": "string",
+          "description": "Il percorso del file status.json."
+        }
+      },
+      "required": ["status_file_path_str"]
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "function",
+  "function": {
+    "name": "search_in_memory",
+    "description": "Cerca informazioni nella memoria a lungo termine (RAG) e nella Lore.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": { "type": "string", "description": "La query di ricerca semantica." }
+      },
+      "required": ["query"]
+    }
+  }
+}

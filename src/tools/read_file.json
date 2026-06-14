@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "read_file",
+    "description": "Legge il contenuto di un singolo file di testo.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path_str": {
+          "type": "string",
+          "description": "Il percorso del file da leggere."
+        }
+      },
+      "required": [
+        "path_str"
+      ]
+    }
+  }
+}

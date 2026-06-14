@@ -1,0 +1,138 @@
+/* frontend_mobile/src/index.css */
+/* v9.7 - Restoration of Glass Effect (Backdrop Blur) */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark theme colors for AIRIS */
+    --background: 220 15% 8%;
+    --foreground: 210 20% 98%;
+
+    --card: 220 15% 12%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 220 15% 10%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 340 82% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 210 20% 65%;
+
+    --accent: 220 15% 22%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 220 15% 25%;
+    --input: 220 15% 25%;
+    --ring: 340 82% 52%;
+
+    --radius: 0.75rem;
+
+    /* AIRIS specific colors */
+    --gemma-message: 340 82% 52%;
+    --user-message: 220 15% 25%;
+    --video-border: 220 15% 30%;
+    --sidebar-bg: 220 15% 6%;
+    --sidebar-hover: 220 15% 12%;
+  }
+
+  /* FIX CRITICO PER IOS/MOBILE */
+  html {
+    height: 100dvh;
+    width: 100vw;
+    overflow: hidden;
+    overscroll-behavior: none;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    height: 100dvh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  #root {
+    height: 100dvh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* --- FIX: SCROLLBAR SEMPRE VISIBILI (AIRIS PINK) --- */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--primary)) hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    display: block;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 10px;
+    border: 2px solid hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(340 82% 60%);
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
+
+@layer components {
+  /* --- RESTAURAZIONE: STILE GLASS (v9.7) --- */
+  .chat-message-user {
+    @apply bg-user-message/70 text-foreground rounded-2xl px-4 py-2.5 max-w-[80%] ml-auto border border-white/5;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  .chat-message-gemma {
+    @apply bg-gemma-message/20 border border-gemma-message/30 text-foreground rounded-2xl px-4 py-2.5 max-w-[80%] mr-auto;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  .sidebar-item {
+    @apply flex items-center gap-4 px-6 py-4 text-foreground hover:bg-sidebar-hover transition-colors cursor-pointer;
+  }
+
+  .video-container {
+    @apply relative w-full aspect-[9/16] max-h-[60vh] mx-auto rounded-3xl overflow-hidden border-4 border-video-border shadow-2xl;
+  }
+
+  .input-bar {
+    @apply flex items-center gap-3 bg-secondary rounded-full px-4 py-2 border border-border;
+  }
+}

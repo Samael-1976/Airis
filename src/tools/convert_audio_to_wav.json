@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "convert_audio_to_wav",
+    "description": "Converte file audio in formato WAV standard per l'elaborazione.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "input_path_str": {
+          "type": "string",
+          "description": "Il percorso del file audio da convertire."
+        }
+      },
+      "required": ["input_path_str"]
+    }
+  }
+}

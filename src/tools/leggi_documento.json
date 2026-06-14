@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "leggi_documento",
+    "description": "Estrae il testo da documenti complessi (PDF, DOCX, TXT).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "file_path_str": {
+          "type": "string",
+          "description": "Il percorso del documento (PDF, DOCX, TXT) da leggere."
+        }
+      },
+      "required": ["file_path_str"]
+    }
+  }
+}

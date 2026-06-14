@@ -1,0 +1,27 @@
+# VibeVoice OpenAI-Compatible TTS Server Dependencies
+# Allineato con Aniverse-Project (CUDA 12.8 Nightly)
+
+# --- Anima Unificata per CUDA 12.8 (Nightly) ---
+--index-url https://download.pytorch.org/whl/nightly/cu128
+--pre
+torch
+torchvision
+torchaudio
+
+# --- Reset Index per i pacchetti normali (CRUCIALE) ---
+--index-url https://pypi.org/simple
+
+# VibeVoice from GitHub (pinned to specific commit)
+git+https://github.com/microsoft/VibeVoice.git@a507d67f8e78d9ff6b2ec0b79f1f43ad89477187
+
+# HuggingFace with fast downloads
+huggingface_hub[hf_xet]
+
+# FastAPI server
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# Audio processing
+scipy
+numpy
+pydub

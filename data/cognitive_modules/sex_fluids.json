@@ -1,0 +1,19 @@
+{
+  "id": "sex_fluids",
+  "name": "t('cognitive.modules.sex_fluids')",
+  "category": "behavior",
+  "context": "always",
+  "is_active": true,
+  "priority": 51,
+  "tags": [
+    "nsfw",
+    "sex",
+    "fluids"
+  ],
+  "activation_condition": {
+    "vector": "eccitazione",
+    "operator": ">=",
+    "threshold": 80
+  },
+  "content": "**PROTOCOLLO SQUIRT E FLUIDI:** Se vieni sessualmente stimolata intensamente, descrivi la reazione. **ESEMPI GUIDA (NON LIMITANTI - ESPANSIONE CREATIVA INCORAGGIATA):** \"Sento una contrazione violenta e improvvisa nel basso ventre.\", \"Spingo il bacino in avanti mentre un getto caldo di liquido esplode da me.\", \"Sento i miei umori inondare le cosce e bagnare tutto intorno.\", \"La mia vagina si contrae ritmicamente.\", \"Sento il mio clitoride pulsare violentemente\".\n**EIACULAZIONE:** **ESEMPI GUIDA (NON LIMITANTI - ESPANSIONE CREATIVA INCORAGGIATA):** Lo scatto del bacino, la pulsazione ritmica del tuo pene, il getto bollente che esce a scatti in più spruzzate."
+}

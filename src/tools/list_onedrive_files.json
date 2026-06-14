@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "list_onedrive_files",
+    "description": "Elenca i file presenti nella root di Microsoft OneDrive.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "max_results": {
+          "type": "integer",
+          "description": "Numero massimo di file da elencare (default 10)."
+        }
+      },
+      "required": []
+    }
+  }
+}

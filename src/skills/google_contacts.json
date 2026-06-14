@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "google_contacts",
+    "description": "Cerca contatti nella rubrica Google.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Cerca contatti nella rubrica Google."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

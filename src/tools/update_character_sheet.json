@@ -1,0 +1,28 @@
+{
+  "type": "function",
+  "function": {
+    "name": "update_character_sheet",
+    "description": "Aggiorna chirurgicamente campi specifici nella scheda di un personaggio esistente.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "char_name": {
+          "type": "string",
+          "description": "Il nome del personaggio da evolvere."
+        },
+        "updates": {
+          "type": "object",
+          "description": "Oggetto JSON contenente solo le chiavi e i valori da modificare."
+        },
+        "lang": {
+          "type": "string",
+          "description": "Lingua della scheda."
+        }
+      },
+      "required": [
+        "char_name",
+        "updates"
+      ]
+    }
+  }
+}

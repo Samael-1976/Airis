@@ -1,0 +1,24 @@
+{
+  "type": "function",
+  "function": {
+    "name": "send_sms",
+    "description": "Invia un messaggio SMS tramite il servizio Twilio.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "to_number": {
+          "type": "string",
+          "description": "Il numero di telefono del destinatario (formato internazionale, es. +39...)."
+        },
+        "body": {
+          "type": "string",
+          "description": "Il corpo del messaggio SMS."
+        }
+      },
+      "required": [
+        "to_number",
+        "body"
+      ]
+    }
+  }
+}

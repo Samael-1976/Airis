@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "get_tool_definition",
+    "description": "Recupera la definizione completa di un tool dal nome.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "tool_name": {
+          "type": "string",
+          "description": "Il nome del tool di cui recuperare la definizione."
+        }
+      },
+      "required": ["tool_name"]
+    }
+  }
+}

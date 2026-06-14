@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "webhook_client",
+    "description": "Invia richieste HTTP generiche (Webhook).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Invia richieste HTTP generiche (Webhook)."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

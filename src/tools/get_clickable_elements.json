@@ -1,0 +1,11 @@
+{
+  "type": "function",
+  "function": {
+    "name": "get_clickable_elements",
+    "description": "Analizza lo schermo e restituisce una lista di tutti gli elementi cliccabili (bottoni, menu) con le loro coordinate X,Y. Usalo per sapere esattamente dove cliccare.",
+    "parameters": {
+      "type": "object",
+      "properties": {}
+    }
+  }
+}

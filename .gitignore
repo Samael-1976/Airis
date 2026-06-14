@@ -1,0 +1,85 @@
+# ==========================================
+# AIRIS PROJECT - GLOBAL GITIGNORE
+# ==========================================
+
+# 1. Python & Ambienti Virtuali
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.env
+
+# 2. Node & Frontend Build
+avatars/Ai Oshino/videos
+avatars/Gemma/videos
+node_modules/
+frontend_mobile/node_modules/
+frontend_mobile/dist/
+node_portable/
+
+# 3. Modelli AI e Binari Pesanti (ESCLUSI DA GITHUB)
+models/
+bin/
+tts_engine/kokoro/model/
+tts_engine/kokoro/hub/
+tts_engine/kokoro/python/
+tts_engine/kokoro/.gradio
+tts_engine/kokoro/dist
+tts_engine/kokoro/docopt.egg-info
+tts_engine/kokoro/scripts
+tts_engine/VibeVoice/.git
+tts_engine/VibeVoice/demo
+tts_engine/VibeVoice/docs
+tts_engine/VibeVoice/Figures
+tts_engine/VibeVoice/finetuning-asr
+tts_engine/VibeVoice/models
+tts_engine/VibeVoice/venv
+tts_engine/VibeVoice/vibevoice
+tts_engine/VibeVoice/vibevoice.egg-info
+tts_engine/VibeVoice/vibevoice-realtime-openai-api
+tts_engine/VibeVoice/vllm_plugin
+
+
+# 4. Dati Sensibili e Credenziali (SICUREZZA ASSOLUTA)
+config/network_uid.txt
+
+# 5. Database, Memorie e Sandbox
+data/memory_db/
+data/sandbox/
+logs/
+backups/
+exports/
+
+# 6. File Temporanei
+temp_audio/
+temp_images/
+temp_imports/
+temp_uploads/
+
+# 7. Media Pesanti (Video degli Avatar)
+
+# 8. OS Generated Files
+.DS_Store
+Thumbs.db
+
+# 9. BLOCCO GLOBALE ESTENSIONI PESANTI (LA RETE A STRASCICO)
+*.pt
+*.pth
+*.exe
+*.msi
+*.zip
+*.tar.gz
+*.whl
+*.safetensors
+*.gguf
+*.onnx
+*.onnx_data
+*.bin
+*.mp4
+*.dll
+*.so
+*.dylib
+*.dat
+*.hsaco
+*.mp4

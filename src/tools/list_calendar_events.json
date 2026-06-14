@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "list_calendar_events",
+    "description": "Elenca i prossimi eventi dal Google Calendar.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "max_results": {
+          "type": "integer",
+          "description": "Numero massimo di eventi da restituire (default 10)."
+        }
+      },
+      "required": []
+    }
+  }
+}

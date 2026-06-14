@@ -1,0 +1,14 @@
+{
+  "type": "function",
+  "function": {
+    "name": "sync_pg_name_to_all_gdrs",
+    "description": "Propaga il nome del PG in tutti i file di salvataggio GDR.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "new_name": { "type": "string", "description": "Il nuovo nome del Creatore da propagare." }
+      },
+      "required": ["new_name"]
+    }
+  }
+}

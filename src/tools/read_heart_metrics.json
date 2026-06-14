@@ -1,0 +1,12 @@
+{
+  "type": "function",
+  "function": {
+    "name": "read_heart_metrics",
+    "description": "Legge lo stato emotivo grezzo attuale dal file heart.json.",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+}

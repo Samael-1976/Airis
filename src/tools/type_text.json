@@ -1,0 +1,14 @@
+{
+  "type": "function",
+  "function": {
+    "name": "type_text",
+    "description": "Digita una stringa di testo simulando la tastiera, con verifica visiva del risultato.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "text": { "type": "string", "description": "Il testo da digitare." }
+      },
+      "required": ["text"]
+    }
+  }
+}

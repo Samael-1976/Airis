@@ -1,0 +1,30 @@
+{
+  "devices": {
+    "dev-yndyu6r9r": {
+      "name": "Dogee",
+      "type": "tablet",
+      "ip": "192.168.1.137"
+    },
+    "94074236-25cd-4659-b735-e0b88d3e0a2a": {
+      "name": "Poco f7",
+      "type": "mobile",
+      "ip": "45.144.113.172"
+    },
+    "8d74f352-83a2-4efd-bc3d-ea426f4786bf": {
+      "name": "Phantom",
+      "type": "desktop",
+      "ip": "127.0.0.1"
+    },
+    "4f91433a-2434-4ff7-87a5-2af53916813f": {
+      "name": "Phantom",
+      "type": "desktop",
+      "ip": "192.168.1.108"
+    }
+  },
+  "ip_bindings": {
+    "192.168.1.137": {
+      "id": "dev-yndyu6r9r",
+      "name": "Dogee"
+    }
+  }
+}

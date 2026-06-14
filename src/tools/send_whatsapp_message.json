@@ -1,0 +1,24 @@
+{
+  "type": "function",
+  "function": {
+    "name": "send_whatsapp_message",
+    "description": "Invia un messaggio WhatsApp tramite l'API di Twilio.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "to_number": {
+          "type": "string",
+          "description": "Il numero WhatsApp del destinatario (es. +39...)."
+        },
+        "body": {
+          "type": "string",
+          "description": "Il contenuto del messaggio."
+        }
+      },
+      "required": [
+        "to_number",
+        "body"
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "function",
+  "function": {
+    "name": "search_contacts",
+    "description": "Cerca un contatto nella rubrica Google.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": { "type": "string", "description": "Il nome o l'email da cercare." },
+        "max_results": { "type": "integer", "description": "Numero massimo di contatti." }
+      },
+      "required": ["query"]
+    }
+  }
+}

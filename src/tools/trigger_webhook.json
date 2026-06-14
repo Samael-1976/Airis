@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "trigger_webhook",
+    "description": "Invia una richiesta HTTP generica (Webhook).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "url": { "type": "string", "description": "URL del Webhook." },
+        "payload": { "type": "object", "description": "Dati JSON da inviare." },
+        "method": { "type": "string", "description": "Metodo HTTP (POST, GET, etc.)." },
+        "headers": { "type": "object", "description": "Header HTTP opzionali." }
+      },
+      "required": ["url", "payload"]
+    }
+  }
+}

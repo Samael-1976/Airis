@@ -1,0 +1,15 @@
+{
+  "type": "function",
+  "function": {
+    "name": "get_posts",
+    "description": "Recupera post da WordPress.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "per_page": { "type": "integer", "description": "Numero di post per pagina." },
+        "status": { "type": "string", "description": "Filtra per stato (es. 'publish')." }
+      },
+      "required": []
+    }
+  }
+}

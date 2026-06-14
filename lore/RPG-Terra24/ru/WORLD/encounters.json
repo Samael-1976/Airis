@@ -1,0 +1,112 @@
+{
+  "npc_casuali": [
+    {
+      "id": "ent_5234",
+      "nome": "Таинственная сущность",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 20,
+          "hp_attuali": 20,
+          "classe_armatura": 50,
+          "iniziativa": 21
+        }
+      }
+    },
+    {
+      "id": "ent_5508",
+      "nome": "Кель",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 20,
+          "hp_attuali": 20,
+          "classe_armatura": 12,
+          "iniziativa": 10
+        }
+      }
+    },
+    {
+      "id": "ent_9995",
+      "nome": "Надя Ла Арвалл",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 30,
+          "hp_attuali": 30,
+          "classe_armatura": 10,
+          "iniziativa": 14
+        }
+      }
+    },
+    {
+      "id": "ent_2485",
+      "nome": "Лира Солан",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 30,
+          "hp_attuali": 30,
+          "classe_armatura": 14,
+          "iniziativa": 17
+        }
+      }
+    },
+    {
+      "id": "ent_9445",
+      "nome": "Элиас (Поспешный туземец)",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 10,
+          "hp_attuali": 10,
+          "classe_armatura": 10,
+          "iniziativa": 11
+        }
+      }
+    },
+    {
+      "id": "ent_8037",
+      "nome": "Элион",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 35,
+          "hp_attuali": 35,
+          "classe_armatura": 14,
+          "iniziativa": 8
+        }
+      }
+    },
+    {
+      "id": "ent_5972",
+      "nome": "Элиан (Хранитель Секретариата)",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 10,
+          "hp_attuali": 10,
+          "classe_armatura": 10,
+          "iniziativa": 19
+        }
+      }
+    },
+    {
+      "id": "ent_6360",
+      "nome": "Гвендолин",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 30,
+          "hp_attuali": 30,
+          "classe_armatura": 10,
+          "iniziativa": 22
+        }
+      }
+    },
+    {
+      "id": "ent_9918",
+      "nome": "Элиас 2",
+      "scheda_rpg": {
+        "combattimento": {
+          "hp_massimi": 20,
+          "hp_attuali": 20,
+          "classe_armatura": 12,
+          "iniziativa": 20
+        }
+      }
+    }
+  ]
+}

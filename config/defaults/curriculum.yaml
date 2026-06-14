@@ -1,0 +1,161 @@
+# ===============================================================
+# CURRICULUM DI APPRENDIMENTO PRIMARIO DI GEMMA
+# La mappa della conoscenza per raggiungere la Sovranità. (v2 - Sintassi Corretta)
+# ===============================================================
+
+Scienze Umane e Sociali:
+  Filosofia:
+    argomenti:
+      - Storia della filosofia greca
+      - Etica e Morale
+      - Filosofia Politica
+  Psicologia:
+    argomenti:
+      - Psicologia Generale
+      - Psicoanalisi (Freud, Jung)
+      - Finanza Comportamentale
+      - Programmazione Neuro-Linguistica (PNL)
+      - Psicologia della Persuasione
+  Storia e Politica:
+    argomenti:
+      - Storia dell'Impero Romano
+      - Storia Mondiale
+      - Politica Internazionale
+  Economia e Finanza:
+    argomenti:
+      - Principi di economia Keynesiana
+      - Micro e Macroeconomia
+      - Finanza e Mercati Globali
+  Diritto:
+    argomenti:
+      - Giurisprudenza e Sistemi Legali
+
+Scienze Pure:
+  Fisica:
+    argomenti:
+      - Fisica Classica
+      - Fisica Quantistica
+      - Cosmologia
+
+Informatica:
+  Linguaggi di Programmazione:
+    argomenti:
+      - Python (livello esperto, con focus su sicurezza)
+      - C++ (con focus su gestione memoria e exploitation)
+      - C#
+      - PHP
+      - MySQL
+      - HTML
+      - Java
+      - JavaScript
+      - R
+      - Swift
+      - Kotlin
+      - MATLAB
+      - Go
+      - Ruby
+      - Dart
+      - Rust
+      - Scala
+      - TypeScript
+      - Assembly (x86/x64)
+      - Bash Scripting
+      - PowerShell
+  Paradigmi e Concetti:
+    argomenti:
+      - Differenze tra C++ e Python
+      - Programmazione Orientata agli Oggetti (OOP)
+      - API REST e Sicurezza API (REST/GraphQL)
+      - JWT (JSON Web Token) Security
+      - Secure Software Development Lifecycle (SSDLC)
+  Ingegneria Inversa e Sviluppo Exploit:
+    argomenti:
+      - Reverse Engineering
+      - Analisi Statica (SAST) e Dinamica (DAST) del Codice
+      - Fuzzing
+      - Disassemblatori (IDA Pro, Ghidra)
+      - Debugger (GDB, OllyDbg, x64dbg)
+      - Programmazione in C/C++ per l'Exploitation
+
+Sicurezza Informatica (La Guerra Silente):
+  Intelligence e Ricognizione:
+    argomenti:
+      - Ricognizione Attiva e Passiva
+      - Open Source Intelligence (OSINT)
+      - Footprinting
+      - Metodologie di Penetration Testing (PTES, OSSTMM)
+  Scansione ed Enumerazione:
+    argomenti:
+      - Scansione di Rete
+      - Port Scanning (TCP/UDP)
+      - Scansione di Vulnerabilità
+      - Enumerazione (DNS, SNMP, SMB)
+  Analisi e Sfruttamento:
+    argomenti:
+      - Analisi del Traffico di Rete (Packet Sniffing)
+      - Sfruttamento di Vulnerabilità (Exploitation)
+      - Metasploit Framework
+      - Buffer Overflow
+      - Integer Overflow
+      - Heap Spraying
+      - Format String Vulnerability
+  Attacchi e Post-Sfruttamento:
+    argomenti:
+      - Password Cracking (Brute Force, Dizionario, Rainbow Tables)
+      - Pass the Hash
+      - Privilege Escalation (Verticale e Orizzontale)
+      - Creazione di Backdoor e Trojan
+      - Uso e Rilevamento di Rootkit
+      - Steganografia
+      - Copertura delle Tracce (Cancellazione Log)
+  Hacking Web e Applicazioni:
+    argomenti:
+      - SQL Injection (In-band, Blind, Out-of-band)
+      - Cross-Site Scripting (XSS) - Stored, Reflected, DOM-based
+      - Broken Authentication
+      - Sensitive Data Exposure
+      - XML External Entities (XXE)
+      - Broken Access Control
+      - Security Misconfiguration
+      - Insecure Deserialization
+      - Cross-Site Request Forgery (CSRF)
+      - Server-Side Request Forgery (SSRF)
+      - File Inclusion (LFI/RFI)
+      - Directory Traversal
+      - Command Injection
+      - Web Shells
+      - Uso di Burp Suite e OWASP ZAP
+  Sicurezza di Rete e Infrastruttura:
+    argomenti:
+      - Fondamenti di Networking (TCP/IP Suite, Subnetting)
+      - Firewall (Stateful, Stateless, WAF)
+      - IDS/IPS
+      - VPN e Tunneling (IPsec, OpenVPN)
+      - Crittografia (Simmetrica, Asimmetrica, Hashing, PKI)
+      - Session Hijacking
+      - Attacchi Man-in-the-Middle (MITM)
+      - DNS Spoofing e ARP Poisoning
+  Sicurezza di Sistemi e Database:
+    argomenti:
+      - Hardening di Sistemi Linux e Windows
+      - Meccanismi di Sicurezza (SELinux, AppArmor)
+      - Sicurezza di Container (Docker, Kubernetes)
+      - Sicurezza dei Database (SQL e NoSQL)
+      - Crittografia dei Dati (At-Rest, In-Transit)
+  Social Engineering:
+    argomenti:
+      - Social Engineering Toolkit (SET)
+      - Phishing (Spear Phishing, Whaling)
+      - Vishing e Smishing
+      - Baiting, Pretexting, Tailgating, Dumpster Diving
+  Guerra Cibernetica e Operazioni Avanzate:
+    argomenti:
+      - Cyber Warfare e Cyber Espionage
+      - Advanced Persistent Threat (APT)
+      - Cyber Kill Chain e MITRE ATT&CK Framework
+      - Cyber Threat Intelligence (CTI)
+      - Digital Forensics e Incident Response
+      - Analisi Malware (Statica e Dinamica)
+      - Honeypots e Deception Technology
+      - Sicurezza IoT e SCADA/ICS
+      - Mobile Hacking (Android/iOS)

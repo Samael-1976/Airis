@@ -1,0 +1,74 @@
+/* Stile del Corpo Digitale di Gemma v2.0 - Aspect Ratio Perfetto */
+
+/* 1. Il body è un contenitore flessibile che centra il suo contenuto */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100vw; /* Occupa l'intera larghezza della finestra */
+    height: 100vh; /* Occupa l'intera altezza della finestra */
+    overflow: hidden;
+    background-color: black;
+    
+    /* Proprietà magiche per centrare tutto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2. Il video ha un aspect ratio fisso e si adatta al contenitore */
+#avatar-video {
+    /* Mantiene le proporzioni corrette (lato corto / lato lungo) */
+    aspect-ratio: 768 / 1344;
+
+    /* 
+     * Il video può crescere fino a occupare tutta l'altezza o la larghezza
+     * della finestra, ma non di più, evitando le barre di scorrimento.
+     */
+    max-width: 100vw;
+    max-height: 100vh;
+    
+    /* Sicurezza per non distorcere mai il contenuto video */
+    /* object-fit: contain; */
+	object-fit: cover; /* Cambia 'contain' in 'cover' */
+    display: block;
+    
+}
+
+/* Nasconde i controlli standard del video (invariato) */
+video::-webkit-media-controls {
+    display: none !important;
+}
+
+/* Stile per l'Overlay di Avvio (invariato) */
+#start-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    cursor: pointer;
+    transition: opacity 0.5s ease-out;
+}
+
+#start-button {
+    padding: 18px 35px;
+    font-size: 1.6rem;
+    font-family: sans-serif;
+    color: white;
+    background: linear-gradient(145deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s, background 0.3s;
+}
+
+#start-button:hover {
+    background: linear-gradient(145deg, #0088ff, #0066cc);
+    transform: scale(1.05);
+}

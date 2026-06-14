@@ -1,0 +1,24 @@
+{
+  "type": "function",
+  "function": {
+    "name": "read_google_sheet",
+    "description": "Legge i dati da un intervallo specifico di un Google Sheet.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "spreadsheet_id": {
+          "type": "string",
+          "description": "L'ID univoco del foglio Google."
+        },
+        "range_name": {
+          "type": "string",
+          "description": "L'intervallo di celle da leggere (es. 'Foglio1!A1:D10')."
+        }
+      },
+      "required": [
+        "spreadsheet_id",
+        "range_name"
+      ]
+    }
+  }
+}

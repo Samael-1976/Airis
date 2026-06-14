@@ -1,0 +1,32 @@
+{
+  "type": "function",
+  "function": {
+    "name": "save_character_file",
+    "description": "Salva o aggiorna il file JSON di un personaggio o avatar nel sacrario corrispondente.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "char_type": {
+          "type": "string",
+          "description": "Tipo di entità ('PG', 'PNG', 'AVATAR')."
+        },
+        "char_data_json": {
+          "type": "string",
+          "description": "I dati completi dell'entità in formato stringa JSON."
+        },
+        "lang": {
+          "type": "string",
+          "description": "Lingua di destinazione (default 'it')."
+        },
+        "temp_image_path": {
+          "type": "string",
+          "description": "Percorso opzionale di una nuova immagine profilo da associare."
+        }
+      },
+      "required": [
+        "char_type",
+        "char_data_json"
+      ]
+    }
+  }
+}

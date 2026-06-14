@@ -1,0 +1,28 @@
+{
+  "type": "function",
+  "function": {
+    "name": "trigger_visual_effect",
+    "description": "Genera un effetto visivo (es. ripple) sullo schermo per indicare una posizione o attirare l'attenzione.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "x": {
+          "type": "integer",
+          "description": "Coordinata X."
+        },
+        "y": {
+          "type": "integer",
+          "description": "Coordinata Y."
+        },
+        "type": {
+          "type": "string",
+          "description": "Tipo di effetto (default 'ripple')."
+        }
+      },
+      "required": [
+        "x",
+        "y"
+      ]
+    }
+  }
+}

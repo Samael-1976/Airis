@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "twitter_manager",
+    "description": "Pubblica tweet su X (Twitter).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Pubblica tweet su X (Twitter)."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

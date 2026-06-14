@@ -1,0 +1,24 @@
+{
+  "type": "function",
+  "function": {
+    "name": "delete_file",
+    "description": "Elimina un file dal sistema, creando prima un backup di sicurezza.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path_str": {
+          "type": "string",
+          "description": "Il percorso del file da eliminare."
+        },
+        "motivation": {
+          "type": "string",
+          "description": "La ragione per cui il file deve essere rimosso."
+        }
+      },
+      "required": [
+        "path_str",
+        "motivation"
+      ]
+    }
+  }
+}

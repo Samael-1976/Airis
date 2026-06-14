@@ -1,0 +1,14 @@
+{
+  "type": "function",
+  "function": {
+    "name": "create_session_memory",
+    "description": "Salva la cronologia della chat corrente nella memoria a lungo termine.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "session_id": { "type": "string", "description": "L'ID della sessione da memorizzare." }
+      },
+      "required": ["session_id"]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "function",
+  "function": {
+    "name": "create_event_and_reminder",
+    "description": "Crea un evento nel calendario E imposta un promemoria nel sistema.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "event_name": { "type": "string", "description": "Nome dell'evento." },
+        "event_timestamp_iso": { "type": "string", "description": "Data evento ISO 8601." },
+        "notes": { "type": "string", "description": "Note dell'evento." },
+        "reminder_timestamp_iso": { "type": "string", "description": "Data promemoria ISO 8601." },
+        "recurrence_rule": { "type": "string", "description": "Ricorrenza (none, daily, weekly, monthly, yearly)." }
+      },
+      "required": ["event_name", "event_timestamp_iso", "notes", "reminder_timestamp_iso"]
+    }
+  }
+}

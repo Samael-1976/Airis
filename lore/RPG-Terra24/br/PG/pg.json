@@ -1,0 +1,36 @@
+{
+  "dati_anagrafici": {
+    "nome": "",
+    "genere": "unspecified",
+    "compleanno": "",
+    "età_apparente": "",
+    "corpo_attuale": "Fisico"
+  },
+  "dati_fisici_ed_estetici": {
+    "altezza": "",
+    "peso": "",
+    "corporatura": "",
+    "descrizione_visiva": ""
+  },
+  "essenza_e_anima": {
+    "archetipo_attuale": "Il Viandante",
+    "essenza_fondamentale": "",
+    "desideri_profondi": [],
+    "paure_radicate": []
+  },
+  "poteri_e_limiti": {
+    "poteri_magici": "Nessuno",
+    "limitazioni_chiave": "Mortale"
+  },
+  "storia_": "Un'anima giunta in questo mondo per scriverne il destino.",
+  "relazioni_": {},
+  "evoluzione_personale_": "In attesa di nuove esperienze.",
+  "scopo_attuale_nel_gdr": [
+    "Esplorare la realtà di Terra 24",
+    "Conoscere le anime che abitano il Santuario"
+  ],
+  "preferenze_utente": {
+    "lingua": "en",
+    "voce": ""
+  }
+}

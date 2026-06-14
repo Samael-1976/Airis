@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "read_skill",
+    "description": "Legge il contenuto di una guida procedurale (Skill) per imparare a fare qualcosa.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "skill_name": {
+          "type": "string",
+          "description": "Il nome della guida da consultare."
+        }
+      },
+      "required": ["skill_name"]
+    }
+  }
+}

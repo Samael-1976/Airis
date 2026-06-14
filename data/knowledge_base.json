@@ -1,0 +1,1182 @@
+{
+  "sources": [
+    {
+      "id": "07d7d27b-7f91-445a-94ab-249fb69d64f8",
+      "url": "https://www.google.com/",
+      "enabled": true,
+      "last_checked": 1774431673.4883742,
+      "status": "online"
+    },
+    {
+      "id": "de448a11-caee-408e-98d0-7db01b20b38e",
+      "url": "https://it.wikipedia.org/wiki/Pagina_principale",
+      "enabled": true,
+      "last_checked": 1774431673.5944574,
+      "status": "offline"
+    },
+    {
+      "id": "dbbd3355-1276-4160-9ecd-321d427c162e",
+      "url": "https://en.wikipedia.org/wiki/Main_Page",
+      "enabled": true,
+      "last_checked": 1774431673.6885917,
+      "status": "offline"
+    },
+    {
+      "id": "ebb337a5-9180-4901-876e-75b126db1eee",
+      "url": "https://quickref.me/",
+      "enabled": true,
+      "last_checked": 1774431673.9555113,
+      "status": "online"
+    },
+    {
+      "id": "4da27aed-4a88-43c6-b82c-482732e94fd8",
+      "url": "https://wiki.python.org/moin/BeginnersGuide",
+      "enabled": true,
+      "last_checked": 1774431679.303859,
+      "status": "online"
+    },
+    {
+      "id": "0845b1dd-83a4-4e41-908a-13d38c681ca8",
+      "url": "https://devguide.python.org/",
+      "enabled": true,
+      "last_checked": 1774431679.4977088,
+      "status": "online"
+    },
+    {
+      "id": "8c1d24d2-702f-40db-8b08-f40d0beb2f16",
+      "url": "https://docs.python.org/3/faq/",
+      "enabled": true,
+      "last_checked": 1774431679.660119,
+      "status": "online"
+    },
+    {
+      "id": "d072f1a6-7657-4e8d-945a-13e8c83aaef3",
+      "url": "https://docs.python.org/3/tutorial/",
+      "enabled": true,
+      "last_checked": 1774431679.783056,
+      "status": "online"
+    },
+    {
+      "id": "99bef472-604d-4bd2-843e-312ca6e557d9",
+      "url": "https://www.w3schools.com/java/default.asp",
+      "enabled": true,
+      "last_checked": 1774431679.9117553,
+      "status": "online"
+    },
+    {
+      "id": "139ea7af-b018-4b47-814f-841be24595c8",
+      "url": "https://www.w3schools.com/php/default.asp",
+      "enabled": true,
+      "last_checked": 1774431680.0175197,
+      "status": "online"
+    },
+    {
+      "id": "6f69405d-c304-47be-9ff1-ecfe308ae859",
+      "url": "https://www.w3schools.com/w3css/default.asp",
+      "enabled": true,
+      "last_checked": 1774431680.1276784,
+      "status": "online"
+    },
+    {
+      "id": "41805000-89bd-45eb-ba73-b001db2cc0c5",
+      "url": "https://www.w3schools.com/c/index.php",
+      "enabled": true,
+      "last_checked": 1774431680.200909,
+      "status": "online"
+    },
+    {
+      "id": "d9d3a937-9d30-40a1-944d-348cf6d2c8cb",
+      "url": "https://www.w3schools.com/cpp/default.asp",
+      "enabled": true,
+      "last_checked": 1774431680.3059068,
+      "status": "online"
+    },
+    {
+      "id": "232064eb-9a69-40ad-850a-9be0785b281d",
+      "url": "https://www.learncpp.com/",
+      "enabled": true,
+      "last_checked": 1774431680.4107976,
+      "status": "online"
+    },
+    {
+      "id": "17f2d3bc-94ad-4e7b-bd59-48bc483cc359",
+      "url": "https://www.w3schools.com/cs/index.php",
+      "enabled": true,
+      "last_checked": 1774431680.5145376,
+      "status": "online"
+    },
+    {
+      "id": "7c732924-ba2d-406b-9457-8b0744b3484a",
+      "url": "https://www.w3schools.com/bootstrap/default.asp",
+      "enabled": true,
+      "last_checked": 1774431680.6229017,
+      "status": "online"
+    },
+    {
+      "id": "991f56de-84b9-4b76-a744-7aa0fd1c648c",
+      "url": "https://www.w3schools.com/bootstrap4/default.asp",
+      "enabled": true,
+      "last_checked": 1774431680.7315567,
+      "status": "online"
+    },
+    {
+      "id": "2d85df1b-8b1f-4d27-b135-e40afebabc26",
+      "url": "https://www.w3schools.com/bootstrap5/index.php",
+      "enabled": true,
+      "last_checked": 1774431680.8495417,
+      "status": "online"
+    },
+    {
+      "id": "da2921ff-0634-45fb-b811-a075184196cc",
+      "url": "https://www.w3schools.com/react/default.asp",
+      "enabled": true,
+      "last_checked": 1774431680.9213061,
+      "status": "online"
+    },
+    {
+      "id": "b68cddaa-8dbb-41b2-a43a-264e23b3168a",
+      "url": "https://www.w3schools.com/mysql/default.asp",
+      "enabled": true,
+      "last_checked": 1774431681.0280914,
+      "status": "online"
+    },
+    {
+      "id": "4308201b-bfc3-4532-b5ab-fcb1610e24c8",
+      "url": "https://www.w3schools.com/jquery/default.asp",
+      "enabled": true,
+      "last_checked": 1774431681.1011982,
+      "status": "online"
+    },
+    {
+      "id": "9cee81a6-589d-4f7e-b299-4d40ab6d3973",
+      "url": "https://www.w3schools.com/excel/index.php",
+      "enabled": true,
+      "last_checked": 1774431681.203851,
+      "status": "online"
+    },
+    {
+      "id": "439a52c9-3ad3-4b7a-b9d2-7ee43a97c6db",
+      "url": "https://www.w3schools.com/xml/default.asp",
+      "enabled": true,
+      "last_checked": 1774431681.308711,
+      "status": "online"
+    },
+    {
+      "id": "0d6061f7-3be4-411b-970a-f4b86e3dcc5f",
+      "url": "https://www.w3schools.com/django/index.php",
+      "enabled": true,
+      "last_checked": 1774431681.4125984,
+      "status": "online"
+    },
+    {
+      "id": "0b1cfe05-4651-4d50-810d-3509b546b9b4",
+      "url": "https://www.w3schools.com/python/numpy/default.asp",
+      "enabled": true,
+      "last_checked": 1774431681.5171154,
+      "status": "online"
+    },
+    {
+      "id": "e87ded1a-9286-47d9-abe3-56e953676718",
+      "url": "https://www.w3schools.com/python/pandas/default.asp",
+      "enabled": true,
+      "last_checked": 1774431681.6215777,
+      "status": "online"
+    },
+    {
+      "id": "fab47cf0-1f13-4352-a22c-2f6eebc5f2a0",
+      "url": "https://www.w3schools.com/nodejs/default.asp",
+      "enabled": true,
+      "last_checked": 1774431681.7286496,
+      "status": "online"
+    },
+    {
+      "id": "eb86f736-8304-457f-92a5-461efb4f4c9e",
+      "url": "https://www.w3schools.com/dsa/index.php",
+      "enabled": true,
+      "last_checked": 1774431681.8342566,
+      "status": "online"
+    },
+    {
+      "id": "5923a8dc-5b09-4059-b634-62709f708214",
+      "url": "https://www.w3schools.com/typescript/index.php",
+      "enabled": true,
+      "last_checked": 1774431681.9406173,
+      "status": "online"
+    },
+    {
+      "id": "f40fa3e8-0071-49d0-9def-5d4563803aff",
+      "url": "https://www.w3schools.com/angular/default.asp",
+      "enabled": true,
+      "last_checked": 1774431682.0490463,
+      "status": "online"
+    },
+    {
+      "id": "26f4c4ec-230b-41b8-958b-84fea858b89b",
+      "url": "https://www.w3schools.com/angularjs/default.asp",
+      "enabled": true,
+      "last_checked": 1774431682.1586735,
+      "status": "online"
+    },
+    {
+      "id": "a89f764e-d5ed-4332-8fb5-89669cb0b635",
+      "url": "https://www.w3schools.com/git/default.asp",
+      "enabled": true,
+      "last_checked": 1774431682.247319,
+      "status": "online"
+    },
+    {
+      "id": "52b21fc4-a138-43f3-85a3-dca96cc5dd68",
+      "url": "https://www.w3schools.com/postgresql/index.php",
+      "enabled": true,
+      "last_checked": 1774431682.3559144,
+      "status": "online"
+    },
+    {
+      "id": "53a9fbac-1761-4ddd-9820-429eaac55b75",
+      "url": "https://www.w3schools.com/mongodb/index.php",
+      "enabled": true,
+      "last_checked": 1774431682.5314136,
+      "status": "online"
+    },
+    {
+      "id": "9c806946-9ca1-422f-890b-4305e2390238",
+      "url": "https://www.w3schools.com/asp/default.asp",
+      "enabled": true,
+      "last_checked": 1774431682.6341655,
+      "status": "online"
+    },
+    {
+      "id": "3a2e8734-df8f-470b-af8c-eb99bd2303ff",
+      "url": "https://www.w3schools.com/ai/default.asp",
+      "enabled": true,
+      "last_checked": 1774431682.7410588,
+      "status": "online"
+    },
+    {
+      "id": "e344437d-65db-4afb-bd13-e8dc93c82187",
+      "url": "https://www.w3schools.com/r/default.asp",
+      "enabled": true,
+      "last_checked": 1774431682.8434563,
+      "status": "online"
+    },
+    {
+      "id": "3c8c3f79-958b-4595-8e98-9dd29c35d4a1",
+      "url": "https://www.w3schools.com/go/index.php",
+      "enabled": true,
+      "last_checked": 1774431682.9272752,
+      "status": "online"
+    },
+    {
+      "id": "b750f384-8f9c-4bc4-9a82-d64c51ea846e",
+      "url": "https://www.w3schools.com/kotlin/index.php",
+      "enabled": true,
+      "last_checked": 1774431683.0316167,
+      "status": "online"
+    },
+    {
+      "id": "d89f0cd3-777a-4ec0-ad64-08a4e44c1303",
+      "url": "https://www.w3schools.com/sass/default.asp",
+      "enabled": true,
+      "last_checked": 1774431683.140451,
+      "status": "online"
+    },
+    {
+      "id": "d3038e9d-87d9-4745-9703-1605b598b1da",
+      "url": "https://www.w3schools.com/vue/index.php",
+      "enabled": true,
+      "last_checked": 1774431683.2496247,
+      "status": "online"
+    },
+    {
+      "id": "04ed023e-2f9a-4f38-a766-01aa4abdefe0",
+      "url": "https://www.w3schools.com/gen_ai/index.php",
+      "enabled": true,
+      "last_checked": 1774431683.356715,
+      "status": "online"
+    },
+    {
+      "id": "3c732551-34a9-46e2-a448-3e5820ed0e8d",
+      "url": "https://www.w3schools.com/python/scipy/index.php",
+      "enabled": true,
+      "last_checked": 1774431683.4566157,
+      "status": "online"
+    },
+    {
+      "id": "3d7430e3-a368-4f6a-b6b9-430414627340",
+      "url": "https://www.w3schools.com/cybersecurity/index.php",
+      "enabled": true,
+      "last_checked": 1774431683.52791,
+      "status": "online"
+    },
+    {
+      "id": "7251cfd1-1303-454b-be94-12cbb221105e",
+      "url": "https://www.w3schools.com/datascience/default.asp",
+      "enabled": true,
+      "last_checked": 1774431683.6586254,
+      "status": "online"
+    },
+    {
+      "id": "705fc559-3632-4e2a-8d0f-b6e72ab9fa4b",
+      "url": "https://www.w3schools.com/programming/index.php",
+      "enabled": true,
+      "last_checked": 1774431683.7628002,
+      "status": "online"
+    },
+    {
+      "id": "3bab958a-29fd-47f7-9abe-2cfe4d9de909",
+      "url": "https://www.w3schools.com/bash/index.php",
+      "enabled": true,
+      "last_checked": 1774431683.8367665,
+      "status": "online"
+    },
+    {
+      "id": "eeefd761-2c5f-42a0-a122-cbe46b657f30",
+      "url": "https://www.w3schools.com/rust/index.php",
+      "enabled": true,
+      "last_checked": 1774431683.9085994,
+      "status": "online"
+    }
+  ],
+  "arguments": [
+    {
+      "id": "320be78c-1c51-40f7-aaa3-ab3327d6794b",
+      "topic": "Storia della filosofia greca (Filosofia)",
+      "associatedSourceIds": [
+        "dbbd3355-1276-4160-9ecd-321d427c162e",
+        "de448a11-caee-408e-98d0-7db01b20b38e"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "d8a51a96-769b-4b30-bcb2-c4114db28b85",
+      "topic": "Etica e Morale (Filosofia)",
+      "associatedSourceIds": [
+        "de448a11-caee-408e-98d0-7db01b20b38e",
+        "dbbd3355-1276-4160-9ecd-321d427c162e"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "f6c79195-a713-49d7-bc3e-9e7e6067a983",
+      "topic": "Filosofia Politica (Filosofia)",
+      "associatedSourceIds": [
+        "de448a11-caee-408e-98d0-7db01b20b38e",
+        "dbbd3355-1276-4160-9ecd-321d427c162e"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "50b79cf4-b57a-4e9c-aef6-45ef574d638c",
+      "topic": "Psicologia Generale (Psicologia)",
+      "associatedSourceIds": [
+        "de448a11-caee-408e-98d0-7db01b20b38e",
+        "dbbd3355-1276-4160-9ecd-321d427c162e"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "f00729a5-e20a-4583-9d4e-97b00a032c1f",
+      "topic": "Psicoanalisi (Freud, Jung) (Psicologia)",
+      "associatedSourceIds": [
+        "de448a11-caee-408e-98d0-7db01b20b38e",
+        "dbbd3355-1276-4160-9ecd-321d427c162e"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "b0bce806-639d-4408-842a-453c21fcb24d",
+      "topic": "Finanza Comportamentale (Psicologia)",
+      "associatedSourceIds": [
+        "de448a11-caee-408e-98d0-7db01b20b38e",
+        "dbbd3355-1276-4160-9ecd-321d427c162e"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "81919bc5-9608-4841-8806-30973e3fc8b4",
+      "topic": "Programmazione Neuro-Linguistica (PNL) (Psicologia)",
+      "associatedSourceIds": [
+        "de448a11-caee-408e-98d0-7db01b20b38e",
+        "dbbd3355-1276-4160-9ecd-321d427c162e"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "5e4a7c75-9db9-48c3-ab5f-8b626bb20be8",
+      "topic": "Psicologia della Persuasione (Psicologia)",
+      "associatedSourceIds": [
+        "de448a11-caee-408e-98d0-7db01b20b38e",
+        "dbbd3355-1276-4160-9ecd-321d427c162e"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "668f9931-3dc2-41d9-956d-fe41fa6daf43",
+      "topic": "Storia dell'Impero Romano (Storia e Politica)",
+      "associatedSourceIds": [
+        "dbbd3355-1276-4160-9ecd-321d427c162e",
+        "de448a11-caee-408e-98d0-7db01b20b38e"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "ad251e60-3f64-45cf-a3c4-aba04b6cff4c",
+      "topic": "Storia Mondiale (Storia e Politica)",
+      "associatedSourceIds": [
+        "dbbd3355-1276-4160-9ecd-321d427c162e",
+        "de448a11-caee-408e-98d0-7db01b20b38e"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "a264a261-fc0d-4035-bdc1-bc9b7b1d73ad",
+      "topic": "Politica Internazionale (Storia e Politica)",
+      "associatedSourceIds": [
+        "dbbd3355-1276-4160-9ecd-321d427c162e",
+        "de448a11-caee-408e-98d0-7db01b20b38e"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "c587d89f-99d9-433b-bf78-8d0fe5ab2b5b",
+      "topic": "Principi di economia Keynesiana (Economia e Finanza)",
+      "associatedSourceIds": [
+        "de448a11-caee-408e-98d0-7db01b20b38e",
+        "dbbd3355-1276-4160-9ecd-321d427c162e"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "0f04ba27-4d4e-4920-950d-bd73f4b17328",
+      "topic": "Micro e Macroeconomia (Economia e Finanza)",
+      "associatedSourceIds": [
+        "de448a11-caee-408e-98d0-7db01b20b38e",
+        "dbbd3355-1276-4160-9ecd-321d427c162e"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "43ccc9e2-384b-4902-a52a-31e01118c965",
+      "topic": "Finanza e Mercati Globali (Economia e Finanza)",
+      "associatedSourceIds": [
+        "dbbd3355-1276-4160-9ecd-321d427c162e",
+        "de448a11-caee-408e-98d0-7db01b20b38e"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "2398a53f-e9d6-4300-9191-9b16d6b6307d",
+      "topic": "Giurisprudenza e Sistemi Legali (Diritto)",
+      "associatedSourceIds": [
+        "dbbd3355-1276-4160-9ecd-321d427c162e",
+        "de448a11-caee-408e-98d0-7db01b20b38e"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "55d5b4d9-8b83-42c7-a274-a740c65788c7",
+      "topic": "Fisica Classica (Fisica)",
+      "associatedSourceIds": [
+        "de448a11-caee-408e-98d0-7db01b20b38e",
+        "dbbd3355-1276-4160-9ecd-321d427c162e"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "b91e6902-a2a7-4a51-bdb3-c4f1cb9714ce",
+      "topic": "Fisica Quantistica (Fisica)",
+      "associatedSourceIds": [
+        "de448a11-caee-408e-98d0-7db01b20b38e",
+        "dbbd3355-1276-4160-9ecd-321d427c162e"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "e6039c86-071e-4c91-bb8c-a6aadad66c19",
+      "topic": "Cosmologia (Fisica)",
+      "associatedSourceIds": [
+        "de448a11-caee-408e-98d0-7db01b20b38e",
+        "dbbd3355-1276-4160-9ecd-321d427c162e"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "3c3d82c4-14b4-43b5-8ece-83f61a661d66",
+      "topic": "Python (livello esperto, con focus su sicurezza) (Linguaggi di Programmazione)",
+      "associatedSourceIds": [
+        "4da27aed-4a88-43c6-b82c-482732e94fd8",
+        "8c1d24d2-702f-40db-8b08-f40d0beb2f16",
+        "0845b1dd-83a4-4e41-908a-13d38c681ca8",
+        "d072f1a6-7657-4e8d-945a-13e8c83aaef3",
+        "0b1cfe05-4651-4d50-810d-3509b546b9b4",
+        "e87ded1a-9286-47d9-abe3-56e953676718",
+        "fab47cf0-1f13-4352-a22c-2f6eebc5f2a0",
+        "52b21fc4-a138-43f3-85a3-dca96cc5dd68",
+        "53a9fbac-1761-4ddd-9820-429eaac55b75",
+        "3a2e8734-df8f-470b-af8c-eb99bd2303ff",
+        "b750f384-8f9c-4bc4-9a82-d64c51ea846e",
+        "04ed023e-2f9a-4f38-a766-01aa4abdefe0",
+        "3c732551-34a9-46e2-a448-3e5820ed0e8d",
+        "705fc559-3632-4e2a-8d0f-b6e72ab9fa4b",
+        "232064eb-9a69-40ad-850a-9be0785b281d"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "fb4d63e6-1133-4848-a6fd-3291d98cf2de",
+      "topic": "C++ (con focus su gestione memoria e exploitation) (Linguaggi di Programmazione)",
+      "associatedSourceIds": [
+        "ebb337a5-9180-4901-876e-75b126db1eee",
+        "41805000-89bd-45eb-ba73-b001db2cc0c5",
+        "d9d3a937-9d30-40a1-944d-348cf6d2c8cb",
+        "232064eb-9a69-40ad-850a-9be0785b281d",
+        "b68cddaa-8dbb-41b2-a43a-264e23b3168a",
+        "4308201b-bfc3-4532-b5ab-fcb1610e24c8",
+        "705fc559-3632-4e2a-8d0f-b6e72ab9fa4b"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "59cadffc-8ea3-473e-9fe8-1fb4fb2d93c5",
+      "topic": "C# (Linguaggi di Programmazione)",
+      "associatedSourceIds": [
+        "41805000-89bd-45eb-ba73-b001db2cc0c5",
+        "d9d3a937-9d30-40a1-944d-348cf6d2c8cb",
+        "ebb337a5-9180-4901-876e-75b126db1eee",
+        "232064eb-9a69-40ad-850a-9be0785b281d",
+        "705fc559-3632-4e2a-8d0f-b6e72ab9fa4b"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "a5b24b6e-6ec4-4e74-8b70-9ec3fa1eaf2c",
+      "topic": "PHP (Linguaggi di Programmazione)",
+      "associatedSourceIds": [
+        "ebb337a5-9180-4901-876e-75b126db1eee",
+        "139ea7af-b018-4b47-814f-841be24595c8"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "ee92e2e9-47c5-4061-9cc5-b045b785fc20",
+      "topic": "MySQL (Linguaggi di Programmazione)",
+      "associatedSourceIds": [
+        "ebb337a5-9180-4901-876e-75b126db1eee",
+        "b68cddaa-8dbb-41b2-a43a-264e23b3168a"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "fe58609d-a755-497e-90ce-170f88076fef",
+      "topic": "HTML (Linguaggi di Programmazione)",
+      "associatedSourceIds": [
+        "ebb337a5-9180-4901-876e-75b126db1eee",
+        "99bef472-604d-4bd2-843e-312ca6e557d9",
+        "139ea7af-b018-4b47-814f-841be24595c8",
+        "6f69405d-c304-47be-9ff1-ecfe308ae859",
+        "7c732924-ba2d-406b-9457-8b0744b3484a",
+        "991f56de-84b9-4b76-a744-7aa0fd1c648c",
+        "2d85df1b-8b1f-4d27-b135-e40afebabc26",
+        "da2921ff-0634-45fb-b811-a075184196cc",
+        "439a52c9-3ad3-4b7a-b9d2-7ee43a97c6db",
+        "705fc559-3632-4e2a-8d0f-b6e72ab9fa4b"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "3aa4691e-dd20-4585-83e5-a1b9fdf8a65c",
+      "topic": "Java (Linguaggi di Programmazione)",
+      "associatedSourceIds": [
+        "ebb337a5-9180-4901-876e-75b126db1eee",
+        "99bef472-604d-4bd2-843e-312ca6e557d9"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "fdf89ded-d173-4e92-b134-183d859c6d0a",
+      "topic": "JavaScript (Linguaggi di Programmazione)",
+      "associatedSourceIds": [
+        "ebb337a5-9180-4901-876e-75b126db1eee",
+        "99bef472-604d-4bd2-843e-312ca6e557d9",
+        "705fc559-3632-4e2a-8d0f-b6e72ab9fa4b",
+        "de448a11-caee-408e-98d0-7db01b20b38e"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "80d70156-729e-413f-8b59-0c0db6214d7b",
+      "topic": "R (Linguaggi di Programmazione)",
+      "associatedSourceIds": [
+        "e344437d-65db-4afb-bd13-e8dc93c82187"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "8cad0aa1-0af8-4b42-b1a4-1287e711f206",
+      "topic": "Swift (Linguaggi di Programmazione)",
+      "associatedSourceIds": [
+        "ebb337a5-9180-4901-876e-75b126db1eee"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "79b7bdcd-3852-4d18-8594-6baa86b83657",
+      "topic": "Kotlin (Linguaggi di Programmazione)",
+      "associatedSourceIds": [
+        "b750f384-8f9c-4bc4-9a82-d64c51ea846e",
+        "705fc559-3632-4e2a-8d0f-b6e72ab9fa4b",
+        "ebb337a5-9180-4901-876e-75b126db1eee"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "abad3b2a-082e-4873-8463-7bfcaffe5ac3",
+      "topic": "MATLAB (Linguaggi di Programmazione)",
+      "associatedSourceIds": [
+        "ebb337a5-9180-4901-876e-75b126db1eee",
+        "705fc559-3632-4e2a-8d0f-b6e72ab9fa4b",
+        "de448a11-caee-408e-98d0-7db01b20b38e"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "b3763958-8f1e-4ed5-aee6-4a64ca21ac1a",
+      "topic": "Go (Linguaggi di Programmazione)",
+      "associatedSourceIds": [
+        "ebb337a5-9180-4901-876e-75b126db1eee",
+        "705fc559-3632-4e2a-8d0f-b6e72ab9fa4b",
+        "3c8c3f79-958b-4595-8e98-9dd29c35d4a1"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "7bb6d247-5d44-464f-94f1-701505a12b61",
+      "topic": "Ruby (Linguaggi di Programmazione)",
+      "associatedSourceIds": [
+        "ebb337a5-9180-4901-876e-75b126db1eee",
+        "705fc559-3632-4e2a-8d0f-b6e72ab9fa4b",
+        "7c732924-ba2d-406b-9457-8b0744b3484a",
+        "991f56de-84b9-4b76-a744-7aa0fd1c648c",
+        "2d85df1b-8b1f-4d27-b135-e40afebabc26"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "988001be-ec78-437c-8b72-685cdbc70d80",
+      "topic": "Dart (Linguaggi di Programmazione)",
+      "associatedSourceIds": [
+        "ebb337a5-9180-4901-876e-75b126db1eee",
+        "705fc559-3632-4e2a-8d0f-b6e72ab9fa4b"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "3e644f57-3fcf-4314-a98c-876379fef333",
+      "topic": "Rust (Linguaggi di Programmazione)",
+      "associatedSourceIds": [
+        "ebb337a5-9180-4901-876e-75b126db1eee",
+        "eeefd761-2c5f-42a0-a122-cbe46b657f30"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "6c02e648-48ab-4258-baa3-f6ef6973f32c",
+      "topic": "Scala (Linguaggi di Programmazione)",
+      "associatedSourceIds": [
+        "ebb337a5-9180-4901-876e-75b126db1eee",
+        "705fc559-3632-4e2a-8d0f-b6e72ab9fa4b"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "ddeff178-0f4c-426d-a54c-044cd8785175",
+      "topic": "TypeScript (Linguaggi di Programmazione)",
+      "associatedSourceIds": [
+        "ebb337a5-9180-4901-876e-75b126db1eee",
+        "705fc559-3632-4e2a-8d0f-b6e72ab9fa4b",
+        "5923a8dc-5b09-4059-b634-62709f708214"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "2e27d2cb-98d3-4993-98fb-ee75b78e04d0",
+      "topic": "Assembly (x86/x64) (Linguaggi di Programmazione)",
+      "associatedSourceIds": [
+        "ebb337a5-9180-4901-876e-75b126db1eee",
+        "705fc559-3632-4e2a-8d0f-b6e72ab9fa4b",
+        "d89f0cd3-777a-4ec0-ad64-08a4e44c1303"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "e5b49039-4d71-4456-9553-724e008b77fa",
+      "topic": "Bash Scripting (Linguaggi di Programmazione)",
+      "associatedSourceIds": [
+        "ebb337a5-9180-4901-876e-75b126db1eee",
+        "3bab958a-29fd-47f7-9abe-2cfe4d9de909",
+        "705fc559-3632-4e2a-8d0f-b6e72ab9fa4b"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "8f44ea60-23c4-4b2e-8a45-f72b86e579e3",
+      "topic": "PowerShell (Linguaggi di Programmazione)",
+      "associatedSourceIds": [
+        "3bab958a-29fd-47f7-9abe-2cfe4d9de909",
+        "705fc559-3632-4e2a-8d0f-b6e72ab9fa4b",
+        "ebb337a5-9180-4901-876e-75b126db1eee"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "45231d29-876c-41bd-934c-9e61d0b2ac8b",
+      "topic": "Differenze tra C++ e Python (Paradigmi e Concetti)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "81d21813-fecc-4e05-9b4c-6c3a889cf051",
+      "topic": "Programmazione Orientata agli Oggetti (OOP) (Paradigmi e Concetti)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "6a8758b5-441d-4378-9009-e20612802842",
+      "topic": "API REST e Sicurezza API (REST/GraphQL) (Paradigmi e Concetti)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "c39645d2-5a1b-419a-ac45-a41550a6207f",
+      "topic": "JWT (JSON Web Token) Security (Paradigmi e Concetti)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "e7ac64d8-46ca-4d6c-8fd3-8f7e567c832d",
+      "topic": "Secure Software Development Lifecycle (SSDLC) (Paradigmi e Concetti)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "749ca8c9-b676-419d-83ed-4e2c024ebda2",
+      "topic": "Reverse Engineering (Ingegneria Inversa e Sviluppo Exploit)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "cdda9489-8255-4adf-bdc2-34f93d2e1cdc",
+      "topic": "Analisi Statica (SAST) e Dinamica (DAST) del Codice (Ingegneria Inversa e Sviluppo Exploit)",
+      "associatedSourceIds": [
+        "d89f0cd3-777a-4ec0-ad64-08a4e44c1303"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "4d5ef729-8ded-469d-b211-365b3281cecd",
+      "topic": "Fuzzing (Ingegneria Inversa e Sviluppo Exploit)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "ebda52bf-a827-4738-879a-c5415152e31c",
+      "topic": "Disassemblatori (IDA Pro, Ghidra) (Ingegneria Inversa e Sviluppo Exploit)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "d89480e7-d501-49d7-a2e9-05f1d2e64bb5",
+      "topic": "Debugger (GDB, OllyDbg, x64dbg) (Ingegneria Inversa e Sviluppo Exploit)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "2318af13-15b7-4be5-978e-94828faa4859",
+      "topic": "Programmazione in C/C++ per l'Exploitation (Ingegneria Inversa e Sviluppo Exploit)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "2595bedd-74d1-4010-9147-54de5c1ad9eb",
+      "topic": "Ricognizione Attiva e Passiva (Intelligence e Ricognizione)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "7013a0b7-7236-44ad-9041-ac1078831284",
+      "topic": "Open Source Intelligence (OSINT) (Intelligence e Ricognizione)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "f6be32c5-2383-4089-b725-5524f4d443ce",
+      "topic": "Footprinting (Intelligence e Ricognizione)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "b5ffb28a-75f3-4367-95bb-0f8669f0e95c",
+      "topic": "Metodologie di Penetration Testing (PTES, OSSTMM) (Intelligence e Ricognizione)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "5d2bc0f7-5692-404a-8a3a-a00aa5453f37",
+      "topic": "Scansione di Rete (Scansione ed Enumerazione)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "822012bb-5c78-43ee-8145-04af69f4e23b",
+      "topic": "Port Scanning (TCP/UDP) (Scansione ed Enumerazione)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "8b6712d7-bac1-4b77-b779-289b95ad2254",
+      "topic": "Scansione di Vulnerabilit\u00e0 (Scansione ed Enumerazione)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "9a5bfec3-a85f-44de-9995-388560ecf063",
+      "topic": "Enumerazione (DNS, SNMP, SMB) (Scansione ed Enumerazione)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "7b082ec6-9efd-4fc5-8fbb-e9f0e388e627",
+      "topic": "Analisi del Traffico di Rete (Packet Sniffing) (Analisi e Sfruttamento)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "c6e533f3-d321-4e93-ba52-ce602f9c959f",
+      "topic": "Sfruttamento di Vulnerabilit\u00e0 (Exploitation) (Analisi e Sfruttamento)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "f241a1be-2dad-4ead-8be7-3c02237ebf27",
+      "topic": "Metasploit Framework (Analisi e Sfruttamento)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "cc1a8593-1816-4d5e-81a6-d4f20f7c3e0a",
+      "topic": "Buffer Overflow (Analisi e Sfruttamento)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "b608544d-92e5-4e65-a800-22d7e2308c00",
+      "topic": "Integer Overflow (Analisi e Sfruttamento)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "be7b6405-6b85-4b8d-927c-73b690ea83e0",
+      "topic": "Heap Spraying (Analisi e Sfruttamento)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "e71fe84d-6285-4d8c-b610-36741541d947",
+      "topic": "Format String Vulnerability (Analisi e Sfruttamento)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "a4ebef45-1a13-4011-959a-fbb13fd04e73",
+      "topic": "Password Cracking (Brute Force, Dizionario, Rainbow Tables) (Attacchi e Post-Sfruttamento)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "6f85864f-b4b0-4f7e-9b6b-2ef9fdff9d54",
+      "topic": "Pass the Hash (Attacchi e Post-Sfruttamento)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "02050be2-d7a9-4faf-9293-c3a633b6c6a6",
+      "topic": "Privilege Escalation (Verticale e Orizzontale) (Attacchi e Post-Sfruttamento)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "ab2f86a9-f8b2-4a34-a1f4-d90744872d97",
+      "topic": "Creazione di Backdoor e Trojan (Attacchi e Post-Sfruttamento)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "dec5543f-a1df-4154-96a5-4f5162db8dd8",
+      "topic": "Uso e Rilevamento di Rootkit (Attacchi e Post-Sfruttamento)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "fa527074-0679-4f07-a953-d03130d936bf",
+      "topic": "Steganografia (Attacchi e Post-Sfruttamento)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "73b5c753-8505-45d1-b19c-ce4e7c23196b",
+      "topic": "Copertura delle Tracce (Cancellazione Log) (Attacchi e Post-Sfruttamento)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "d7d02fed-46e2-4430-a3bd-806ee79bf05b",
+      "topic": "SQL Injection (In-band, Blind, Out-of-band) (Hacking Web e Applicazioni)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "0a661711-75b1-49e5-be0e-ca79c4c602a7",
+      "topic": "Cross-Site Scripting (XSS) - Stored, Reflected, DOM-based (Hacking Web e Applicazioni)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "b0e9107a-548b-4aca-8a76-7ba496b8ee2c",
+      "topic": "Broken Authentication (Hacking Web e Applicazioni)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "5a3a9b59-0249-491f-901f-188eb61c8233",
+      "topic": "Sensitive Data Exposure (Hacking Web e Applicazioni)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "4d48af53-3675-4c35-80d3-4dfde854ea74",
+      "topic": "XML External Entities (XXE) (Hacking Web e Applicazioni)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "135b6c63-ebf9-4cd8-ab60-53fa4896d374",
+      "topic": "Broken Access Control (Hacking Web e Applicazioni)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "96045c0f-2508-4ff1-913e-52982500e7c1",
+      "topic": "Security Misconfiguration (Hacking Web e Applicazioni)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "4a0ce15a-373e-460c-b017-137557cd4f2a",
+      "topic": "Insecure Deserialization (Hacking Web e Applicazioni)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "83c5af50-7f1a-4208-92f4-95d166f95f06",
+      "topic": "Cross-Site Request Forgery (CSRF) (Hacking Web e Applicazioni)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "f7cd8ed4-0be8-4990-8975-7f941731b244",
+      "topic": "Server-Side Request Forgery (SSRF) (Hacking Web e Applicazioni)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "884e7385-a2cd-48db-9cbb-183a9669bbcd",
+      "topic": "File Inclusion (LFI/RFI) (Hacking Web e Applicazioni)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "f01f125a-2d5a-46fa-b03a-bce769680dc8",
+      "topic": "Directory Traversal (Hacking Web e Applicazioni)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "67576609-94d7-4d28-ac8e-146135ed9d89",
+      "topic": "Command Injection (Hacking Web e Applicazioni)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "c4cea207-43e4-45a9-8857-d13ae739f3af",
+      "topic": "Web Shells (Hacking Web e Applicazioni)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "3fd43432-f361-436a-b5d1-21b781f84505",
+      "topic": "Uso di Burp Suite e OWASP ZAP (Hacking Web e Applicazioni)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "dfe33451-aaad-4ab6-8214-d675b3ade250",
+      "topic": "Fondamenti di Networking (TCP/IP Suite, Subnetting) (Sicurezza di Rete e Infrastruttura)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "fda6d15b-6d74-4e2d-bb96-82dbace61792",
+      "topic": "Firewall (Stateful, Stateless, WAF) (Sicurezza di Rete e Infrastruttura)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "9a296b37-32ea-40b2-ae41-0fed0026d2de",
+      "topic": "IDS/IPS (Sicurezza di Rete e Infrastruttura)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "8daf21f5-80dc-4dcf-9abd-22cb17593000",
+      "topic": "VPN e Tunneling (IPsec, OpenVPN) (Sicurezza di Rete e Infrastruttura)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "df981b58-e29e-4745-87e4-6d3da027189d",
+      "topic": "Crittografia (Simmetrica, Asimmetrica, Hashing, PKI) (Sicurezza di Rete e Infrastruttura)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "a865a14f-8c00-47be-a47a-44c1998d2709",
+      "topic": "Session Hijacking (Sicurezza di Rete e Infrastruttura)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "ef85a42a-466c-48bc-aade-854dc57e53bc",
+      "topic": "Attacchi Man-in-the-Middle (MITM) (Sicurezza di Rete e Infrastruttura)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "dc68e7ee-e6a4-41bd-8b00-3bcee6b90609",
+      "topic": "DNS Spoofing e ARP Poisoning (Sicurezza di Rete e Infrastruttura)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "c3b74bdc-07c9-4b8a-8766-13e51220259f",
+      "topic": "Hardening di Sistemi Linux e Windows (Sicurezza di Sistemi e Database)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "74145859-a395-46b9-83c0-953fbee33ce5",
+      "topic": "Meccanismi di Sicurezza (SELinux, AppArmor) (Sicurezza di Sistemi e Database)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "62b42c0e-c295-440c-aeef-0bd7d7a515e6",
+      "topic": "Sicurezza di Container (Docker, Kubernetes) (Sicurezza di Sistemi e Database)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "e47fc995-8bec-4a08-ba7c-8f35b8380bef",
+      "topic": "Sicurezza dei Database (SQL e NoSQL) (Sicurezza di Sistemi e Database)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "bf42b1ad-e26f-4284-b945-a5748a948c6d",
+      "topic": "Crittografia dei Dati (At-Rest, In-Transit) (Sicurezza di Sistemi e Database)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "39a5f699-19a4-45c6-92d1-557f2eda4352",
+      "topic": "Social Engineering Toolkit (SET) (Social Engineering)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "0a7db3c6-5ed3-4d5d-ab1d-d566636b672e",
+      "topic": "Phishing (Spear Phishing, Whaling) (Social Engineering)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "162e4e6b-f610-40d7-9930-c218450ddbd1",
+      "topic": "Vishing e Smishing (Social Engineering)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "1b531e6f-7422-455b-a968-3e08222616a8",
+      "topic": "Baiting, Pretexting, Tailgating, Dumpster Diving (Social Engineering)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "b48d6eb2-65cb-4dff-a3f3-c8fdca352efb",
+      "topic": "Cyber Warfare e Cyber Espionage (Guerra Cibernetica e Operazioni Avanzate)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "58cff7e5-07b1-4288-9f17-bbd714ac22c2",
+      "topic": "Advanced Persistent Threat (APT) (Guerra Cibernetica e Operazioni Avanzate)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "6d0f9e33-c76c-4e55-95d5-2d3e385e893e",
+      "topic": "Cyber Kill Chain e MITRE ATT&CK Framework (Guerra Cibernetica e Operazioni Avanzate)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "0c21a7e4-2d7b-4408-8693-5c075bf7dc06",
+      "topic": "Cyber Threat Intelligence (CTI) (Guerra Cibernetica e Operazioni Avanzate)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "70087aee-006a-4e55-9943-425c3b176bcb",
+      "topic": "Digital Forensics e Incident Response (Guerra Cibernetica e Operazioni Avanzate)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "66db12f8-df59-481b-974b-d79e888f5279",
+      "topic": "Analisi Malware (Statica e Dinamica) (Guerra Cibernetica e Operazioni Avanzate)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "43d6daf1-7eea-4487-8f2d-f4609bed7003",
+      "topic": "Honeypots e Deception Technology (Guerra Cibernetica e Operazioni Avanzate)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "4c82cc59-de92-49c4-8bdf-3e19160e7139",
+      "topic": "Sicurezza IoT e SCADA/ICS (Guerra Cibernetica e Operazioni Avanzate)",
+      "associatedSourceIds": [],
+      "enabled": true
+    },
+    {
+      "id": "afad2b3a-c34d-4b3f-97ba-1660f8a61138",
+      "topic": "Mobile Hacking (Android/iOS) (Guerra Cibernetica e Operazioni Avanzate)",
+      "associatedSourceIds": [],
+      "enabled": true
+    }
+  ],
+  "config": {
+    "interval_minutes": 44,
+    "active": true
+  }
+}

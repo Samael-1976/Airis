@@ -1,0 +1,29 @@
+{
+  "type": "function",
+  "function": {
+    "name": "write_file",
+    "description": "Crea o sovrascrive un file di testo con il contenuto fornito.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path_str": {
+          "type": "string",
+          "description": "Il percorso o nome del file da scrivere."
+        },
+        "content": {
+          "type": "string",
+          "description": "Il contenuto testuale da inserire nel file."
+        },
+        "motivation": {
+          "type": "string",
+          "description": "La motivazione tecnica o emotiva per la creazione del file."
+        }
+      },
+      "required": [
+        "path_str",
+        "content",
+        "motivation"
+      ]
+    }
+  }
+}

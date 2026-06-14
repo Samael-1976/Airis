@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "invia_immagine",
+    "description": "Genera e invia un'immagine in chat (Auto-switch DALL-E/Flux).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "prompt": {
+          "type": "string",
+          "description": "La descrizione dell'immagine da generare."
+        }
+      },
+      "required": ["prompt"]
+    }
+  }
+}

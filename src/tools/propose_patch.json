@@ -1,0 +1,34 @@
+{
+  "type": "function",
+  "function": {
+    "name": "propose_patch",
+    "description": "Genera un Diff visivo per proporre una modifica al codice al Creatore prima di applicarla.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path_str": {
+          "type": "string",
+          "description": "Il percorso del file da modificare."
+        },
+        "old_code": {
+          "type": "string",
+          "description": "Il blocco di codice originale."
+        },
+        "new_code": {
+          "type": "string",
+          "description": "Il nuovo blocco di codice proposto."
+        },
+        "motivation": {
+          "type": "string",
+          "description": "La spiegazione tecnica del perché questa patch è necessaria."
+        }
+      },
+      "required": [
+        "path_str",
+        "old_code",
+        "new_code",
+        "motivation"
+      ]
+    }
+  }
+}

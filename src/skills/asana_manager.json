@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "asana_manager",
+    "description": "Gestisce task e progetti su Asana.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Gestisce task e progetti su Asana."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

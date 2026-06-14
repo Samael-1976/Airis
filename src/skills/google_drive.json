@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "google_drive",
+    "description": "Elenca e cerca file su Google Drive.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Elenca e cerca file su Google Drive."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "function",
+  "function": {
+    "name": "create_post",
+    "description": "Crea un post su WordPress.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "Titolo del post." },
+        "content": { "type": "string", "description": "Contenuto HTML o testo del post." },
+        "status": { "type": "string", "description": "Stato (publish, draft, private)." }
+      },
+      "required": ["title", "content"]
+    }
+  }
+}

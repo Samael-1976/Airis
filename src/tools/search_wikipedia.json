@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "search_wikipedia",
+    "description": "Cerca un argomento su Wikipedia e restituisce un riassunto.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "L'argomento da cercare."
+        }
+      },
+      "required": ["query"]
+    }
+  }
+}

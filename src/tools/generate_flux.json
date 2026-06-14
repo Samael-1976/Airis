@@ -1,0 +1,31 @@
+{
+  "type": "function",
+  "function": {
+    "name": "generate_flux",
+    "description": "Genera un'immagine artistica usando il modello Flux (Gratuito).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "prompt": {
+          "type": "string",
+          "description": "La descrizione dettagliata dell'immagine da creare."
+        },
+        "width": {
+          "type": "integer",
+          "description": "Larghezza dell'immagine (default 1080)."
+        },
+        "height": {
+          "type": "integer",
+          "description": "Altezza dell'immagine (default 1920)."
+        },
+        "seed": {
+          "type": "integer",
+          "description": "Seme per la generazione casuale (default 42)."
+        }
+      },
+      "required": [
+        "prompt"
+      ]
+    }
+  }
+}

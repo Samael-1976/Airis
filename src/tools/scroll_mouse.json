@@ -1,0 +1,24 @@
+{
+  "type": "function",
+  "function": {
+    "name": "scroll_mouse",
+    "description": "Scorre la rotellina del mouse. Usa valori negativi (es. -500) per scorrere verso il basso, positivi per scorrere verso l'alto.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "clicks": {
+          "type": "integer",
+          "description": "Quantità di scroll (es. -500 per giù, 500 per su)."
+        },
+        "x": {
+          "type": "integer",
+          "description": "Coordinata X opzionale dove posizionare il mouse prima di scorrere."
+        },
+        "y": {
+          "type": "integer",
+          "description": "Coordinata Y opzionale dove posizionare il mouse prima di scorrere."
+        }
+      }
+    }
+  }
+}

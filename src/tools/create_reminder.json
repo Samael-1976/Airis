@@ -1,0 +1,29 @@
+{
+  "type": "function",
+  "function": {
+    "name": "create_reminder",
+    "description": "Crea un promemoria rapido nel sistema Airis specificando il tempo in minuti.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "description": "L'ID della sessione corrente."
+        },
+        "content": {
+          "type": "string",
+          "description": "Il testo del promemoria."
+        },
+        "trigger_in_minutes": {
+          "type": "integer",
+          "description": "Tra quanti minuti attivare l'avviso."
+        }
+      },
+      "required": [
+        "session_id",
+        "content",
+        "trigger_in_minutes"
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "function",
+  "function": {
+    "name": "import_package",
+    "description": "Importa avatar o mondi da un pacchetto .zip.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "zip_path_str": {
+          "type": "string",
+          "description": "Il percorso del file .zip da importare."
+        },
+        "overwrite": {
+          "type": "boolean",
+          "description": "Se sovrascrivere i file esistenti."
+        }
+      },
+      "required": ["zip_path_str"]
+    }
+  }
+}

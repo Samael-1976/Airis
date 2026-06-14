@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "trello_manager",
+    "description": "Gestisce bacheche e card su Trello.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Gestisce bacheche e card su Trello."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

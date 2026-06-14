@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "read_screen_area",
+    "description": "Legge il testo (OCR) presente in una specifica area rettangolare dello schermo.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "x1": { "type": "integer", "description": "Coordinata X iniziale." },
+        "y1": { "type": "integer", "description": "Coordinata Y iniziale." },
+        "x2": { "type": "integer", "description": "Coordinata X finale." },
+        "y2": { "type": "integer", "description": "Coordinata Y finale." }
+      },
+      "required": ["x1", "y1", "x2", "y2"]
+    }
+  }
+}

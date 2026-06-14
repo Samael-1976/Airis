@@ -1,0 +1,12 @@
+{
+  "type": "function",
+  "function": {
+    "name": "list_task_lists",
+    "description": "Elenca le liste di attività di Google Tasks.",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+}

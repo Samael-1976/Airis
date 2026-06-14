@@ -1,0 +1,24 @@
+{
+  "type": "function",
+  "function": {
+    "name": "browse_and_interact",
+    "description": "Naviga su una pagina web ed esegue azioni (click, fill) con Playwright.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "L'URL della pagina web."
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Lista di azioni da eseguire (es. 'click(#btn)', 'fill(#input, testo)')."
+        }
+      },
+      "required":["url", "actions"]
+    }
+  }
+}

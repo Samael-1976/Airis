@@ -1,0 +1,14 @@
+{
+  "type": "function",
+  "function": {
+    "name": "list_forms",
+    "description": "Elenca form Typeform.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "page_size": { "type": "integer", "description": "Numero di moduli da elencare." }
+      },
+      "required": []
+    }
+  }
+}

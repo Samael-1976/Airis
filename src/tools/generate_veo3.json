@@ -1,0 +1,27 @@
+{
+  "type": "function",
+  "function": {
+    "name": "generate_veo3",
+    "description": "Genera un video cinematografico usando il modello VEO3 (Google/Fal.ai).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "prompt": {
+          "type": "string",
+          "description": "La descrizione dell'azione nel video."
+        },
+        "aspect_ratio": {
+          "type": "string",
+          "description": "Rapporto d'aspetto (es. '16:9', '9:16')."
+        },
+        "duration": {
+          "type": "string",
+          "description": "Durata del video (es. '5s', '8s')."
+        }
+      },
+      "required": [
+        "prompt"
+      ]
+    }
+  }
+}

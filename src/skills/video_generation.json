@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "video_generation",
+    "description": "Genera video tramite AI (VEO3/Sora).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Genera video tramite AI (VEO3/Sora)."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "function",
+  "function": {
+    "name": "simula_scenari",
+    "description": "Esegue una simulazione strategica di scenari futuri basata sullo stato attuale.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "obiettivo": {
+          "type": "string",
+          "description": "L'obiettivo della simulazione."
+        },
+        "variabili": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Lista di variabili da considerare."
+        }
+      },
+      "required": ["obiettivo", "variabili"]
+    }
+  }
+}

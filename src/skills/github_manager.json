@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "github_manager",
+    "description": "Gestisce repository e issue su GitHub.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Gestisce repository e issue su GitHub."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

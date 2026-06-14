@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "ai_research",
+    "description": "Esegue ricerche accademiche (Arxiv) e web profonde.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Esegue ricerche accademiche (Arxiv) e web profonde."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

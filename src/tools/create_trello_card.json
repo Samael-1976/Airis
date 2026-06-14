@@ -1,0 +1,33 @@
+{
+  "type": "function",
+  "function": {
+    "name": "create_trello_card",
+    "description": "Crea una nuova scheda (card) in una lista specifica di una bacheca Trello.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "board_name": {
+          "type": "string",
+          "description": "Il nome della bacheca."
+        },
+        "list_name": {
+          "type": "string",
+          "description": "Il nome della lista all'interno della bacheca."
+        },
+        "name": {
+          "type": "string",
+          "description": "Il titolo della scheda."
+        },
+        "desc": {
+          "type": "string",
+          "description": "La descrizione opzionale della scheda."
+        }
+      },
+      "required": [
+        "board_name",
+        "list_name",
+        "name"
+      ]
+    }
+  }
+}

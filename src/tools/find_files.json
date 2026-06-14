@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "find_files",
+    "description": "Cerca file nel sistema che corrispondono a un pattern o nome specifico.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "pattern": {
+          "type": "string",
+          "description": "Il pattern di ricerca (es. '*.txt' o 'nome_file')."
+        }
+      },
+      "required": ["pattern"]
+    }
+  }
+}

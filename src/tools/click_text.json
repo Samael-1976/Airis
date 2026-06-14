@@ -1,0 +1,21 @@
+{
+  "type": "function",
+  "function": {
+    "name": "click_text",
+    "description": "Cerca una stringa di testo sullo schermo tramite OCR e ci clicca sopra.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Il testo da cercare e cliccare."
+        },
+        "double_click": {
+          "type": "boolean",
+          "description": "Se True, esegue un doppio click."
+        }
+      },
+      "required": ["text"]
+    }
+  }
+}

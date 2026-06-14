@@ -1,0 +1,34 @@
+{
+  "type": "function",
+  "function": {
+    "name": "toggle_character_in_world",
+    "description": "Aggiunge o rimuove un personaggio dal roster attivo del mondo GDR (status.json).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "rpg_root_str": {
+          "type": "string",
+          "description": "Percorso della root del GDR."
+        },
+        "lang": {
+          "type": "string",
+          "description": "Lingua del mondo."
+        },
+        "char_name": {
+          "type": "string",
+          "description": "Nome del personaggio da gestire."
+        },
+        "action": {
+          "type": "string",
+          "description": "Azione da compiere ('add' per inserire, 'remove' per togliere)."
+        }
+      },
+      "required": [
+        "rpg_root_str",
+        "lang",
+        "char_name",
+        "action"
+      ]
+    }
+  }
+}

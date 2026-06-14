@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "outlook_manager",
+    "description": "Legge e invia email tramite Microsoft Outlook.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Legge e invia email tramite Microsoft Outlook."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

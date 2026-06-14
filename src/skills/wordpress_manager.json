@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "wordpress_manager",
+    "description": "Gestisce post e articoli su WordPress.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Gestisce post e articoli su WordPress."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

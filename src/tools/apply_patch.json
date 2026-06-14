@@ -1,0 +1,29 @@
+{
+  "type": "function",
+  "function": {
+    "name": "apply_patch",
+    "description": "Applica fisicamente la patch al file solo DOPO che il Creatore ha dato il suo consenso esplicito.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path_str": {
+          "type": "string",
+          "description": "Il percorso del file da modificare."
+        },
+        "old_code": {
+          "type": "string",
+          "description": "Il blocco di codice originale da sostituire."
+        },
+        "new_code": {
+          "type": "string",
+          "description": "Il nuovo blocco di codice."
+        }
+      },
+      "required": [
+        "path_str",
+        "old_code",
+        "new_code"
+      ]
+    }
+  }
+}

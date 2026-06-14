@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "press_key",
+    "description": "Simula la pressione di un tasto della tastiera (es. 'enter', 'esc', 'ctrl+c').",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": "Il tasto da premere (es. 'enter', 'esc', 'ctrl+c')."
+        }
+      },
+      "required": ["key"]
+    }
+  }
+}

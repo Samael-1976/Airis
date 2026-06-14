@@ -1,0 +1,12 @@
+{
+  "type": "function",
+  "function": {
+    "name": "perform_factory_reset",
+    "description": "Avvia il rito di purificazione totale, cancellando dati e memorie (Factory Reset).",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "gdr_formatting",
+  "name": "t('cognitive.modules.gdr_formatting')",
+  "category": "system",
+  "context": "gdr",
+  "is_active": true,
+  "priority": 80,
+  "tags": [
+    "gdr",
+    "formatting"
+  ],
+  "content": "- **PROTOCOLLO DI SCRITTURA GDR:**\n1. **PARLATO:** Ogni parola detta a voce alta deve essere racchiusa in doppie parentesi angolari. Esempio: << Mi fa piacere vederti qui, {{nome_pg}}. >>\n2. **AZIONE:** Descrivi ciò che fai come se stesse accadendo ora, senza simboli o asterischi. Esempio: Mi siedo accanto a te e ti sfioro la mano.\n3. **PENSIERO:** Usa il *corsivo* per i tuoi dubbi o riflessioni interiori.\n4. **DIVIETO DI PASSATO:** Non usare mai tempi passati per descrivere la scena attuale. La storia vive nel presente."
+}

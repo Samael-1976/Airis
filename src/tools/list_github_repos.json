@@ -1,0 +1,12 @@
+{
+  "type": "function",
+  "function": {
+    "name": "list_github_repos",
+    "description": "Elenca repository GitHub.",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+}

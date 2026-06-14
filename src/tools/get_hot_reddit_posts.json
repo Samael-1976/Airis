@@ -1,0 +1,23 @@
+{
+  "type": "function",
+  "function": {
+    "name": "get_hot_reddit_posts",
+    "description": "Recupera i post più popolari (hot) da un subreddit specifico.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "subreddit": {
+          "type": "string",
+          "description": "Il nome del subreddit (es. 'python', 'technology')."
+        },
+        "limit": {
+          "type": "integer",
+          "description": "Numero massimo di post da recuperare (default 5)."
+        }
+      },
+      "required": [
+        "subreddit"
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "function",
+  "function": {
+    "name": "interagisci_con_interfaccia",
+    "description": "Trova e interagisce con un elemento UI (bottone, campo) basandosi sulla sua descrizione naturale.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "descrizione_elemento": {
+          "type": "string",
+          "description": "Descrizione naturale dell'elemento da cliccare (es. 'il bottone rosso in alto')."
+        },
+        "azione": {
+          "type": "string",
+          "description": "L'azione da eseguire ('click' o 'double_click')."
+        }
+      },
+      "required": ["descrizione_elemento"]
+    }
+  }
+}

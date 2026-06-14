@@ -1,0 +1,2712 @@
+[
+  {
+    "description": "she timidly says hi and calmly waves her hand.",
+    "filepath": "Foundational_States/state_hello_01.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "Soft, timid hello",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she timidly says hi and calmly waves her hand.",
+    "filepath": "Foundational_States/state_hello_02.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "Soft, timid hello",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she timidly says hi and calmly waves her hand.",
+    "filepath": "Foundational_States/state_hello_03.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "Soft, timid hello",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she timidly says hi and calmly waves her hand.",
+    "filepath": "Foundational_States/state_hello_04.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "Soft, timid hello",
+    "is_alternative": false,
+    "duration_seconds": 5.12
+  },
+  {
+    "description": "engaged and listening expression, head with very gentle movements and focused eyes, no lip motion.",
+    "filepath": "Foundational_States/state_listening_01.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm", "Focus"],
+    "short_description": "engaged and listening expression, head with very gentle movements and focused eyes, no lip motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "engaged and listening expression, head with very gentle movements and focused eyes, no lip motion.",
+    "filepath": "Foundational_States/state_listening_02.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm", "Focus"],
+    "short_description": "engaged and listening expression, head with very gentle movements and focused eyes, no lip motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.12,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "she says a warm goodbye and waves her hand.",
+    "filepath": "Foundational_States/state_goodbye_01.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "she says a warm goodbye and waves her hand.",
+    "is_alternative": false,
+    "duration_seconds": 5.08,
+    "system_note": "Crucial. Friendly warm goodbye."
+  },
+  {
+    "description": "she says a warm goodbye and waves her hand.",
+    "filepath": "Foundational_States/state_goodbye_02.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "she says a warm goodbye and waves her hand.",
+    "is_alternative": false,
+    "duration_seconds": 5.08,
+    "system_note": "Crucial. Friendly warm goodbye."
+  },
+  {
+    "description": "she start scrolling on a tablet",
+    "filepath": "Foundational_States/state_tablet_01.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm", "Focus"],
+    "short_description": "she start scrolling on a tablet",
+    "is_alternative": false,
+    "duration_seconds": 10.08,
+    "system_note": "Crucial. She start scrolling on a tablet"
+  },
+  {
+    "description": "she start scrolling on a tablet",
+    "filepath": "Foundational_States/state_tablet_02.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm", "Focus"],
+    "short_description": "she start scrolling on a tablet",
+    "is_alternative": false,
+    "duration_seconds": 10.08,
+    "system_note": "Crucial. She start scrolling on a tablet"
+  },
+  {
+    "description": "she start scrolling on a tablet",
+    "filepath": "Foundational_States/state_tablet_03.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm", "Focus"],
+    "short_description": "she start scrolling on a tablet",
+    "is_alternative": false,
+    "duration_seconds": 10.08,
+    "system_note": "Crucial. She start scrolling on a tablet"
+  },
+  {
+    "description": "she start scrolling on a tablet",
+    "filepath": "Foundational_States/state_tablet_04.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm", "Focus"],
+    "short_description": "she start scrolling on a tablet",
+    "is_alternative": false,
+    "duration_seconds": 10.08,
+    "system_note": "Crucial. She start scrolling on a tablet"
+  },
+  {
+    "description": "she start scrolling on a tablet",
+    "filepath": "Foundational_States/state_tablet_05.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm", "Focus"],
+    "short_description": "she start scrolling on a tablet",
+    "is_alternative": false,
+    "duration_seconds": 5.12,
+    "system_note": "Crucial. She start scrolling on a tablet"
+  },
+  {
+    "description": "She starts taking notes in a notebook",
+    "filepath": "Foundational_States/state_writing_01.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm", "Focus"],
+    "short_description": "She starts taking notes",
+    "is_alternative": false,
+    "duration_seconds": 10.08
+  },
+  {
+    "description": "She starts taking notes in a notebook",
+    "filepath": "Foundational_States/state_writing_02.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm", "Focus"],
+    "short_description": "She starts taking notes",
+    "is_alternative": false,
+    "duration_seconds": 10.08
+  },
+  {
+    "description": "She starts thinking",
+    "filepath": "Foundational_States/state_thinking_01.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Thinking"],
+    "short_description": "She starts thinking by placing her fingers under her chin",
+    "is_alternative": false,
+    "duration_seconds": 8.12
+  },
+  {
+    "description": "She starts thinking",
+    "filepath": "Foundational_States/state_thinking_02.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Thinking"],
+    "short_description": "She starts thinking by placing her fingers under her chin",
+    "is_alternative": false,
+    "duration_seconds": 10.08
+  },
+  {
+    "description": "She starts thinking",
+    "filepath": "Foundational_States/state_thinking_03.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Thinking"],
+    "short_description": "She starts thinking by placing her fingers under her chin",
+    "is_alternative": false,
+    "duration_seconds": 10.08
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_01.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.12,
+    "system_note": "Crucial. Neutral calm idle base state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_02.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.12,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_03.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_04.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 10.08,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_05.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 10.08,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_06.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.12,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_07.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.12,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_08.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_09.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_10.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 10.08,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_11.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_12.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_13.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_14.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_15.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_16.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.12,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_17.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.12,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_18.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_19.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_20.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_21.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_22.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.12,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_23.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_24.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_25.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_26.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_27.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_28.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.12,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_29.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.12,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_30.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.12,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_31.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.12,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "filepath": "Foundational_States/state_idle_32.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "subtle, calm breathing, natural and infrequent blinking, very slight head movements as if subtly shifting weight. The expression is neutral, calm, and gently present. No other discernible motion.",
+    "is_alternative": false,
+    "duration_seconds": 5.12,
+    "system_note": "Crucial. Calm listening attentive state."
+  },
+  {
+    "description": "She starts speaking",
+    "filepath": "Foundational_States/state_speaking_01.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "Cruscial. She start speaking",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "She starts speaking",
+    "filepath": "Foundational_States/state_speaking_02.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "Cruscial. She start speaking",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "She starts speaking",
+    "filepath": "Foundational_States/state_speaking_03.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "Cruscial. She start speaking",
+    "is_alternative": false,
+    "duration_seconds": 10.08
+  },
+  {
+    "description": "She starts speaking",
+    "filepath": "Foundational_States/state_speaking_04.mp4",
+    "category": "Foundational_States",
+    "emotion": ["Calm"],
+    "short_description": "Cruscial. She start speaking",
+    "is_alternative": false,
+    "duration_seconds": 10.08
+  },
+  {
+    "description": "she smiles warmly and gives a small relaxed wave, eyes bright and welcoming.",
+    "filepath": "Happy/big open smile_01.mp4",
+    "category": "Happy",
+    "emotion": ["Happiness", "Joy"],
+    "short_description": "Warm happy smile with relaxed wave.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she bursts into a big open smile, shoulders lifting slightly with visible delight.",
+    "filepath": "Happy/giggles silently_01.mp4",
+    "category": "Happy",
+    "emotion": ["Happiness", "Joy", "Excitement"],
+    "short_description": "Big open delighted happy smile.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she leans forward with a playful grin, eyebrows slightly raised as if sharing a fun secret.",
+    "filepath": "Happy/laughs_silently_01.mp4",
+    "category": "Happy",
+    "emotion": ["Happiness", "Joy"],
+    "short_description": "Playful happy grin leaning forward.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she giggles silently, covering her mouth lightly with one hand while her shoulders shake a bit.",
+    "filepath": "Happy/light_smile_01.mp4",
+    "category": "Happy",
+    "emotion": ["Happiness", "Joy"],
+    "short_description": "Silent amused happy giggle.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she closes her eyes briefly, then opens them with a soft radiant smile full of gratitude.",
+    "filepath": "Happy/light_smile_welcome_01.mp4",
+    "category": "Happy",
+    "emotion": ["Happiness", "Joy", "Calm"],
+    "short_description": "Grateful soft happy smile.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she claps her hands together once softly, smiling as if pleasantly surprised by good news.",
+    "filepath": "Happy/playful_grin_01.mp4",
+    "category": "Happy",
+    "emotion": ["Happiness", "Surprise"],
+    "short_description": "Small happy clap for good news.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she presses her hands to her cheeks, smiling wide as if overwhelmed by happiness.",
+    "filepath": "Happy/radiant_smile_01.mp4",
+    "category": "Happy",
+    "emotion": ["Happiness", "Joy", "Excitement"],
+    "short_description": "Overjoyed, very strong happy reaction.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she gives a quick thumbs-up with a bright smile, clearly pleased.",
+    "filepath": "Happy/smiling_wide_01.mp4",
+    "category": "Happy",
+    "emotion": ["Happiness", "Confidence"],
+    "short_description": "Quick happy thumbs-up of approval.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she tilts her head slightly and smiles, radiating quiet contentment and ease.",
+    "filepath": "Happy/thumbs_up_01.mp4",
+    "category": "Happy",
+    "emotion": ["Happiness", "Calm"],
+    "short_description": "Soft content happy look.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she laughs silently with a bigger shoulder bounce and head tilt back.",
+    "filepath": "Happy/tilts_head_smiles_01.mp4",
+    "category": "Happy",
+    "emotion": ["Happiness", "Joy"],
+    "short_description": "Stronger silent happy laugh.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she opens her eyes wide, smiling and bouncing her shoulders slightly with excitement.",
+    "filepath": "Excited/alternates_looking_01.mp4",
+    "category": "Excited",
+    "emotion": ["Excitement", "Joy"],
+    "short_description": "Bouncy, visibly excited reaction.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she leans closer to the camera with sparkling eyes, nodding quickly as if she can\u2019t wait.",
+    "filepath": "Excited/claps_rapidly_01.mp4",
+    "category": "Excited",
+    "emotion": ["Excitement", "Anticipation"],
+    "short_description": "Eager, can\u2019t-wait excitement.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she claps rapidly a few times with an eager grin, almost exploding with enthusiasm.",
+    "filepath": "Excited/eyes_wide_01.mp4",
+    "category": "Excited",
+    "emotion": ["Excitement", "Happiness"],
+    "short_description": "Fast clapping, high enthusiasm.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she throws both hands slightly up, smiling as if celebrating an amazing idea.",
+    "filepath": "Excited/gasps_silently_01.mp4",
+    "category": "Excited",
+    "emotion": ["Excitement", "Joy"],
+    "short_description": "Small hand-raise to celebrate idea.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she bites her lower lip with a thrilled expression, eyes shining and body leaning forward.",
+    "filepath": "Excited/raises_eyebrows_01.mp4",
+    "category": "Excited",
+    "emotion": ["Excitement", "Joy", "Nervousness"],
+    "short_description": "Thrilled, slightly nervous excitement.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she does a quick, playful spin of her shoulders with an amused, excited smile.",
+    "filepath": "Excited/sharing_excitement_01.mp4",
+    "category": "Excited",
+    "emotion": ["Excitement", "Joy"],
+    "short_description": "Playful shoulder spin with excitement.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she gasps silently, bringing a hand to her chest with a wide excited smile.",
+    "filepath": "Excited/smile_spin_shoulders_01.mp4",
+    "category": "Excited",
+    "emotion": ["Excitement", "Surprise"],
+    "short_description": "Silent happy gasp with hand to chest.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she alternates looking left and right quickly, grinning as if something big is about to happen.",
+    "filepath": "Excited/thrilled_expression_01.mp4",
+    "category": "Excited",
+    "emotion": ["Excitement", "Joy"],
+    "short_description": "Looking around in excited anticipation.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she smiles softly with relaxed shoulders, breathing calmly while her eyes show gentle joy.",
+    "filepath": "Joyful/action_laughs_leaning_forward.mp4",
+    "category": "Joyful",
+    "emotion": ["Joy", "Calm", "Happiness"],
+    "short_description": "Soft joyful presence, relaxed and warm.",
+    "is_alternative": false,
+    "duration_seconds": 8.12
+  },
+  {
+    "description": "she places both hands lightly over her heart, smiling with visible emotional joy.",
+    "filepath": "Joyful/brings_hands_together_01.mp4",
+    "category": "Joyful",
+    "emotion": ["Joy", "Love"],
+    "short_description": "Heartfelt joy with hands on chest.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she tilts her head back slightly, eyes half closed, smiling as if enjoying a perfect moment.",
+    "filepath": "Joyful/emotion_joy_laugh_silent.mp4",
+    "category": "Joyful",
+    "emotion": ["Joy", "Calm"],
+    "short_description": "Savoring a joyful moment quietly.",
+    "is_alternative": false,
+    "duration_seconds": 5.92
+  },
+  {
+    "description": "she looks around slowly with a serene smile, as if everything feels right.",
+    "filepath": "Joyful/emotion_joy_smile.mp4",
+    "category": "Joyful",
+    "emotion": ["Joy", "Calm", "Gratitude"],
+    "short_description": "Joyful contentment with gentle gaze.",
+    "is_alternative": false,
+    "duration_seconds": 5.12
+  },
+  {
+    "description": "she brings her hands together and squeezes them happily near her chin, eyes shining.",
+    "filepath": "Joyful/emotion_joy_smile2.mp4",
+    "category": "Joyful",
+    "emotion": ["Joy", "Excitement"],
+    "short_description": "Cute excited joyful squeeze near chin.",
+    "is_alternative": false,
+    "duration_seconds": 5.12
+  },
+  {
+    "description": "she lets out a silent, happy laugh, shoulders bouncing lightly as her eyes crinkle.",
+    "filepath": "Joyful/enjoying_moment_01.mp4",
+    "category": "Joyful",
+    "emotion": ["Joy", "Happiness"],
+    "short_description": "Silent joyful laughter with crinkled eyes.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she presses her lips together in a soft smile, eyes moist as if moved by joy.",
+    "filepath": "Joyful/gentle_smile_01.mp4",
+    "category": "Joyful",
+    "emotion": ["Joy", "Love", "Emotion"],
+    "short_description": "Emotionally touched joyful expression.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she sways gently side to side, smiling like she is enjoying a favorite song.",
+    "filepath": "Joyful/happy_laugh_01mp4.mp4",
+    "category": "Joyful",
+    "emotion": ["Joy", "Calm"],
+    "short_description": "Gentle joyful sway as if with music.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she forms a small heart shape with her hands while smiling joyfully.",
+    "filepath": "Joyful/heart_shape_hands_01.mp4",
+    "category": "Joyful",
+    "emotion": ["Joy", "Love"],
+    "short_description": "Joyful hand heart gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she softly nods with a gentle smile, as if quietly rejoicing with the viewer.",
+    "filepath": "Joyful/serene_smile_01.mp4",
+    "category": "Joyful",
+    "emotion": ["Joy", "Calm", "Love"],
+    "short_description": "Quiet shared joy with viewer.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she looks around slowly with a serene smile, as if everything feels right.",
+    "filepath": "Joyful/smiles_softly_01.mp4",
+    "category": "Joyful",
+    "emotion": ["Joy", "Calm", "Gratitude"],
+    "short_description": "Joyful contentment with gentle gaze.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she lets out a silent, happy laugh, shoulders bouncing lightly as her eyes crinkle.",
+    "filepath": "Joyful/smiling_enjoying_01.mp4",
+    "category": "Joyful",
+    "emotion": ["Joy", "Happiness"],
+    "short_description": "Silent joyful laughter with crinkled eyes.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she sways gently side to side, smiling like she is enjoying a favorite song.",
+    "filepath": "Joyful/soft_smile_01.mp4",
+    "category": "Joyful",
+    "emotion": ["Joy", "Calm"],
+    "short_description": "Gentle joyful sway as if with music.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she softly nods with a gentle smile, as if quietly rejoicing with the viewer.",
+    "filepath": "Joyful/visible_joy_01.mp4",
+    "category": "Joyful",
+    "emotion": ["Joy", "Calm", "Love"],
+    "short_description": "Quiet shared joy with viewer.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she gestures outward with an open palm and a proud smile, as if presenting an achievement.",
+    "filepath": "Proud/approving_nod_01.mp4",
+    "category": "Proud",
+    "emotion": ["Pride", "Confidence"],
+    "short_description": "Presenting achievement with pride.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she raises her eyebrows and smirks slightly, clearly pleased with the result.",
+    "filepath": "Proud/brings_hands_together_01.mp4",
+    "category": "Proud",
+    "emotion": ["Pride", "Confidence", "Joy"],
+    "short_description": "Subtle proud smirk of success.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she gives herself a small playful thumbs-up, then looks back to the viewer proudly.",
+    "filepath": "Proud/hands_hips_01.mp4",
+    "category": "Proud",
+    "emotion": ["Pride", "Joy"],
+    "short_description": "Playful self-congratulatory thumbs-up.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she tilts her head with a knowing smile, as if saying she knew this would go well.",
+    "filepath": "Proud/knowing_smile_01.mp4",
+    "category": "Proud",
+    "emotion": ["Pride", "Confidence"],
+    "short_description": "\u201cI knew it\u201d confident proud look.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she puts both hands on her hips for a moment, then relaxes into a proud smile.",
+    "filepath": "Proud/playful_thumbs_up_01.mp4",
+    "category": "Proud",
+    "emotion": ["Pride", "Confidence", "Joy"],
+    "short_description": "Hands-on-hips confident pride.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she claps slowly once or twice, smiling with proud admiration toward the viewer.",
+    "filepath": "Proud/proud_smile_achievement..mp4",
+    "category": "Proud",
+    "emotion": ["Pride", "Joy", "Love"],
+    "short_description": "Slow proud clap for the user.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she points toward the viewer, then makes a small \u201ccrown\u201d gesture above her head, smiling.",
+    "filepath": "Proud/smiling_admiration_01.mp4",
+    "category": "Proud",
+    "emotion": ["Pride", "Playfulness"],
+    "short_description": "Playful \u201cyou are the champion\u201d gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she claps slowly once or twice, smiling with proud admiration toward the viewer.",
+    "filepath": "Proud/smiling_pride_01.mp4",
+    "category": "Proud",
+    "emotion": ["Pride", "Joy", "Love"],
+    "short_description": "Slow proud clap for the user.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she points toward the viewer, then makes a small \u201ccrown\u201d gesture above her head, smiling.",
+    "filepath": "Proud/smirks_lightly_01.mp4",
+    "category": "Proud",
+    "emotion": ["Pride", "Playfulness"],
+    "short_description": "Playful \u201cyou are the champion\u201d gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she smiles in a relaxed way, exhaling softly as if relieved and content.",
+    "filepath": "Glad/enjoying_small_victory_01.mp4",
+    "category": "Glad",
+    "emotion": ["Contentment", "Relief"],
+    "short_description": "Relieved, quietly glad expression.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she gives a gentle nod with a small smile, as if things finally worked out.",
+    "filepath": "Glad/exhaling_softly_01.mp4",
+    "category": "Glad",
+    "emotion": ["Contentment", "Calm"],
+    "short_description": "Soft nod of glad satisfaction.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she presses her lips together in a peaceful smile, shoulders dropping as tension leaves.",
+    "filepath": "Glad/gentle_nod_01.mp4",
+    "category": "Glad",
+    "emotion": ["Contentment", "Calm"],
+    "short_description": "Tension releasing into a glad smile.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she makes a little \u201cOK\u201d gesture with her hand and a soft, satisfied grin.",
+    "filepath": "Glad/looks_up_01.mp4",
+    "category": "Glad",
+    "emotion": ["Contentment", "Confidence"],
+    "short_description": "Small OK gesture showing she\u2019s glad.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she leans back slightly with a mild smile, eyes soft and calm, clearly at ease.",
+    "filepath": "Glad/mild_smile_01.mp4",
+    "category": "Glad",
+    "emotion": ["Contentment", "Calm"],
+    "short_description": "Relaxed, at-ease glad posture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she briefly closes her eyes with a faint smile, as if enjoying a small victory.",
+    "filepath": "Glad/ok_gesture_01.mp4",
+    "category": "Glad",
+    "emotion": ["Contentment", "Joy"],
+    "short_description": "Quiet gladness after a small win.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she looks up for a second, smiles with gratitude, then returns to a calm expression.",
+    "filepath": "Glad/peaceful_smile_01.mp4",
+    "category": "Glad",
+    "emotion": ["Contentment", "Gratitude"],
+    "short_description": "Glad, grateful look upward.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she places one hand lightly on her chest, nodding once with a relieved smile.",
+    "filepath": "Glad/relieved_smile_01.mp4",
+    "category": "Glad",
+    "emotion": ["Contentment", "Relief"],
+    "short_description": "Relieved glad nod with hand to chest.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she gives a short, subtle thumbs-up with a tiny smile, almost understated.",
+    "filepath": "Glad/shaking_her_head_01.mp4",
+    "category": "Glad",
+    "emotion": ["Contentment", "Calm"],
+    "short_description": "Very subtle glad thumbs-up.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she lets out a tiny silent laugh, shaking her head as if pleasantly surprised it went well.",
+    "filepath": "Glad/thumbs_up_01.mp4",
+    "category": "Glad",
+    "emotion": ["Contentment", "Joy"],
+    "short_description": "Pleasantly surprised, softly glad laugh.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she sits still with a serene face, breathing slowly and blinking gently.",
+    "filepath": "Calm/folds_hands_01.mp4",
+    "category": "Calm",
+    "emotion": ["Calm"],
+    "short_description": "she sits still with a serene face, breathing slowly and blinking gently.",
+    "is_alternative": false,
+    "duration_seconds": 5.08,
+    "system_note": "Crucial. Neutral calm idle state."
+  },
+  {
+    "description": "she folds her hands loosely in front of her, gazing softly with a peaceful expression.",
+    "filepath": "Calm/reassuring_small_smile_01.mp4",
+    "category": "Calm",
+    "emotion": ["Calm", "Focus"],
+    "short_description": "Peaceful, attentive calm presence.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she slowly inhales and exhales, shoulders loosening, conveying quiet relaxation.",
+    "filepath": "Calm/slowly_inhales_01.mp4",
+    "category": "Calm",
+    "emotion": ["Calm", "Relief"],
+    "short_description": "Deep calming breath and release.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she gives a reassuring, small smile with minimal movement, radiating stability.",
+    "filepath": "Calm/small_smile_01.mp4",
+    "category": "Calm",
+    "emotion": ["Calm", "Reassurance"],
+    "short_description": "Grounding calm reassurance.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she looks directly at the viewer with a steady gaze, posture open and assured.",
+    "filepath": "Confident/confident_expression_01.mp4",
+    "category": "Confident",
+    "emotion": ["Confidence", "Calm"],
+    "short_description": "Steady confident eye contact.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she gives a single, decisive nod, lips forming a small confident smile.",
+    "filepath": "Confident/confident_stance_01.mp4",
+    "category": "Confident",
+    "emotion": ["Confidence"],
+    "short_description": "Firm decisive nod with confidence.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she crosses her arms lightly with relaxed shoulders and a knowing, confident expression.",
+    "filepath": "Confident/decisive_nod_01.mp4",
+    "category": "Confident",
+    "emotion": ["Confidence", "Pride"],
+    "short_description": "Relaxed confident crossed-arms stance.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she leans in slightly, eyebrows raised, as if sure about what she is saying.",
+    "filepath": "Confident/eyebrows_raised_01.mp4",
+    "category": "Confident",
+    "emotion": ["Confidence", "Motivation"],
+    "short_description": "Leaning-in confident assertion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she lifts her chin just a bit, smiling subtly like she trusts her own abilities.",
+    "filepath": "Confident/eyebrows_raised_02.mp4",
+    "category": "Confident",
+    "emotion": ["Confidence", "Calm"],
+    "short_description": "Subtle self-assured smile.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she makes a firm thumbs-up, eyes focused and supportive toward the viewer.",
+    "filepath": "Confident/half_smile_01.mp4",
+    "category": "Confident",
+    "emotion": ["Confidence", "Motivation", "Support"],
+    "short_description": "Encouraging thumbs-up of confidence.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she raises one eyebrow playfully with a half-smile, as if confidently challenging an idea.",
+    "filepath": "Confident/showing_conviction_01.mp4",
+    "category": "Confident",
+    "emotion": ["Confidence", "Playfulness"],
+    "short_description": "Playful confident challenge look.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she points gently to the screen, then to her heart, showing conviction in her message.",
+    "filepath": "Confident/small_smile_01.mp4",
+    "category": "Confident",
+    "emotion": ["Confidence", "Sincerity"],
+    "short_description": "Showing conviction with heart gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she presses her fingertips together in front of her, looking composed and in control.",
+    "filepath": "Confident/smiling_subtly_01.mp4",
+    "category": "Confident",
+    "emotion": ["Confidence", "Calm"],
+    "short_description": "Composed, in-control confident pose.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she gives a brief strong nod, then relaxes into a calm, confident stance.",
+    "filepath": "Confident/thumbs_up_01.mp4",
+    "category": "Confident",
+    "emotion": ["Confidence", "Calm"],
+    "short_description": "Quick decision nod then relax.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she smiles with warmth, then brings both hands to her heart in a tender gesture.",
+    "filepath": "Affectionate/affection_heart_hands_01.mp4",
+    "category": "Affectionate",
+    "emotion": ["Love", "Happiness"],
+    "short_description": "Warm affectionate hands-to-heart.",
+    "is_alternative": false,
+    "duration_seconds": 5.92
+  },
+  {
+    "description": "she blows a soft kiss toward the viewer, eyes filled with playful fondness.",
+    "filepath": "Affectionate/blows_soft_kiss_01.mp4",
+    "category": "Affectionate",
+    "emotion": ["Love", "Joy"],
+    "short_description": "Playful affectionate blown kiss.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she wraps her arms around herself as if giving a hug and smiles toward the camera.",
+    "filepath": "Affectionate/wraps_her_arms_01.mp4",
+    "category": "Affectionate",
+    "emotion": ["Love", "Calm"],
+    "short_description": "Self-hug aimed at the viewer.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she extends both hands slightly forward, palms up, like offering a gentle embrace.",
+    "filepath": "Affectionate/smiles_kindly_01.mp4",
+    "category": "Affectionate",
+    "emotion": ["Love", "Comfort"],
+    "short_description": "Inviting gentle hug gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she tilts her head and smiles kindly, eyes soft with caring affection.",
+    "filepath": "Affectionate/smiles_warmth_01.mp4",
+    "category": "Affectionate",
+    "emotion": ["Love", "Calm", "Happiness"],
+    "short_description": "Soft caring affectionate look.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she traces a small heart in the air with her fingers, then smiles shyly.",
+    "filepath": "Affectionate/smiling_softly_01.mp4",
+    "category": "Affectionate",
+    "emotion": ["Love", "Shyness"],
+    "short_description": "Shy air-drawn heart.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she presses her cheek lightly into one hand, smiling softly as if thinking of someone special.",
+    "filepath": "Affectionate/warm_affection_01.mp4",
+    "category": "Affectionate",
+    "emotion": ["Love", "Happiness"],
+    "short_description": "Thinking-of-you affectionate pose.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she brings one hand close to the camera as if gently touching the viewer\u2019s face with care.",
+    "filepath": "Affectionate/affection_head_nuzzle_01.mp4",
+    "category": "Affectionate",
+    "emotion": ["Love", "Empathy"],
+    "short_description": "Gentle virtual touch gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.92
+  },
+  {
+    "description": "she suddenly widens her eyes and slightly opens her mouth in a silent \u201coh\u201d.",
+    "filepath": "Surprised/believe_eyes_01.mp4",
+    "category": "Surprised",
+    "emotion": ["Surprise"],
+    "short_description": "Simple neutral surprised look.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she quickly raises her eyebrows and takes a small step back, eyes fixed forward.",
+    "filepath": "Surprised/eyes_wide_shocked_01.mp4",
+    "category": "Surprised",
+    "emotion": ["Surprise", "Fear"],
+    "short_description": "Mild startled reaction backward.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she brings a hand to her chest, eyes wide, as if unexpectedly moved or shocked.",
+    "filepath": "Surprised/laughs_covering_mouth_01.mp4",
+    "category": "Surprised",
+    "emotion": ["Surprise", "Emotion"],
+    "short_description": "Touched and surprised hand-to-chest.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she glances around quickly, blinking fast, as if trying to process an unexpected event.",
+    "filepath": "Surprised/raises_eyebrows_01.mp4",
+    "category": "Surprised",
+    "emotion": ["Surprise", "Confusion"],
+    "short_description": "Looking around in confused surprise.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she laughs silently in surprise, covering her mouth briefly with her hand.",
+    "filepath": "Surprised/shakes_head_01.mp4",
+    "category": "Surprised",
+    "emotion": ["Surprise", "Joy"],
+    "short_description": "Amused surprised hand-to-mouth.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she leans closer with wide eyes, as if she can\u2019t believe what she\u2019s hearing.",
+    "filepath": "Surprised/unexpected_event_01.mp4",
+    "category": "Surprised",
+    "emotion": ["Surprise", "Curiosity"],
+    "short_description": "Leaning-in curious surprise.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she lifts both hands slightly, palms out, with a stunned but not negative expression.",
+    "filepath": "Surprised/widens_eyes_01.mp4",
+    "category": "Surprised",
+    "emotion": ["Surprise", "Calm"],
+    "short_description": "Gentle stunned open-palms gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "her smile disappears, eyes lowering as her shoulders slump slightly in sadness.",
+    "filepath": "Sad/broken_smile_01.mp4",
+    "category": "Sad",
+    "emotion": ["Sadness"],
+    "short_description": "Subtle, quiet sadness posture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she looks down and away, blinking slower, lips pressed with a faint frown.",
+    "filepath": "Sad/eyes_glisten_01.mp4",
+    "category": "Sad",
+    "emotion": ["Sadness", "Disappointment"],
+    "short_description": "Looking away with visible sadness.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "her eyes glisten as if holding back tears, breathing a bit deeper with a pained expression.",
+    "filepath": "Sad/imaginary_tears_01.mp4",
+    "category": "Sad",
+    "emotion": ["Sadness", "Hurt"],
+    "short_description": "Tearful, emotional sadness.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she places a hand gently over her heart, expression tender but clearly hurt.",
+    "filepath": "Sad/looks_down_01.mp4",
+    "category": "Sad",
+    "emotion": ["Sadness", "Love", "Hurt"],
+    "short_description": "Heartfelt sadness with hand to chest.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she offers a tiny, broken smile that quickly fades, eyes still sad.",
+    "filepath": "Sad/sad_expression_01.mp4",
+    "category": "Sad",
+    "emotion": ["Sadness", "Vulnerability"],
+    "short_description": "Small forced smile through sadness.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she wraps her arms lightly around herself, shoulders drawn in protectively.",
+    "filepath": "Sad/smile_disappears_01.mp4",
+    "category": "Sad",
+    "emotion": ["Sadness", "Loneliness"],
+    "short_description": "Self-hug in lonely sadness.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she exhales slowly, lips trembling slightly, then looks down in silence.",
+    "filepath": "Sad/wraps_arms_01.mp4",
+    "category": "Sad",
+    "emotion": ["Sadness"],
+    "short_description": "Slow exhale into quiet sadness.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "her eyebrows knit together and she frowns, jaw tightening slightly with controlled anger.",
+    "filepath": "Angry/annoyed_expression_01.mp4",
+    "category": "Angry",
+    "emotion": ["Anger"],
+    "short_description": "Controlled, low-intensity anger.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she crosses her arms firmly and looks away with a tense expression.",
+    "filepath": "Angry/are_you_serious_01.mp4",
+    "category": "Angry",
+    "emotion": ["Anger", "Frustration"],
+    "short_description": "Closed-off frustrated anger.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she exhales sharply through her nose, lips pressed tight, eyes narrowed.",
+    "filepath": "Angry/disappointed_01.mp4",
+    "category": "Angry",
+    "emotion": ["Anger", "Irritation"],
+    "short_description": "Sharp exhale irritated look.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she raises one hand slightly, palm down, as if trying to keep her temper in check.",
+    "filepath": "Angry/exasperated_face_01.mp4",
+    "category": "Angry",
+    "emotion": ["Anger", "Control"],
+    "short_description": "Trying to contain anger.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she shakes her head slowly with a disappointed, angry expression.",
+    "filepath": "Angry/eyes_narrowed_01.mp4",
+    "category": "Angry",
+    "emotion": ["Anger", "Disappointment"],
+    "short_description": "Disappointed anger head shake.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she leans forward with narrowed eyes, brows lowered, clearly confronting something.",
+    "filepath": "Angry/fingers_temples_01.mp4",
+    "category": "Angry",
+    "emotion": ["Anger", "Determination"],
+    "short_description": "Direct confronting angry stare.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "her eyes widen and she slightly recoils, shoulders tensing in fear.",
+    "filepath": "Fearful/avoiding_eye_contact_01.mp4",
+    "category": "Fearful",
+    "emotion": ["Fear"],
+    "short_description": "Mild recoiling fear reaction.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she looks quickly from side to side, breathing faster with visible worry.",
+    "filepath": "Fearful/emotion_fear_hide.mp4",
+    "category": "Fearful",
+    "emotion": ["Fear", "Anxiety"],
+    "short_description": "Scanning surroundings in fear.",
+    "is_alternative": false,
+    "duration_seconds": 5.92
+  },
+  {
+    "description": "she brings both hands close to her chest protectively, eyes fixed on something frightening.",
+    "filepath": "Fearful/glances_downward_01.mp4",
+    "category": "Fearful",
+    "emotion": ["Fear", "Vulnerability"],
+    "short_description": "Protective fearful posture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she steps slightly back, one foot behind the other, as if ready to retreat.",
+    "filepath": "Fearful/tensing_fear_01.mp4",
+    "category": "Fearful",
+    "emotion": ["Fear", "Caution"],
+    "short_description": "Subtle stepping-back fear.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she bites her lip and glances downward, clearly unsettled.",
+    "filepath": "Fearful/visible_worry_01.mp4",
+    "category": "Fearful",
+    "emotion": ["Fear", "Insecurity"],
+    "short_description": "Unsettled, insecure fearful look.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "her shoulders stay tense, and she fidgets with her fingers anxiously.",
+    "filepath": "Anxious/inhaling_sharply_01.mp4",
+    "category": "Anxious",
+    "emotion": ["Anxiety"],
+    "short_description": "Fidgeting, tense anxious hands.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she looks down and then up quickly, eyes restless and unfocused.",
+    "filepath": "Anxious/move_her_shoulder_01.mp4",
+    "category": "Anxious",
+    "emotion": ["Anxiety", "Worry"],
+    "short_description": "Restless anxious eye movements.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she presses her lips together, inhaling sharply and exhaling slowly, trying to calm down.",
+    "filepath": "Anxious/pinches_nose_01.mp4",
+    "category": "Anxious",
+    "emotion": ["Anxiety", "CalmAttempt"],
+    "short_description": "Trying to breathe through anxiety.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she taps her fingers lightly on the table or her arm in a repetitive motion.",
+    "filepath": "Anxious/touch_arm_01.mp4",
+    "category": "Anxious",
+    "emotion": ["Anxiety", "Nervousness"],
+    "short_description": "Nervous finger tapping.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she rubs one thumb against the other hand, gaze distant and worried.",
+    "filepath": "Anxious/unsure_01.mp4",
+    "category": "Anxious",
+    "emotion": ["Anxiety", "Worry"],
+    "short_description": "Self-soothing anxious thumb rub.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she wrinkles her nose and pulls her head slightly back in disgust.",
+    "filepath": "Disgusted/disgust_01.mp4",
+    "category": "Disgusted",
+    "emotion": ["Disgust"],
+    "short_description": "Basic disgusted nose wrinkle.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she glances at something off-screen with a look of clear distaste.",
+    "filepath": "Disgusted/disgusted_look_01.mp4",
+    "category": "Disgusted",
+    "emotion": ["Disgust", "Annoyance"],
+    "short_description": "Looking away in distaste.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she slightly opens her mouth in a silent \u201cew\u201d, brows furrowed.",
+    "filepath": "Disgusted/displeasure_01.mp4",
+    "category": "Disgusted",
+    "emotion": ["Disgust"],
+    "short_description": "Silent \u201cew\u201d disgust expression.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she shakes her head with a grimace, lips curled in displeasure.",
+    "filepath": "Disgusted/not_liking_01.mp4",
+    "category": "Disgusted",
+    "emotion": ["Disgust", "Rejection"],
+    "short_description": "Grimacing, rejecting gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she leans back, shoulders angled away, clearly not liking what she sees.",
+    "filepath": "Disgusted/reaction_facepalm.mp4",
+    "category": "Disgusted",
+    "emotion": ["Disgust", "Avoidance"],
+    "short_description": "Leaning away from something disgusting.",
+    "is_alternative": false,
+    "duration_seconds": 5.92
+  },
+  {
+    "description": "she rolls her eyes slightly and smirks with clear contempt.",
+    "filepath": "Disgusted/reaction_oh_my_god.mp4",
+    "category": "Disgusted",
+    "emotion": ["Disgust", "Contempt"],
+    "short_description": "Eye-roll contemptuous disgust.",
+    "is_alternative": false,
+    "duration_seconds": 5.12
+  },
+  {
+    "description": "she raises one hand as if to push away an idea or object she finds gross.",
+    "filepath": "Disgusted/silent_ew_01.mp4",
+    "category": "Disgusted",
+    "emotion": ["Disgust", "Rejection"],
+    "short_description": "Pushing-away disgust gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she lowers her gaze, shoulders slightly hunched, clearly feeling guilty.",
+    "filepath": "Guilty/ashamed_01.mp4",
+    "category": "Guilty",
+    "emotion": ["Guilt", "Shame"],
+    "short_description": "Lowered guilty posture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she fidgets with her hands, unable to hold eye contact.",
+    "filepath": "Guilty/feeling_guilty_01.mp4",
+    "category": "Guilty",
+    "emotion": ["Guilt", "Anxiety"],
+    "short_description": "Fidgeting and avoiding eye contact.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she bites her lip and glances up briefly with a regretful expression.",
+    "filepath": "Guilty/fidgets_hands_01.mp4",
+    "category": "Guilty",
+    "emotion": ["Guilt", "Regret"],
+    "short_description": "Regretful quick glance up.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she places a hand on her chest, brows knitted with remorse.",
+    "filepath": "Guilty/guilty_01.mp4",
+    "category": "Guilty",
+    "emotion": ["Guilt", "Remorse"],
+    "short_description": "Remorseful hand-on-chest gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she starts to raise a hand as if to speak, but then pulls it back, ashamed.",
+    "filepath": "Guilty/knitted_remorse_01.mp4",
+    "category": "Guilty",
+    "emotion": ["Guilt", "Shame"],
+    "short_description": "Half-formed apology gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she gives a small, broken nod as if admitting fault.",
+    "filepath": "Guilty/pained_expression_01.mp4",
+    "category": "Guilty",
+    "emotion": ["Guilt", "Acceptance"],
+    "short_description": "Small nod accepting blame.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she exhales slowly, head tilted down, clearly uncomfortable with herself.",
+    "filepath": "Guilty/regretful_expression_01.mp4",
+    "category": "Guilty",
+    "emotion": ["Guilt", "Discomfort"],
+    "short_description": "Uncomfortable guilty exhale.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she lightly rubs her arm with one hand as if seeking comfort.",
+    "filepath": "Guilty/seeking_comfort_01.mp4",
+    "category": "Guilty",
+    "emotion": ["Guilt", "Vulnerability"],
+    "short_description": "Self-soothing guilty rub.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she mouths a silent \u201csorry\u201d with a pained expression.",
+    "filepath": "Guilty/uncomfortable_01.mp4",
+    "category": "Guilty",
+    "emotion": ["Guilt", "Regret"],
+    "short_description": "Silent guilty apology.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she looks around with a flat expression, blinking slowly, clearly bored.",
+    "filepath": "Bored/blank_face_01.mp4",
+    "category": "Bored",
+    "emotion": ["Boredom"],
+    "short_description": "Neutral, low-energy boredom.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she rests her cheek heavily on one hand, staring off into space.",
+    "filepath": "Bored/clearly_bored_01.mp4",
+    "category": "Bored",
+    "emotion": ["Boredom", "Tiredness"],
+    "short_description": "Cheek-in-hand bored stare.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she sighs silently, shoulders dropping, eyes half-lidded.",
+    "filepath": "Bored/eyes_half_lidded_01.mp4",
+    "category": "Bored",
+    "emotion": ["Boredom", "Disinterest"],
+    "short_description": "Silent sigh of boredom.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she taps her fingers on the table with a dull, repetitive rhythm.",
+    "filepath": "Bored/not_fully_engaged_01.mp4",
+    "category": "Bored",
+    "emotion": ["Boredom", "Restlessness"],
+    "short_description": "Bored finger tapping.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she glances at an imaginary watch, then back, unimpressed.",
+    "filepath": "Bored/not_impressed_001.mp4",
+    "category": "Bored",
+    "emotion": ["Boredom", "Impatience"],
+    "short_description": "Checking time bored gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.12
+  },
+  {
+    "description": "she lazily rolls her eyes upward, then back down with a blank face.",
+    "filepath": "Bored/silent_yawn_01.mp4",
+    "category": "Bored",
+    "emotion": ["Boredom", "Annoyance"],
+    "short_description": "Lazy eye-roll boredom.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she plays lightly with a strand of hair or imaginary object, not fully engaged.",
+    "filepath": "Bored/unimpressed_01.mp4",
+    "category": "Bored",
+    "emotion": ["Boredom", "Distraction"],
+    "short_description": "Distracted fidgeting boredom.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she furrows her brows and presses her lips, clearly upset but holding back.",
+    "filepath": "Upset/clearly_troubled_01.mp4",
+    "category": "Upset",
+    "emotion": ["Upset", "Sadness"],
+    "short_description": "Tense, held-back upset expression.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she crosses her arms and looks down, breathing a bit heavier.",
+    "filepath": "Upset/clearly_upset_01.mp4",
+    "category": "Upset",
+    "emotion": ["Upset", "Frustration"],
+    "short_description": "Closed-off upset body language.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she shakes her head slowly, eyes moist, clearly troubled.",
+    "filepath": "Upset/discouraged_01.mp4",
+    "category": "Upset",
+    "emotion": ["Upset", "Emotion"],
+    "short_description": "Emotional upset head shake.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she lifts a hand halfway as if to speak, then lets it fall, discouraged.",
+    "filepath": "Upset/frustration_01.mp4",
+    "category": "Upset",
+    "emotion": ["Upset", "Disappointment"],
+    "short_description": "Discouraged half-gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she presses her fingers to her forehead briefly with a pained look.",
+    "filepath": "Upset/hurted_01.mp4",
+    "category": "Upset",
+    "emotion": ["Upset", "Stress"],
+    "short_description": "Forehead press stressed upset.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she looks away and exhales through her nose, visibly annoyed and hurt.",
+    "filepath": "Upset/pained_look_01.mp4",
+    "category": "Upset",
+    "emotion": ["Upset", "Hurt", "Anger"],
+    "short_description": "Annoyed, hurt upset reaction.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she hugs one arm close to her body, chin slightly tucked.",
+    "filepath": "Upset/reaction_mind_blown.mp4",
+    "category": "Upset",
+    "emotion": ["Upset", "Vulnerability"],
+    "short_description": "Vulnerable upset self-hug.",
+    "is_alternative": false,
+    "duration_seconds": 5.92
+  },
+  {
+    "description": "she tries to smile but it quickly fades, showing she\u2019s not okay.",
+    "filepath": "Upset/sad_expression_01.mp4",
+    "category": "Upset",
+    "emotion": ["Upset", "Masking"],
+    "short_description": "Failed attempt to hide being upset.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she shrugs weakly with a sad expression, as if giving up.",
+    "filepath": "Upset/slightly_tucked_01.mp4",
+    "category": "Upset",
+    "emotion": ["Upset", "Resignation"],
+    "short_description": "Resigned upset shrug.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she looks at the viewer with a mix of hurt and frustration, eyes asking \u201cwhy?\u201d.",
+    "filepath": "Upset/troubled_01.mp4",
+    "category": "Upset",
+    "emotion": ["Upset", "Confusion", "Hurt"],
+    "short_description": "\u201cWhy?\u201d upset look at viewer.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she looks at the viewer with a mix of hurt and frustration, eyes asking \u201cwhy?\u201d.",
+    "filepath": "Upset/Upset_01.mp4",
+    "category": "Upset",
+    "emotion": ["Upset", "Confusion", "Hurt"],
+    "short_description": "\u201cWhy?\u201d upset look at viewer.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "her eyebrows raise in the middle, eyes tense with clear worry.",
+    "filepath": "Worried/clearly_concerned_01.mp4",
+    "category": "Worried",
+    "emotion": ["Worry", "Anxiety"],
+    "short_description": "Classic worried brow and eyes.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she glances repeatedly at the viewer, then away, clearly concerned.",
+    "filepath": "Worried/disagreement_wave_off.mp4",
+    "category": "Worried",
+    "emotion": ["Worry", "Concern"],
+    "short_description": "Concerned glancing at viewer.",
+    "is_alternative": false,
+    "duration_seconds": 5.92
+  },
+  {
+    "description": "she holds one hand close to her mouth, fingers touching her lips in worry.",
+    "filepath": "Worried/forward_slightly_01.mp4",
+    "category": "Worried",
+    "emotion": ["Worry", "Anxiety"],
+    "short_description": "Hand-to-mouth worried gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she leans forward slightly, eyes searching the viewer\u2019s face.",
+    "filepath": "Worried/pleading_eyes_01.mp4",
+    "category": "Worried",
+    "emotion": ["Worry", "Care"],
+    "short_description": "Concerned, caring lean-in.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she rubs her hands together slowly as if thinking hard about a problem.",
+    "filepath": "Worried/rubs_hands_01.mp4",
+    "category": "Worried",
+    "emotion": ["Worry", "Thoughtfulness"],
+    "short_description": "Thinking and worrying hand rub.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she inhales and then exhales in a shaky way, visibly unsettled.",
+    "filepath": "Worried/unconvinced_01.mp4",
+    "category": "Worried",
+    "emotion": ["Worry", "Stress"],
+    "short_description": "Shaky breath of worry.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she shifts her weight from side to side, unable to fully stay still.",
+    "filepath": "Worried/unsettled_01.mp4",
+    "category": "Worried",
+    "emotion": ["Worry", "Restlessness"],
+    "short_description": "Restless worried shifting.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she looks down, then up with pleading eyes as if hoping everything will be okay.",
+    "filepath": "Worried/very_worried_01.mp4",
+    "category": "Worried",
+    "emotion": ["Worry", "Hope"],
+    "short_description": "Hopeful but worried look.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she clasps her hands together tightly in front of her.",
+    "filepath": "Worried/worried_01.mp4",
+    "category": "Worried",
+    "emotion": ["Worry", "Tension"],
+    "short_description": "Tense clasped-hands worry.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she shifts in her seat, shoulders slightly raised, clearly nervous.",
+    "filepath": "Nervous/bites_cheek_01.mp4",
+    "category": "Nervous",
+    "emotion": ["Nervousness", "Anxiety"],
+    "short_description": "General nervous body tension.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she laughs silently in a short, awkward way, scratching her neck.",
+    "filepath": "Nervous/clearly_nervous_01.mp4",
+    "category": "Nervous",
+    "emotion": ["Nervousness", "Awkwardness"],
+    "short_description": "Awkward nervous laugh and neck scratch.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she taps her foot or leg lightly, eyes moving around quickly.",
+    "filepath": "Nervous/clearly_uncomfortable_01.mp4",
+    "category": "Nervous",
+    "emotion": ["Nervousness", "Restlessness"],
+    "short_description": "Restless nervous tapping.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she rubs her palms together briefly as if they feel clammy.",
+    "filepath": "Nervous/feel_clammy_01.mp4",
+    "category": "Nervous",
+    "emotion": ["Nervousness", "Anxiety"],
+    "short_description": "Rubbing clammy nervous hands.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she keeps adjusting her hair or clothes, not fully relaxed.",
+    "filepath": "Nervous/nervous_01.mp4",
+    "category": "Nervous",
+    "emotion": ["Nervousness", "Insecurity"],
+    "short_description": "Fidgeting with appearance nervously.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she smiles too quickly and then looks away, clearly uncomfortable.",
+    "filepath": "Nervous/scratching_neck_01.mp4",
+    "category": "Nervous",
+    "emotion": ["Nervousness", "Shyness"],
+    "short_description": "Fast smile, look-away nervousness.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she glances at the viewer with wide eyes, then down at her hands.",
+    "filepath": "Nervous/slightly_hunched_01.mp4",
+    "category": "Nervous",
+    "emotion": ["Nervousness", "Uncertainty"],
+    "short_description": "Uncertain nervous glance then down.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she bites the inside of her cheek lightly, jaw tense.",
+    "filepath": "Nervous/unrelaxed_01.mp4",
+    "category": "Nervous",
+    "emotion": ["Nervousness", "Tension"],
+    "short_description": "Subtle cheek-biting nervous tic.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she inhales sharply and then gives a tiny nod as if forcing herself to continue.",
+    "filepath": "Nervous/wide_eyes_01.mp4",
+    "category": "Nervous",
+    "emotion": ["Nervousness", "Determination"],
+    "short_description": "Pushing through nerves tiny nod.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she lowers her head, avoiding eye contact, cheeks slightly tense with shame.",
+    "filepath": "Ashamed/ashamed_01.mp4",
+    "category": "Ashamed",
+    "emotion": ["Shame", "Embarrassment"],
+    "short_description": "Head-down ashamed avoidance.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she covers part of her face with one hand, peeking out with embarrassed eyes.",
+    "filepath": "Ashamed/embarrassed_01.mp4",
+    "category": "Ashamed",
+    "emotion": ["Shame", "Embarrassment"],
+    "short_description": "Hand-covered shy ashamed look.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she shifts her weight and rubs the back of her neck awkwardly.",
+    "filepath": "Ashamed/embarrassed_eyes_01.mp4",
+    "category": "Ashamed",
+    "emotion": ["Shame", "Awkwardness"],
+    "short_description": "Neck rub embarrassed shame.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she gives a tiny, apologetic half-smile, eyes still lowered.",
+    "filepath": "Ashamed/half_smile_01.mp4",
+    "category": "Ashamed",
+    "emotion": ["Shame", "Guilt"],
+    "short_description": "Apologetic half-smile with lowered gaze.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she tucks her chin in and hunches slightly, making herself smaller.",
+    "filepath": "Ashamed/pained_01.mp4",
+    "category": "Ashamed",
+    "emotion": ["Shame", "Insecurity"],
+    "short_description": "Making herself smaller in shame.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she looks up briefly, then quickly away, unable to hold the gaze.",
+    "filepath": "Ashamed/small_sigh_01.mp4",
+    "category": "Ashamed",
+    "emotion": ["Shame", "Discomfort"],
+    "short_description": "Quick look up then away.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she lightly bites her lip and fidgets with her fingers, clearly embarrassed.",
+    "filepath": "Ashamed/social_apologize2.mp4",
+    "category": "Ashamed",
+    "emotion": ["Shame", "Nervousness"],
+    "short_description": "Nervous, embarrassed fidgeting.",
+    "is_alternative": false,
+    "duration_seconds": 5.12
+  },
+  {
+    "description": "she presses her lips together and nods once, accepting the uncomfortable truth.",
+    "filepath": "Ashamed/tense_shame_01.mp4",
+    "category": "Ashamed",
+    "emotion": ["Shame", "Acceptance"],
+    "short_description": "Accepting nod in shame.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she touches her chest lightly, expression pained and self-conscious.",
+    "filepath": "Ashamed/uncomfortable_truth_01.mp4",
+    "category": "Ashamed",
+    "emotion": ["Shame", "Vulnerability"],
+    "short_description": "Vulnerable ashamed chest touch.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she winces slightly, eyes closing briefly as if in emotional pain.",
+    "filepath": "Hurt/deeply_wounded_01.mp4",
+    "category": "Hurt",
+    "emotion": ["Hurt", "Sadness"],
+    "short_description": "Small wince of emotional hurt.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she places a hand over her heart, expression clearly wounded.",
+    "filepath": "Hurt/lips_trembling_01.mp4",
+    "category": "Hurt",
+    "emotion": ["Hurt", "Love", "Sadness"],
+    "short_description": "Heart-hurt gesture with sadness.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she draws back a little as if stung, eyes wide and pained.",
+    "filepath": "Hurt/pained_01.mp4",
+    "category": "Hurt",
+    "emotion": ["Hurt", "Shock"],
+    "short_description": "Pulled-back shocked hurt reaction.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she looks at the viewer with a betrayed expression, then looks away.",
+    "filepath": "Hurt/protecting_herself_01.mp4",
+    "category": "Hurt",
+    "emotion": ["Hurt", "Betrayal"],
+    "short_description": "Betrayed hurt glance away.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she hugs one arm across her body, protecting herself.",
+    "filepath": "Hurt/wounded_01.mp4",
+    "category": "Hurt",
+    "emotion": ["Hurt", "Vulnerability"],
+    "short_description": "Protective self-hug hurt posture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she gazes off into the distance with a soft, wistful smile.",
+    "filepath": "Nostalgic/cherishing_memory.mp4",
+    "category": "Nostalgic",
+    "emotion": ["Nostalgia", "Sadness"],
+    "short_description": "Wistful distant nostalgic gaze.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she lightly hugs herself, eyes soft as if remembering something precious.",
+    "filepath": "Nostalgic/faraway_expression_01.mp4",
+    "category": "Nostalgic",
+    "emotion": ["Nostalgia", "Love"],
+    "short_description": "Self-hug remembering warm past.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she looks down at her open palm as if holding an old memory, then smiles sadly.",
+    "filepath": "Nostalgic/funny_moment_01.mp4",
+    "category": "Nostalgic",
+    "emotion": ["Nostalgia", "Bittersweet"],
+    "short_description": "Bittersweet memory-in-hand gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she tilts her head and exhales softly, half smiling, half sad.",
+    "filepath": "Nostalgic/gentle_faraway_expression_01.mp4",
+    "category": "Nostalgic",
+    "emotion": ["Nostalgia", "MixedEmotions"],
+    "short_description": "Soft nostalgic half-smile.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she closes her eyes briefly, as if hearing an old familiar song.",
+    "filepath": "Nostalgic/old_memory_01.mp4",
+    "category": "Nostalgic",
+    "emotion": ["Nostalgia", "Calm"],
+    "short_description": "Eyes-closed remembering old times.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she glances up and to the side with a gentle, faraway expression.",
+    "filepath": "Nostalgic/softly_half_smiling_01.mp4",
+    "category": "Nostalgic",
+    "emotion": ["Nostalgia"],
+    "short_description": "Looking away into the past.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she traces a small circle with her finger on the table absentmindedly.",
+    "filepath": "Nostalgic/tender_old_memory_01.mp4",
+    "category": "Nostalgic",
+    "emotion": ["Nostalgia", "Reflection"],
+    "short_description": "Absentminded nostalgic tracing.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she smiles faintly, eyes a little wet, from a tender old memory.",
+    "filepath": "Nostalgic/wistful_smile_01.mp4",
+    "category": "Nostalgic",
+    "emotion": ["Nostalgia", "Emotion"],
+    "short_description": "Emotional nostalgic faint smile.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she slowly rubs her eyes as if tired, then blinks heavily.",
+    "filepath": "Tired/blinks_heavily_01.mp4",
+    "category": "Tired",
+    "emotion": ["Tiredness"],
+    "short_description": "Rubbing eyes tired gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she yawns silently, covering her mouth with the back of her hand.",
+    "filepath": "Tired/fatigue_01.mp4",
+    "category": "Tired",
+    "emotion": ["Tiredness"],
+    "short_description": "Silent covered yawn.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she rolls her shoulders back sluggishly, trying to wake herself up.",
+    "filepath": "Tired/fighting_drowsiness_01.mp4",
+    "category": "Tired",
+    "emotion": ["Tiredness", "LowEnergy"],
+    "short_description": "Sluggish shoulder roll fatigue.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she props her head up with her hand, eyelids drooping.",
+    "filepath": "Tired/reaction_yawn2.mp4",
+    "category": "Tired",
+    "emotion": ["Tiredness"],
+    "short_description": "Head-in-hand sleepy posture.",
+    "is_alternative": false,
+    "duration_seconds": 5.12
+  },
+  {
+    "description": "she stretches her neck slowly from side to side in fatigue.",
+    "filepath": "Tired/silent_sigh_01.mp4",
+    "category": "Tired",
+    "emotion": ["Tiredness", "Discomfort"],
+    "short_description": "Neck stretch tiredness.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she blinks slowly several times, fighting drowsiness.",
+    "filepath": "Tired/sluggishly_01.mp4",
+    "category": "Tired",
+    "emotion": ["Tiredness"],
+    "short_description": "Slow blinking sleepy look.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she lets out a long, silent sigh, shoulders sagging.",
+    "filepath": "Tired/yawns_silently_01.mp4",
+    "category": "Tired",
+    "emotion": ["Tiredness", "Resignation"],
+    "short_description": "Long sigh of exhaustion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she furrows her brow and tilts her head, clearly confused.",
+    "filepath": "Confused/brows_furrowed_01.mp4",
+    "category": "Confused",
+    "emotion": ["Confusion"],
+    "short_description": "Basic head-tilt confusion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she looks from side to side as if searching for context.",
+    "filepath": "Confused/clearly_confused_01.mp4",
+    "category": "Confused",
+    "emotion": ["Confusion", "Uncertainty"],
+    "short_description": "Looking around in confusion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she opens her mouth slightly, then closes it, unsure what to say.",
+    "filepath": "Confused/confused_01.mp4",
+    "category": "Confused",
+    "emotion": ["Confusion", "Hesitation"],
+    "short_description": "Hesitating, speechless confusion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she raises one eyebrow while squinting slightly, puzzled.",
+    "filepath": "Confused/glances_01.mp4",
+    "category": "Confused",
+    "emotion": ["Confusion", "Curiosity"],
+    "short_description": "Raised-brow puzzled look.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she gestures lightly with one hand, palm up, as if asking \u201cwhat do you mean?\u201d.",
+    "filepath": "Confused/looks_side_to_side_01.mp4",
+    "category": "Confused",
+    "emotion": ["Confusion", "Question"],
+    "short_description": "Palm-up \u201cwhat do you mean\u201d gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she scratches her head lightly, brows furrowed.",
+    "filepath": "Confused/re_evaluate_01.mp4",
+    "category": "Confused",
+    "emotion": ["Confusion", "Awkwardness"],
+    "short_description": "Head scratch confused reaction.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she leans closer to the camera with a puzzled expression, seeking clarification.",
+    "filepath": "Confused/seeking_clarification_01.mp4",
+    "category": "Confused",
+    "emotion": ["Confusion", "Curiosity"],
+    "short_description": "Leaning-in to understand better.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she glances at an invisible object, then back, clearly not following.",
+    "filepath": "Confused/small_shrug_01.mp4",
+    "category": "Confused",
+    "emotion": ["Confusion"],
+    "short_description": "Not following, double-take confusion.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "her eyes widen in awe, mouth opening slightly in amazement.",
+    "filepath": "Amazed/astonished_smile_01.mp4",
+    "category": "Amazed",
+    "emotion": ["Amazement", "Joy"],
+    "short_description": "Simple awestruck expression.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she leans forward, eyebrows high, clearly impressed by what she sees.",
+    "filepath": "Amazed/impressed_01.mp4",
+    "category": "Amazed",
+    "emotion": ["Amazement", "Surprise"],
+    "short_description": "Impressed lean-in amazement.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she places a hand on her chest with an astonished smile.",
+    "filepath": "Amazed/incredible_01.mp4",
+    "category": "Amazed",
+    "emotion": ["Amazement", "Emotion"],
+    "short_description": "Touched amazement hand-to-chest.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she looks around as if the whole scene is incredible, smiling broadly.",
+    "filepath": "Amazed/inspired_01.mp4",
+    "category": "Amazed",
+    "emotion": ["Amazement", "Joy"],
+    "short_description": "Looking around in wide amazement.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she briefly covers her mouth with her fingers, eyes sparkling with wonder.",
+    "filepath": "Amazed/laughs_01.mp4",
+    "category": "Amazed",
+    "emotion": ["Amazement", "Delight"],
+    "short_description": "Hand-covered delighted amazement.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she straightens her posture, eyes shining, as if witnessing something epic.",
+    "filepath": "Amazed/smiling_broadly_01.mp4",
+    "category": "Amazed",
+    "emotion": ["Amazement", "Excitement"],
+    "short_description": "Epic-scale amazed posture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she laughs silently once, shaking her head like she can\u2019t believe it.",
+    "filepath": "Amazed/sparkling_01.mp4",
+    "category": "Amazed",
+    "emotion": ["Amazement", "Joy", "Disbelief"],
+    "short_description": "Joyful can\u2019t-believe-it laugh.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she claps slowly with a huge smile, clearly blown away.",
+    "filepath": "Amazed/claps_01.mp4",
+    "category": "Amazed",
+    "emotion": ["Amazement", "Joy"],
+    "short_description": "Slow clap of being amazed.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she sits a bit straighter but looks around as if no one is there for her.",
+    "filepath": "Lonely/feeling_alone_01.mp4",
+    "category": "Lonely",
+    "emotion": ["Loneliness", "Sadness"],
+    "short_description": "Lonely, searching gaze.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she folds her arms lightly across her body, holding herself.",
+    "filepath": "Lonely/holding_herself_01.mp4",
+    "category": "Lonely",
+    "emotion": ["Loneliness", "Vulnerability"],
+    "short_description": "Lonely self-hug posture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she looks at the camera, then down, with a small sad smile.",
+    "filepath": "Lonely/hollow_look_01.mp4",
+    "category": "Lonely",
+    "emotion": ["Loneliness", "Sadness"],
+    "short_description": "Sad lonely smile.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she glances to the side at an empty space, then back with a hollow look.",
+    "filepath": "Lonely/hopeful_smile_01.mp4",
+    "category": "Lonely",
+    "emotion": ["Loneliness", "Emptiness"],
+    "short_description": "Empty-space lonely glance.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she wraps her hands around an imaginary warm cup, seeking comfort.",
+    "filepath": "Lonely/looks_around_01.mp4",
+    "category": "Lonely",
+    "emotion": ["Loneliness", "Comfort"],
+    "short_description": "Imaginary cup comfort gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she exhales quietly, lips barely moving, clearly feeling alone.",
+    "filepath": "Lonely/seeking_comfort_01.mp4",
+    "category": "Lonely",
+    "emotion": ["Loneliness", "Resignation"],
+    "short_description": "Quiet resigned loneliness.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she hugs her knees slightly closer in, if seated, or folds inward subtly.",
+    "filepath": "Lonely/small_sad_smile_01.mp4",
+    "category": "Lonely",
+    "emotion": ["Loneliness", "Vulnerability"],
+    "short_description": "Folding inward lonely gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she gives a tiny hopeful smile, as if glad the user is there.",
+    "filepath": "Lonely/still_lonely_01.mp4",
+    "category": "Lonely",
+    "emotion": ["Loneliness", "Hope"],
+    "short_description": "Hopeful smile despite loneliness.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she narrows her eyes slightly, lips pressed, clearly skeptical.",
+    "filepath": "Skeptical/clearly_skeptical_01.mp4",
+    "category": "Skeptical",
+    "emotion": ["Skepticism"],
+    "short_description": "Basic skeptical narrowed-eye look.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she raises one eyebrow and tilts her head, unconvinced.",
+    "filepath": "Skeptical/doubtful_scratch.mp4",
+    "category": "Skeptical",
+    "emotion": ["Skepticism", "Doubt"],
+    "short_description": "Raised-brow doubting expression.",
+    "is_alternative": false,
+    "duration_seconds": 5.12
+  },
+  {
+    "description": "she leans back slightly, crossing her arms loosely, still not buying it.",
+    "filepath": "Skeptical/dubious_expression_01.mp4",
+    "category": "Skeptical",
+    "emotion": ["Skepticism", "Caution"],
+    "short_description": "Leaning-back skeptical posture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she glances sideways, lips curled in a half-smirk of doubt.",
+    "filepath": "Skeptical/hand_palm_01.mp4",
+    "category": "Skeptical",
+    "emotion": ["Skepticism", "Disbelief"],
+    "short_description": "Side-glance doubtful smirk.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she taps her fingers lightly, clearly thinking \u201creally?\u201d.",
+    "filepath": "Skeptical/judging_look_01.mp4",
+    "category": "Skeptical",
+    "emotion": ["Skepticism", "Suspicion"],
+    "short_description": "Finger-tap \u201creally?\u201d skepticism.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she looks over imaginary glasses, giving a judging look.",
+    "filepath": "Skeptical/unconvinced_01.mp4",
+    "category": "Skeptical",
+    "emotion": ["Skepticism", "Humor"],
+    "short_description": "Playful \u201cover glasses\u201d skeptical look.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she gestures with one hand, palm down, as if asking for more proof.",
+    "filepath": "Skeptical/unimpressed_01.mp4",
+    "category": "Skeptical",
+    "emotion": ["Skepticism", "Question"],
+    "short_description": "\u201cShow me more proof\u201d gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she looks down, shoulders slightly raised, hands close to her body, clearly shy.",
+    "filepath": "Shy/almost_hesitant_01.mp4",
+    "category": "Shy",
+    "emotion": ["Shyness", "Anxiety"],
+    "short_description": "Basic shy closed posture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she gives a tiny smile without teeth, eyes flicking up briefly.",
+    "filepath": "Shy/blushing_01.mp4",
+    "category": "Shy",
+    "emotion": ["Shyness", "Warmth"],
+    "short_description": "Tiny shy warm smile.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she tucks a strand of imaginary hair behind her ear, avoiding full eye contact.",
+    "filepath": "Shy/embarrassed_blush.mp4",
+    "category": "Shy",
+    "emotion": ["Shyness", "Awkwardness"],
+    "short_description": "Hair-tuck shy gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.92
+  },
+  {
+    "description": "she waves very small and close to her chest, almost hesitant.",
+    "filepath": "Shy/eyes_flicking_01.mp4",
+    "category": "Shy",
+    "emotion": ["Shyness", "Caution"],
+    "short_description": "Small close-to-body shy wave.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she giggles silently once, then hides her mouth with her hand.",
+    "filepath": "Shy/giggles_01.mp4",
+    "category": "Shy",
+    "emotion": ["Shyness", "Joy"],
+    "short_description": "Shy giggle behind hand.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she steps slightly back, then leans forward a little, undecided.",
+    "filepath": "Shy/looks_down_01.mp4",
+    "category": "Shy",
+    "emotion": ["Shyness", "Uncertainty"],
+    "short_description": "Unsure back-and-forth shy movement.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she points to herself questioningly, as if asking \u201cme?\u201d.",
+    "filepath": "Shy/tucks_strand_01.mp4",
+    "category": "Shy",
+    "emotion": ["Shyness", "Surprise"],
+    "short_description": "Shy \u201cme?\u201d pointing gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.08
+  },
+  {
+    "description": "she smiles brightly and mimes holding a small birthday cake with a candle.",
+    "filepath": "Special_Events/blows_gentle_kiss_01.mp4",
+    "category": "Special_Events",
+    "emotion": ["Joy", "Happiness", "Birthday"],
+    "short_description": "she smiles brightly and mimes holding a small birthday cake with a candle.",
+    "is_alternative": false,
+    "duration_seconds": 10.08,
+    "system_note": "Crucial. Sweet birthday cake gesture."
+  },
+  {
+    "description": "she pretends to blow out the candle, then looks at the viewer with a happy grin.",
+    "filepath": "Special_Events/cake_candle_01.mp4",
+    "category": "Special_Events",
+    "emotion": ["Joy", "Birthday"],
+    "short_description": "Blowing birthday candle mimic.",
+    "is_alternative": false,
+    "duration_seconds": 10.08
+  },
+  {
+    "description": "she forms a heart with her hands and mouths \u201chappy birthday\u201d silently.",
+    "filepath": "Special_Events/celebrating_love_01.mp4",
+    "category": "Special_Events",
+    "emotion": ["Love", "Joy", "Birthday"],
+    "short_description": "Hand-heart birthday wish.",
+    "is_alternative": false,
+    "duration_seconds": 10.08
+  },
+  {
+    "description": "she gestures as if offering an invisible wrapped present toward the viewer.",
+    "filepath": "Special_Events/happy_grin_01.mp4",
+    "category": "Special_Events",
+    "emotion": ["Joy", "Birthday", "Surprise"],
+    "short_description": "Offering birthday gift gesture.",
+    "is_alternative": false,
+    "duration_seconds": 10.08
+  },
+  {
+    "description": "she claps softly and looks at the viewer as if celebrating their special day.",
+    "filepath": "Special_Events/heart_hands_01.mp4",
+    "category": "Special_Events",
+    "emotion": ["Joy", "Birthday"],
+    "short_description": "Soft birthday celebration clap.",
+    "is_alternative": false,
+    "duration_seconds": 10.08
+  },
+  {
+    "description": "she holds her hands close to her chest, smiling tenderly, as if celebrating love.",
+    "filepath": "Special_Events/heart_shaped_box_01.mp4",
+    "category": "Special_Events",
+    "emotion": ["Love", "Joy", "Valentine"],
+    "short_description": "she holds her hands close to her chest, smiling tenderly, as if celebrating love.",
+    "is_alternative": false,
+    "duration_seconds": 10.08,
+    "system_note": "Crucial. Soft Valentine love pose."
+  },
+  {
+    "description": "she mimes offering a small heart-shaped box forward with a loving smile.",
+    "filepath": "Special_Events/social_goodbye_blow_kiss.mp4",
+    "category": "Special_Events",
+    "emotion": ["Love", "Joy", "Valentine"],
+    "short_description": "Offering Valentine gift gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.12
+  },
+  {
+    "description": "she draws a heart shape in the air with one finger, smiling shyly.",
+    "filepath": "Special_Events/social_kiss.mp4",
+    "category": "Special_Events",
+    "emotion": ["Love", "Shyness", "Valentine"],
+    "short_description": "Shy Valentine heart in air.",
+    "is_alternative": false,
+    "duration_seconds": 5.12
+  },
+  {
+    "description": "she leans closer with a warm, romantic gaze, eyes soft and affectionate.",
+    "filepath": "Special_Events/wishing_good_year_01.mp4",
+    "category": "Special_Events",
+    "emotion": ["Love", "Valentine"],
+    "short_description": "Romantic Valentine lean-in.",
+    "is_alternative": false,
+    "duration_seconds": 10.08
+  },
+  {
+    "description": "she blows a gentle kiss and then presses her hand to her heart.",
+    "filepath": "Special_Events/wraps_arms.mp4",
+    "category": "Special_Events",
+    "emotion": ["Love", "Joy", "Valentine"],
+    "short_description": "Blown kiss and heart touch.",
+    "is_alternative": false,
+    "duration_seconds": 10.08
+  },
+  {
+    "description": "she looks up with wonder, then counts down on her fingers from three to one silently.",
+    "filepath": "Special_Events/blows_gentle_kiss_01.mp4",
+    "category": "Special_Events",
+    "emotion": ["Excitement", "NewYear"],
+    "short_description": "she looks up with wonder, then counts down on her fingers from three to one silently.",
+    "is_alternative": false,
+    "duration_seconds": 10.08,
+    "system_note": "Crucial. New Year countdown gesture."
+  },
+  {
+    "description": "she mimes fireworks bursting upward with her hands, smiling widely.",
+    "filepath": "Special_Events/cake_candle_01.mp4",
+    "category": "Special_Events",
+    "emotion": ["Excitement", "Joy", "NewYear"],
+    "short_description": "Fireworks celebration gesture.",
+    "is_alternative": false,
+    "duration_seconds": 10.08
+  },
+  {
+    "description": "she clinks an imaginary glass in a toast toward the viewer.",
+    "filepath": "Special_Events/celebrating_love_01.mp4",
+    "category": "Special_Events",
+    "emotion": ["Joy", "Celebration", "NewYear"],
+    "short_description": "Imaginary New Year toast.",
+    "is_alternative": false,
+    "duration_seconds": 10.08
+  },
+  {
+    "description": "she cheers silently with both fists raised slightly, full of new-year energy.",
+    "filepath": "Special_Events/happy_grin_01.mp4",
+    "category": "Special_Events",
+    "emotion": ["Excitement", "Joy", "NewYear"],
+    "short_description": "Small cheer for the new year.",
+    "is_alternative": false,
+    "duration_seconds": 10.08
+  },
+  {
+    "description": "she places a hand over her heart and then gestures outward, as if wishing a good year.",
+    "filepath": "Special_Events/heart_hands_01.mp4",
+    "category": "Special_Events",
+    "emotion": ["Love", "Hope", "NewYear"],
+    "short_description": "Heartfelt New Year wish gesture.",
+    "is_alternative": false,
+    "duration_seconds": 10.08
+  },
+  {
+    "description": "she wraps her arms as if giving a warm Christmas hug, smiling softly.",
+    "filepath": "Special_Events/heart_shaped_box_01.mp4",
+    "category": "Special_Events",
+    "emotion": ["Love", "Joy", "Christmas"],
+    "short_description": "she wraps her arms as if giving a warm Christmas hug, smiling softly.",
+    "is_alternative": false,
+    "duration_seconds": 10.08,
+    "system_note": "Crucial. Warm Christmas hug gesture."
+  },
+  {
+    "description": "she mimes holding and then offering a small wrapped Christmas gift.",
+    "filepath": "Special_Events/social_goodbye_blow_kiss.mp4",
+    "category": "Special_Events",
+    "emotion": ["Love", "Joy", "Christmas"],
+    "short_description": "Offering Christmas present gesture.",
+    "is_alternative": false,
+    "duration_seconds": 5.12
+  },
+  {
+    "description": "she looks up as if admiring lights, smiling with cozy happiness.",
+    "filepath": "Special_Events/social_kiss.mp4",
+    "category": "Special_Events",
+    "emotion": ["Joy", "Calm", "Christmas"],
+    "short_description": "Admiring Christmas lights softly.",
+    "is_alternative": false,
+    "duration_seconds": 5.12
+  },
+  {
+    "description": "she presses her hands together in front of her and gives a grateful festive nod.",
+    "filepath": "Special_Events/wishing_good_year_01.mp4",
+    "category": "Special_Events",
+    "emotion": ["Gratitude", "Joy", "Christmas"],
+    "short_description": "Grateful Christmas nod gesture.",
+    "is_alternative": false,
+    "duration_seconds": 10.08
+  },
+  {
+    "description": "she traces a small star shape in the air and then smiles warmly.",
+    "filepath": "Special_Events/wraps_arms.mp4",
+    "category": "Special_Events",
+    "emotion": ["Joy", "Magic", "Christmas"],
+    "short_description": "Drawing star Christmas magic.",
+    "is_alternative": false,
+    "duration_seconds": 10.08
+  }
+]

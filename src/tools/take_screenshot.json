@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "take_screenshot",
+    "description": "Cattura uno screenshot dell'intero schermo e lo salva su disco.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "output_path_str": {
+          "type": "string",
+          "description": "Il percorso dove salvare lo screenshot."
+        }
+      },
+      "required": ["output_path_str"]
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "function",
+  "function": {
+    "name": "transcribe_audio",
+    "description": "Trascrive il parlato di un file audio in testo usando SpeechRecognition.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "wav_path_str": { "type": "string", "description": "Percorso del file .wav da trascrivere." }
+      },
+      "required": ["wav_path_str"]
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "function",
+  "function": {
+    "name": "list_todo_lists",
+    "description": "Elenca liste di Microsoft To Do.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "max_results": { "type": "integer", "description": "Numero massimo di liste." }
+      },
+      "required": []
+    }
+  }
+}

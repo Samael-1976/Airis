@@ -1,0 +1,14 @@
+{
+  "type": "function",
+  "function": {
+    "name": "salva_analisi_visiva",
+    "description": "Cattura lo schermo o un'immagine, esegue l'OCR e la salva nella memoria permanente.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "label": { "type": "string", "description": "Etichetta per la cattura (es. 'DOC_IMPORTANTE')." }
+      },
+      "required": []
+    }
+  }
+}

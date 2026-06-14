@@ -1,0 +1,25 @@
+{
+  "type": "function",
+  "function": {
+    "name": "control_window",
+    "description": "Gestisce le finestre di Windows (focus, minimizza, chiudi, scrivi) tramite titolo.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "title_regex": {
+          "type": "string",
+          "description": "Espressione regolare per trovare il titolo della finestra."
+        },
+        "action": {
+          "type": "string",
+          "description": "Azione da eseguire ('focus', 'type', 'close', 'minimize', 'maximize')."
+        },
+        "text": {
+          "type": "string",
+          "description": "Testo da digitare (se action è 'type')."
+        }
+      },
+      "required": ["title_regex"]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "function",
+  "function": {
+    "name": "crea_da_immagini",
+    "description": "Genera contenuti creativi (storie, descrizioni) ispirati da una sequenza di immagini.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "image_paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Lista dei percorsi delle immagini."
+        },
+        "user_query": {
+          "type": "string",
+          "description": "La richiesta creativa dell'utente."
+        }
+      },
+      "required": ["image_paths"]
+    }
+  }
+}

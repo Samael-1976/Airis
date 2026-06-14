@@ -1,0 +1,12 @@
+{
+  "type": "function",
+  "function": {
+    "name": "get_system_health",
+    "description": "Restituisce un report su CPU, RAM e Batteria del sistema.",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+}

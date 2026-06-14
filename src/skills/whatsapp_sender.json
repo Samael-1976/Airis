@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "whatsapp_sender",
+    "description": "Invia messaggi WhatsApp tramite Twilio.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Invia messaggi WhatsApp tramite Twilio."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

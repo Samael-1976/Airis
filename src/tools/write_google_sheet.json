@@ -1,0 +1,35 @@
+{
+  "type": "function",
+  "function": {
+    "name": "write_google_sheet",
+    "description": "Scrive dati in un intervallo specifico di un Google Sheet.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "spreadsheet_id": {
+          "type": "string",
+          "description": "L'ID univoco del foglio Google."
+        },
+        "range_name": {
+          "type": "string",
+          "description": "L'intervallo di celle dove scrivere (es. 'Foglio1!A1')."
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": "I dati da scrivere organizzati come array di righe (es. [['Cella A1', 'Cella B1'], ['Cella A2', 'Cella B2']])."
+        }
+      },
+      "required": [
+        "spreadsheet_id",
+        "range_name",
+        "values"
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "function",
+  "function": {
+    "name": "send_outlook_email",
+    "description": "Invia un'email tramite Microsoft Outlook.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "to": {
+          "type": "string",
+          "description": "Indirizzo email del destinatario."
+        },
+        "subject": {
+          "type": "string",
+          "description": "Oggetto dell'email."
+        },
+        "body": {
+          "type": "string",
+          "description": "Corpo del messaggio."
+        }
+      },
+      "required": [
+        "to",
+        "subject",
+        "body"
+      ]
+    }
+  }
+}

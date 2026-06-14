@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "save_profile_file",
+    "description": "Salva le modifiche al profilo utente.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "profile_data_json": {
+          "type": "string",
+          "description": "I dati del profilo in formato stringa JSON."
+        }
+      },
+      "required": ["profile_data_json"]
+    }
+  }
+}

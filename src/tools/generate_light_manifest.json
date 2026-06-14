@@ -1,0 +1,12 @@
+{
+  "type": "function",
+  "function": {
+    "name": "generate_light_manifest",
+    "description": "Genera una lista sintetica separando TOOL ESEGUIBILI da SKILLS.",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+}

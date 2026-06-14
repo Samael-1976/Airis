@@ -1,0 +1,28 @@
+{
+  "type": "function",
+  "function": {
+    "name": "archive_character_file",
+    "description": "Sposta un file personaggio nella cartella di archivio.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "char_id": {
+          "type": "string",
+          "description": "L'ID del personaggio."
+        },
+        "char_type": {
+          "type": "string",
+          "description": "Il tipo di personaggio (PG, PNG, AVATAR)."
+        },
+        "lang": {
+          "type": "string",
+          "description": "La lingua della scheda."
+        }
+      },
+      "required":[
+        "char_id",
+        "char_type"
+      ]
+    }
+  }
+}

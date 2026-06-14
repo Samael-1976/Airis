@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "read_emails",
+    "description": "Legge le ultime email ricevute su Gmail.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "max_results": {
+          "type": "integer",
+          "description": "Numero massimo di email da leggere (default 5)."
+        }
+      },
+      "required": []
+    }
+  }
+}

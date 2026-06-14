@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "list_tasks",
+    "description": "Elenca le attività presenti in una specifica lista di Google Tasks.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "tasklist_id": {
+          "type": "string",
+          "description": "L'ID della lista di attività."
+        }
+      },
+      "required": [
+        "tasklist_id"
+      ]
+    }
+  }
+}

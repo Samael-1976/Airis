@@ -1,0 +1,15 @@
+{
+  "type": "function",
+  "function": {
+    "name": "get_responses",
+    "description": "Recupera risposte da Typeform.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "form_id": { "type": "string", "description": "L'ID del modulo Typeform." },
+        "page_size": { "type": "integer", "description": "Numero di risposte da recuperare." }
+      },
+      "required": ["form_id"]
+    }
+  }
+}

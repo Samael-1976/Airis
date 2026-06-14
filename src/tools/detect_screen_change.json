@@ -1,0 +1,21 @@
+{
+  "type": "function",
+  "function": {
+    "name": "detect_screen_change",
+    "description": "Verifica se lo schermo è cambiato visivamente dopo un'azione (conferma visiva).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "wait_seconds": {
+          "type": "number",
+          "description": "Secondi da attendere prima del secondo screenshot."
+        },
+        "threshold": {
+          "type": "number",
+          "description": "Soglia di tolleranza per il cambiamento (es. 1.0)."
+        }
+      },
+      "required":[]
+    }
+  }
+}

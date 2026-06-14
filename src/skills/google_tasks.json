@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "google_tasks",
+    "description": "Gestisce liste e task su Google Tasks.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Gestisce liste e task su Google Tasks."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

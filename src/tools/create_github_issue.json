@@ -1,0 +1,29 @@
+{
+  "type": "function",
+  "function": {
+    "name": "create_github_issue",
+    "description": "Crea una nuova issue in un repository GitHub.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "repo_full_name": {
+          "type": "string",
+          "description": "Il nome completo del repository (es. 'utente/repo')."
+        },
+        "title": {
+          "type": "string",
+          "description": "Il titolo della issue."
+        },
+        "body": {
+          "type": "string",
+          "description": "Il corpo descrittivo della issue."
+        }
+      },
+      "required": [
+        "repo_full_name",
+        "title",
+        "body"
+      ]
+    }
+  }
+}

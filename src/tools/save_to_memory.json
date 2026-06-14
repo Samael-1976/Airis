@@ -1,0 +1,15 @@
+{
+  "type": "function",
+  "function": {
+    "name": "save_to_memory",
+    "description": "Salva un frammento di testo specifico nella memoria episodica.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "text": { "type": "string", "description": "Il testo da memorizzare." },
+        "session_id": { "type": "string", "description": "L'ID della sessione corrente." }
+      },
+      "required": ["text", "session_id"]
+    }
+  }
+}

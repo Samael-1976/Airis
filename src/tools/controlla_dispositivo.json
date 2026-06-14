@@ -1,0 +1,28 @@
+{
+  "type": "function",
+  "function": {
+    "name": "controlla_dispositivo",
+    "description": "[STRUMENTO] Invia un comando fisico a un dispositivo Smart Home (luci, TV, Clima, ecc.).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "device_id": {
+          "type": "string",
+          "description": "L'ID del dispositivo da controllare."
+        },
+        "action": {
+          "type": "string",
+          "description": "L'azione da eseguire (es. 'on', 'off')."
+        },
+        "value": {
+          "type": "string",
+          "description": "Valore opzionale per l'azione (es. livello luminosità)."
+        }
+      },
+      "required": [
+        "device_id",
+        "action"
+      ]
+    }
+  }
+}

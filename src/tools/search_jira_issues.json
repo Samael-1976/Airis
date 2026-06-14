@@ -1,0 +1,23 @@
+{
+  "type": "function",
+  "function": {
+    "name": "search_jira_issues",
+    "description": "Cerca ticket su Jira utilizzando il linguaggio di query JQL.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "jql_query": {
+          "type": "string",
+          "description": "La query JQL (es. 'project = PROJ AND status = Open')."
+        },
+        "max_results": {
+          "type": "integer",
+          "description": "Numero massimo di risultati (default 5)."
+        }
+      },
+      "required": [
+        "jql_query"
+      ]
+    }
+  }
+}

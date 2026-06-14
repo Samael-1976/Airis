@@ -1,0 +1,29 @@
+{
+  "type": "function",
+  "function": {
+    "name": "update_status_json_partial",
+    "description": "Aggiorna parzialmente lo stato del mondo (meteo, ora, eventi) preservando l'integrità dei dati esistenti.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "status_file_path_str": {
+          "type": "string",
+          "description": "Percorso del file status.json."
+        },
+        "changes": {
+          "type": "object",
+          "description": "Oggetto JSON con i cambiamenti rilevati (es. location, time, current_event)."
+        },
+        "pg_name": {
+          "type": "string",
+          "description": "Il nome del Creatore per la bonifica agnostica."
+        }
+      },
+      "required": [
+        "status_file_path_str",
+        "changes",
+        "pg_name"
+      ]
+    }
+  }
+}

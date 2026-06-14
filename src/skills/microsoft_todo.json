@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "microsoft_todo",
+    "description": "Gestisce task su Microsoft To Do.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Gestisce task su Microsoft To Do."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

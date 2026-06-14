@@ -1,0 +1,25 @@
+{
+  "type": "function",
+  "function": {
+    "name": "confronta_immagini",
+    "description": "Confronta due immagini per evidenziare differenze visive, cambiamenti di layout o errori.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path1_str": {
+          "type": "string",
+          "description": "Percorso della prima immagine."
+        },
+        "path2_str": {
+          "type": "string",
+          "description": "Percorso della seconda immagine."
+        },
+        "user_query": {
+          "type": "string",
+          "description": "La domanda specifica sul confronto."
+        }
+      },
+      "required":["path1_str", "path2_str"]
+    }
+  }
+}

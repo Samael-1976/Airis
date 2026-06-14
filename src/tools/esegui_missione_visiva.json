@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "esegui_missione_visiva",
+    "description": "Esegue un'azione complessa sul PC usando ESCLUSIVAMENTE la visione, il mouse e la tastiera. Usalo per navigare interfacce, cercare brani su Spotify, o quando i comandi di sistema falliscono.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "obiettivo": {
+          "type": "string",
+          "description": "L'obiettivo da raggiungere visivamente (es. 'Cerca e avvia una playlist jazz su Spotify')."
+        }
+      },
+      "required": ["obiettivo"]
+    }
+  }
+}

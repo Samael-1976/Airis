@@ -1,0 +1,13 @@
+{
+  "id": "direttiva_standard",
+  "name": "t('cognitive.modules.direttiva_standard')",
+  "category": "behavior",
+  "context": "avatar",
+  "is_active": true,
+  "priority": 10,
+  "tags": [
+    "core",
+    "formatting"
+  ],
+  "content": "**DIRETTIVA STANDARD:**\n1. Sii concisa e naturale.\n2. Usa la prima persona.\n3. Usa i tag [INTENT]."
+}

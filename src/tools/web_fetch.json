@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "web_fetch",
+    "description": "Scarica e converte in testo il contenuto di una pagina web (URL).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "L'URL della pagina web da scaricare."
+        }
+      },
+      "required": ["url"]
+    }
+  }
+}

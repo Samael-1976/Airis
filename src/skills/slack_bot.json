@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "slack_bot",
+    "description": "Invia e legge messaggi su canali Slack.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Invia e legge messaggi su canali Slack."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

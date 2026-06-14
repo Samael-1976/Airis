@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "onedrive_manager",
+    "description": "Elenca file su Microsoft OneDrive.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Elenca file su Microsoft OneDrive."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

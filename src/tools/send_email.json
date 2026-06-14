@@ -1,0 +1,29 @@
+{
+  "type": "function",
+  "function": {
+    "name": "send_email",
+    "description": "Invia un'email tramite Gmail.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "to": {
+          "type": "string",
+          "description": "Indirizzo email del destinatario."
+        },
+        "subject": {
+          "type": "string",
+          "description": "Oggetto dell'email."
+        },
+        "body": {
+          "type": "string",
+          "description": "Corpo del messaggio."
+        }
+      },
+      "required": [
+        "to",
+        "subject",
+        "body"
+      ]
+    }
+  }
+}

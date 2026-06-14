@@ -1,0 +1,138 @@
+{
+  "modules": {
+    "baby_monitor": {
+      "enabled": false,
+      "sensitivity": "high",
+      "cry_detection": true,
+      "posture_detection": true
+    },
+    "elderly_helper": {
+      "enabled": false,
+      "fall_detection": true,
+      "inactivity_alert_minutes": 120
+    },
+    "pet_monitor": {
+      "enabled": false,
+      "bark_detection": true,
+      "forbidden_zones_active": true
+    }
+  },
+  "zones": [
+    {
+      "id": "zone_culla",
+      "name": "Culla",
+      "type": "safe",
+      "coordinates": [
+        0.2,
+        0.2,
+        0.6,
+        0.6
+      ],
+      "description": "Area sicura dove il bambino deve stare."
+    },
+    {
+      "id": "zone_divano",
+      "name": "Divano",
+      "type": "forbidden",
+      "coordinates": [
+        0.1,
+        0.5,
+        0.8,
+        0.3
+      ],
+      "description": "Area vietata al cane."
+    }
+  ],
+  "cron_jobs": [
+    {
+      "id": "medicina_mattina",
+      "name": "Promemoria Medicina",
+      "time": "08:00",
+      "days": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ],
+      "action": "iot_command",
+      "payload": "È ora della medicina.",
+      "enabled": false
+    }
+  ],
+  "rules": [
+    {
+      "id": "rule_baby_cry",
+      "name": "Calma Pianto Notturno",
+      "trigger": "fall_detected",
+      "conditions": {
+        "time_range": "22:00-07:00"
+      },
+      "actions": [
+        {
+          "type": "notification",
+          "message": "Rilevato pianto notturno."
+        },
+        {
+          "type": "play_audio",
+          "file": "lullaby.mp3"
+        }
+      ],
+      "enabled": false
+    },
+    {
+      "id": "rule_pet_couch",
+      "name": "Cane sul Divano",
+      "trigger": "fall_detected",
+      "conditions": {
+        "zone_id": "zone_divano",
+        "target_class": "dog"
+      },
+      "actions": [
+        {
+          "type": "tts_speak",
+          "text": "No! Giù dal divano!"
+        },
+        {
+          "type": "notification",
+          "message": "Il cane è salito sul divano."
+        }
+      ],
+      "enabled": false
+    }
+  ],
+  "triggers": [
+    {
+      "value": "audio_cry",
+      "label": "Baby Cry"
+    },
+    {
+      "value": "audio_bark",
+      "label": "Dog Bark"
+    },
+    {
+      "value": "visual_zone_entry",
+      "label": "Zone Entry"
+    },
+    {
+      "value": "fall_detected",
+      "label": "Fall Detected"
+    }
+  ],
+  "emergency_contacts": {
+    "email": "",
+    "phone": ""
+  },
+  "audio_library": [
+    {
+      "id": "29d45e4d-b960-4212-9ab3-921e382bd003",
+      "label": "test",
+      "category": "Custom",
+      "path": "data/care_audio/29d45e4d-b960-4212-9ab3-921e382bd003.wav",
+      "type": "generated",
+      "created_at": 1771853653.952317
+    }
+  ]
+}

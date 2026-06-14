@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "notion_manager",
+    "description": "Cerca e crea pagine su Notion.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Cerca e crea pagine su Notion."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

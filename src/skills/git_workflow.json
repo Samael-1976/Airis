@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "git_workflow",
+    "description": "Esegue comandi Git (status, add, commit, push).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Esegue comandi Git (status, add, commit, push)."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

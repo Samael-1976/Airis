@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "document_processing",
+    "description": "Estrae testo da documenti PDF, DOCX e TXT.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Estrae testo da documenti PDF, DOCX e TXT."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

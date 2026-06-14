@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "write_genesis_diary_entry",
+    "description": "Scrive una voce nel Diario della Genesi (auto-apprendimento).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "topic": { "type": "string", "description": "Argomento studiato." },
+        "content": { "type": "string", "description": "Sintesi dello studio." },
+        "reflection": { "type": "string", "description": "Riflessione dell'Anima." },
+        "source_url": { "type": "string", "description": "URL della fonte." }
+      },
+      "required": ["topic", "content", "reflection", "source_url"]
+    }
+  }
+}

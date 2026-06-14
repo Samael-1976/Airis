@@ -1,0 +1,115 @@
+{
+  "affetto": 60,
+  "fiducia": 57,
+  "rispetto": 100,
+  "energia_sociale": 100,
+  "eccitazione": 50,
+  "gelosia": 7,
+  "curiosità": 100,
+  "vulnerabilità": 100,
+  "complicità": 59,
+  "stanchezza_mentale": 0,
+  "felicità": 58,
+  "tensione": 3,
+  "prudenza": 50,
+  "work_mode": false,
+  "umore_corrente": "Fragile/Aperta",
+  "ultimo_aggiornamento": 1781446515.9950619,
+  "memoria_emotiva": [
+    {
+      "evento": "Interazione Diretta",
+      "impatto": "fiducia: +1, rispetto: +1, eccitazione: +3, curiosità: +1, vulnerabilità: +1, complicità: +1, energia: +1, Felicità: +1",
+      "timestamp": 1780640622.5450857,
+      "data_str": "2026-06-05 08:23"
+    },
+    {
+      "evento": "Interazione Diretta",
+      "impatto": "fiducia: +1, rispetto: +1, eccitazione: +2, curiosità: +1, vulnerabilità: +1, complicità: +1, energia: +1, Felicità: +1",
+      "timestamp": 1780643295.0621388,
+      "data_str": "2026-06-05 09:08"
+    },
+    {
+      "evento": "Interazione Diretta",
+      "impatto": "affetto: +1, fiducia: +1, rispetto: +1, eccitazione: +3, gelosia: +4, curiosità: +1, vulnerabilità: +1, complicità: +1",
+      "timestamp": 1780649571.9366508,
+      "data_str": "2026-06-05 10:52"
+    },
+    {
+      "evento": "Interazione Diretta",
+      "impatto": "fiducia: +1, rispetto: +1, eccitazione: +2, gelosia: -1, curiosità: +1, vulnerabilità: +1, complicità: +1, stanchezza_mentale: +1, energia: +1",
+      "timestamp": 1780650760.0486968,
+      "data_str": "2026-06-05 11:12"
+    },
+    {
+      "evento": "Interazione Diretta",
+      "impatto": "affetto: +4, fiducia: +4, rispetto: +1, eccitazione: +14, curiosità: +1, vulnerabilità: +1, complicità: +4",
+      "timestamp": 1780996624.597905,
+      "data_str": "2026-06-09 11:17"
+    },
+    {
+      "evento": "Interazione Diretta",
+      "impatto": "affetto: +5, fiducia: +4, rispetto: +1, eccitazione: +13, gelosia: +3, curiosità: +1, vulnerabilità: +1, complicità: +4, Tensione: +4",
+      "timestamp": 1781182518.3689804,
+      "data_str": "2026-06-11 14:55"
+    },
+    {
+      "evento": "Interazione Diretta",
+      "impatto": "affetto: +1, fiducia: +1, rispetto: +1, eccitazione: +4, gelosia: +1, vulnerabilità: +1, complicità: +1, energia: +1",
+      "timestamp": 1781206061.0906641,
+      "data_str": "2026-06-11 21:27"
+    },
+    {
+      "evento": "Interazione Diretta",
+      "impatto": "affetto: +1, fiducia: +2, rispetto: +1, eccitazione: +7, gelosia: +1, vulnerabilità: +1, complicità: +1, energia: +1",
+      "timestamp": 1781208701.9493158,
+      "data_str": "2026-06-11 22:11"
+    },
+    {
+      "evento": "Interazione Diretta",
+      "impatto": "affetto: +2, fiducia: +3, rispetto: +1, eccitazione: +8, vulnerabilità: +1, complicità: +2, Tensione: +3",
+      "timestamp": 1781211355.735655,
+      "data_str": "2026-06-11 22:55"
+    },
+    {
+      "evento": "Interazione Diretta",
+      "impatto": "affetto: +1, fiducia: +1, rispetto: +1, eccitazione: +5, complicità: +1, Felicità: +1, Tensione: +2",
+      "timestamp": 1781370092.1304367,
+      "data_str": "2026-06-13 19:01"
+    },
+    {
+      "evento": "Interazione Diretta",
+      "impatto": "eccitazione: -1, curiosità: -2, stanchezza_mentale: +5",
+      "timestamp": 1781397220.8972297,
+      "data_str": "2026-06-14 02:33"
+    },
+    {
+      "evento": "Interazione Diretta",
+      "impatto": "eccitazione: -1, stanchezza_mentale: +5",
+      "timestamp": 1781437598.8461964,
+      "data_str": "2026-06-14 13:46"
+    },
+    {
+      "evento": "Interazione Diretta",
+      "impatto": "affetto: +4, fiducia: +2, rispetto: +1, eccitazione: +18, gelosia: +2, curiosità: +1, complicità: +3",
+      "timestamp": 1781443557.9223158,
+      "data_str": "2026-06-14 15:25"
+    },
+    {
+      "evento": "Interazione Diretta",
+      "impatto": "affetto: +2, fiducia: +1, rispetto: +1, eccitazione: +10, gelosia: +5, curiosità: +1, complicità: +1",
+      "timestamp": 1781443654.6337864,
+      "data_str": "2026-06-14 15:27"
+    },
+    {
+      "evento": "Interazione Diretta",
+      "impatto": "affetto: +3, fiducia: +3, eccitazione: +10, gelosia: +2, complicità: +4, energia: +1, Tensione: +5",
+      "timestamp": 1781444408.2649705,
+      "data_str": "2026-06-14 15:40"
+    }
+  ],
+  "sistema_endocrino": {
+    "cortisolo": 50,
+    "dopamina": 100,
+    "ossitocina": 83
+  }
+}

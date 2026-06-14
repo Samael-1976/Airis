@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Viewport bloccato per comportamento app nativa -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    
+    <title>AIRIS</title>
+    <meta name="description" content="AIRIS - Artificial Intelligence Responsive Interactive System" />
+    <meta name="author" content="Samael1976" />
+
+    <!-- --- PWA & MOBILE CONFIGURATION --- -->
+    
+    <!-- Nome dell'App quando aggiunta alla Home -->
+    <meta name="apple-mobile-web-app-title" content="AIRIS">
+    <meta name="application-name" content="AIRIS">
+
+    <!-- Abilita la modalità Standalone (App Nativa) su iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- FIX: Aggiunto tag standard per Android/Chrome per rimuovere il warning -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Colore della barra di stato (Orologio/Batteria) -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Colore del tema per Android -->
+    <meta name="theme-color" content="#11141d">
+
+    <!-- --- ICONS --- -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/mobile/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/mobile/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/mobile/favicon-16x16.png">
+    
+    <!-- FIX: Percorso assoluto esplicito per il manifest -->
+    <link rel="manifest" href="/mobile/site.webmanifest" crossorigin="use-credentials">
+
+    <!-- --- SOCIAL META --- -->
+    <meta property="og:title" content="AIRIS" />
+    <meta property="og:description" content="You Are Not Alone" />
+    <meta property="og:image" content="/android-chrome-512x512.png" /> 
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

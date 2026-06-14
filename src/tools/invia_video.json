@@ -1,0 +1,21 @@
+{
+  "type": "function",
+  "function": {
+    "name": "invia_video",
+    "description": "Genera e invia un video in chat (Auto-switch VEO3/Sora).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "prompt": {
+          "type": "string",
+          "description": "La descrizione del video da generare."
+        },
+        "engine": {
+          "type": "string",
+          "description": "Il motore da usare ('auto', 'veo3', 'sora2')."
+        }
+      },
+      "required": ["prompt"]
+    }
+  }
+}

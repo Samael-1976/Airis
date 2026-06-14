@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "descrivi_immagine_con_pan_scan",
+    "description": "Analizza un'immagine ad alta risoluzione usando crop multipli (Pan-and-Scan) per cogliere ogni dettaglio visivo.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "image_path_str": {
+          "type": "string",
+          "description": "Il percorso dell'immagine da analizzare."
+        }
+      },
+      "required": [
+        "image_path_str"
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "function",
+  "function": {
+    "name": "move_mouse",
+    "description": "Sposta il cursore del mouse alle coordinate X,Y con un movimento fluido e umano.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "x": {
+          "type": "integer",
+          "description": "Coordinata X di destinazione."
+        },
+        "y": {
+          "type": "integer",
+          "description": "Coordinata Y di destinazione."
+        }
+      },
+      "required":["x", "y"]
+    }
+  }
+}

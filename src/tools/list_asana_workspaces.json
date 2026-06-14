@@ -1,0 +1,12 @@
+{
+  "type": "function",
+  "function": {
+    "name": "list_asana_workspaces",
+    "description": "Elenca workspace Asana.",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "analizza_stato_vitale",
+    "description": "Genera un report biometrico simulato basato sui sensori (camera/mic) attivi.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "target": {
+          "type": "string",
+          "description": "Il nome del bersaglio da analizzare."
+        }
+      },
+      "required":[]
+    }
+  }
+}

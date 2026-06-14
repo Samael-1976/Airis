@@ -1,0 +1,34 @@
+{
+  "type": "function",
+  "function": {
+    "name": "create_jira_issue",
+    "description": "Crea un nuovo ticket (issue) su Jira.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "project_key": {
+          "type": "string",
+          "description": "La chiave del progetto (es. 'AIRIS')."
+        },
+        "summary": {
+          "type": "string",
+          "description": "Il titolo sintetico del ticket."
+        },
+        "description": {
+          "type": "string",
+          "description": "La descrizione dettagliata del problema o task."
+        },
+        "issuetype_name": {
+          "type": "string",
+          "description": "Il tipo di ticket (es. 'Bug', 'Task', 'Story')."
+        }
+      },
+      "required": [
+        "project_key",
+        "summary",
+        "description",
+        "issuetype_name"
+      ]
+    }
+  }
+}

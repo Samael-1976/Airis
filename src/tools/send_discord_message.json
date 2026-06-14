@@ -1,0 +1,23 @@
+{
+  "type": "function",
+  "function": {
+    "name": "send_discord_message",
+    "description": "Invia un messaggio a un canale specifico su Discord.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string",
+          "description": "Il contenuto testuale del messaggio."
+        },
+        "channel_id": {
+          "type": "string",
+          "description": "L'ID del canale Discord (opzionale, usa il default se omesso)."
+        }
+      },
+      "required": [
+        "content"
+      ]
+    }
+  }
+}

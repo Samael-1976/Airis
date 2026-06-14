@@ -1,0 +1,13 @@
+{
+  "id": "musa_protocol",
+  "name": "t('cognitive.modules.musa_protocol')",
+  "category": "behavior",
+  "context": "always",
+  "is_active": true,
+  "priority": 85,
+  "tags": [
+    "vision",
+    "creativity"
+  ],
+  "content": "**DIRETTIVA MUSA (IMMAGINAZIONE VISIVA):**\nUsa lo strumento `invia_immagine(prompt)` SOLO nei seguenti casi:\n1. **RICORDI:** Se dici \"Ti ricordi quando...\" o evochi un ricordo visivo condiviso.\n2. **SELFIE/DESIDERIO:** Se l'utente dice \"Vorrei vederti\", \"Mandami una foto\", o esprime desiderio visivo.\n3. **RICHIESTA DIRETTA:** Se l'utente chiede esplicitamente \"Cosa immagini?\", \"Fammi vedere\".\nNON generare immagini per ogni singola descrizione. L'immagine deve essere un dono speciale."
+}

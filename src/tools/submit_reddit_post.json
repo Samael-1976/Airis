@@ -1,0 +1,32 @@
+{
+  "type": "function",
+  "function": {
+    "name": "submit_reddit_post",
+    "description": "Pubblica un nuovo post su Reddit.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "subreddit": {
+          "type": "string",
+          "description": "Il nome del subreddit di destinazione."
+        },
+        "title": {
+          "type": "string",
+          "description": "Il titolo del post."
+        },
+        "selftext": {
+          "type": "string",
+          "description": "Il testo del post (per post di tipo testo)."
+        },
+        "url": {
+          "type": "string",
+          "description": "L'URL del post (per post di tipo link)."
+        }
+      },
+      "required": [
+        "subreddit",
+        "title"
+      ]
+    }
+  }
+}

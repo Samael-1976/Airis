@@ -1,0 +1,32 @@
+{
+  "type": "function",
+  "function": {
+    "name": "write_dream_journal",
+    "description": "Scrive una entry nel Diario Onirico, narrando il sogno e le memorie cristallizzate durante la notte.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "context_name": {
+          "type": "string",
+          "description": "Il nome del contesto (es. 'Standard' o nome del GDR)."
+        },
+        "dream_narrative": {
+          "type": "string",
+          "description": "Il racconto in prima persona del sogno."
+        },
+        "core_memories": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "description": "Lista di oggetti memoria (content, emotion, intensity)."
+        }
+      },
+      "required": [
+        "context_name",
+        "dream_narrative",
+        "core_memories"
+      ]
+    }
+  }
+}

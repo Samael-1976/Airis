@@ -1,0 +1,16 @@
+{
+  "type": "function",
+  "function": {
+    "name": "task_completed",
+    "description": "Segnala che il task assegnato è stato completato con successo. DEVI chiamare questo tool alla fine di ogni operazione.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "final_message": {
+          "type": "string",
+          "description": "Un messaggio riassuntivo di ciò che hai fatto."
+        }
+      }
+    }
+  }
+}

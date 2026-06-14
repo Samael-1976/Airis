@@ -1,0 +1,23 @@
+{
+  "type": "function",
+  "function": {
+    "name": "send_telegram_message",
+    "description": "Invia un messaggio tramite il bot Telegram.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string",
+          "description": "Il testo del messaggio da inviare."
+        },
+        "chat_id": {
+          "type": "string",
+          "description": "L'ID della chat Telegram (opzionale, usa il default se omesso)."
+        }
+      },
+      "required": [
+        "content"
+      ]
+    }
+  }
+}

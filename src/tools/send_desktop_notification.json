@@ -1,0 +1,16 @@
+{
+  "type": "function",
+  "function": {
+    "name": "send_desktop_notification",
+    "description": "Invia una notifica desktop visibile all'utente.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "Titolo della notifica." },
+        "message": { "type": "string", "description": "Messaggio della notifica." },
+        "app_name": { "type": "string", "description": "Nome dell'app mittente (default 'AIRIS')." }
+      },
+      "required": ["title", "message"]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "function",
+  "function": {
+    "name": "save_skill",
+    "description": "Salva o aggiorna una guida procedurale (Skill).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "filename": { "type": "string", "description": "Nome del file .json della skill." },
+        "content": { "type": "string", "description": "Contenuto JSON della skill." }
+      },
+      "required": ["filename", "content"]
+    }
+  }
+}

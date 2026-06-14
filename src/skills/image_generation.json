@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "image_generation",
+    "description": "Genera immagini tramite AI (Flux/DALL-E).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Genera immagini tramite AI (Flux/DALL-E)."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

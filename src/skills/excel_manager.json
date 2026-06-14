@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "excel_manager",
+    "description": "Legge e scrive dati su file Microsoft Excel.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Legge e scrive dati su file Microsoft Excel."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "function",
+  "function": {
+    "name": "generate_sora2",
+    "description": "Genera un video realistico usando il modello Sora (Kie.ai).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "prompt": {
+          "type": "string",
+          "description": "La descrizione del video."
+        },
+        "aspect_ratio": {
+          "type": "string",
+          "description": "Rapporto d'aspetto (es. '16:9')."
+        }
+      },
+      "required": [
+        "prompt"
+      ]
+    }
+  }
+}

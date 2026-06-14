@@ -1,0 +1,14 @@
+{
+  "type": "function",
+  "function": {
+    "name": "list_photo_albums",
+    "description": "Elenca gli album fotografici di Google Photos.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "max_results": { "type": "integer", "description": "Numero massimo di album." }
+      },
+      "required": []
+    }
+  }
+}

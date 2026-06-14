@@ -1,0 +1,40 @@
+{
+  "type": "function",
+  "function": {
+    "name": "write_excel_sheet",
+    "description": "Scrive dati in un foglio Excel su OneDrive.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "file_id": {
+          "type": "string",
+          "description": "L'ID del file Excel su OneDrive."
+        },
+        "worksheet_name": {
+          "type": "string",
+          "description": "Il nome del foglio di lavoro."
+        },
+        "range_address": {
+          "type": "string",
+          "description": "L'indirizzo dell'intervallo (es. 'A1:B2')."
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": "I dati da scrivere organizzati come array di righe."
+        }
+      },
+      "required": [
+        "file_id",
+        "worksheet_name",
+        "range_address",
+        "values"
+      ]
+    }
+  }
+}

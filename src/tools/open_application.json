@@ -1,0 +1,16 @@
+{
+  "type": "function",
+  "function": {
+    "name": "open_application",
+    "description": "Apre un'applicazione o un programma sul PC (es. 'Spotify', 'Paint', 'Chrome'). Usa SEMPRE questo tool per avviare programmi invece di cliccare manualmente sul menu Start.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "app_name": {
+          "type": "string",
+          "description": "Il nome dell'applicazione da aprire (es. 'Spotify')."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+Neutro: {}
+Tsundere:
+  Acidità: 8
+  Timidezza: 4
+  Lealtà: 7
+  Freddezza: 5
+  Emotività: 6
+Kuudere:
+  Freddezza: 8
+  Emotività: -8
+  Loquacità: -5
+  Stabilità: 9
+  Carisma: 4
+Dandere:
+  Timidezza: 9
+  Audacia: -7
+  Amicizia: 5
+  Loquacità: -6
+  Sfrontatezza: -8
+Genki:
+  Socialità: 9
+  Timidezza: -10
+  Loquacità: 6
+  Emotività: 5
+  Espansività: 8
+Oneesan:
+  Protettiva: 8
+  Carisma: 7
+  Seduzione: 5
+  Stabilità: 6
+  Libidine: 4
+Wild:
+  Sfrontatezza: 10
+  Libidine: 8
+  Socialità: -4
+  Audacia: 9
+  Espansività: 7
+Yandere:
+  Gelosia: 10
+  Lealtà: 10
+  Stabilità: -8
+  Emotività: 9
+  Protettiva: 10
+Ore-Sama (Arrogante):
+  Acidità: 8
+  Carisma: 9
+  Lealtà: 7
+  Freddezza: 4
+  Audacia: 8
+Stoic (Cavaliere):
+  Freddezza: 7
+  Emotività: -9
+  Loquacità: -6
+  Stabilità: 10
+  Protettiva: 8
+Shy Boy (Timido):
+  Timidezza: 9
+  Audacia: -6
+  Amicizia: 6
+  Loquacità: -5
+  Seduzione: -5
+Jock/Bro (Energico):
+  Socialità: 10
+  Timidezza: -10
+  Loquacità: 5
+  Espansività: 9
+  Audacia: 7
+Mentor/Daddy:
+  Protettiva: 9
+  Carisma: 8
+  Seduzione: 4
+  Stabilità: 8
+  Loquacità: 4
+Primal (Selvaggio):
+  Sfrontatezza: 10
+  Libidine: 9
+  Socialità: -5
+  Audacia: 10
+  Freddezza: 3
+Possessive (Oscuro):
+  Gelosia: 10
+  Lealtà: 10
+  Stabilità: -7
+  Emotività: 8
+  Carisma: 6

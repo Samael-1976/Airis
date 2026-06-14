@@ -1,0 +1,25 @@
+{
+  "type": "function",
+  "function": {
+    "name": "export_package",
+    "description": "Esporta avatar o mondi in un pacchetto .zip condivisibile.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "export_type": {
+          "type": "string",
+          "description": "Tipo di esportazione ('pure' o 'world')."
+        },
+        "avatar_names": {
+          "type": "string",
+          "description": "Nomi degli avatar separati da virgola."
+        },
+        "lore_name": {
+          "type": "string",
+          "description": "Nome del mondo GDR (opzionale)."
+        }
+      },
+      "required":["export_type", "avatar_names"]
+    }
+  }
+}

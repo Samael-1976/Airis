@@ -1,0 +1,25 @@
+{
+  "type": "function",
+  "function": {
+    "name": "double_click",
+    "description": "Esegue un doppio click del mouse alle coordinate specificate o attuali.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "x": {
+          "type": "integer",
+          "description": "Coordinata X dello schermo (opzionale)."
+        },
+        "y": {
+          "type": "integer",
+          "description": "Coordinata Y dello schermo (opzionale)."
+        },
+        "button": {
+          "type": "string",
+          "description": "Tasto del mouse da premere ('left', 'right', 'middle')."
+        }
+      },
+      "required":[]
+    }
+  }
+}

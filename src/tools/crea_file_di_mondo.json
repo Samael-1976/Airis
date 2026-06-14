@@ -1,0 +1,37 @@
+{
+  "type": "function",
+  "function": {
+    "name": "crea_file_di_mondo",
+    "description": "Inizializza i file di stato (status.json) per un nuovo universo GDR.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "rpg_path_str": {
+          "type": "string",
+          "description": "Il percorso della cartella del GDR."
+        },
+        "lang": {
+          "type": "string",
+          "description": "Il codice lingua (es. 'it')."
+        },
+        "pg_name": {
+          "type": "string",
+          "description": "Il nome del giocatore."
+        },
+        "png_names": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Lista dei nomi dei personaggi non giocanti da includere."
+        }
+      },
+      "required": [
+        "rpg_path_str",
+        "lang",
+        "pg_name",
+        "png_names"
+      ]
+    }
+  }
+}

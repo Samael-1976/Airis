@@ -1,0 +1,21 @@
+{
+  "type": "function",
+  "function": {
+    "name": "applica_azione_di_mondo",
+    "description": "Applica modifiche allo stato del mondo GDR (es. spostamento personaggi).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "character_name": {
+          "type": "string",
+          "description": "Il nome del personaggio."
+        },
+        "action_tag": {
+          "type": "string",
+          "description": "Il tag dell'azione da applicare."
+        }
+      },
+      "required": ["character_name", "action_tag"]
+    }
+  }
+}

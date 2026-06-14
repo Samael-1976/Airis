@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "google_photos",
+    "description": "Cerca foto e album su Google Photos.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Cerca foto e album su Google Photos."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

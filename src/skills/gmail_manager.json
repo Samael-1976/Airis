@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "gmail_manager",
+    "description": "Legge e invia email tramite Gmail.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Legge e invia email tramite Gmail."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

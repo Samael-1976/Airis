@@ -1,0 +1,21 @@
+{
+  "type": "function",
+  "function": {
+    "name": "fetch_wikipedia_page",
+    "description": "Scarica il contenuto completo di una pagina Wikipedia.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Il titolo della pagina o la query di ricerca."
+        },
+        "lang": {
+          "type": "string",
+          "description": "La lingua della pagina (es. 'it', 'en')."
+        }
+      },
+      "required": ["query"]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "google_calendar",
+    "description": "Gestisce eventi nel Google Calendar.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Gestisce eventi nel Google Calendar."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

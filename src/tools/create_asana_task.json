@@ -1,0 +1,33 @@
+{
+  "type": "function",
+  "function": {
+    "name": "create_asana_task",
+    "description": "Crea un nuovo task in un progetto Asana.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "workspace_gid": {
+          "type": "string",
+          "description": "Il GID del workspace Asana."
+        },
+        "project_gid": {
+          "type": "string",
+          "description": "Il GID del progetto Asana."
+        },
+        "name": {
+          "type": "string",
+          "description": "Il nome del task."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Note o descrizione del task."
+        }
+      },
+      "required": [
+        "workspace_gid",
+        "project_gid",
+        "name"
+      ]
+    }
+  }
+}

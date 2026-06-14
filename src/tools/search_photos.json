@@ -1,0 +1,15 @@
+{
+  "type": "function",
+  "function": {
+    "name": "search_photos",
+    "description": "Cerca foto specifiche in Google Photos.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": { "type": "string", "description": "Descrizione delle foto da cercare." },
+        "max_results": { "type": "integer", "description": "Numero massimo di foto." }
+      },
+      "required": ["query"]
+    }
+  }
+}

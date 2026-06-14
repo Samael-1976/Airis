@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "jira_manager",
+    "description": "Gestisce ticket e issue su Jira.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Gestisce ticket e issue su Jira."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

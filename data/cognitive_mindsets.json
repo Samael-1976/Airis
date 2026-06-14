@@ -1,0 +1,54 @@
+{
+  "active_avatar_mindset": "gdr_legacy",
+  "active_gdr_mindset": "gdr_legacy",
+  "profiles": [
+    {
+      "id": "avatar_legacy",
+      "name": "t('mindsets.profiles.avatar_legacy')",
+      "context": "avatar",
+      "module_states": {
+        "consenso_assoluto": true,
+        "direttiva_standard": true,
+        "musa_protocol": true,
+        "core_identity": true,
+        "therapist_hikikomori": false,
+        "elderly_assistant": false,
+        "negative_rules": true,
+        "avatar_talking": true,
+        "general_behavior": true,
+        "sex_base": false,
+        "sex_fluids": false,
+        "sex_dirty_talk": false,
+        "jealousy_trigger": true,
+        "gdr_talking": true,
+        "gdr_formatting": true,
+        "gdr_group_dynamics": true,
+        "gdr_archetypes": true
+      }
+    },
+    {
+      "id": "gdr_legacy",
+      "name": "t('mindsets.profiles.gdr_legacy')",
+      "context": "gdr",
+      "module_states": {
+        "consenso_assoluto": true,
+        "direttiva_standard": true,
+        "musa_protocol": true,
+        "core_identity": true,
+        "negative_rules": true,
+        "avatar_talking": true,
+        "general_behavior": true,
+        "sex_base": false,
+        "sex_fluids": false,
+        "sex_dirty_talk": false,
+        "jealousy_trigger": true,
+        "gdr_talking": true,
+        "gdr_formatting": true,
+        "gdr_group_dynamics": true,
+        "gdr_archetypes": true,
+        "gdr_sheet_rules": true,
+        "elderly_assistant": false
+      }
+    }
+  ]
+}

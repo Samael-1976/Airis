@@ -1,0 +1,27 @@
+{
+  "type": "function",
+  "function": {
+    "name": "click_on_grid",
+    "description": "Clicca su una cella specifica della griglia visiva sovrapposta allo schermo (es. '5,3').",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "cell_coords": {
+          "type": "string",
+          "description": "Coordinate della cella (es. '5,3')."
+        },
+        "grid_rows": {
+          "type": "integer",
+          "description": "Numero di righe della griglia."
+        },
+        "grid_cols": {
+          "type": "integer",
+          "description": "Numero di colonne della griglia."
+        }
+      },
+      "required":[
+        "cell_coords"
+      ]
+    }
+  }
+}

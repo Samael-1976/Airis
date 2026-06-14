@@ -1,0 +1,31 @@
+{
+  "type": "function",
+  "function": {
+    "name": "generate_dalle3",
+    "description": "Genera un'immagine di alta qualità usando OpenAI DALL-E 3.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "prompt": {
+          "type": "string",
+          "description": "La descrizione dell'immagine."
+        },
+        "size": {
+          "type": "string",
+          "description": "Dimensioni (es. '1024x1024', '1024x1792')."
+        },
+        "quality": {
+          "type": "string",
+          "description": "Qualità ('standard' o 'hd')."
+        },
+        "style": {
+          "type": "string",
+          "description": "Stile ('vivid' o 'natural')."
+        }
+      },
+      "required": [
+        "prompt"
+      ]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "delete_skill",
+    "description": "Elimina una guida procedurale (Skill).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "filename": {
+          "type": "string",
+          "description": "Il nome del file della skill da eliminare (es. 'mia_skill.json')."
+        }
+      },
+      "required": ["filename"]
+    }
+  }
+}

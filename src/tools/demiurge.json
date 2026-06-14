@@ -1,0 +1,17 @@
+{
+  "type": "function",
+  "function": {
+    "name": "demiurge",
+    "description": "Attiva l'Agente Autonomo (Agentic AI) per prendere il controllo del PC. USALO TASSATIVAMENTE per scrivere codice, eseguire script, automatizzare il computer, navigare sul web in modo complesso o risolvere problemi che richiedono più passaggi logici.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task": {
+          "type": "string",
+          "description": "L'obiettivo finale che l'Agente Autonomo deve raggiungere sul PC."
+        }
+      },
+      "required": ["task"]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "function",
+  "function": {
+    "name": "create_todo_task",
+    "description": "Crea una nuova attività in Microsoft To Do.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "tasklist_id": {
+          "type": "string",
+          "description": "L'ID della lista di destinazione."
+        },
+        "title": {
+          "type": "string",
+          "description": "Il titolo dell'attività."
+        }
+      },
+      "required": [
+        "tasklist_id",
+        "title"
+      ]
+    }
+  }
+}

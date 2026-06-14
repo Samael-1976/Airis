@@ -1,0 +1,79 @@
+permissions:
+  connectors:
+    calendar:
+      enabled: true
+      type: local_ics
+      path: 
+    email:
+      enabled: false
+brain:
+  provider: google
+  api_key: ''
+backup:
+  enabled: false
+  mega_email: 
+  mega_password: 
+  interval_hours: 24
+perception:
+  hotword_detection:
+    enabled_by_default: false
+    hotword: ehi gemma
+    listen_timeout: 2
+    phrase_time_limit: 10
+  silence_threshold: 25
+proactive_memory:
+  reflection_time: '23:00'
+  reminder_check_interval_minutes: 10
+developer_settings:
+  verbose_logging: true
+parameters:
+  temperature: 0.9
+  top_p: 0.9
+  n_gpu_layers: 35
+  n_ctx: 16384
+model_selection:
+  base_models:
+  - 01 - Gemma-3-12B-it-Q4_K_M.gguf
+  - 02 - Mistral-Nemo-Inst-2407-12B-Thinking-Uncensored-HERETIC-HI-Claude-Opus.Q4_K_M.gguf
+  mmproj_models:
+  - gemma3-mmproj.gguf
+  lora_models: []
+  specialist_models:
+  - qwen2.5-coder-7b-instruct-q4_k_m.gguf
+  labour_models:
+  - 01 - functiongemma-270m-it-Q8_0.gguf
+  active_base_model: None
+  active_mmproj_model: None
+  active_lora_model: None
+  active_specialist_model: ''
+  specialist_mode_enabled: false
+  active_labour_model: 01 - functiongemma-270m-it-Q8_0.gguf
+  labour_model_on_cpu: true
+time_schedule:
+  morning: 06:00
+  afternoon: '12:00'
+  night: '19:00'
+  bed_time: '23:00'
+avatar_settings:
+  gemma:
+    active_set: Standard
+first_run: false
+imagination:
+  enabled: true
+  frequency: medium
+  engine: flux
+demiurge:
+  enabled: true
+  provider: labour
+  model: 01 - functiongemma-270m-it-Q8_0.gguf
+  api_key: ''
+  api_base: ''
+  auto_run: true
+  safe_mode: false
+  labour_model_on_cpu: true
+tts_settings:
+  active_engine: vibevoice
+  vibevoice_url: http://localhost:8880
+specialist:
+  keep_loaded: false
+  prompts: []

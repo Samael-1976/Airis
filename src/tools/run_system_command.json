@@ -1,0 +1,23 @@
+{
+  "type": "function",
+  "function": {
+    "name": "run_system_command",
+    "description": "Esegue un comando di shell/terminale sul sistema operativo. STRUMENTO PRINCIPALE PER AVVIARE APPLICAZIONI (es. 'start spotify', 'start chrome', 'calc').",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "type": "string",
+          "description": "Il comando da eseguire (es. 'start spotify')."
+        },
+        "background": {
+          "type": "boolean",
+          "description": "Se True, esegue il comando senza attendere la fine (non bloccante)."
+        }
+      },
+      "required":[
+        "command"
+      ]
+    }
+  }
+}

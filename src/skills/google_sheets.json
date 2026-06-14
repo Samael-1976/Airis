@@ -1,0 +1,19 @@
+{
+  "type": "function",
+  "function": {
+    "name": "google_sheets",
+    "description": "Legge e scrive dati su Google Sheets.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "task_description": {
+          "type": "string",
+          "description": "Legge e scrive dati su Google Sheets."
+        }
+      },
+      "required": [
+        "task_description"
+      ]
+    }
+  }
+}

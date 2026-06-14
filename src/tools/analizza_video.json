@@ -1,0 +1,23 @@
+{
+  "type": "function",
+  "function": {
+    "name": "analizza_video",
+    "description": "Estrae frame sequenziali da un video per analizzare movimento, azioni e cambiamenti temporali.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "video_path_str": {
+          "type": "string",
+          "description": "Il percorso del file video da analizzare."
+        },
+        "user_query": {
+          "type": "string",
+          "description": "La domanda specifica o il task di analisi sul video."
+        }
+      },
+      "required": [
+        "video_path_str"
+      ]
+    }
+  }
+}

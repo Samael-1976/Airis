@@ -1,0 +1,21 @@
+{
+  "type": "function",
+  "function": {
+    "name": "web_search",
+    "description": "Esegue una ricerca su DuckDuckGo e restituisce i primi risultati.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "La query di ricerca."
+        },
+        "num_results": {
+          "type": "integer",
+          "description": "Numero massimo di risultati da restituire."
+        }
+      },
+      "required": ["query"]
+    }
+  }
+}

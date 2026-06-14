@@ -1,0 +1,29 @@
+{
+  "type": "function",
+  "function": {
+    "name": "genera_voce",
+    "description": "Genera un file audio TTS (Text-to-Speech) usando il motore configurato (Kokoro/VibeVoice).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Il testo da pronunciare."
+        },
+        "intent": {
+          "type": "string",
+          "description": "L'intento emotivo associato."
+        },
+        "preferred_voice": {
+          "type": "string",
+          "description": "Il file della voce (opzionale)."
+        },
+        "preferred_lang_code": {
+          "type": "string",
+          "description": "Il codice lingua (opzionale)."
+        }
+      },
+      "required":["text", "intent"]
+    }
+  }
+}

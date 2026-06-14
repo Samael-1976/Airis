@@ -1,0 +1,26 @@
+/* Reset totale per garantire che l'app occupi tutto lo schermo su mobile */
+
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  max-width: none; /* Rimuove il limite di larghezza di Vite */
+  text-align: left; /* Rimuove l'allineamento centrale di Vite */
+  overflow: hidden; /* Previene scroll indesiderati del body */
+}
+
+/* Rimuove animazioni logo di default che non servono */
+.logo {
+  display: none;
+}
+
+/* Assicura che html e body siano full height */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Gestiamo lo scroll internamente ai componenti */
+  background-color: hsl(var(--background)); /* Usa il colore di sfondo del tema */
+}

@@ -1,0 +1,21 @@
+{
+  "type": "function",
+  "function": {
+    "name": "draw_shape",
+    "description": "Muove il mouse per disegnare forme geometriche (cerchio, cuore, spirale) sullo schermo.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "shape": {
+          "type": "string",
+          "description": "La forma da disegnare ('heart', 'circle', 'spiral')."
+        },
+        "size": {
+          "type": "integer",
+          "description": "La dimensione della forma in pixel."
+        }
+      },
+      "required": ["shape"]
+    }
+  }
+}

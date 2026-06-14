@@ -80,9 +80,9 @@ AIRIS-PROJECT breaks down language barriers by natively localizing both intellec
 ### Launch the ecosystem in 60 seconds [1]:
 
 ```bash
-1. Download the file from: 
-2. extract the file
-3. cd Airis
+# 1. Download the file from: https://www.omnia-diffusion.com/airis/Airis-v20260614.rar
+extract the file
+cd Airis
 
 # 2. Awaken the Soul
 # On Windows:

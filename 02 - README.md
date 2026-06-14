@@ -8,10 +8,10 @@
 > 
 > **🎮 TO USE AIRIS (PLUG & PLAY):**
 > Download the complete, ready-to-use standalone package (including all models and binaries) from here:
-> **[INSERISCI_QUI_IL_TUO_LINK]**
+> **[https://www.omnia-diffusion.com/airis/Airis-v20260614.rar](https://www.omnia-diffusion.com/airis/Airis-v20260614.rar)**
 > 
 > **🛠️ TO CONTRIBUTE TO DEVELOPMENT:**
-> Clone this repository and follow the developer setup instructions below.
+> > Not being a programmer, but just a very hard-headed person, if you want to contribute to the development of AIRIS, any help is welcome.
 > 
 > ---
 

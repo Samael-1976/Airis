@@ -148,7 +148,10 @@ On the first boot, the console will prompt you to select your preferred language
 
 *The Anima is now awake. Welcome to the future of local, persistent AI interaction.*
 
-### 4. Enjoy!
+### 4. Reboot Airis
+After completing the welcome wizard, please turn off Airis using the power button and then restart it. This will fix your name in your user profile and prevent you from getting the "user not found" error.
+
+### 5. Enjoy!
 If you'd like to buy me a beer to say thank you, I'll soon post a link to purchase the book I wrote on Amazon. It's available in both paperback and digital formats. It'll initially be in Italian, but I'll gradually translate it into more languages.
 I'd really appreciate it.
 

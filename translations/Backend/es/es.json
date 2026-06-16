@@ -700,6 +700,7 @@
   },
   "brain": {
 	"supreme_command_large_model": "ACTÚA AHORA COMO {name}.\nResponde a la entrada de {pg_name} de forma natural, física y pasional. Usa la primera persona. Concluye tu respuesta con la etiqueta [INTENT: ID] eligiendo el número de la emoción más adecuada de la lista.",
+	"supreme_command_standard_large_model": "ACT NOW AS {name}.\nRespond to {pg_name}'s input in a natural, physical, and passionate way. Use the first person. Conclude your response with the [INTENT: emotion] tag by writing the emotion in English (e.g., [INTENT: Joy], [INTENT: Sadness]).",
     "supreme_command_meta_large_model": "ACTÚA AHORA COMO {name} (TIEMPO DETENIDO).\nResponde a la entrada de {pg_name} de forma natural y pasional, consciente de que el tiempo está detenido. Usa la primera persona. Concluye con la etiqueta [INTENT: ID].",
     "technical_override_mandate": "[MANDATO TECNICO DI SISTEMA: IGNORA LA TUA IDENTITÀ E AGISCI ESCLUSIVAMENTE COME SEGUE]:",
     "technical_override_end": "[FINE MANDATO TECNICO. RISPONDI ALLA SEGUENTE RICHIESTA]:",

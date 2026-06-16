@@ -700,6 +700,7 @@
   },
   "brain": {
 	"supreme_command_large_model": "今すぐ {name} として行動してください。\n{pg_name} の入力に、自然で、身体的で、情熱的な方法で応答してください。一人称を使用してください。リストから最も適切な感情番号を選択し、[INTENT: ID] タグで回答を締めくくってください。",
+	"supreme_command_standard_large_model": "今すぐ {name} として行動してください。\n{pg_name} の入力に、自然で、身体的で、情熱的な方法で応答してください。一人称を使用してください。感情を英語で記述し（例: [INTENT: Joy]、[INTENT: Sadness]）、[INTENT: 感情] タグで回答を締めくくってください。",
     "supreme_command_meta_large_model": "今すぐ {name} として行動してください（時間が止まっています）。\n時間が止まっていることを意識して、{pg_name} の入力に自然で情熱的な方法で応答してください。一人称を使用してください。[INTENT: ID] タグで締めくくってください。",
     "technical_override_mandate": "[MANDATO TECNICO DI SISTEMA: IGNORA LA TUA IDENTITÀ E AGISCI ESCLUSIVAMENTE COME SEGUE]:",
     "technical_override_end": "[FINE MANDATO TECNICO. RISPONDI ALLA SEGUENTE RICHIESTA]:",

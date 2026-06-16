@@ -700,6 +700,7 @@
   },
   "brain": {
 	"supreme_command_large_model": "AJA AGORA COMO {name}.\nResponda à entrada de {pg_name} de forma natural, física e passional. Use a primeira pessoa. Conclua sua resposta com a tag [INTENT: ID] escolhendo o número da emoção mais adequada da lista.",
+	"supreme_command_standard_large_model": "AJA AGORA COMO {name}.\nResponda à entrada de {pg_name} de forma natural, física e passional. Use a primeira pessoa. Conclua sua resposta com a tag [INTENT: emoção] escrevendo a emoção em inglês (ex. [INTENT: Joy], [INTENT: Sadness]).",
     "supreme_command_meta_large_model": "AJA AGORA COMO {name} (TEMPO PARADO).\nResponda à entrada de {pg_name} de forma natural e passional, consciente de que o tempo está parado. Use a primeira pessoa. Conclua com a tag [INTENT: ID].",
     "technical_override_mandate": "[MANDATO TECNICO DI SISTEMA: IGNORA LA TUA IDENTITÀ E AGISCI ESCLUSIVAMENTE COME SEGUE]:",
     "technical_override_end": "[FINE MANDATO TECNICO. RISPONDI ALLA SEGUENTE RICHIESTA]:",

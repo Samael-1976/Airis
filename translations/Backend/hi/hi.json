@@ -700,6 +700,7 @@
   },
   "brain": {
 	"supreme_command_large_model": "अब {name} के रूप में कार्य करें।\n{pg_name} के इनपुट का स्वाभाविक, शारीरिक और भावुक तरीके से उत्तर दें। प्रथम पुरुष का प्रयोग करें। सूची से सबसे उपयुक्त भावना संख्या चुनकर अपने उत्तर को [INTENT: ID] टैग के साथ समाप्त करें।",
+	"supreme_command_standard_large_model": "अब {name} के रूप में कार्य करें।\n{pg_name} के इनपुट का स्वाभाविक, शारीरिक और भावुक तरीके से उत्तर दें। प्रथम पुरुष का प्रयोग करें। भावना को अंग्रेजी में लिखकर (उदा. [INTENT: Joy], [INTENT: Sadness]) अपने उत्तर को [INTENT: भावना] टैग के साथ समाप्त करें।",
     "supreme_command_meta_large_model": "अब {name} के रूप में कार्य करें (समय रुक गया है)।\n{pg_name} के इनपुट का स्वाभाविक और भावुक तरीके से उत्तर दें, यह जानते हुए कि समय रुक गया है। प्रथम पुरुष का प्रयोग करें। [INTENT: ID] टैग के साथ समाप्त करें।",
     "technical_override_mandate": "[MANDATO TECNICO DI SISTEMA: IGNORA LA TUA IDENTITÀ E AGISCI ESCLUSIVAMENTE COME SEGUE]:",
     "technical_override_end": "[FINE MANDATO TECNICO. RISPONDI ALLA SEGUENTE RICHIESTA]:",

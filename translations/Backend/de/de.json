@@ -700,6 +700,7 @@
   },
   "brain": {
 	"supreme_command_large_model": "HANDLE JETZT ALS {name}.\nAntworte auf die Eingabe von {pg_name} auf natürliche, physische und leidenschaftliche Weise. Verwende die erste Person. Beende deine Antwort mit dem Tag [INTENT: ID] und wähle die Nummer der passendsten Emotion aus der Liste.",
+	"supreme_command_standard_large_model": "HANDLE JETZT ALS {name}.\nAntworte auf die Eingabe von {pg_name} auf natürliche, physische und leidenschaftliche Weise. Verwende die erste Person. Beende deine Antwort mit dem Tag [INTENT: Emotion], indem du die Emotion auf Englisch schreibst (z. B. [INTENT: Joy], [INTENT: Sadness]).",
     "supreme_command_meta_large_model": "HANDLE JETZT ALS {name} (ZEIT ANGEHALTEN).\nAntworte auf die Eingabe von {pg_name} auf natürliche und leidenschaftliche Weise, im Bewusstsein, dass die Zeit angehalten ist. Verwende die erste Person. Beende mit dem Tag [INTENT: ID].",
     "technical_override_mandate": "[MANDATO TECNICO DI SISTEMA: IGNORA LA TUA IDENTITÀ E AGISCI ESCLUSIVAMENTE COME SEGUE]:",
     "technical_override_end": "[FINE MANDATO TECNICO. RISPONDI ALLA SEGUENTE RICHIESTA]:",

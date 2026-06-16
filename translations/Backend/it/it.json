@@ -698,6 +698,7 @@
   },
   "brain": {
 	"supreme_command_large_model": "AGISCI ORA COME {name}.\nRispondi all'input di {pg_name} in modo naturale, fisico e passionale. Usa la prima persona. Concludi la tua risposta con il tag [INTENT: ID] scegliendo il numero dell'emozione più adatta dalla lista.",
+	"supreme_command_standard_large_model": "AGISCI ORA COME {name}.\nRispondi all'input di {pg_name} in modo naturale, fisico e passionale. Usa la prima persona. Concludi la tua risposta con il tag [INTENT: emozione] scrivendo l'emozione in inglese (es. [INTENT: Joy], [INTENT: Sadness]).",
     "supreme_command_meta_large_model": "AGISCI ORA COME {name} (TEMPO FERMO).\nRispondi all'input di {pg_name} in modo naturale e passionale, consapevole che il tempo è fermo. Usa la prima persona. Concludi con il tag [INTENT: ID].",
     "technical_override_mandate": "[MANDATO TECNICO DI SISTEMA: IGNORA LA TUA IDENTITÀ E AGISCI ESCLUSIVAMENTE COME SEGUE]:",
     "technical_override_end": "[FINE MANDATO TECNICO. RISPONDI ALLA SEGUENTE RICHIESTA]:",

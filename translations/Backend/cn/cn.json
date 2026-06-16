@@ -700,6 +700,7 @@
   },
   "brain": {
 	"supreme_command_large_model": "现在作为 {name} 行动。\n以自然、身体和充满激情的方式回应 {pg_name} 的输入。使用第一人称。通过从列表中选择最合适的情感编号，以 [INTENT: ID] 标签结束你的回答。",
+	"supreme_command_standard_large_model": "现在作为 {name} 行动。\n以自然、身体和充满激情的方式回应 {pg_name} 的输入。使用第一人称。用英文写下情感（例如 [INTENT: Joy], [INTENT: Sadness]），以 [INTENT: 情感] 标签结束你的回答。",
     "supreme_command_meta_large_model": "现在作为 {name} 行动（时间停止）。\n以自然和充满激情的方式回应 {pg_name} 的输入，意识到时间已经停止。使用第一人称。以 [INTENT: ID] 标签结束。",
     "technical_override_mandate": "[MANDATO TECNICO DI SISTEMA: IGNORA LA TUA IDENTITÀ E AGISCI ESCLUSIVAMENTE COME SEGUE]：",
     "technical_override_end": "[FINE MANDATO TECNICO. RISPONDI ALLA SEGUENTE RICHIESTA]：",

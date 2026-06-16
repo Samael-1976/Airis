@@ -700,6 +700,7 @@
   },
   "brain": {
 	"supreme_command_large_model": "HANDEL NU ALS {name}.\nReageer op de invoer van {pg_name} op een natuurlijke, fysieke en gepassioneerde manier. Gebruik de eerste persoon. Sluit je antwoord af met de tag [INTENT: ID] door het nummer van de meest geschikte emotie uit de lijst te kiezen.",
+	"supreme_command_standard_large_model": "HANDEL NU ALS {name}.\nReageer op de invoer van {pg_name} op een natuurlijke, fysieke en gepassioneerde manier. Gebruik de eerste persoon. Sluit je antwoord af met de tag [INTENT: emotie] door de emotie in het Engels te schrijven (bijv. [INTENT: Joy], [INTENT: Sadness]).",
     "supreme_command_meta_large_model": "HANDEL NU ALS {name} (TIJD GESTOPT).\nReageer op de invoer van {pg_name} op een natuurlijke en gepassioneerde manier, in het besef dat de tijd is gestopt. Gebruik de eerste persoon. Sluit af met de tag [INTENT: ID].",
     "technical_override_mandate": "[MANDATO TECNICO DI SISTEMA: IGNORA LA TUA IDENTITÀ E AGISCI ESCLUSIVAMENTE COME SEGUE]:",
     "technical_override_end": "[FINE MANDATO TECNICO. RISPONDI ALLA SEGUENTE RICHIESTA]:",

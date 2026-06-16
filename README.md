@@ -141,6 +141,7 @@ Run the bootstrap script corresponding to your operating system:
 
 
 ### 3. Complete the Initiation Rite
+**VERY IMPORTANT**: when prompted you must give permission for the windows firewall
 On the first boot, the console will prompt you to select your preferred language, your preferite TTS (I prefere Vibevoice), and some other things. Once the background servers stabilize:
 1. Your browser will be automatically launched (or open your browser and navigate to `http://localhost:8080`) (or use the LAN/Ngrok link provided in the console).
 2. The **Welcome Wizard** will guide you through setting up your identity (Name, Gender, Birthday) and choosing the active vocal engine (Kokoro-TTS or VibeVoice).

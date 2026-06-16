@@ -121,7 +121,7 @@ Experience **The Plug & Play Revolution** in three simple steps. No external dep
 Download the latest standalone release package:
 
 1. Download the file from: https://aka.ms/vs/17/release/vc_redist.x64.exe and intall it
-1. Download the file from: https://www.omnia-diffusion.com/airis/Airis-v20260616.rar
+1. Download the file from: https://www.omnia-diffusion.com/airis/Airis-v20260616b.rar
 2. extract the file
 3. cd Airis (or the name of the directory where you extracted the package)
 

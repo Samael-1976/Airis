@@ -2457,8 +2457,13 @@ class CervelloTrinitario:
         
         # --- [FIX CRITICO] GATEKEEPER COGNITIVO (MODALITÀ STANDARD) ---
         if getattr(self, "is_large_model", False):
-            comando_supremo_large = t("brain.supreme_command_large_model", name=nome_png.upper(), pg_name=pg_name)
-            caos_parts.append(comando_supremo_large)
+            # In Modalità Standard NON passiamo la lista numerata delle emozioni per risparmiare token.
+            # Dobbiamo usare un comando specifico che non chieda all'LLM di cercare una lista inesistente,
+            # altrimenti va in cortocircuito logico e genera scena muta.
+            comando_supremo_large_std = t("brain.supreme_command_standard_large_model", name=nome_png.upper(), pg_name=pg_name)
+            if comando_supremo_large_std.startswith("["): # Fallback di sicurezza se manca la traduzione
+                comando_supremo_large_std = f"AGISCI ORA COME {nome_png.upper()}.\nRispondi all'input di {pg_name} in modo naturale, fisico e passionale. Usa la prima persona. Concludi la tua risposta con il tag [INTENT: emozione] scrivendo l'emozione in inglese (es. [INTENT: Joy], [INTENT: Sadness])."
+            caos_parts.append(comando_supremo_large_std)
         else:
             caos_parts.append(comando_supremo)
 

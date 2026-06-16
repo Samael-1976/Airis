@@ -5434,6 +5434,17 @@ class CicloVitale:
             if self.cervello:
                 self.cervello.update_pg_name(self.pg_name)
 
+            # --- [FIX CRITICO] RE-INGESTIONE BACKSTORY POST-WIZARD ---
+            # Quando l'utente cambia nome (es. da 'Creatore' a 'Beppe'), dobbiamo rigenerare
+            # il Super-Ricordo nel Vector DB, altrimenti l'Anima soffrirà di amnesia.
+            if self.memory:
+                companions = self._get_all_companions_names()
+                self.memory.ingest_avatar_backstory(
+                    self.active_avatar_name, 
+                    on_complete=self._update_super_ricordo_cache,
+                    companions_list=companions
+                )
+
             self.logger.log(
                 t(
                     "log.hot_reload_profile",

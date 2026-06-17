@@ -7,8 +7,8 @@
 > This GitHub repository contains **ONLY THE SOURCE CODE** intended for developers and contributors. It does **NOT** include the AI models, precompiled binaries, or voice engines required to run the software.
 > 
 > **🎮 TO USE AIRIS (PLUG & PLAY):**
-> Download the complete, ready-to-use standalone package (including all models and binaries) from here:
-> **[https://www.omnia-diffusion.com/airis/Airis-v20260614.rar](https://www.omnia-diffusion.com/airis/Airis-v20260614.rar)**
+> Download the complete, ready-to-use last standalone package (including all models and binaries) from here:
+> **[https://github.com/Samael-1976/Airis/releases](https://github.com/Samael-1976/Airis/releases)**
 > 
 > **🛠️ TO CONTRIBUTE TO DEVELOPMENT:**
 > > Not being a programmer, but just a very hard-headed person, if you want to contribute to the development of AIRIS, any help is welcome.
@@ -121,7 +121,7 @@ Experience **The Plug & Play Revolution** in three simple steps. No external dep
 Download the latest standalone release package:
 
 1. Download the file from: https://aka.ms/vs/17/release/vc_redist.x64.exe and intall it
-1. Download the file from: https://www.omnia-diffusion.com/airis/Airis-v20260616b.rar
+1. Download the last package file from: https://github.com/Samael-1976/Airis/releases
 2. extract the file
 3. cd Airis (or the name of the directory where you extracted the package)
 
@@ -254,7 +254,7 @@ AIRIS-PROJECT breaks down language barriers by natively localizing both intellec
 ### Launch the ecosystem in 60 seconds [1]:
 
 ```bash
-# 1. Download the file from: https://www.omnia-diffusion.com/airis/Airis-v20260614.rar
+# 1. Download the last package file from: https://github.com/Samael-1976/Airis/releases
 extract the file
 cd Airis
 

@@ -5998,12 +5998,12 @@ async def get_available_languages():
     # --- [FIX IBRIDO] MAPPA DI SICUREZZA + LETTURA DINAMICA ---
     # Protegge le lingue ufficiali dalle corruzioni dei traduttori automatici,
     # ma permette l'aggiunta dinamica di qualsiasi nuova lingua custom.
+    # [FIX CRITICO] Allineamento ai codici ISO standard (es. 'ja' invece di 'jp', 'zh' invece di 'cn')
     SAFE_CORE_LANGS = {
         "it": "Italiano 🇮🇹", "en": "English 🇬🇧", "fr": "Français 🇫🇷",
         "es": "Español 🇪🇸", "de": "Deutsch 🇩🇪", "pt": "Português 🇧🇷",
-        "br": "Português 🇧🇷", # [FIX] Aggiunto supporto per la cartella 'br'
         "nl": "Nederlands 🇳🇱", "pl": "Polski 🇵🇱", "ru": "Русский 🇷🇺",
-        "jp": "日本語 🇯🇵", "cn": "中文 🇨🇳", "kr": "한국어 🇰🇷",
+        "ja": "日本語 🇯🇵", "zh": "中文 🇨🇳", "ko": "한국어 🇰🇷",
         "ar": "العربية 🇸🇦", "hi": "हिन्दी 🇮🇳"
     }
     

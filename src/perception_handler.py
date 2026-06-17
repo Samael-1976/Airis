@@ -1031,12 +1031,19 @@ class PerceptionHandler:
             self.logger.log(t("log.perception.webcam_reacquire"))
             try:
                 self.video_capture = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+                
+                # --- [FIX CRITICO] FALLBACK WEBCAM ---
+                if not self.video_capture.isOpened():
+                    self.video_capture = cv2.VideoCapture(0)
+                    
                 if not self.video_capture.isOpened():
                     self.logger.log(t("log.perception.webcam_reacquire_error"))
+                    self.video_capture = None
                 else:
                     self.logger.log(t("log.perception.webcam_reacquired"))
             except Exception as e:
                 self.logger.log(t("log.perception.webcam_reacquire_critical", error=e))
+                self.video_capture = None
             finally:
                 self.camera_paused.clear()
 
@@ -1044,9 +1051,18 @@ class PerceptionHandler:
         self.is_running = True
         self.logger.log(t("log.perception.webcam_open_attempt"))
         try:
+            # Tentativo 1: DirectShow (Più veloce su Windows, ma sensibile ai driver)
             self.video_capture = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+            
+            # --- [FIX CRITICO] FALLBACK WEBCAM ---
+            # Se DirectShow fallisce (es. telecamere virtuali o permessi), proviamo il backend di default
             if not self.video_capture.isOpened():
-                print(t("log.perception.webcam_open_error")),
+                self.logger.warning("DirectShow fallito. Tento fallback sul backend video predefinito...")
+                self.video_capture = cv2.VideoCapture(0)
+                
+            if not self.video_capture.isOpened():
+                print(t("log.perception.webcam_open_error"))
+                self.video_capture = None
             else:
                 self.vision_thread = threading.Thread(
                     target=self._vision_loop, daemon=True
@@ -1295,6 +1311,13 @@ class PerceptionHandler:
         """
         Monitora l'ambiente per suoni di allarme usando YAMNet (Orecchio Assoluto).
         """
+        # --- [FIX CRITICO] BYPASS MICROFONO FANTASMA ---
+        # Se l'inizializzazione principale ha fallito (nessun microfono di default),
+        # disattiviamo silenziosamente il Care Audio Loop per evitare il crash di PyAudio (Errno -9996).
+        if self.microphone is None:
+            self.logger.warning("Care OS Audio disattivato: Nessun microfono di default rilevato sul sistema.")
+            return
+
         self.logger.log(t("log.perception.yamnet_active"), "CARE")
 
         # Inizializza YAMNet se non fatto

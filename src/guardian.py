@@ -780,15 +780,52 @@ class Guardian:
     # --- FINE NUOVI METODI ---
 
     def normalize_lang_code(self, lang: str) -> str:
-        """Converte codici come 'i' in 'it' per la risoluzione dei percorsi (v20.2)."""
+        """
+        Converte codici come 'i' in 'it' per la risoluzione dei percorsi (v20.2).
+        [FIX CRITICO] Mappa di normalizzazione assoluta per prevenire l'Amnesia Lore e i crash del Frontend.
+        Forza tutti i codici non standard (es. 'sp', 'br', 'cn') ai codici ISO a due lettere usati nelle cartelle.
+        """
         if not lang:
             return "it"
-        l = lang.lower()
+        l = lang.lower().strip()
+        
         # Se è un codice VibeVoice (es. it-Gemma_woman), estrai la prima parte
         if "-" in l and "_" in l:
             l = l.split("-")[0]
 
-        return self._LANG_MAP.get(l, l)
+        # Mappa di normalizzazione assoluta (Alias -> Codice ISO Standard Cartelle)
+        lang_map = {
+            # Italiano
+            "italiano": "it", "ita": "it", "i": "it", "vv": "it",
+            # Inglese
+            "english": "en", "eng": "en", "a": "en", "b": "en",
+            # Spagnolo (Fix 'sp' -> 'es')
+            "spanish": "es", "español": "es", "sp": "es", "spa": "es", "e": "es",
+            # Francese
+            "french": "fr", "français": "fr", "fra": "fr", "f": "fr",
+            # Tedesco
+            "german": "de", "deutsch": "de", "ger": "de",
+            # Portoghese/Brasiliano (Fix 'br' -> 'pt')
+            "portuguese": "pt", "português": "pt", "br": "pt", "bra": "pt", "pt-br": "pt", "p": "pt",
+            # Giapponese (Fix 'jp' -> 'ja')
+            "japanese": "ja", "日本語": "ja", "jp": "ja", "jpn": "ja", "j": "ja",
+            # Cinese (Fix 'cn' -> 'zh')
+            "chinese": "zh", "中文": "zh", "cn": "zh", "zho": "zh", "chi": "zh", "z": "zh",
+            # Coreano (Fix 'kr' -> 'ko')
+            "korean": "ko", "한국어": "ko", "kr": "ko", "kor": "ko",
+            # Arabo
+            "arabic": "ar", "العربية": "ar", "ara": "ar",
+            # Olandese
+            "dutch": "nl", "nederlands": "nl", "nld": "nl",
+            # Polacco
+            "polish": "pl", "polski": "pl", "pol": "pl",
+            # Russo
+            "russian": "ru", "русский": "ru", "rus": "ru",
+            # Hindi
+            "hindi": "hi", "हिन्दी": "hi", "hin": "hi", "h": "hi"
+        }
+        
+        return lang_map.get(l, l)
 
     def _save_main_config(self) -> bool:
         """Salva il file config.yaml principale."""

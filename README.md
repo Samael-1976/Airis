@@ -226,7 +226,7 @@ The cooperation between the AIRIS-PROJECT modules follows a sequential and mathe
 AIRIS-PROJECT breaks down language barriers by natively localizing both intellect (text comprehension and processing) and expression (speech synthesis and pronunciation) across **14 key languages**:
 
 | Language | ISO Code |
-| :--- | :---: | :---: | :---: | :--- |
+| :--- | :---: |
 | **Arabic** | `ar` |
 | **Chinese** | `ch` | 
 | **Dutch** | `nl` |

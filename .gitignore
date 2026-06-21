@@ -43,6 +43,13 @@ tts_engine/VibeVoice/vllm_plugin
 
 # 4. Dati Sensibili e Credenziali (SICUREZZA ASSOLUTA)
 config/network_uid.txt
+config/credentials.yaml
+config/credentials.yaml.txt
+config/google_client_secret.json
+config/google_token.json
+config/user/
+lang.cfg
+updates/
 
 # 5. Database, Memorie e Sandbox
 data/memory_db/
@@ -50,6 +57,13 @@ data/sandbox/
 logs/
 backups/
 exports/
+data/heart_*.json
+data/last_avatar.json
+data/cognitive_mindsets.json
+data/learning_state.json
+data/shadow_buffer.json
+lore/**/WORLD/Status.json
+lore/**/WORLD/snapshots/
 
 # 6. File Temporanei
 temp_audio/

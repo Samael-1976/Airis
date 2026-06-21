@@ -3162,8 +3162,10 @@ class CervelloTrinitario:
 
             # --- MODIFICA v32.0: USO COSTANTI DINAMICHE ---
             prompt = self._get_brain_prompt("oracolo")
-            # [FIX CRITICO] Aumentato limite a 25.000 caratteri per leggere intere pagine Wiki
-            prompt = self._safe_replace(prompt, "page_text", page_text[:25000])
+            # [FIX CRITICO] Ridotto a 12.000 caratteri (circa 4000 token). Un numero maggiore
+            # causava un Out Of Memory (Context Window Exceeded) sui modelli con n_ctx standard a 8192,
+            # impedendo la generazione dell'intero JSON della scheda.
+            prompt = self._safe_replace(prompt, "page_text", page_text[:12000])
             prompt += self._get_language_instruction(lang)
 
             self.logger.log(t("log.brain_oracle_sending"))
@@ -3219,7 +3221,8 @@ class CervelloTrinitario:
 
             llm_response_str = self._genera_pensiero(
                 messages,
-                temperature=0.1,
+                temperature=0.2, # [FIX] Aumentato da 0.1 a 0.2 per evitare loop di punteggiatura nel reasoning
+                max_tokens=4096, # [FIX CRITICO] Garantisce lo spazio vitale per generare un JSON così massiccio
                 response_format={"type": "json_object", "schema": schema},
             )
 
@@ -4504,9 +4507,15 @@ class CervelloTrinitario:
         response_str = self._genera_pensiero(
             messages,
             temperature=0.0,
+            max_tokens=1024, # [FIX CRITICO] Aggiunto spazio esplicito per permettere il ragionamento
             response_format={"type": "json_object", "schema": schema},
             in_gdr_mode=True
         )
+
+        # [FIX CRITICO] Scudo anti-vuoto
+        if not response_str or not response_str.strip():
+            self.logger.error("Estrazione Intento GDR: Risposta LLM completamente vuota (Token Exhaustion).")
+            return {"azione": "nessuna"}
 
         try:
             # --- [FIX CRITICO] PULIZIA MARKDOWN JSON ---
@@ -5028,10 +5037,15 @@ class CervelloTrinitario:
 
         response_str = self._genera_pensiero(
             messages,
-            temperature=0.1,
+            temperature=0.2, # [FIX] Alzato leggermente per prevenire incastri sintattici
+            max_tokens=4096, # [FIX CRITICO] Garantisce spazio vitale assoluto all'estrazione
             response_format={"type": "json_object", "schema": schema},
             override_brain=override_brain
         )
+
+        if not response_str or not response_str.strip():
+            self.logger.error("GraphRAG: Risposta LLM vuota durante l'estrazione.")
+            return []
 
         try:
             clean_str = response_str.replace("```json", "").replace("```", "").strip()

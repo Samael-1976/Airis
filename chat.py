@@ -10171,6 +10171,41 @@ class CicloVitale:
                         m_clean,
                         metadata={"type": "learned", "source": url, "topic": topic},
                     )
+                    
+                    # --- [FIX CRITICO] INTEGRAZIONE GRAPHRAG SU AUTO-APPRENDIMENTO ---
+                    # Estrae le relazioni semantiche (Soggetto -> Predicato -> Oggetto) 
+                    # dalle memorie appena apprese e le inietta nella Mappa Mentale.
+                    # Eseguito rigorosamente sul Cervello Principale in background.
+                    def _async_study_graph_extraction(text_to_analyze: str, topic_name: str):
+                        try:
+                            # [FIX CRITICO CACHE] Attesa strategica. Diamo al thread principale il tempo 
+                            # di acquisire il Lock dell'LLM per rispondere all'utente, evitando starvation.
+                            time.sleep(3.0)
+                            
+                            # Chiamata al Cervello Principale (gestito sempre e solo dal modello primario)
+                            triplets = self.cervello.estrai_triplette_conoscenza(text_to_analyze, lang=self.user_lang)
+                            if triplets:
+                                context_tag = f"Studio_{topic_name.replace(' ', '_')}"
+                                for t_data in triplets:
+                                    subj = t_data.get("subject")
+                                    pred = t_data.get("predicate")
+                                    obj = t_data.get("object")
+                                    if subj and pred and obj:
+                                        # Salva nel DB SQL del Grafo
+                                        t_id = self.db_manager.add_graph_triplet(subj, pred, obj, context=context_tag)
+                                        # Indicizza nel Vector DB del Grafo
+                                        if t_id and self.memory:
+                                            self.memory.add_graph_triplet_vector(t_id, subj, pred, obj, context_tag)
+                                self.logger.log(f"GraphRAG: Estratte {len(triplets)} relazioni dallo studio su '{topic_name}'.", "MEMORY")
+                        except Exception as e:
+                            self.logger.error(f"Errore estrazione GraphRAG durante l'apprendimento: {e}")
+
+                    threading.Thread(
+                        target=_async_study_graph_extraction,
+                        args=(m_clean, topic),
+                        daemon=True
+                    ).start()
+                    
                 num += 1
         # [FIX] Salvataggio come System e is_hidden=True per non sporcare la UI della chat
         if num > 0:

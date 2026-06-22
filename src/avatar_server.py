@@ -3863,7 +3863,8 @@ async def get_knowledge_graph():
     if not db_manager:
         raise HTTPException(status_code=503, detail=t("system.db_unavailable"))
     try:
-        db_manager.cursor.execute("SELECT subject, predicate, object FROM knowledge_graph")
+        # --- [FIX CRITICO] Estrazione della colonna context per i filtri del frontend ---
+        db_manager.cursor.execute("SELECT subject, predicate, object, context FROM knowledge_graph")
         rows = db_manager.cursor.fetchall()
         
         nodes_set = set()
@@ -3872,12 +3873,15 @@ async def get_knowledge_graph():
         for r in rows:
             subj = r["subject"]
             obj = r["object"]
+            ctx = r["context"] if "context" in r.keys() else "Standard"
+            
             nodes_set.add(subj)
             nodes_set.add(obj)
             links.append({
                 "source": subj,
                 "target": obj,
-                "label": r["predicate"]
+                "label": r["predicate"],
+                "context": ctx
             })
             
         nodes = [{"id": n} for n in nodes_set]

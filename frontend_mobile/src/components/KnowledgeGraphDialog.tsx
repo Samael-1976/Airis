@@ -24,12 +24,15 @@ interface GraphNode {
   screenX?: number;
   screenY?: number;
   scale?: number;
+  weight?: number;
+  category?: string; // [NUOVO] Categoria dominante del nodo
 }
 
 interface GraphLink {
   source: string;
   target: string;
   label: string;
+  context?: string; // [NUOVO] Contesto per i filtri
 }
 
 export const KnowledgeGraphDialog = ({ serverUrl, userName }: KnowledgeGraphDialogProps) => {
@@ -39,10 +42,18 @@ export const KnowledgeGraphDialog = ({ serverUrl, userName }: KnowledgeGraphDial
   const [links, setLinks] = useState<GraphLink[]>(Array(0));
   const [searchQuery, setSearchQuery] = useState("");
   
+  // --- [NUOVO] STATI PER FILTRI E ZOOM ---
+  const [zoom, setZoom] = useState(1);
+  const [filterAvatar, setFilterAvatar] = useState(true);
+  const [filterLearning, setFilterLearning] = useState(true);
+  // Rimosso filtro RPG (Accorpato ad Avatar)
+  
   // Ref mutabile per la fisica, disaccoppiato dallo stato React per evitare lag e desync
   const physicsNodesRef = useRef<GraphNode[]>(Array(0));
   const selectedNodeRef = useRef<string | null>(null);
   const searchQueryRef = useRef("");
+  const zoomRef = useRef(1);
+  const filtersRef = useRef({ avatar: true, learning: true });
 
   // --- STATI PER INTERATTIVITÀ 3D CANVAS ---
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
@@ -61,6 +72,8 @@ export const KnowledgeGraphDialog = ({ serverUrl, userName }: KnowledgeGraphDial
   useEffect(() => { rotationRef.current = rotation; }, [rotation]);
   useEffect(() => { selectedNodeRef.current = selectedNode; }, [selectedNode]);
   useEffect(() => { searchQueryRef.current = searchQuery; }, [searchQuery]);
+  useEffect(() => { zoomRef.current = zoom; }, [zoom]);
+  useEffect(() => { filtersRef.current = { avatar: filterAvatar, learning: filterLearning }; }, [filterAvatar, filterLearning]);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>();
@@ -80,10 +93,36 @@ export const KnowledgeGraphDialog = ({ serverUrl, userName }: KnowledgeGraphDial
           
           const replacePgName = (text: string) => text.replace(/\{\{nome_pg\}\}/gi, userName);
 
-          // Distribuzione Sfera di Fibonacci (3D)
+          // --- [FIX CRITICO] EURISTICA DEL CONTESTO (SEMPLIFICATA) ---
+          const getLinkCategory = (contextStr: string | null | undefined) => {
+              const ctx = (contextStr || "").toLowerCase().trim();
+
+              // Se non c'è contesto, o se appartiene a una chat (Standard o GDR), è Avatar (Blu)
+              if (!ctx || ctx === "null" || ctx === "undefined") return 'avatar';
+              if (ctx.startsWith('standard') || ctx.includes('realtà') || ctx.startsWith('rpg') || ctx.includes('gdr') || ctx.includes('terra24') || ctx.includes('aincrad')) return 'avatar';
+              
+              // Tutto il resto (Studio, Wiki, Codice) è Learning (Giallo)
+              return 'learning';
+          };
+
+          // Calcolo del "peso" e della "categoria dominante" di ogni nodo
+          const nodeWeights: Record<string, number> = {};
+          const nodeCats: Record<string, string> = {};
+
+          data.links.forEach((l: any) => {
+            nodeWeights[l.source] = (nodeWeights[l.source] || 0) + 1;
+            nodeWeights[l.target] = (nodeWeights[l.target] || 0) + 1;
+
+            const cat = getLinkCategory(l.context);
+            // Priorità visiva: Avatar > Learning
+            if (!nodeCats[l.source] || cat === 'avatar') nodeCats[l.source] = cat;
+            if (!nodeCats[l.target] || cat === 'avatar') nodeCats[l.target] = cat;
+          });
+
+          // Distribuzione Sfera di Fibonacci Estesa (3D Anti-Clutter)
           const numNodes = data.nodes.length;
           const phi = Math.PI * (3 - Math.sqrt(5)); // Golden angle
-          const radius = 350; // Raggio della sfera
+          const radius = numNodes > 500 ? 1200 : (numNodes > 100 ? 800 : 400);
 
           const initNodes = data.nodes.map((n: any, i: number) => {
             const y = 1 - (i / (numNodes - 1)) * 2; // y va da 1 a -1
@@ -96,7 +135,9 @@ export const KnowledgeGraphDialog = ({ serverUrl, userName }: KnowledgeGraphDial
               baseX: Math.cos(theta) * r * radius,
               baseY: y * radius,
               baseZ: Math.sin(theta) * r * radius,
-              x: 0, y: 0, z: 0, screenX: 0, screenY: 0, scale: 1
+              x: 0, y: 0, z: 0, screenX: 0, screenY: 0, scale: 1,
+              weight: nodeWeights[n.id] || 0,
+              category: nodeCats[n.id] || 'avatar'
             };
           });
           
@@ -104,7 +145,8 @@ export const KnowledgeGraphDialog = ({ serverUrl, userName }: KnowledgeGraphDial
             ...l,
             source: replacePgName(l.source),
             target: replacePgName(l.target),
-            label: replacePgName(l.label)
+            label: replacePgName(l.label),
+            context: l.context
           }));
 
           setNodes(initNodes);
@@ -130,129 +172,242 @@ export const KnowledgeGraphDialog = ({ serverUrl, userName }: KnowledgeGraphDial
 
     const width = canvas.width;
     const height = canvas.height;
-    const fov = 800; // Campo visivo (Prospettiva)
+    
+    // --- [FIX CRITICO MATEMATICO] ANTI-CRASH CANVAS ---
+    // Se il raggio della sfera è 1200, la profondità (Z) può arrivare a -1200.
+    // Se fov è 1000, la formula scale = fov / (fov + z) dà 1000 / (1000 - 1200) = -5!
+    // Un raggio negativo fa crashare istantaneamente il canvas (IndexSizeError).
+    // Impostiamo il FOV a 3000 per garantire che la telecamera sia SEMPRE fuori dalla sfera.
+    const fov = 3000; 
+
+    // Variabile per l'Hover tracking
+    let hoveredNodeId: string | null = null;
+    let connectedToHovered: Set<string> = new Set();
+
+    // Event listener per catturare la posizione del mouse (Hover)
+    const handleCanvasMouseMove = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
+      const mouseX = (e.clientX - rect.left) * scaleX;
+      const mouseY = (e.clientY - rect.top) * scaleY;
+
+      const currentNodes = physicsNodesRef.current;
+      // Cerca il nodo più vicino sotto il mouse
+      const found = currentNodes.find(n => {
+          if (n.z! > 300) return false; // Ignora nodi sul retro
+          const dx = n.screenX! - mouseX;
+          const dy = n.screenY! - mouseY;
+          // Area di hit dinamica basata sul peso
+          const hitRadius = (Math.min(15, 6 + (n as any).weight * 0.5)) * n.scale! + 5;
+          return Math.sqrt(dx * dx + dy * dy) < hitRadius;
+      });
+
+      if (found) {
+          hoveredNodeId = found.id;
+          // Calcola chi è connesso a lui
+          const connected = new Set<string>();
+          links.forEach(l => {
+              if (l.source === found.id) connected.add(l.target);
+              if (l.target === found.id) connected.add(l.source);
+          });
+          connectedToHovered = connected;
+      } else {
+          hoveredNodeId = null;
+          connectedToHovered.clear();
+      }
+    };
+
+    canvas.addEventListener('mousemove', handleCanvasMouseMove);
 
     const render3D = () => {
       const currentNodes = physicsNodesRef.current;
       const currentSearch = searchQueryRef.current;
       const currentSelected = selectedNodeRef.current;
+      const currentZoom = zoomRef.current;
+      const currentFilters = filtersRef.current;
 
-      // Auto-rotazione se non stiamo trascinando
-      if (!isDraggingRef.current) {
-          rotationRef.current.y -= 0.002; // Rotazione lenta sull'asse Y
+      // --- [FIX CRITICO] IDENTIFICAZIONE DELLE CATEGORIE DEI LINK (SEMPLIFICATA) ---
+      const getLinkCategory = (contextStr: string | null | undefined) => {
+          const ctx = (contextStr || "").toLowerCase().trim();
+          if (!ctx || ctx === "null" || ctx === "undefined") return 'avatar';
+          if (ctx.startsWith('standard') || ctx.includes('realtà') || ctx.startsWith('rpg') || ctx.includes('gdr') || ctx.includes('terra24') || ctx.includes('aincrad')) return 'avatar';
+          return 'learning';
+      };
+
+      // 1. Filtra i link in base ai checkbox attivi
+      const activeLinks = links.filter(link => {
+          const cat = getLinkCategory(link.context);
+          if (cat === 'avatar' && !currentFilters.avatar) return false;
+          if (cat === 'learning' && !currentFilters.learning) return false;
+          return true;
+      });
+
+      // Calcola quanti filtri sono attivi per fare il Boost dell'Opacità
+      const activeFilterCount = (currentFilters.avatar ? 1 : 0) + (currentFilters.learning ? 1 : 0);
+      const opacityBoost = activeFilterCount < 2 ? 2.5 : 1.0;
+
+      // 2. Crea un Set di nodi "vivi" (quelli che hanno almeno un link attivo)
+      const activeNodeIds = new Set<string>();
+      activeLinks.forEach(l => {
+          activeNodeIds.add(l.source);
+          activeNodeIds.add(l.target);
+      });
+
+      // Seleziona i nodi connessi a quello attivo per l'highlight
+      const connectedToSelected = new Set<string>();
+      if (currentSelected) {
+          activeLinks.forEach(l => {
+              if (l.source === currentSelected) connectedToSelected.add(l.target);
+              if (l.target === currentSelected) connectedToSelected.add(l.source);
+          });
+      }
+
+      // Auto-rotazione fluida
+      if (!isDraggingRef.current && !hoveredNodeId) {
+          rotationRef.current.y -= 0.001;
           setRotation({ ...rotationRef.current });
       }
 
       const rotX = rotationRef.current.x;
       const rotY = rotationRef.current.y;
+      const sinX = Math.sin(rotX), cosX = Math.cos(rotX);
+      const sinY = Math.sin(rotY), cosY = Math.cos(rotY);
 
-      const sinX = Math.sin(rotX);
-      const cosX = Math.cos(rotX);
-      const sinY = Math.sin(rotY);
-      const cosY = Math.cos(rotY);
-
-      // 1. Calcolo Matrici di Rotazione e Proiezione 2D
+      // 3. Matrici di Rotazione, Proiezione 2D e ZOOM
       currentNodes.forEach(n => {
-        // Rotazione asse X (Pitch)
         const y1 = n.baseY! * cosX - n.baseZ! * sinX;
         const z1 = n.baseY! * sinX + n.baseZ! * cosX;
-
-        // Rotazione asse Y (Yaw)
         const x2 = n.baseX! * cosY + z1 * sinY;
         const z2 = -n.baseX! * sinY + z1 * cosY;
 
-        n.x = x2;
-        n.y = y1;
-        n.z = z2;
+        n.x = x2; n.y = y1; n.z = z2;
 
-        // Proiezione Prospettica
-        const scale = fov / (fov + z2);
+        const scale = (fov / (fov + z2)) * currentZoom; // [FIX ZOOM] Applica fattore di scala
         n.screenX = (width / 2) + (x2 * scale);
         n.screenY = (height / 2) + (y1 * scale);
         n.scale = scale;
       });
 
-      // 2. Z-Sorting (Disegna prima i nodi più lontani)
+      // Z-Sorting per rendering corretto
       const sortedNodes = [...currentNodes].sort((a, b) => b.z! - a.z!);
 
-      ctx.clearRect(0, 0, width, height);
+      // Sfondo galattico scuro
+      ctx.fillStyle = "#09090b"; 
+      ctx.fillRect(0, 0, width, height);
 
-      // 3. Disegno Connessioni (Links)
-      links.forEach(link => {
+      // 4. Disegno Connessioni (Links)
+      activeLinks.forEach(link => {
         const source = currentNodes.find(n => n.id === link.source);
         const target = currentNodes.find(n => n.id === link.target);
         
         if (source && target) {
-          // Calcola la profondità media del link per l'opacità
           const avgZ = (source.z! + target.z!) / 2;
-          const linkScale = fov / (fov + avgZ);
-          
-          // Nascondi i link troppo lontani o dietro la sfera per pulizia visiva
-          if (avgZ > 150) return;
+          if (avgZ > 400) return; // Culling profondo
 
-          // Opacità basata sulla profondità (più lontano = più trasparente)
-          const opacity = Math.max(0.05, Math.min(0.4, linkScale * 0.3));
+          const linkScale = (fov / (fov + avgZ)) * currentZoom;
+          const isLinkHighlighted = 
+              (currentSelected && (link.source === currentSelected || link.target === currentSelected)) ||
+              (hoveredNodeId && (link.source === hoveredNodeId || link.target === hoveredNodeId));
+
+          const cat = getLinkCategory(link.context);
+          
+          // Colori Base per Categoria (Semplificati)
+          let r = 59, g = 130, b = 246; // Avatar & RPG (Blu)
+          if (cat === 'learning') { r = 234; g = 179; b = 8; } // Learning (Giallo)
+
+          // [FIX OPACITÀ] Applica il boost se l'utente sta filtrando
+          let opacity = Math.max(0.05, Math.min(0.25, linkScale * 0.15)) * opacityBoost;
+          let lineWidth = 0.5 * linkScale;
+          let color = `rgba(${r}, ${g}, ${b}, ${opacity})`;
+
+          if (isLinkHighlighted) {
+              opacity = 0.9 * linkScale;
+              lineWidth = 2.0 * linkScale;
+              color = `rgba(${r}, ${g}, ${b}, ${opacity})`;
+          }
           
           ctx.beginPath();
           ctx.moveTo(source.screenX!, source.screenY!);
           ctx.lineTo(target.screenX!, target.screenY!);
-          ctx.strokeStyle = `rgba(236, 72, 153, ${opacity})`;
-          ctx.lineWidth = 1.5 * linkScale;
+          ctx.strokeStyle = color;
+          ctx.lineWidth = lineWidth;
           ctx.stroke();
           
-          // Disegna etichetta link solo se è abbastanza vicino
-          if (avgZ < 0) {
+          if (isLinkHighlighted && avgZ < 100) {
               const midX = (source.screenX! + target.screenX!) / 2;
               const midY = (source.screenY! + target.screenY!) / 2;
-              ctx.fillStyle = `rgba(255, 255, 255, ${opacity * 1.5})`;
-              ctx.font = `${8 * linkScale}px monospace`;
-              ctx.fillText(link.label, midX, midY);
+              ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+              ctx.font = `${10 * linkScale}px monospace`;
+              ctx.fillText(link.label, midX, midY - 5);
           }
         }
       });
 
-      // 4. Disegno Nodi
+      // 5. Disegno Nodi
       sortedNodes.forEach(n => {
-        const isHighlighted = currentSearch && n.id.toLowerCase().includes(currentSearch.toLowerCase());
+        // [FIX FILTRI] Salta il rendering dei nodi che non hanno connessioni attive
+        if (!activeNodeIds.has(n.id)) return;
+
+        const weight = (n as any).weight || 0;
+        const cat = n.category || 'avatar';
+        const isSearchHighlighted = currentSearch && n.id.toLowerCase().includes(currentSearch.toLowerCase());
         const isSelected = currentSelected === n.id;
+        const isConnectedToSelected = connectedToSelected.has(n.id);
+        const isHovered = hoveredNodeId === n.id;
+        const isConnectedToHovered = connectedToHovered.has(n.id);
         
-        // Opacità e dimensione basate sulla profondità (Z)
-        const depthOpacity = Math.max(0.2, Math.min(1, n.scale!));
-        const baseRadius = isHighlighted || isSelected ? 12 : 6;
-        const radius = baseRadius * n.scale!;
+        const shouldShowText = isSearchHighlighted || isSelected || isConnectedToSelected || isHovered || isConnectedToHovered;
+
+        const depthOpacity = Math.max(0.1, Math.min(1, n.scale!));
+        
+        let baseRadius = Math.min(15, 3 + (weight * 0.4));
+        if (isSearchHighlighted || isHovered || isSelected) baseRadius += 4;
+        
+        // --- [FIX CRITICO MATEMATICO] SAFE CLAMPING ---
+        const radius = Math.max(0.1, baseRadius * n.scale!);
+
+        // Assegnazione colori ai nodi in base alla categoria (Semplificati)
+        let r = 59, g = 130, b = 246; // Avatar & RPG (Blu)
+        if (cat === 'learning') { r = 234; g = 179; b = 8; }
 
         ctx.beginPath();
         ctx.arc(n.screenX!, n.screenY!, radius, 0, 2 * Math.PI);
         
         if (isSelected) {
-            ctx.fillStyle = `rgba(34, 197, 94, ${depthOpacity})`; // Verde
-        } else if (isHighlighted) {
-            ctx.fillStyle = `rgba(236, 72, 153, ${depthOpacity})`; // Rosa Airis
+            ctx.fillStyle = `rgba(34, 197, 94, ${depthOpacity})`;
+            ctx.shadowBlur = 15; ctx.shadowColor = "rgba(34, 197, 94, 0.8)";
+        } else if (isHovered || isSearchHighlighted) {
+            ctx.fillStyle = `rgba(255, 255, 255, ${depthOpacity})`; 
+            ctx.shadowBlur = 10; ctx.shadowColor = "rgba(255, 255, 255, 0.8)";
+        } else if (isConnectedToSelected || isConnectedToHovered) {
+            ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${depthOpacity * 0.9})`; // Colore Categoria Acceso
+            ctx.shadowBlur = 0;
         } else {
-            // Nodi lontani sono più scuri
-            const b = Math.floor(255 * depthOpacity);
-            ctx.fillStyle = `rgba(59, 130, 246, ${depthOpacity})`; // Blu
+            // [FIX COLORI NODI] Ora i nodi base hanno il colore della loro categoria, non grigio scuro
+            ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${depthOpacity * 0.5})`; 
+            ctx.shadowBlur = 0;
         }
         ctx.fill();
+        ctx.shadowBlur = 0;
         
-        // Disegna il testo solo per i nodi sulla metà frontale della sfera o se selezionati
-        if (n.z! < 50 || isHighlighted || isSelected) {
-            const fontSize = (isHighlighted || isSelected ? 14 : 11) * n.scale!;
-            ctx.font = `${isHighlighted || isSelected ? 'bold' : 'normal'} ${fontSize}px sans-serif`;
+        if (shouldShowText && n.z! < 200) {
+            const fontSize = (isHovered || isSelected ? 16 : 12) * n.scale!;
+            ctx.font = `${isHovered || isSelected ? 'bold' : 'normal'} ${fontSize}px sans-serif`;
             const textWidth = ctx.measureText(n.id).width;
             
-            // Sfondo testo
-            ctx.fillStyle = `rgba(0, 0, 0, ${depthOpacity * 0.8})`;
-            ctx.fillRect(
-                n.screenX! + (8 * n.scale!), 
-                n.screenY! - (10 * n.scale!), 
-                textWidth + (8 * n.scale!), 
-                (20 * n.scale!)
+            ctx.fillStyle = `rgba(0, 0, 0, ${depthOpacity * 0.9})`;
+            ctx.roundRect(
+                n.screenX! + (radius * 1.2), 
+                n.screenY! - (fontSize * 0.8), 
+                textWidth + 10, 
+                fontSize * 1.5,
+                4
             );
+            ctx.fill();
 
-            // Testo
-            ctx.fillStyle = isHighlighted || isSelected ? "#ffffff" : `rgba(255, 255, 255, ${depthOpacity})`;
-            ctx.fillText(n.id, n.screenX! + (12 * n.scale!), n.screenY! + (4 * n.scale!));
+            ctx.fillStyle = isHovered || isSelected || isSearchHighlighted ? "#ffffff" : `rgba(200, 200, 200, ${depthOpacity})`;
+            ctx.fillText(n.id, n.screenX! + (radius * 1.2) + 5, n.screenY! + (fontSize * 0.3));
         }
       });
 
@@ -262,6 +417,7 @@ export const KnowledgeGraphDialog = ({ serverUrl, userName }: KnowledgeGraphDial
     render3D();
 
     return () => {
+      canvas.removeEventListener('mousemove', handleCanvasMouseMove);
       if (animationRef.current) cancelAnimationFrame(animationRef.current);
     };
   }, [nodes.length, links]);
@@ -417,24 +573,48 @@ export const KnowledgeGraphDialog = ({ serverUrl, userName }: KnowledgeGraphDial
       </div>
 
       <div className="flex-1 flex flex-col min-h-0 m-0 relative rounded-lg border border-white/10 overflow-hidden">
-        <div className="absolute top-4 left-4 right-4 z-10 flex gap-2">
-            <div className="relative flex-1 max-w-xs">
-                <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
-                <Input 
-                    placeholder={t("knowledge_graph.search", { defaultValue: "Cerca entità..." })}
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-8 bg-background/80 backdrop-blur-sm border-white/20"
-                />
-                {searchQuery && (
-                    <Button variant="ghost" size="icon" className="absolute right-1 top-1 h-7 w-7" onClick={() => setSearchQuery("")}>
-                        <X className="h-3 w-3" />
-                    </Button>
-                )}
+        <div className="absolute top-4 left-4 right-4 z-10 flex flex-col gap-2 pointer-events-none">
+            {/* RAW 1: Search and Stats */}
+            <div className="flex gap-2 pointer-events-auto">
+                <div className="relative flex-1 max-w-xs">
+                    <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
+                    <Input 
+                        placeholder={t("knowledge_graph.search", { defaultValue: "Cerca entità..." })}
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="pl-8 bg-background/80 backdrop-blur-sm border-white/20"
+                    />
+                    {searchQuery && (
+                        <Button variant="ghost" size="icon" className="absolute right-1 top-1 h-7 w-7" onClick={() => setSearchQuery("")}>
+                            <X className="h-3 w-3" />
+                        </Button>
+                    )}
+                </div>
+                <div className="bg-background/80 backdrop-blur-sm border border-white/20 rounded-md px-3 py-1.5 flex items-center gap-3 text-xs font-mono text-muted-foreground">
+                    <span>{t("knowledge_graph.nodes", { defaultValue: "Nodi" })}: {nodes.length}</span>
+                    <span>{t("knowledge_graph.links", { defaultValue: "Connessioni" })}: {links.length}</span>
+                    <span className="text-primary ml-2 border-l border-white/10 pl-3">Zoom: {Math.round(zoom * 100)}%</span>
+                </div>
             </div>
-            <div className="bg-background/80 backdrop-blur-sm border border-white/20 rounded-md px-3 py-1.5 flex items-center gap-3 text-xs font-mono text-muted-foreground">
-                <span>{t("knowledge_graph.nodes", { defaultValue: "Nodi" })}: {nodes.length}</span>
-                <span>{t("knowledge_graph.links", { defaultValue: "Connessioni" })}: {links.length}</span>
+            
+            {/* RAW 2: Filters */}
+            <div className="flex gap-2 pointer-events-auto">
+                <Button 
+                    variant={filterAvatar ? "default" : "outline"} 
+                    size="sm" 
+                    className={"text-xs h-7 " + (filterAvatar ? "bg-blue-600 hover:bg-blue-700 text-white" : "")}
+                    onClick={() => setFilterAvatar(!filterAvatar)}
+                >
+                    <span className="w-2 h-2 rounded-full bg-blue-300 mr-2"></span> Avatar / RPG
+                </Button>
+                <Button 
+                    variant={filterLearning ? "default" : "outline"} 
+                    size="sm" 
+                    className={"text-xs h-7 " + (filterLearning ? "bg-yellow-600 hover:bg-yellow-700 text-white" : "")}
+                    onClick={() => setFilterLearning(!filterLearning)}
+                >
+                    <span className="w-2 h-2 rounded-full bg-yellow-300 mr-2"></span> Self-Learning
+                </Button>
             </div>
         </div>
 
@@ -458,10 +638,15 @@ export const KnowledgeGraphDialog = ({ serverUrl, userName }: KnowledgeGraphDial
                     onMouseMove={handleMouseMove}
                     onMouseUp={handleMouseUp}
                     onMouseLeave={handleMouseUp}
+                    onWheel={(e) => {
+                        e.preventDefault();
+                        const zoomFactor = e.deltaY < 0 ? 1.1 : 0.9;
+                        setZoom(prev => Math.max(0.1, Math.min(10.0, prev * zoomFactor)));
+                    }}
                 />
                 {/* Overlay Istruzioni 3D */}
                 <div className="absolute bottom-4 right-4 bg-background/80 backdrop-blur-sm px-3 py-1.5 rounded-md border border-white/10 text-[10px] text-muted-foreground pointer-events-none">
-                    Trascina per ruotare il globo
+                    Trascina per ruotare | Rotellina per Zoom
                 </div>
             </div>
         )}
@@ -489,7 +674,7 @@ export const KnowledgeGraphDialog = ({ serverUrl, userName }: KnowledgeGraphDial
             </div>
             <div className="space-y-2">
               <Label className="text-xs text-muted-foreground uppercase tracking-wider">{t("knowledge_graph.connections", { defaultValue: "Connessioni" })}</Label>
-              <div className="max-h-[150px] overflow-y-auto bg-muted/10 border border-white/5 rounded-md p-2 text-xs font-mono space-y-1">
+              <div className="max-h-[150px] overflow-y-auto bg-muted/10 border border-white/5 rounded-md p-2 text-xs font-mono space-y-1 custom-scrollbar">
                 {links.filter(l => l.source === selectedNode || l.target === selectedNode).map((l, i) => (
                   <div key={i} className="truncate text-muted-foreground">
                     {l.source === selectedNode ? (

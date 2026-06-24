@@ -258,11 +258,16 @@ AIRIS-PROJECT breaks down language barriers by natively localizing both intellec
 ### Launch the ecosystem in 60 seconds [1]:
 
 ```bash
-# 1. Download the last package file from: https://github.com/Samael-1976/Airis/releases
-extract the file
-cd Airis
+# 1. Download the file from: `https://aka.ms/vs/17/release/vc_redist.x64.exe` and intall it
+# 2. Install espeak 
+- For Windows: Download the file from: `https://github.com/espeak-ng/espeak-ng/releases` and install it. 
+- For Linux Ubuntu/Debian: `sudo apt-get update && sudo apt-get install -y espeak-ng`
+- For Mac: `brew install espeak-ng`
+# 3. Download the last package file from: https://github.com/Samael-1976/Airis/releases
+# 4 . extract the file
+# 5. cd Airis (or the name of the directory where you extracted the package)
 
-# 2. Awaken the Soul
+# 6. Awaken the Soul
 # On Windows:
 run.bat
 

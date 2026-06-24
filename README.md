@@ -120,9 +120,11 @@ Experience **The Plug & Play Revolution** in three simple steps. No external dep
 ### 1. Download & Extract
 Download the latest standalone release package:
 
-1. Download the file from: https://aka.ms/vs/17/release/vc_redist.x64.exe and intall it
-2. Download the file from:
-https://github.com/espeak-ng/espeak-ng/releases and install it
+1. Download the file from: `https://aka.ms/vs/17/release/vc_redist.x64.exe` and intall it
+2. Install espeak 
+- For Windows: Download the file from: `https://github.com/espeak-ng/espeak-ng/releases` and install it. 
+- For Linux Ubuntu/Debian: `sudo apt-get update && sudo apt-get install -y espeak-ng`
+- For Mac: `brew install espeak-ng`
 3. Download the last package file from: https://github.com/Samael-1976/Airis/releases
 4. extract the file
 5. cd Airis (or the name of the directory where you extracted the package)

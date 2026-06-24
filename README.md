@@ -264,7 +264,7 @@ AIRIS-PROJECT breaks down language barriers by natively localizing both intellec
 - For Linux Ubuntu/Debian: `sudo apt-get update && sudo apt-get install -y espeak-ng`
 - For Mac: `brew install espeak-ng`
 # 3. Download the last package file from: https://github.com/Samael-1976/Airis/releases
-# 4 . extract the file
+# 4. Extract the file
 # 5. cd Airis (or the name of the directory where you extracted the package)
 
 # 6. Awaken the Soul

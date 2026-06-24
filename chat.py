@@ -2151,9 +2151,9 @@ class CicloVitale:
                 "--spec-draft-n-max", "2"
             ])
             self.logger.log(f"MTP Esterno attivato: {draft_model_path.name}", "SYSTEM")
-            # Disattiviamo forzatamente mmproj perché incompatibile con i modelli draft esterni
-            mmproj_path = None
-            self.logger.log(t("chat.warn_mmproj_speculative"), "WARNING")
+            # --- [TEST SPERIMENTALE] ---
+            # Rimosso il blocco di sicurezza che disattivava mmproj_path.
+            # Testiamo se la build attuale di llama.cpp supporta MTP + Visione simultaneamente.
         elif draft_enabled:
             if draft_name == "lookup":
                 self.logger.log(t("chat.log_lookup_decoding"), "SYSTEM")
@@ -2181,6 +2181,12 @@ class CicloVitale:
             else:
                 self.logger.warning(t("chat.warn_mmproj_incompatible", base=model_path.name, mmproj=mmproj_path.name))
                 mmproj_path = None # Disattiva gli occhi per evitare il crash del server C++
+                
+        # --- [FIX CRITICO] SINCRONIZZAZIONE STATO OCCHI ---
+        # Salviamo il percorso reale caricato dal server per passarlo al Cervello.
+        # Se l'MTP o l'incompatibilità hanno disattivato gli occhi, il Cervello saprà di essere cieco
+        # e non invierà immagini, evitando l'Errore 500.
+        self._loaded_mmproj_path = mmproj_path
             
         creationflags = subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0
 
@@ -2635,7 +2641,8 @@ class CicloVitale:
 
         self.cervello = CervelloTrinitario(
             model_path=cuore_path,
-            mmproj_path=occhi_path,
+            # --- [FIX CRITICO] Passiamo gli occhi REALMENTE caricati dal server, non quelli scelti dall'utente
+            mmproj_path=getattr(self, "_loaded_mmproj_path", occhi_path),
             lora_path=lora_path,
             logger=self.logger,
             guardian=self.guardian,

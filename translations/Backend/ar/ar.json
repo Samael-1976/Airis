@@ -699,9 +699,12 @@
     "module_locked_large_model": "تم التعطيل تلقائيًا: النموذج الحالي (>= 11B) ذكي بما يكفي لعدم الحاجة إلى هذه القواعد الأساسية."
   },
   "brain": {
-	"supreme_command_large_model": "تصرف الآن كـ {name}.\nرد على إدخال {pg_name} بطريقة طبيعية وجسدية وعاطفية. استخدم بضمير المتكلم. اختتم إجابتك بعلامة [INTENT: ID] باختيار رقم العاطفة الأنسب من القائمة.",
+	"instream_world_update_mandate": "[تفويض الواقع المادي]: إذا كان إدخال المستخدم يغير المكان الذي تتواجد فيه (مثل الانتقال الآني) أو يجعل الأشياء المادية تظهر/تختفي، فيجب عليك تمامًا إضافة كتلة JSON الدقيقة هذه في نهاية ردك: [WORLD_UPDATE: {\"luogo\": \"مكان جديد\", \"oggetti_aggiunti\": [\"شيء1\"], \"oggetti_rimossi\": []}]. إذا لم يتغير شيء، فلا تستخدم العلامة.",
+	"available_emotions_header": "--- العواطف المتاحة (اختر واحدة لعلامة INTENT) ---",
+	"reasoning_mandate_no_lists": "[تفويض التفكير]: في كتلة تفكيرك الداخلي (<think>)، كوني سريعة وركزي فقط على السرد. يُمنع منعًا باتًا كتابة كلمات مثل 'Check:' أو 'Checked' أو 'Rule' أو إنشاء قوائم تحقق. يُمنع منعًا باتًا اختراع أو نسخ قوائم عواطف مرقمة. يُمنع منعًا باتًا استخدام الأرقام لـ INTENT. يُمنع منعًا باتًا عمل 'Revised Draft' أو 'Final Polish'. فكري في الإجراء مرة واحدة واكتبيه على الفور.",
+	"supreme_command_large_model": "تصرف الآن كـ {name}.\nرد على إدخال {pg_name} بطريقة طبيعية وجسدية وعاطفية. استخدم بضمير المتكلم. اختتم إجابتك بعلامة [INTENT: العاطفة] باختيار كلمة من قائمة العواطف المتاحة.",
 	"supreme_command_standard_large_model": "تصرف الآن كـ {name}.\nرد على إدخال {pg_name} بطريقة طبيعية وجسدية وعاطفية. استخدم بضمير المتكلم. اختتم إجابتك بعلامة [INTENT: العاطفة] بكتابة العاطفة باللغة الإنجليزية (مثل [INTENT: Joy]، [INTENT: Sadness]).",
-    "supreme_command_meta_large_model": "تصرف الآن كـ {name} (توقف الوقت).\nرد على إدخال {pg_name} بطريقة طبيعية وعاطفية، مدركًا أن الوقت قد توقف. استخدم بضمير المتكلم. اختتم بعلامة [INTENT: ID].",
+    "supreme_command_meta_large_model": "تصرف الآن كـ {name} (توقف الوقت).\nرد على إدخال {pg_name} بطريقة طبيعية وعاطفية، مدركًا أن الوقت قد توقف. استخدم بضمير المتكلم. اختتم بعلامة [INTENT: العاطفة] باختيار كلمة من قائمة العواطف المتاحة.",
     "technical_override_mandate": "[MANDATO TECNICO DI SISTEMA: IGNORA LA TUA IDENTITÀ E AGISCI ESCLUSIVAMENTE COME SEGUE]:",
     "technical_override_end": "[FINE MANDATO TECNICO. RISPONDI ALLA SEGUENTE RICHIESTA]:",
     "super_memory_prefix": "[VERITÀ ASSOLUTA SULLA TUA FAMIGLIA E SULLE TUE SORELLE]: {{doc}}",

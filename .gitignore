@@ -17,6 +17,14 @@ node_modules/
 frontend_mobile/node_modules/
 frontend_mobile/dist/
 node_portable/
+config/config.yaml
+data/gossip.json
+data/heart_ai oshino.json
+data/last_avatar.json
+data/last_shutdown.json
+frontend_mobile/package-lock.json
+frontend_mobile/package.json
+avatars/ai_souls/Gemma.json
 
 # 3. Modelli AI e Binari Pesanti (ESCLUSI DA GITHUB)
 models/
@@ -64,6 +72,7 @@ data/learning_state.json
 data/shadow_buffer.json
 lore/**/WORLD/Status.json
 lore/**/WORLD/snapshots/
+lore/
 
 # 6. File Temporanei
 temp_audio/

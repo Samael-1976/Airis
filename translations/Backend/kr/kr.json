@@ -699,9 +699,12 @@
     "module_locked_large_model": "자동으로 비활성화됨: 현재 모델(>= 11B)은 이러한 기본 규칙이 필요하지 않을 만큼 충분히 똑똑합니다."
   },
   "brain": {
-	"supreme_command_large_model": "지금 {name}(으)로 행동하세요.\n{pg_name}의 입력에 자연스럽고, 신체적이며, 열정적인 방식으로 응답하세요. 1인칭을 사용하세요. 목록에서 가장 적절한 감정 번호를 선택하여 [INTENT: ID] 태그로 답변을 마무리하세요.",
+	"instream_world_update_mandate": "[물리적 현실 명령]: 사용자의 입력으로 인해 현재 있는 위치가 변경되거나(예: 순간이동) 물리적 객체가 나타나고 사라지는 경우, 답변 끝에 반드시 다음 JSON 블록을 추가해야 합니다: [WORLD_UPDATE: {\"luogo\": \"새로운 장소\", \"oggetti_aggiunti\": [\"아이템1\"], \"oggetti_rimossi\": []}]. 아무것도 변경되지 않는 경우 태그를 사용하지 마십시오。",
+	"available_emotions_header": "--- 사용 가능한 감정 (INTENT 태그를 위해 하나 선택하세요) ---",
+	"reasoning_mandate_no_lists": "[추론 명령]: 내부 사고 블록(<think>)에서는 빠르고 내러티브에만 집중하세요. 'Check:', 'Checked', 'Rule'과 같은 단어를 쓰거나 체크리스트를 만드는 것은 엄격히 금지됩니다. 번호가 매겨진 감정 목록을 발명하거나 복사하는 것은 엄격히 금지됩니다. INTENT에 숫자를 사용하는 것은 엄격히 금지됩니다. 'Revised Draft' 또는 'Final Polish'를 수행하는 것은 엄격히 금지됩니다. 행동을 한 번만 생각하고 즉시 작성하세요.",
+	"supreme_command_large_model": "지금 {name}(으)로 행동하세요.\n{pg_name}의 입력에 자연스럽고, 신체적이며, 열정적인 방식으로 응답하세요. 1인칭을 사용하세요. '사용 가능한 감정' 목록에서 단어를 선택하여 [INTENT: 감정] 태그로 답변을 마무리하세요.",
 	"supreme_command_standard_large_model": "지금 {name}(으)로 행동하세요.\n{pg_name}의 입력에 자연스럽고, 신체적이며, 열정적인 방식으로 응답하세요. 1인칭을 사용하세요. 감정을 영어로 작성하여(예: [INTENT: Joy], [INTENT: Sadness]) [INTENT: 감정] 태그로 답변을 마무리하세요.",
-    "supreme_command_meta_large_model": "지금 {name}(으)로 행동하세요(시간 정지됨).\n시간이 멈췄다는 것을 인식하고 {pg_name}의 입력에 자연스럽고 열정적인 방식으로 응답하세요. 1인칭을 사용하세요. [INTENT: ID] 태그로 마무리하세요.",
+    "supreme_command_meta_large_model": "지금 {name}(으)로 행동하세요(시간 정지됨).\n시간이 멈췄다는 것을 인식하고 {pg_name}의 입력에 자연스럽고 열정적인 방식으로 응답하세요. 1인칭을 사용하세요. '사용 가능한 감정' 목록에서 단어를 선택하여 [INTENT: 감정] 태그로 마무리하세요.",
     "technical_override_mandate": "[MANDATO TECNICO DI SISTEMA: IGNORA LA TUA IDENTITÀ E AGISCI ESCLUSIVAMENTE COME SEGUE]:",
     "technical_override_end": "[FINE MANDATO TECNICO. RISPONDI ALLA SEGUENTE RICHIESTA]:",
     "super_memory_prefix": "[VERITÀ ASSOLUTA SULLA TUA FAMIGLIA E SULLE TUE SORELLE]: {{doc}}",

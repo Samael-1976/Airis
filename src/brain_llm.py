@@ -732,7 +732,7 @@ class CervelloTrinitario:
             static_slots = self._assembla_slot("gdr", {}, mode="static")
             ancora_parts =[
                 self._get_freedom_header().strip(),
-                f"--- LISTA AZIONI EMOTIVE (USA SOLO GLI ID DI QUESTA LISTA) ---\n{self.lista_intent_disponibili}\n",
+                f"{t('brain.available_emotions_header')}\n{self.lista_intent_disponibili}\n",
                 static_slots["identity"],
                 static_slots["behavior"],
                 static_slots["restriction"],
@@ -805,11 +805,6 @@ class CervelloTrinitario:
         
         final_text = self._semantic_minify(text)
         
-        # --- [FIX CRITICO CACHE] INIEZIONE THINKING NELL'ANCORA ---
-        # Garantisce che l'hash del prompt sia identico tra warmup e generazione per Gemma 4
-        if self.is_gemma_4 and not final_text.startswith("<|think|>"):
-            final_text = "<|think|>\n" + final_text
-            
         return final_text
 
     def _warmup_cache(self):
@@ -1186,40 +1181,35 @@ class CervelloTrinitario:
         # Se stiamo usando il modello principale (12B), il System Prompt DEVE essere sempre l'Ancora.
         # Se la richiesta contiene un System Prompt tecnico (es. Logic Gate), lo spostiamo nel messaggio User.
         if active_brain == self.narrative_brain and messages and messages[0].get("role") == "system":
-            # --- [FIX CRITICO] SE C'È UN JSON RESPONSE FORMAT, DISABILITIAMO L'ANCORA PER EVITARE DEADLOCK SINTATTICO ---
-            if response_format and response_format.get("type") == "json_object":
-                if messages[0]["content"].startswith("<|think|>\n"):
-                    messages[0]["content"] = messages[0]["content"].replace("<|think|>\n", "", 1)
-            else:
-                current_gdr_mode = kwargs.get("in_gdr_mode", getattr(self, "in_gdr_mode", False))
-                true_anchor = self._build_anchor_prompt(in_gdr_mode=current_gdr_mode)
+            current_gdr_mode = kwargs.get("in_gdr_mode", getattr(self, "in_gdr_mode", False))
+            true_anchor = self._build_anchor_prompt(in_gdr_mode=current_gdr_mode)
+            
+            # Confronto esatto. Se differiscono, significa che è un task tecnico in background.
+            if messages[0]["content"] != true_anchor:
+                technical_instruction = messages[0]["content"]
+                messages[0]["content"] = true_anchor
                 
-                # Confronto esatto. Se differiscono, significa che è un task tecnico in background.
-                if messages[0]["content"] != true_anchor:
-                    technical_instruction = messages[0]["content"]
-                    messages[0]["content"] = true_anchor
-                    
-                    # Cerca il primo messaggio user per iniettare il mandato tecnico
-                    for msg in messages:
-                        if msg.get("role") == "user":
-                            original_content = msg["content"]
-                            override_prefix = t("brain.technical_override_mandate")
-                            override_suffix = t("brain.technical_override_end")
-                            
-                            if isinstance(original_content, str):
-                                msg["content"] = f"{override_prefix}\n{technical_instruction}\n\n{override_suffix}\n{original_content}"
-                            elif isinstance(original_content, list):
-                                # Gestione multimodale (lista di dict)
-                                text_injected = False
-                                for item in original_content:
-                                    if item.get("type") == "text":
-                                        item["text"] = f"{override_prefix}\n{technical_instruction}\n\n{override_suffix}\n{item['text']}"
-                                        text_injected = True
-                                        break
-                                if not text_injected:
-                                    original_content.append({"type": "text", "text": f"{override_prefix}\n{technical_instruction}\n\n{override_suffix}"})
-                            break
-                    self.logger.log(t("log.brain_universal_anchor_applied"), "SYSTEM")
+                # Cerca il primo messaggio user per iniettare il mandato tecnico
+                for msg in messages:
+                    if msg.get("role") == "user":
+                        original_content = msg["content"]
+                        override_prefix = t("brain.technical_override_mandate")
+                        override_suffix = t("brain.technical_override_end")
+                        
+                        if isinstance(original_content, str):
+                            msg["content"] = f"{override_prefix}\n{technical_instruction}\n\n{override_suffix}\n{original_content}"
+                        elif isinstance(original_content, list):
+                            # Gestione multimodale (lista di dict)
+                            text_injected = False
+                            for item in original_content:
+                                if item.get("type") == "text":
+                                    item["text"] = f"{override_prefix}\n{technical_instruction}\n\n{override_suffix}\n{item['text']}"
+                                    text_injected = True
+                                    break
+                            if not text_injected:
+                                original_content.append({"type": "text", "text": f"{override_prefix}\n{technical_instruction}\n\n{override_suffix}"})
+                        break
+                self.logger.log(t("log.brain_universal_anchor_applied"), "SYSTEM")
 
         #[FIX CRITICO v124.5] USARE .copy() PER EVITARE MUTAZIONE GLOBALE
         params = (self.guardian.get_parameters_config() or {}).copy()
@@ -1918,34 +1908,22 @@ class CervelloTrinitario:
 
     def _carica_lista_intent_filtrata(self) -> str:
         """
-        Carica la lista delle emozioni valide (Lista Sacra v27.40).[AGGIORNATO] Implementa il Protocollo Copione Teatrale: genera un menu numerato
-        con descrizioni fisiche per azzerare le allucinazioni dell'LLM.
+        Carica la lista delle emozioni valide (Lista Sacra v27.40).
+        [FIX CRITICO] Restituisce una stringa piatta separata da virgole per evitare che l'LLM
+        la interpreti come una checklist da iterare nel blocco <think>.
         """
         try:
             if not self.valid_emotions:
                 return t("log.brain_no_emotions")
 
             self.emotion_id_map.clear()
-            final_output =[t("log.brain_sacred_list_header")]
-
+            
+            # Popoliamo la mappa per retrocompatibilità
             for idx, emotion in enumerate(self.valid_emotions):
-                # Trova la descrizione associata a questa emozione
-                desc = ""
-                for video in self.intent_data:
-                    emo_list = video.get("emotion",[])
-                    if isinstance(emo_list, str):
-                        emo_list = [emo_list]
-                    if emotion.lower() in[str(e).lower() for e in emo_list]:
-                        desc = video.get("short_description", "")
-                        if desc:
-                            break
-
-                desc_str = f" ({desc})" if desc else ""
-                line = f"[ID: {idx}] Emozione: {emotion}{desc_str}"
-                final_output.append(line)
                 self.emotion_id_map[str(idx)] = emotion
 
-            result = "\n".join(final_output)
+            # Restituiamo solo i nomi in inglese, separati da virgola
+            result = ", ".join(self.valid_emotions)
 
             # Scrittura del copione su file per l'utente
             try:
@@ -3798,7 +3776,10 @@ class CervelloTrinitario:
         
         # --- [FIX CRITICO] MANDATO ANTI-CHECKLIST (SINDROME QA TESTER) ---
         # Impedisce ai modelli 12B+ di entrare in loop infiniti verificando le regole una ad una.
-        caos_parts.append("[MANDATO DI RAGIONAMENTO]: Nel tuo blocco di pensiero interno (<think>), sii rapida e focalizzata solo sulla narrazione. È TASSATIVAMENTE VIETATO scrivere parole come 'Check:', 'Checked', 'Rule', o creare liste di controllo per verificare la grammatica o i pronomi. Pensa la scena e scrivila immediatamente.")
+        caos_parts.append(t("brain.reasoning_mandate_no_lists"))
+        
+        # --- [FIX CRITICO] IN-STREAM WORLD UPDATE INSTRUCTION (IDEA 4) ---
+        caos_parts.append(t("brain.instream_world_update_mandate"))
         
         # --- [FIX CRITICO] NUKE ANTI-ROBOT ALLA FINE ASSOLUTA ---
         caos_parts.append(t("brain.anti_robot_nuke"))
@@ -4440,7 +4421,7 @@ class CervelloTrinitario:
             caos_parts.append(comando_supremo)
 
         # --- [FIX CRITICO] MANDATO ANTI-CHECKLIST (SINDROME QA TESTER) ---
-        caos_parts.append("[MANDATO DI RAGIONAMENTO]: Nel tuo blocco di pensiero interno (<think>), sii rapida e focalizzata solo sulla narrazione. È TASSATIVAMENTE VIETATO scrivere parole come 'Check:', 'Checked', 'Rule', o creare liste di controllo per verificare la grammatica o i pronomi. Pensa la scena e scrivila immediatamente.")
+        caos_parts.append(t("brain.reasoning_mandate_no_lists"))
 
         caos_text = self.PROMPT_SEPARATOR.join(
             [self._sanitize_for_cache(p) for p in caos_parts if p]
@@ -4867,11 +4848,15 @@ class CervelloTrinitario:
         response_str = self._genera_pensiero(
             messages,
             temperature=0.0,
-            max_tokens=2048, # [FIX CRITICO] Aumentato per permettere il Reasoning Channel di Gemma 4
-            reasoning_budget=1024, # [FIX CRITICO] Budget esplicito per evitare il blocco
+            max_tokens=4096, # [FIX CRITICO] Aumentato a 4096 per garantire spazio vitale al ragionamento
             response_format={"type": "json_object", "schema": schema},
             in_gdr_mode=True
         )
+
+        # --- [FIX CRITICO] SCUDO ANTI-VUOTO (TOKEN EXHAUSTION) ---
+        if not response_str or not response_str.strip():
+            self.logger.error("Rilevatore Eventi: Risposta LLM vuota (Token Exhaustion). Nessun evento rilevato.")
+            return {}
 
         try:
             clean_str = response_str.replace("```json", "").replace("```", "").strip()

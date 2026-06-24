@@ -699,9 +699,12 @@
     "module_locked_large_model": "自動的に無効化されました: 現在のモデル (>= 11B) は十分にスマートであるため、これらの基本ルールは必要ありません。"
   },
   "brain": {
-	"supreme_command_large_model": "今すぐ {name} として行動してください。\n{pg_name} の入力に、自然で、身体的で、情熱的な方法で応答してください。一人称を使用してください。リストから最も適切な感情番号を選択し、[INTENT: ID] タグで回答を締めくくってください。",
+	"instream_world_update_mandate": "[物理的現実の義務]: ユーザーの入力によって現在地が変更されたり（例: テレポート）、物理的なオブジェクトが出現/消失したりした場合は、回答の最後にこの正確な JSON ブロックを必ず追加してください: [WORLD_UPDATE: {\"luogo\": \"新しい場所\", \"oggetti_aggiunti\": [\"アイテム1\"], \"oggetti_rimossi\": []}]。何も変わらない場合は、タグを使用しないでください。",
+	"available_emotions_header": "--- 利用可能な感情 (INTENT タグ用に1つ選択してください) ---",
+	"reasoning_mandate_no_lists": "[推論の義務]: 内部思考ブロック (<think>) では、迅速に、物語のみに集中してください。'Check:'、'Checked'、'Rule' のような単語を書いたり、チェックリストを作成したりすることは固く禁じられています。番号付きの感情リストを発明したりコピーしたりすることは固く禁じられています。INTENT に数字を使用することは固く禁じられています。'Revised Draft' や 'Final Polish' を行うことは固く禁じられています。アクションを一度だけ考え、すぐに書き留めてください。",
+	"supreme_command_large_model": "今すぐ {name} として行動してください。\n{pg_name} の入力に、自然で、身体的で、情熱的な方法で応答してください。一人称を使用してください。「利用可能な感情」リストから単語を選択し、[INTENT: 感情] タグで回答を締めくくってください。",
 	"supreme_command_standard_large_model": "今すぐ {name} として行動してください。\n{pg_name} の入力に、自然で、身体的で、情熱的な方法で応答してください。一人称を使用してください。感情を英語で記述し（例: [INTENT: Joy]、[INTENT: Sadness]）、[INTENT: 感情] タグで回答を締めくくってください。",
-    "supreme_command_meta_large_model": "今すぐ {name} として行動してください（時間が止まっています）。\n時間が止まっていることを意識して、{pg_name} の入力に自然で情熱的な方法で応答してください。一人称を使用してください。[INTENT: ID] タグで締めくくってください。",
+    "supreme_command_meta_large_model": "今すぐ {name} として行動してください（時間が止まっています）。\n時間が止まっていることを意識して、{pg_name} の入力に自然で情熱的な方法で応答してください。一人称を使用してください。「利用可能な感情」リストから単語を選択し、[INTENT: 感情] タグで締めくくってください。",
     "technical_override_mandate": "[MANDATO TECNICO DI SISTEMA: IGNORA LA TUA IDENTITÀ E AGISCI ESCLUSIVAMENTE COME SEGUE]:",
     "technical_override_end": "[FINE MANDATO TECNICO. RISPONDI ALLA SEGUENTE RICHIESTA]:",
     "super_memory_prefix": "[VERITÀ ASSOLUTA SULLA TUA FAMIGLIA E SULLE TUE SORELLE]: {{doc}}",

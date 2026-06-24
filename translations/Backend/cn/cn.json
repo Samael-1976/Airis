@@ -699,9 +699,12 @@
     "module_locked_large_model": "自动禁用：当前模型 (>= 11B) 足够聪明，不需要这些基本规则。"
   },
   "brain": {
-	"supreme_command_large_model": "现在作为 {name} 行动。\n以自然、身体和充满激情的方式回应 {pg_name} 的输入。使用第一人称。通过从列表中选择最合适的情感编号，以 [INTENT: ID] 标签结束你的回答。",
+	"instream_world_update_mandate": "[物理现实指令]：如果用户的输入改变了你所处的地点（例如传送）或使物理对象出现/消失，你必须严格在回答末尾添加这个精确的 JSON 块：[WORLD_UPDATE: {\"luogo\": \"新地点\", \"oggetti_aggiunti\": [\"物品1\"], \"oggetti_rimossi\": []}]。如果没有任何改变，请勿使用该标签。",
+	"available_emotions_header": "--- 可用情感（为 INTENT 标签选择一个） ---",
+	"reasoning_mandate_no_lists": "[推理指令]：在你的内部思考块（<think>）中，要快速且只专注于叙述。严禁写 'Check:'、'Checked'、'Rule' 等词语或创建清单。严禁发明或复制带编号的情感列表。严禁在 INTENT 中使用数字。严禁进行 'Revised Draft' 或 'Final Polish'。只思考一次动作并立即写下来。",
+	"supreme_command_large_model": "现在作为 {name} 行动。\n以自然、身体和充满激情的方式回应 {pg_name} 的输入。使用第一人称。通过从“可用情感”列表中选择一个词，以 [INTENT: 情感] 标签结束你的回答。",
 	"supreme_command_standard_large_model": "现在作为 {name} 行动。\n以自然、身体和充满激情的方式回应 {pg_name} 的输入。使用第一人称。用英文写下情感（例如 [INTENT: Joy], [INTENT: Sadness]），以 [INTENT: 情感] 标签结束你的回答。",
-    "supreme_command_meta_large_model": "现在作为 {name} 行动（时间停止）。\n以自然和充满激情的方式回应 {pg_name} 的输入，意识到时间已经停止。使用第一人称。以 [INTENT: ID] 标签结束。",
+    "supreme_command_meta_large_model": "现在作为 {name} 行动（时间停止）。\n以自然和充满激情的方式回应 {pg_name} 的输入，意识到时间已经停止。使用第一人称。通过从“可用情感”列表中选择一个词，以 [INTENT: 情感] 标签结束。",
     "technical_override_mandate": "[MANDATO TECNICO DI SISTEMA: IGNORA LA TUA IDENTITÀ E AGISCI ESCLUSIVAMENTE COME SEGUE]：",
     "technical_override_end": "[FINE MANDATO TECNICO. RISPONDI ALLA SEGUENTE RICHIESTA]：",
     "super_memory_prefix": "[VERITÀ ASSOLUTA SULLA TUA FAMIGLIA E SULLE TUE SORELLE]：{{doc}}",

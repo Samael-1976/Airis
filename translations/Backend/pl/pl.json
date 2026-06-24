@@ -699,9 +699,12 @@
     "module_locked_large_model": "Automatycznie wyłączone: Obecny model (>= 11B) jest wystarczająco inteligentny, aby nie potrzebować tych podstawowych reguł."
   },
   "brain": {
-	"supreme_command_large_model": "DZIAŁAJ TERAZ JAKO {name}.\nOdpowiedz na wejście {pg_name} w sposób naturalny, fizyczny i namiętny. Użyj pierwszej osoby. Zakończ swoją odpowiedź tagiem [INTENT: ID], wybierając numer najbardziej odpowiedniej emocji z listy.",
+	"instream_world_update_mandate": "[MANDAT FIZYCZNEJ RZECZYWISTOŚCI]: Jeśli dane wejściowe użytkownika zmieniają miejsce, w którym się znajdujecie (np. teleportacja) lub powodują pojawienie się/znikanie obiektów fizycznych, MUSISZ BEZWZGLĘDNIE dodać ten dokładny blok JSON na końcu swojej odpowiedzi: [WORLD_UPDATE: {\"luogo\": \"Nowe Miejsce\", \"oggetti_aggiunti\": [\"przedmiot1\"], \"oggetti_rimossi\": []}]. Jeśli nic się nie zmienia, nie używaj tagu.",
+	"available_emotions_header": "--- DOSTĘPNE EMOCJE (Wybierz jedną dla tagu INTENT) ---",
+	"reasoning_mandate_no_lists": "[MANDAT ROZUMOWANIA]: W swoim wewnętrznym bloku myślowym (<think>) bądź szybka i skupiona wyłącznie na narracji. SUROWO ZABRANIA SIĘ pisania słów takich jak 'Check:', 'Checked', 'Rule' lub tworzenia list kontrolnych. SUROWO ZABRANIA SIĘ wymyślania lub kopiowania ponumerowanych list emocji. SUROWO ZABRANIA SIĘ używania liczb dla INTENT. SUROWO ZABRANIA SIĘ robienia 'Revised Draft' lub 'Final Polish'. Pomyśl o akcji tylko raz i natychmiast ją zapisz.",
+	"supreme_command_large_model": "DZIAŁAJ TERAZ JAKO {name}.\nOdpowiedz na wejście {pg_name} w sposób naturalny, fizyczny i namiętny. Użyj pierwszej osoby. Zakończ swoją odpowiedź tagiem [INTENT: emocja], wybierając słowo z listy DOSTĘPNE EMOCJE.",
 	"supreme_command_standard_large_model": "DZIAŁAJ TERAZ JAKO {name}.\nOdpowiedz na wejście {pg_name} w sposób naturalny, fizyczny i namiętny. Użyj pierwszej osoby. Zakończ swoją odpowiedź tagiem [INTENT: emocja], wpisując emocję po angielsku (np. [INTENT: Joy], [INTENT: Sadness]).",
-    "supreme_command_meta_large_model": "DZIAŁAJ TERAZ JAKO {name} (CZAS ZATRZYMANY).\nOdpowiedz na wejście {pg_name} w sposób naturalny i namiętny, mając świadomość, że czas się zatrzymał. Użyj pierwszej osoby. Zakończ tagiem [INTENT: ID].",
+    "supreme_command_meta_large_model": "DZIAŁAJ TERAZ JAKO {name} (CZAS ZATRZYMANY).\nOdpowiedz na wejście {pg_name} w sposób naturalny i namiętny, mając świadomość, że czas się zatrzymał. Użyj pierwszej osoby. Zakończ tagiem [INTENT: emocja], wybierając słowo z listy DOSTĘPNE EMOCJE.",
     "technical_override_mandate": "[MANDATO TECNICO DI SISTEMA: IGNORA LA TUA IDENTITÀ E AGISCI ESCLUSIVAMENTE COME SEGUE]:",
     "technical_override_end": "[FINE MANDATO TECNICO. RISPONDI ALLA SEGUENTE RICHIESTA]:",
     "super_memory_prefix": "[VERITÀ ASSOLUTA SULLA TUA FAMIGLIA E SULLE TUE SORELLE]: {{doc}}",

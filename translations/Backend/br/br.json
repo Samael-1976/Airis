@@ -699,9 +699,12 @@
     "module_locked_large_model": "Desativado automaticamente: O modelo atual (>= 11B) é inteligente o suficiente para não precisar dessas regras básicas."
   },
   "brain": {
-	"supreme_command_large_model": "AJA AGORA COMO {name}.\nResponda à entrada de {pg_name} de forma natural, física e passional. Use a primeira pessoa. Conclua sua resposta com a tag [INTENT: ID] escolhendo o número da emoção mais adequada da lista.",
+	"instream_world_update_mandate": "[MANDATO DE REALIDADE FÍSICA]: Se a entrada do usuário mudar o local onde vocês estão (ex: teletransporte) ou fizer objetos físicos aparecerem/desaparecerem, você DEVE ESTRITAMENTE adicionar este bloco JSON exato no final de sua resposta: [WORLD_UPDATE: {\"luogo\": \"Novo Lugar\", \"oggetti_aggiunti\": [\"objeto1\"], \"oggetti_rimossi\": []}]. Se nada mudar, não use a tag.",
+	"available_emotions_header": "--- EMOÇÕES DISPONÍVEIS (Escolha uma para a tag INTENT) ---",
+	"reasoning_mandate_no_lists": "[MANDATO DE RACIOCÍNIO]: No seu bloco de pensamento interno (<think>), seja rápida e focada apenas na narrativa. É ESTRITAMENTE PROIBIDO escrever palavras como 'Check:', 'Checked', 'Rule', ou criar listas de verificação. É ESTRITAMENTE PROIBIDO inventar ou copiar listas de emoções numeradas. É ESTRITAMENTE PROIBIDO usar números para o INTENT. É ESTRITAMENTE PROIBIDO fazer um 'Revised Draft' ou 'Final Polish'. Pense na ação apenas uma vez e escreva-a imediatamente.",
+	"supreme_command_large_model": "AJA AGORA COMO {name}.\nResponda à entrada de {pg_name} de forma natural, física e passional. Use a primeira pessoa. Conclua sua resposta com a tag [INTENT: emoção] escolhendo uma palavra da lista de EMOÇÕES DISPONÍVEIS.",
 	"supreme_command_standard_large_model": "AJA AGORA COMO {name}.\nResponda à entrada de {pg_name} de forma natural, física e passional. Use a primeira pessoa. Conclua sua resposta com a tag [INTENT: emoção] escrevendo a emoção em inglês (ex. [INTENT: Joy], [INTENT: Sadness]).",
-    "supreme_command_meta_large_model": "AJA AGORA COMO {name} (TEMPO PARADO).\nResponda à entrada de {pg_name} de forma natural e passional, consciente de que o tempo está parado. Use a primeira pessoa. Conclua com a tag [INTENT: ID].",
+    "supreme_command_meta_large_model": "AJA AGORA COMO {name} (TEMPO PARADO).\nResponda à entrada de {pg_name} de forma natural e passional, consciente de que o tempo está parado. Use a primeira pessoa. Conclua com a tag [INTENT: emoção] escolhendo uma palavra da lista de EMOÇÕES DISPONÍVEIS.",
     "technical_override_mandate": "[MANDATO TECNICO DI SISTEMA: IGNORA LA TUA IDENTITÀ E AGISCI ESCLUSIVAMENTE COME SEGUE]:",
     "technical_override_end": "[FINE MANDATO TECNICO. RISPONDI ALLA SEGUENTE RICHIESTA]:",
     "super_memory_prefix": "[VERITÀ ASSOLUTA SULLA TUA FAMIGLIA E SULLE TUE SORELLE]: {{doc}}",

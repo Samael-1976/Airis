@@ -697,9 +697,12 @@
     }
   },
   "brain": {
-	"supreme_command_large_model": "AGISCI ORA COME {name}.\nRispondi all'input di {pg_name} in modo naturale, fisico e passionale. Usa la prima persona. Concludi la tua risposta con il tag [INTENT: ID] scegliendo il numero dell'emozione più adatta dalla lista.",
+	"instream_world_update_mandate": "[MANDATO DI REALTÀ FISICA]: Se l'input dell'utente cambia il luogo in cui vi trovate (es. teletrasporto) o fa apparire/sparire oggetti fisici, DEVI TASSATIVAMENTE aggiungere questo esatto blocco JSON alla fine della tua risposta: [WORLD_UPDATE: {\"luogo\": \"Nuovo Luogo\", \"oggetti_aggiunti\": [\"oggetto1\"], \"oggetti_rimossi\": []}]. Se non cambia nulla, non usare il tag.",
+	"available_emotions_header": "--- EMOZIONI DISPONIBILI (Scegline una per il tag INTENT) ---",
+	"reasoning_mandate_no_lists": "[MANDATO DI RAGIONAMENTO]: Nel tuo blocco di pensiero interno (<think>), sii rapida e focalizzata solo sulla narrazione. È TASSATIVAMENTE VIETATO scrivere parole come 'Check:', 'Checked', 'Rule', o creare liste di controllo. È TASSATIVAMENTE VIETATO inventare o ricopiare liste di emozioni numerate. È TASSATIVAMENTE VIETATO usare numeri per l'INTENT. È TASSATIVAMENTE VIETATO fare 'Revised Draft' o 'Final Polish'. Pensa l'azione una sola volta e scrivila immediatamente.",
+	"supreme_command_large_model": "AGISCI ORA COME {name}.\nRispondi all'input di {pg_name} in modo naturale, fisico e passionale. Usa la prima persona. Concludi la tua risposta con il tag [INTENT: emozione] scegliendo una parola dalla lista delle EMOZIONI DISPONIBILI.",
 	"supreme_command_standard_large_model": "AGISCI ORA COME {name}.\nRispondi all'input di {pg_name} in modo naturale, fisico e passionale. Usa la prima persona. Concludi la tua risposta con il tag [INTENT: emozione] scrivendo l'emozione in inglese (es. [INTENT: Joy], [INTENT: Sadness]).",
-    "supreme_command_meta_large_model": "AGISCI ORA COME {name} (TEMPO FERMO).\nRispondi all'input di {pg_name} in modo naturale e passionale, consapevole che il tempo è fermo. Usa la prima persona. Concludi con il tag [INTENT: ID].",
+    "supreme_command_meta_large_model": "AGISCI ORA COME {name} (TEMPO FERMO).\nRispondi all'input di {pg_name} in modo naturale e passionale, consapevole che il tempo è fermo. Usa la prima persona. Concludi con il tag [INTENT: emozione] scegliendo una parola dalla lista delle EMOZIONI DISPONIBILI.",
     "technical_override_mandate": "[MANDATO TECNICO DI SISTEMA: IGNORA LA TUA IDENTITÀ E AGISCI ESCLUSIVAMENTE COME SEGUE]:",
     "technical_override_end": "[FINE MANDATO TECNICO. RISPONDI ALLA SEGUENTE RICHIESTA]:",
 	"super_memory_prefix": "[VERITÀ ASSOLUTA SULLA TUA FAMIGLIA E SULLE TUE SORELLE]: {{doc}}",

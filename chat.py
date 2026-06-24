@@ -692,7 +692,7 @@ def _scegli_il_cuore() -> Tuple[Path, str] | None:
 
 def _scegli_sussurratore() -> Path | None:
     try:
-        draft_dir = APP_ROOT / "models" / "specialist"
+        draft_dir = APP_ROOT / "models" / "labour"
         drafts = []
         
         if draft_dir.exists():
@@ -2136,27 +2136,33 @@ class CicloVitale:
             cmd.extend(["--flash-attn", "auto"])  # Sintassi sicura e inequivocabile
             self.logger.log(t("chat.log_cpp_server_flash_attn"), "SYSTEM")
 
-        # --- [NUOVO] SPECULATIVE DECODING (NATIVE LLAMA.CPP) ---
+        # --- [NUOVO] MTP / SPECULATIVE DECODING (NATIVE LLAMA.CPP) ---
         model_config = self.guardian.get_model_selection_config() or {}
-        if model_config.get("draft_enabled", False):
-            draft_name = model_config.get("active_draft_model", "")
-            
+        draft_enabled = model_config.get("draft_enabled", False)
+        draft_name = model_config.get("active_draft_model", "")
+
+        # --- [FIX CRITICO] PRIORITÀ ALLA CONSOLE ---
+        # Se l'utente ha scelto il file MTP all'avvio (draft_model_path esiste),
+        # lo attiviamo forzatamente, ignorando l'interruttore della UI.
+        if draft_model_path and draft_model_path.exists():
+            cmd.extend([
+                "-md", str(draft_model_path),
+                "--spec-type", "draft-mtp",
+                "--spec-draft-n-max", "2"
+            ])
+            self.logger.log(f"MTP Esterno attivato: {draft_model_path.name}", "SYSTEM")
+            # Disattiviamo forzatamente mmproj perché incompatibile con i modelli draft esterni
+            mmproj_path = None
+            self.logger.log(t("chat.warn_mmproj_speculative"), "WARNING")
+        elif draft_enabled:
             if draft_name == "lookup":
-                # Prompt Lookup Decoding: Usa il contesto come draft. Zero VRAM, altissime performance su JSON/GDR.
-                # La build b8668 gestisce il lookup nativamente senza flag espliciti.
                 self.logger.log(t("chat.log_lookup_decoding"), "SYSTEM")
-            elif draft_model_path and draft_model_path.exists():
-                # Modello Draft Esterno (Richiede architettura supportata da llama.cpp)
+            elif draft_name == "qwen_native":
                 cmd.extend([
-                    "-md", str(draft_model_path),
-                    "--draft-max", "16",
-                    "--draft-min", "5",
-                    "-ngld", safe_ngl
+                    "--spec-type", "draft-mtp",
+                    "--spec-draft-n-max", "2"
                 ])
-                self.logger.log(t("chat.log_speculative_draft", name=draft_model_path.name), "SYSTEM")
-                # Disattiviamo forzatamente mmproj perché incompatibile con i modelli draft esterni
-                mmproj_path = None
-                self.logger.log(t("chat.warn_mmproj_speculative"), "WARNING")
+                self.logger.log("MTP Nativo attivato (Qwen 3.6).", "SYSTEM")
 
         if mmproj_path and mmproj_path.exists():
             # --- [FIX BUG 2] SCUDO ARCHITETTURALE (COMPATIBILITÀ MMPROJ) ---
@@ -2405,12 +2411,13 @@ class CicloVitale:
         # --- FIX v29.29: FORZATURA SCELTA OCCHI AD OGNI AVVIO ---
         occhi_path = _scegli_gli_occhi()
 
-        # --- [NUOVO] SCELTA SUSSURRATORE (SPECULATIVE DECODING) ---
+        # --- [NUOVO] SCELTA SUSSURRATORE (MTP / SPECULATIVE DECODING) ---
         draft_path = None
+        draft_name = ""
         if model_config.get("draft_enabled", False):
             draft_name = model_config.get("active_draft_model", "")
-            if draft_name:
-                draft_path = APP_ROOT / "models" / "specialist" / draft_name
+            if draft_name and draft_name not in ["lookup", "qwen_native", "None"]:
+                draft_path = APP_ROOT / "models" / "labour" / draft_name
         else:
             draft_path = _scegli_sussurratore()
             
@@ -8209,52 +8216,11 @@ class CicloVitale:
             )
             time_gdr = status_data.get("tempo", {}).get("nella_bolla", "Sconosciuto")
             
-            # ---[FIX CRITICO] INIEZIONE STATO REALE PER RILEVATORE EVENTI ---
-            # L'LLM deve conoscere lo stato esatto per poter fare il "Copia-Incolla" dei campi obbligatori
-            stato_per_eventi = {
-                "location": loc,
-                "time": time_gdr,
-                "percezione_ambientale": status_data.get("percezione_ambientale", {}),
-                "oggetti_interattivi": status_data.get("oggetti_interattivi",[]),
-                "characters": {
-                    p["nome"]: {
-                        "outfit": p.get("abbigliamento", "Standard"),
-                        "position": p.get("stato", ""),
-                        "physical_state": p.get("stato", ""),
-                        "postura_e_posizione": p.get("postura_e_posizione", ""),
-                        "dettagli_sensoriali": p.get("dettagli_sensoriali", ""),
-                        "oggetti_equipaggiati": p.get("oggetti_equipaggiati",[])
-                    } for p in status_data.get("personaggi",[])
-                }
-            }
-            current_state_summary = json.dumps(stato_per_eventi, ensure_ascii=False)
-
-            print(
-                f"{self._get_prompt('gemma_thinking')}{t('chat.log_event_flow_analysis')}"
-            )
-            event_changes = self.cervello.rileva_eventi_mondo(
-                gdr_input, current_state_summary
-            )
-
-            if event_changes:
-                print(
-                    t(
-                        "chat.events_detected",
-                        name=self.active_avatar_name.capitalize(),
-                        events=list(event_changes.keys()),
-                    )
-                )
-                # --- [FIX CRITICO] INIEZIONE RAM E LOCK ---
-                with self.world_lock:
-                    self.executor.update_status_json_partial(
-                        self.status_file_path, event_changes, self.pg_name, world_state_ref=self.world_state
-                    )
-                    status_data = self.world_state
-                    
-                # Riapplica la sostituzione dopo il reload
-                for p in status_data.get("personaggi",[]):
-                    if p["nome"] == "{{nome_pg}}":
-                        p["nome"] = self.pg_name
+            # --- [FIX CRITICO] DISATTIVAZIONE RILEVATORE EVENTI LENTO (ANTI-LAG ASSOLUTO) ---
+            # Il vecchio Rilevatore Eventi causava 100s di TTFT e distruggeva la cache.
+            # È stato sostituito dall'In-Stream Tool Calling (Idea 4 Ottimizzata).
+            # L'LLM aggiornerà il mondo in tempo reale tramite il tag [WORLD_UPDATE] nella sua risposta.
+            self.logger.log("Rilevatore Eventi legacy disattivato. Attivato In-Stream World Update.", "DEBUG")
 
             pg_data = next(
                 (
@@ -8888,6 +8854,26 @@ class CicloVitale:
 
         self.avatar_state = "ACTION"  # LOCK STATO
         self._create_session_in_db()
+        
+        # --- [FIX CRITICO] IN-STREAM WORLD UPDATE (IDEA 4 OTTIMIZZATA) ---
+        # Intercetta il tag generato dall'LLM per aggiornare il mondo a latenza zero.
+        world_update_match = re.search(r"\[WORLD_UPDATE:\s*(\{.*?\})\s*\]", risposta_grezza, re.IGNORECASE | re.DOTALL)
+        if world_update_match:
+            try:
+                update_json_str = world_update_match.group(1)
+                update_data = json.loads(update_json_str)
+                self.logger.log(f"In-Stream World Update rilevato da {nome_png}: {update_data}", "WORLD")
+                
+                with self.world_lock:
+                    self.executor.apply_instream_world_update(
+                        self.status_file_path, update_data, self.pg_name, world_state_ref=self.world_state
+                    )
+            except Exception as e:
+                self.logger.error(f"Errore parsing In-Stream World Update: {e}")
+                
+        # Rimuovi il tag dalla risposta grezza per non sporcare la UI
+        risposta_grezza = re.sub(r"\[WORLD_UPDATE:\s*\{.*?\}\s*\]", "", risposta_grezza, flags=re.IGNORECASE | re.DOTALL).strip()
+
         risposta_filtrata = self._clean_response_text(risposta_grezza)
 
         testo_pulito = re.sub(

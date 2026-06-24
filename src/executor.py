@@ -5760,6 +5760,69 @@ class BraccioDivino:
         except Exception as e:
             print(t("executor.executor_partial_update_error", error=e))
             return t("executor.partial_update_error", error=str(e))
+            
+    def apply_instream_world_update(self, status_file_path: Path, update_data: dict, pg_name: str, world_state_ref: dict = None):
+        """
+        [IDEA 4 OTTIMIZZATA] Applica i cambiamenti fisici rilevati in-stream dall'LLM.
+        Latenza zero, esecuzione sincrona in RAM.
+        """
+        try:
+            if world_state_ref is None:
+                if not status_file_path or not status_file_path.exists():
+                    return
+                with open(status_file_path, "r", encoding="utf-8") as f:
+                    world_state_ref = json.load(f)
+                    
+            changed = False
+            
+            # 1. Cambio Luogo (Teletrasporto/Spostamento)
+            nuovo_luogo = update_data.get("luogo")
+            if nuovo_luogo and isinstance(nuovo_luogo, str) and nuovo_luogo.strip():
+                if "localizzazione" not in world_state_ref:
+                    world_state_ref["localizzazione"] = {}
+                world_state_ref["localizzazione"]["luogo_fisico_attuale"] = nuovo_luogo.strip()
+                
+                # Sposta il PG e i PNG presenti nel nuovo luogo
+                for p in world_state_ref.get("personaggi", []):
+                    p["luogo"] = nuovo_luogo.strip()
+                changed = True
+                
+            # 2. Oggetti Aggiunti (Spawn)
+            oggetti_aggiunti = update_data.get("oggetti_aggiunti", [])
+            if oggetti_aggiunti and isinstance(oggetti_aggiunti, list):
+                if "oggetti_interattivi" not in world_state_ref:
+                    world_state_ref["oggetti_interattivi"] = []
+                for obj_name in oggetti_aggiunti:
+                    if str(obj_name).strip():
+                        world_state_ref["oggetti_interattivi"].append({
+                            "nome": str(obj_name).strip(),
+                            "stato": "Nuovo",
+                            "possessore": "Nessuno"
+                        })
+                changed = True
+                
+            # 3. Oggetti Rimossi (Distruzione)
+            oggetti_rimossi = update_data.get("oggetti_rimossi", [])
+            if oggetti_rimossi and isinstance(oggetti_rimossi, list):
+                current_objects = world_state_ref.get("oggetti_interattivi", [])
+                new_objects = []
+                for obj in current_objects:
+                    obj_name_lower = obj.get("nome", "").lower()
+                    if not any(str(r).lower() in obj_name_lower for r in oggetti_rimossi):
+                        new_objects.append(obj)
+                if len(new_objects) != len(current_objects):
+                    world_state_ref["oggetti_interattivi"] = new_objects
+                    changed = True
+                
+            if changed and status_file_path:
+                temp_file = status_file_path.with_suffix(".tmp")
+                with open(temp_file, "w", encoding="utf-8") as f:
+                    json.dump(world_state_ref, f, indent=2, ensure_ascii=False)
+                os.replace(temp_file, status_file_path)
+                self.logger.log("Stato del mondo aggiornato con successo (In-Stream).", "SYSTEM")
+                
+        except Exception as e:
+            self.logger.error(f"Errore apply_instream_world_update: {e}")
 
     # ---[NUOVO v127.0] AUTO-TOOL GENERATOR ---
     def generate_tool_json_from_connector(

@@ -4630,14 +4630,14 @@ const Index = () => {
                         </Select>
                       </div>
 
-                      {/* --- SPECULATIVE DECODING --- */}
+                      {/* --- MTP / SPECULATIVE DECODING --- */}
                       <div className="mt-6 p-4 border border-primary/30 rounded-lg bg-primary/5">
-                          <h4 className="text-sm font-bold text-primary mb-4">Native Speculative Decoding (Sperimental)</h4>
+                          <h4 className="text-sm font-bold text-primary mb-4">MTP / Speculative Decoding (Boost)</h4>
                           
                           <div className="flex items-center justify-between mb-4">
                               <div className="space-y-0.5">
                                   <Label className="text-sm font-bold">Abilita</Label>
-                                  <p className="text-[10px] text-muted-foreground">Permette all'anima di eseguire due modelli contemporaneamente, ottenendo un boost del 150%.</p>
+                                  <p className="text-[10px] text-muted-foreground">Attiva la Multi-Token Prediction (MTP) per un boost massiccio dei TPS.</p>
                               </div>
                               <Switch 
                                   checked={modelsState.draft_enabled} 
@@ -4647,20 +4647,21 @@ const Index = () => {
 
                           <div className={cn("space-y-4 transition-all", !modelsState.draft_enabled && "opacity-50 pointer-events-none")}>
                               <div className="space-y-2">
-                                  <Label>Nome Modello</Label>
+                                  <Label>Modello MTP (Cartella Labour)</Label>
                                   <Select 
                                       value={modelsState.active_draft_model || 'None'} 
                                       onValueChange={(v) => setModelsState(p => p ? {...p, active_draft_model: v} : p)}
                                   >
                                       <SelectTrigger><SelectValue /></SelectTrigger>
                                       <SelectContent className="max-h-[200px] overflow-y-auto">
-                                          <SelectItem value="None">Nessun speculative decoding (0)</SelectItem>
+                                          <SelectItem value="None">Nessun MTP (0)</SelectItem>
                                           <SelectItem value="lookup">Prompt Lookup (Nativo, No VRAM)</SelectItem>
-                                          {modelsState.specialist_models?.map(m => <SelectItem key={m} value={m}>{m}</SelectItem>)}
+                                          <SelectItem value="qwen_native">Qwen Native MTP (Nessun file extra)</SelectItem>
+                                          {modelsState.labour_models?.map(m => <SelectItem key={m} value={m}>{m}</SelectItem>)}
                                       </SelectContent>
                                   </Select>
                               </div>
-                              <p className="text-[10px] text-yellow-500 italic">Attenzione: Se abilitato, il modello MMProj (Occhi) verrà disattivato automaticamente per incompatibilità tecnica.</p>
+                              <p className="text-[10px] text-yellow-500 italic">Attenzione: I file MTP esterni (es. Gemma 4) devono trovarsi nella cartella /models/labour.</p>
                           </div>
                       </div>
 

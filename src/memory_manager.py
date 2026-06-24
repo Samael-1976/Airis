@@ -679,39 +679,55 @@ class MemoryManager:
                 )
             except Exception as q_err:
                 # --- [FIX CRITICO] AUTO-HEALING CORRUZIONE CHROMADB ---
-                # Se l'indice HNSW è corrotto (Error finding id), lo ricostruiamo al volo dai dati SQLite intatti.
-                if "Error finding id" in str(q_err):
+                # Se l'indice HNSW è corrotto, lo ricostruiamo al volo dai dati SQLite intatti.
+                error_str = str(q_err).lower()
+                if "error finding id" in error_str or "hnsw" in error_str or "internal error" in error_str:
                     self.log("[AUTO-HEALING] Rilevata corruzione indice ChromaDB. Avvio ricostruzione HNSW...", "WARNING")
-                    all_data = self.episodic_memories.get(include=["documents", "metadatas", "embeddings"])
-                    
-                    if all_data and all_data["ids"]:
-                        self.client.delete_collection("episodic_memories")
-                        self.episodic_memories = self.client.get_or_create_collection(
-                            name="episodic_memories", metadata={"hnsw:space": "cosine"}
-                        )
+                    try:
+                        all_data = self.episodic_memories.get(include=["documents", "metadatas", "embeddings"])
                         
-                        # Upsert a blocchi per evitare Memory Error
-                        batch_size = 100
-                        for i in range(0, len(all_data["ids"]), batch_size):
-                            self.episodic_memories.upsert(
-                                ids=all_data["ids"][i:i+batch_size],
-                                embeddings=all_data["embeddings"][i:i+batch_size],
-                                documents=all_data["documents"][i:i+batch_size],
-                                metadatas=all_data["metadatas"][i:i+batch_size]
+                        if all_data and all_data["ids"]:
+                            self.client.delete_collection("episodic_memories")
+                            self.episodic_memories = self.client.get_or_create_collection(
+                                name="episodic_memories", metadata={"hnsw:space": "cosine"}
                             )
-                        self.log("[AUTO-HEALING] Ricostruzione completata. Ripeto la query...", "SUCCESS")
-                        
-                        # Ripete la query originale
-                        results = self.episodic_memories.query(
-                            query_embeddings=[query_embedding],
-                            n_results=fetch_limit,
-                            where=where_filter,
-                            include=["documents", "metadatas", "distances", "embeddings"],
-                        )
-                    else:
-                        raise q_err
+                            
+                            # Upsert a blocchi per evitare Memory Error
+                            batch_size = 100
+                            for i in range(0, len(all_data["ids"]), batch_size):
+                                self.episodic_memories.upsert(
+                                    ids=all_data["ids"][i:i+batch_size],
+                                    embeddings=all_data["embeddings"][i:i+batch_size],
+                                    documents=all_data["documents"][i:i+batch_size],
+                                    metadatas=all_data["metadatas"][i:i+batch_size]
+                                )
+                            self.log("[AUTO-HEALING] Ricostruzione completata. Ripeto la query...", "SUCCESS")
+                            
+                            # Ripete la query originale
+                            results = self.episodic_memories.query(
+                                query_embeddings=[query_embedding],
+                                n_results=fetch_limit,
+                                where=where_filter,
+                                include=["documents", "metadatas", "distances", "embeddings"],
+                            )
+                        else:
+                            self.log("Auto-Healing fallito: Nessun dato recuperabile. Ritorno memoria vuota.", "ERROR")
+                            return []
+                    except Exception as heal_err:
+                        self.log(f"Auto-Healing fallito catastroficamente: {heal_err}. Eseguo HARD RESET del database vettoriale.", "ERROR")
+                        # --- [HARD RESET] ---
+                        try:
+                            self.client.delete_collection("episodic_memories")
+                            self.episodic_memories = self.client.get_or_create_collection(
+                                name="episodic_memories", metadata={"hnsw:space": "cosine"}
+                            )
+                            self.log("Hard Reset completato. La collezione è stata ricreata vuota.", "SUCCESS")
+                        except Exception as hard_err:
+                            self.log(f"Hard Reset fallito: {hard_err}", "ERROR")
+                        return []
                 else:
-                    raise q_err
+                    self.log(f"Errore ChromaDB sconosciuto: {q_err}. Ritorno memoria vuota.", "ERROR")
+                    return []
 
             if not results or not results["documents"] or not results["documents"][0]:
                 return[]

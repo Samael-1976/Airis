@@ -121,9 +121,11 @@ Experience **The Plug & Play Revolution** in three simple steps. No external dep
 Download the latest standalone release package:
 
 1. Download the file from: https://aka.ms/vs/17/release/vc_redist.x64.exe and intall it
-1. Download the last package file from: https://github.com/Samael-1976/Airis/releases
-2. extract the file
-3. cd Airis (or the name of the directory where you extracted the package)
+2. Download the file from:
+https://github.com/espeak-ng/espeak-ng/releases and install it
+3. Download the last package file from: https://github.com/Samael-1976/Airis/releases
+4. extract the file
+5. cd Airis (or the name of the directory where you extracted the package)
 
 
 ### 2. Launch the Ecosystem

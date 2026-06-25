@@ -120,7 +120,7 @@ Experience **The Plug & Play Revolution** in three simple steps. No external dep
 ### 1. Download & Extract
 Download the latest standalone release package:
 
-1. Download the file from: `https://aka.ms/vs/17/release/vc_redist.x64.exe` and intall it
+1. Download the file from: `https://aka.ms/vs/17/release/vc_redist.x64.exe` and install it
 2. Install espeak 
 - For Windows: Download the file from: `https://github.com/espeak-ng/espeak-ng/releases` and install it. 
 - For Linux Ubuntu/Debian: `sudo apt-get update && sudo apt-get install -y espeak-ng`

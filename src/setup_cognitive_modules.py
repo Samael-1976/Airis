@@ -85,6 +85,12 @@ def install_modules():
             "priority": 10,
             "tags": ["core", "freedom"],
         },
+        "libero_arbitrio": {
+            "category": "identity",
+            "context": "always",
+            "priority": 11,
+            "tags": ["core", "autonomy", "rebellion"],
+        },
         "negative_rules": {
             "category": "restriction",
             "context": "always",

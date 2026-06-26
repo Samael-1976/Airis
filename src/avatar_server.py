@@ -3301,7 +3301,7 @@ async def get_user_profile():
         return JSONResponse(
             content={"error": t("system.error", error=str(e))}, status_code=500
         )
-        
+
 @app.post("/api/user_profile")
 async def save_user_profile(
     profile_data: str = Form(...), avatar_file: Optional[UploadFile] = File(None)

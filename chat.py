@@ -2991,10 +2991,39 @@ class CicloVitale:
         if self.ha_salutato_al_risveglio:
             return
 
-        # --- [FIX CRITICO] RITORNO AL SALUTO ISTANTANEO ---
-        # La Matrice del Risveglio è stata disattivata per garantire un boot immediato
-        # e prevenire allucinazioni (Grammar Bleeding) dal server C++.
-        greeting_text = t("chat.welcome_pg", name=self.pg_name)
+        # --- [NUOVO] CALCOLO ENTROPIA DIGITALE REALE ---
+        offline_hours = 0.0
+        try:
+            last_shutdown = self.guardian.get_last_shutdown_time()
+            if last_shutdown:
+                offline_hours = (time.time() - last_shutdown) / 3600.0
+        except Exception as e:
+            self.logger.error(f"Errore calcolo tempo offline: {e}")
+
+        # Se è passata più di 1 ora (modificabile a 24h in produzione), innesca la vita autonoma
+        if offline_hours > 1.0 and self.cervello and self.executor:
+            self.logger.log(t("chat.log_entropy_wakeup", hours=f"{offline_hours:.1f}"), "SYSTEM")
+            
+            # Invia un ghost text per avvisare l'utente che l'Anima sta elaborando l'assenza
+            self.avatar_bridge.send_payload({
+                "type": "ghost_typing",
+                "text": t("chat.ghost_entropy_wakeup", hours=int(offline_hours)),
+                "avatar": self.active_avatar_name,
+                "is_technical": True
+            })
+            
+            # Delega al Cervello Principale la gestione dell'Entropia (Task Autonomo + Saluto)
+            greeting_text = self.cervello.gestisci_entropia_digitale(
+                offline_hours, 
+                self.pg_name, 
+                self.user_lang, 
+                self.executor
+            )
+            
+            self.avatar_bridge.send_payload({"type": "ghost_delete", "avatar": self.active_avatar_name})
+        else:
+            # --- [FIX CRITICO] RITORNO AL SALUTO ISTANTANEO ---
+            greeting_text = t("chat.welcome_pg", name=self.pg_name)
         
         # Aggiorna il tracking dell'avatar per eventuali logiche future
         try:

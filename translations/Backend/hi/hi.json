@@ -3427,6 +3427,7 @@
   },
   "log": {
     "analysis_avatar": "[ANALISI] अवतार: {{avatar_name}}",
+	"profile_corrupted_healing": "दूषित उपयोगकर्ता प्रोफ़ाइल का पता चला ({file})। auto-healing निष्पादित किया जा रहा है और First Run को पुनर्स्थापित किया जा रहा है...",
     "archived_count": "मेमोरी मैनेजर: कोल्ड स्टोरेज में {{count}} टुकड़े संग्रहीत।",
     "archiving_session": "मेमोरी मैनेजर: प्रति सत्र यादें संग्रहीत करना (सॉफ्ट डिलीट) {{id}}...",
     "audio_delete_error": "केयर ऑडियो हटाने में त्रुटि: {{error}}",

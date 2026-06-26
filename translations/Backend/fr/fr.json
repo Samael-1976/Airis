@@ -3426,8 +3426,9 @@
     }
   },
   "log": {
-	  "brain_large_model_detected": "Gatekeeper Cognitif : Modèle Large détecté ({size}B). Optimisation du prompt activée.",
+	"brain_large_model_detected": "Gatekeeper Cognitif : Modèle Large détecté ({size}B). Optimisation du prompt activée.",
     "analysis_avatar": "[ANALISI]Avatar : {{avatar_name}}",
+	"profile_corrupted_healing": "Profil utilisateur corrompu détecté ({file}). Exécution de l'auto-healing et restauration du First Run...",
     "archived_count": "MemoryManager : fragments {{count}} stockés dans Cold Storage.",
     "archiving_session": "MemoryManager : Archivage (Soft Supprimer) des mémoires par session {{id}}...",
     "audio_delete_error": "Erreur de suppression audio : {{error}}",

@@ -3427,6 +3427,8 @@
   },
   "log": {
     "analysis_avatar": "[ANALISI] Avatar: {{avatar_name}}",
+	"vram_restart_warning": "Note: Changes to VRAM and Context require a manual server restart to take effect.",
+    "profile_corrupted_healing": "Beschädigtes Benutzerprofil erkannt ({file}). Führe Auto-Healing aus und stelle First Run wieder her...",
     "archived_count": "MemoryManager: {{count}} Fragmente im Cold Storage gespeichert.",
     "archiving_session": "MemoryManager: Archivierung (vorläufiges Löschen) von Erinnerungen pro Sitzung {{id}}...",
     "audio_delete_error": "Fehler beim Löschen von Care-Audio: {{error}}",

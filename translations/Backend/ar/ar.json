@@ -3427,6 +3427,7 @@
   },
   "log": {
     "analysis_avatar": "[ANALISI] الصورة الرمزية: {{avatar_name}}",
+	"profile_corrupted_healing": "تم اكتشاف ملف تعريف مستخدم تالف ({file}). جاري تشغيل auto-healing واستعادة First Run...",
     "archived_count": "MemoryManager: تم تخزين أجزاء {{count}} في وحدة التخزين الباردة.",
     "archiving_session": "MemoryManager: أرشفة (الحذف البسيط) للذكريات لكل جلسة {{id}}...",
     "audio_delete_error": "خطأ في حذف صوت الرعاية: {{error}}",

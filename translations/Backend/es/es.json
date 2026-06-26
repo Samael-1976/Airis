@@ -3427,6 +3427,7 @@
   },
   "log": {
     "analysis_avatar": "[ANALISI]Avatar: {{avatar_name}}",
+	"profile_corrupted_healing": "Se ha detectado un perfil de usuario corrupto ({file}). Realizando auto-healing y restaurando el First Run...",
     "archived_count": "MemoryManager: {{count}} fragmentos almacenados en almacenamiento en frío.",
     "archiving_session": "MemoryManager: Archivando (eliminación temporal) memorias por sesión {{id}}...",
     "audio_delete_error": "Error de eliminación de audio de atención: {{error}}",

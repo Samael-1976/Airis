@@ -3427,6 +3427,7 @@
   },
   "log": {
     "analysis_avatar": "[ANALISI] Avatar: {{avatar_name}}",
+	"profile_corrupted_healing": "Beschadigd gebruikersprofiel gedetecteerd ({file}). Auto-healing uitvoeren en First Run herstellen...",
     "archived_count": "MemoryManager: {{count}} fragmenten opgeslagen in Cold Storage.",
     "archiving_session": "MemoryManager: archiveren (zacht verwijderen) van herinneringen per sessie {{id}}...",
     "audio_delete_error": "Fout bij het verwijderen van audio: {{error}}",

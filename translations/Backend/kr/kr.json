@@ -3426,6 +3426,7 @@
   },
   "log": {
     "analysis_avatar": "[ANALISI] 아바타: {{avatar_name}}",
+	"profile_corrupted_healing": "손상된 사용자 프로필이 감지되었습니다 ({file}). auto-healing을 실행하고 First Run을 복원하는 중...",
     "archived_count": "MemoryManager: {{count}} 조각을 콜드 스토리지에 저장했습니다.",
     "archiving_session": "MemoryManager: 세션당 메모리 보관(소프트 삭제) {{id}}...",
     "audio_delete_error": "Care 오디오 삭제 오류: {{error}}",

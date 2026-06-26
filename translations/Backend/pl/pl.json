@@ -3427,6 +3427,7 @@
   },
   "log": {
     "analysis_avatar": "[ANALISI] Awatar: {{avatar_name}}",
+	"profile_corrupted_healing": "Wykryto uszkodzony profil użytkownika ({file}). Uruchamianie auto-healing i przywracanie First Run...",
     "archived_count": "MemoryManager: Przechowywane fragmenty {{count}} w chłodni.",
     "archiving_session": "MemoryManager: Archiwizacja (miękkie usuwanie) pamięci na sesję {{id}}...",
     "audio_delete_error": "Błąd usuwania dźwięku Care: {{error}}",

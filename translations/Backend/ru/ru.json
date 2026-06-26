@@ -3427,6 +3427,7 @@
   },
   "log": {
     "analysis_avatar": "[ANALISI] Аватар: {{avatar_name}}",
+	"profile_corrupted_healing": "Обнаружен поврежденный профиль пользователя ({file}). Выполняется auto-healing и восстановление First Run...",
     "archived_count": "MemoryManager: фрагменты {{count}} сохранены в холодном хранилище.",
     "archiving_session": "MemoryManager: архивирование (мягкое удаление) воспоминаний за сеанс {{id}}...",
     "audio_delete_error": "Ошибка удаления аудиофайла Care: {{error}}",

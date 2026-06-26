@@ -1929,6 +1929,17 @@ class CicloVitale:
                 t("chat.log.user_profile_loaded", file=profile_path.name), "INIT"
             )
             return profile_data, profile_path
+        except json.JSONDecodeError:
+            # --- [FIX CRITICO] AUTO-HEALING PROFILO CORROTTO (THREAD-SAFE) ---
+            self.logger.error(t("log.profile_corrupted_healing", file=profile_path.name))
+            try:
+                if profile_path.exists():
+                    os.remove(profile_path)
+                if self.guardian:
+                    self.guardian.set_first_run(True)
+            except:
+                pass
+            return None
         except Exception as e:
             self.logger.error(t("chat.log.user_profile_load_error", error=e))
             return None
@@ -2266,7 +2277,8 @@ class CicloVitale:
 
         user_profile_info = self._load_user_profile()
         if not user_profile_info:
-            if not first_run:
+            # --- [FIX CRITICO] Rileggiamo il flag nel caso l'auto-healing lo abbia forzato a True
+            if not self.guardian.is_first_run():
                 self.logger.error(t("chat.ui.err_no_user_profile"))
                 return None
             else:

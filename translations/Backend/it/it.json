@@ -3427,6 +3427,7 @@
     }
   },
   "log": {
+	"profile_corrupted_healing": "Profilo utente corrotto rilevato ({file}). Eseguo auto-healing e ripristino il First Run...",
     "analysis_avatar": "\n[ANALISI] Avatar: {{avatar_name}}",
     "archived_count": "MemoryManager: Archiviati {{count}} frammenti nel Cold Storage.",
     "archiving_session": "MemoryManager: Archiviazione (Soft Delete) memorie per sessione {{id}}...",

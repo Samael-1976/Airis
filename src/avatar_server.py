@@ -3214,29 +3214,57 @@ async def get_user_profile():
         )
 
     try:
-        json_files = list(user_config_dir.glob("*.json"))
-        if not json_files:
-            # Se non ci sono file JSON, restituiamo una struttura vuota con il flag first_run
-            # Questo permette al frontend di vedere il flag e lanciare il wizard
-            return JSONResponse(
-                content={
-                    "first_run": is_first_run,
-                    "name": "",
-                    "email": "",
-                    "mobileNumber": "",
-                    "age": "",
-                    "gender": "unspecified",
-                    "bio": "",
-                    "preferredLanguage": fallback_lang, # [FIX] Usa la lingua scelta nel prompt
-                    "preferredVoice": "",
-                    "birthDate": "",
-                    "avatar": None,
-                }
-            )
+            json_files = list(user_config_dir.glob("*.json"))
+            if not json_files:
+                # Se non ci sono file JSON, restituiamo una struttura vuota con il flag first_run
+                # Questo permette al frontend di vedere il flag e lanciare il wizard
+                return JSONResponse(
+                    content={
+                        "first_run": is_first_run,
+                        "name": "",
+                        "email": "",
+                        "mobileNumber": "",
+                        "age": "",
+                        "gender": "unspecified",
+                        "bio": "",
+                        "preferredLanguage": fallback_lang, # [FIX] Usa la lingua scelta nel prompt
+                        "preferredVoice": "",
+                        "birthDate": "",
+                        "avatar": None,
+                    }
+                )
 
-        with open(json_files[0], "r", encoding="utf-8") as f:
-            profile_data = json.load(f)
-        user_profile = {
+            try:
+                with open(json_files[0], "r", encoding="utf-8") as f:
+                    profile_data = json.load(f)
+            except json.JSONDecodeError:
+                # --- [FIX CRITICO] AUTO-HEALING PROFILO CORROTTO (THREAD-SAFE) ---
+                logger.error(t("log.profile_corrupted_healing", file=json_files[0].name))
+                try:
+                    if json_files[0].exists():
+                        os.remove(json_files[0])
+                    if guardian:
+                        guardian.set_first_run(True)
+                except:
+                    pass
+                # Restituisce il profilo vuoto per forzare il Welcome Wizard
+                return JSONResponse(
+                    content={
+                        "first_run": True,
+                        "name": "",
+                        "email": "",
+                        "mobileNumber": "",
+                        "age": "",
+                        "gender": "unspecified",
+                        "bio": "",
+                        "preferredLanguage": fallback_lang,
+                        "preferredVoice": "",
+                        "birthDate": "",
+                        "avatar": None,
+                    }
+                )
+
+            user_profile = {
             "first_run": is_first_run,  # Inject flag
             "name": get_json_value(profile_data, ["nome", "nome_completo", "name"]),
             "age": get_json_value(profile_data, ["età_apparente", "età_fisica", "age"]),

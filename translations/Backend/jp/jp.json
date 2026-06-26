@@ -3427,6 +3427,7 @@
   },
   "log": {
     "analysis_avatar": "[ANALISI] アバター: {{avatar_name}}",
+	"profile_corrupted_healing": "破損したユーザープロファイルを検出しました ({file})。auto-healing を実行し、First Run を復元しています...",
     "archived_count": "MemoryManager: {{count}} フラグメントをコールド ストレージに保存しました。",
     "archiving_session": "MemoryManager: セッションごとにメモリをアーカイブ (ソフト削除) {{id}}...",
     "audio_delete_error": "ケア音声削除エラー: {{error}}",

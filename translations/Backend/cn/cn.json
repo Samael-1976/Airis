@@ -3427,6 +3427,7 @@
   },
   "log": {
     "analysis_avatar": "[ANALISI] 头像：{{avatar_name}}",
+	"profile_corrupted_healing": "检测到损坏的用户配置文件 ({file})。正在执行 auto-healing 并恢复 First Run...",
     "archived_count": "MemoryManager：将 {{count}} 片段存储在冷存储中。",
     "archiving_session": "MemoryManager：每个会话存档（软删除）内存 {{id}}...",
     "audio_delete_error": "注意音频删除错误：{{error}}",

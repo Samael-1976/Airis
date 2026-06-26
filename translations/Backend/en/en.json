@@ -3427,6 +3427,7 @@
   },
   "log": {
     "analysis_avatar": "[ANALISI] Avatar: {{avatar_name}}",
+	"profile_corrupted_healing": "Corrupted user profile detected ({file}). Performing auto-healing and restoring First Run...",
     "archived_count": "MemoryManager: Stored {{count}} fragments in Cold Storage.",
     "archiving_session": "MemoryManager: Archiving (Soft Delete) memories per session {{id}}...",
     "audio_delete_error": "Care audio deletion error: {{error}}",

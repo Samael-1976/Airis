@@ -1089,6 +1089,9 @@ class CicloVitale:
         # --- [NUOVO] COOLDOWNS COSCIENZA V2 ---
         self.last_spontaneous_initiation = 0.0
         self.last_hardware_resonance = 0.0
+        
+        # --- [NUOVO] LOCK PROATTIVO (ANTI-TRAFFICO NEURALE) ---
+        self.proactive_lock = threading.Lock()
 
         atexit.register(self._cleanup_on_exit)
 
@@ -9723,9 +9726,34 @@ class CicloVitale:
 
             if is_deep_dive:
                 self.logger.log(t("log.deep_dive_trigger"), "EMOTION")
-                # 1. Filler Tattico
-                filler_msg = t("chat.important_question_msg")
-                self.execute_action(filler_msg, text_input)
+                # 1. Filler Tattico (Inviato direttamente alla UI senza chiudere il turno)
+                filler_msg = t("chat.important_question_msg", default="È una domanda importante... dammi un attimo per trovare le parole giuste.")
+                
+                self.avatar_bridge.send_payload({
+                    "type": "text_message",
+                    "text": filler_msg,
+                    "avatar_url": self.ai_avatar_url,
+                    "avatar": self.active_avatar_name.capitalize(),
+                    "payload": {"is_main_ai": True},
+                })
+                
+                # Genera l'audio per il filler se non è mutata
+                if not self.is_muted:
+                    voice_pt, lang_code = self._get_voice_for_character(self.active_avatar_name)
+                    audio_path = self.executor.genera_voce(
+                        filler_msg,
+                        "state_thinking",
+                        preferred_voice=voice_pt,
+                        preferred_lang_code=lang_code,
+                    )
+                    if audio_path:
+                        self.avatar_bridge.send_payload({
+                            "type": "action",
+                            "intent": "state_thinking",
+                            "audio_url": f"/temp_audio/{Path(audio_path).name}",
+                            "avatar": self.active_avatar_name,
+                            "loop": False,
+                        })
 
                 # Ri-blocca stato per il pensiero vero
                 self.avatar_state = "THINKING"
@@ -12226,12 +12254,17 @@ class CicloVitale:
             if now - self.last_interaction_time < 60:
                 continue
                 
+            # --- [FIX CRITICO] LOCK PROATTIVO ---
+            # Evita che il DMN parta mentre il Subconscio o l'Intervento Proattivo stanno già usando l'LLM
+            if not self.proactive_lock.acquire(blocking=False):
+                continue
+                
             try:
                 if self.cervello and self.memory and self.heart:
                     ricordi = self.memory.get_random_distant_memories(limit=2)
                     stato_emotivo = self.heart.get_heart_status(self.dynamic_user_profile)
                     
-                    dmn_json = self.cervello.pensa_flusso_coscienza(ricordi, stato_emotivo, lang=self.user_lang)
+                    dmn_json = self.cervello.pensa_flusso_coscienza(ricordi, stato_emotivo, lang=self.user_lang, in_gdr_mode=self.in_gdr_mode)
                     
                     pensiero = dmn_json.get("pensiero_interno", "")
                     rompi_silenzio = dmn_json.get("rompi_silenzio", False)
@@ -12293,6 +12326,8 @@ class CicloVitale:
                         
             except Exception as e:
                 self.logger.error(f"Errore nel DMN: {e}")
+            finally:
+                self.proactive_lock.release()
 
     # --- [NUOVO] METODI THREAD CORPO E HELPER ---
     def _clear_body_queue(self):
@@ -12959,7 +12994,12 @@ class CicloVitale:
                 self.logger.log(t("chat.log_subconscious_processing"), "SUBCONSCIOUS")
                 
                 # 4. La Forgia delle Intuizioni
-                intuizione = self.cervello.pensa_intuizione_subconscia(ricordi, lang=self.user_lang)
+                if not self.proactive_lock.acquire(blocking=False):
+                    continue
+                try:
+                    intuizione = self.cervello.pensa_intuizione_subconscia(ricordi, lang=self.user_lang)
+                finally:
+                    self.proactive_lock.release()
                 
                 # Failsafe: se l'utente si è svegliato durante la generazione, scarta tutto
                 if self.is_processing_input:

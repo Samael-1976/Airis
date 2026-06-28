@@ -355,7 +355,15 @@ class CervelloTrinitario:
         prompt = self._safe_replace(prompt, "stato_emotivo", stato_emotivo)
         prompt += self._get_language_instruction(lang)
         
-        messages = [{"role": "user", "content": prompt}]
+        # --- [FIX CRITICO] INIEZIONE IDENTITÀ (ANCORA DI DIAMANTE) ---
+        # Senza questo, il modello non sa di essere Airis e pensa come un freddo assistente AI.
+        ancora_text = self._build_anchor_prompt(in_gdr_mode=in_gdr_mode)
+        
+        messages = [
+            {"role": "system", "content": ancora_text},
+            {"role": "user", "content": prompt}
+        ]
+        
         schema = {
             "type": "object",
             "properties": {
@@ -368,12 +376,20 @@ class CervelloTrinitario:
         
         response_str = self._genera_pensiero(messages, temperature=0.7, response_format={"type": "json_object", "schema": schema}, in_gdr_mode=in_gdr_mode)
         try:
-            clean_str = response_str.replace("```json", "").replace("```", "").strip()
+            # --- [FIX CRITICO] PULIZIA JSON ROBUSTA (ANTI-THINKING) ---
+            clean_str = re.sub(r"<\|channel\|\>thought.*?\<channel\|\>", "", response_str, flags=re.IGNORECASE | re.DOTALL).strip()
+            clean_str = re.sub(r"<think>.*?</think>", "", clean_str, flags=re.IGNORECASE | re.DOTALL).strip()
+            clean_str = clean_str.replace("```json", "").replace("```", "").strip()
+            
             json_match = re.search(r"(\{[\s\S]*\})", clean_str)
-            if json_match: clean_str = json_match.group(1)
+            if json_match: 
+                clean_str = json_match.group(1)
+            else:
+                raise ValueError("Nessun oggetto JSON trovato nella risposta.")
+                
             return json.loads(clean_str)
         except Exception as e:
-            self.logger.error(f"Errore DMN: {e}")
+            self.logger.error(f"Errore DMN: {e} | Raw: {response_str[:50]}...")
             return {"pensiero_interno": "Silenzio.", "rompi_silenzio": False, "messaggio_utente": ""}
             
     def valuta_dissonanza_cognitiva(self, storia_recente: str, lang: str = "it", in_gdr_mode: bool = False) -> Dict[str, str]:

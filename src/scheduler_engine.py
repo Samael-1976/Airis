@@ -83,6 +83,11 @@ class SchedulerEngine:
             # Default: ogni giorno
             schedule.every().day.at(job_time).do(job_action)
 
+    def add_dynamic_job(self, job_dict: Dict[str, Any]):
+        """[NUOVO] Aggiunge un job a runtime (usato dall'Agentività dell'Anima)."""
+        self.jobs_config.append(job_dict)
+        self._schedule_job(job_dict)
+
     def _execute_job_action(self, job: Dict[str, Any]):
         """Esegue l'azione definita nel job tramite l'Executor."""
         action_type = job.get("action")
@@ -104,8 +109,21 @@ class SchedulerEngine:
                     device = payload.get("device")
                     action = payload.get("action")
                     value = payload.get("value")
-                    if hasattr(self.executor, "controlla_dispositivo"):
-                        self.executor.controlla_dispositivo(device, action, value)
+                    
+                    # --- [NUOVO] ESECUZIONE DESIDERI TRAMITE DEMIURGO ---
+                    if device == "demiurgo" and action == "execute":
+                        self.logger.log(f"Esecuzione Desiderio Autonomo: {value}", "SYSTEM")
+                        if hasattr(self.executor, "demiurge"):
+                            self.executor.demiurge(value)
+                            
+                        # Se è un desiderio one-shot, rimuovilo dopo l'esecuzione
+                        if job.get("is_autonomous_desire"):
+                            self.jobs_config = [j for j in self.jobs_config if j.get("id") != job.get("id")]
+                            import schedule
+                            return schedule.CancelJob # Metodo nativo e sicuro per uccidere il job corrente
+                    else:
+                        if hasattr(self.executor, "controlla_dispositivo"):
+                            self.executor.controlla_dispositivo(device, action, value)
 
             # Espandibile con altre azioni
 

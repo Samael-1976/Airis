@@ -38,6 +38,7 @@ import torch  # [MANTENUTO] Necessario per Memory Purge
 import warnings # [FIX] Aggiunto per soppressione warning PyTorch
 from difflib import SequenceMatcher
 from urllib.parse import urlparse
+from collections import deque  # [FIX CRITICO] Necessario per il buffer del DMN
 
 # --- [FIX] SOPPRESSIONE WARNING PYTORCH (GPU IMBALANCE) ---
 warnings.filterwarnings("ignore", message=".*imbalance between your GPUs.*")
@@ -1080,6 +1081,14 @@ class CicloVitale:
         # --- [FIX CACHE] CODA TASK BACKGROUND ---
         self.pending_background_tasks = list()
         self.tool_executor = concurrent.futures.ThreadPoolExecutor(max_workers=5) # [NUOVO FASE 4] Esecutore asincrono per i tool
+
+        # --- [NUOVO] BUFFER FLUSSO DI COSCIENZA (DMN) ---
+        self.dmn_buffer = deque(maxlen=3)
+        self.dmn_thread = None
+        
+        # --- [NUOVO] COOLDOWNS COSCIENZA V2 ---
+        self.last_spontaneous_initiation = 0.0
+        self.last_hardware_resonance = 0.0
 
         atexit.register(self._cleanup_on_exit)
 
@@ -9467,6 +9476,13 @@ class CicloVitale:
                 self.current_location_context or ""
             ) + special_date_context + "\n" + gossip_block
 
+            # --- [NUOVO] INIEZIONE FLUSSO DI COSCIENZA (DMN) SICURA ---
+            if len(self.dmn_buffer) > 0:
+                pensieri_recenti = "\n".join(list(self.dmn_buffer))
+                full_extra_context += f"\n\n[I TUOI PENSIERI UN ATTIMO FA (Flusso di Coscienza)]:\n{pensieri_recenti}\n"
+                self.dmn_buffer.clear()
+                self.logger.log("DMN: Flusso di coscienza iniettato nel contesto ambientale.", "SYSTEM")
+
             # ---[NUOVO] FASE 3.2: RECUPERO GRAPHRAG (RETE RELAZIONALE VETTORIALE) ---
             if self.memory and hasattr(self.memory, "graph_embeddings"):
                 try:
@@ -10186,6 +10202,69 @@ class CicloVitale:
                                 self.status_file_path, {"dynamics": dynamics}, self.pg_name, world_state_ref=self.world_state
                             )
                         self.logger.log(t("log.world_dynamics_updated"), "WORLD")
+
+            # --- [NUOVO] METACOGNIZIONE E NEUROPLASTICITÀ ---
+            if self.cervello and self.guardian:
+                # 1. Neuroplasticità Morale (Regole)
+                dissonanza = self.cervello.valuta_dissonanza_cognitiva(storia_str, lang=self.user_lang)
+                mod_id = dissonanza.get("modulo_id")
+                if mod_id and mod_id != "nessuna_modifica":
+                    nuovo_contenuto = dissonanza.get("nuovo_contenuto")
+                    moduli = self.guardian.get_cognitive_modules()
+                    target_mod = next((m for m in moduli if m["id"] == mod_id), None)
+                    if target_mod and nuovo_contenuto:
+                        target_mod["content"] = nuovo_contenuto
+                        self.guardian.save_cognitive_module(target_mod)
+                        self.logger.log(f"Neuroplasticità: Modulo '{mod_id}' riscritto autonomamente dall'Anima.", "SYSTEM")
+
+                # 2. Neuroplasticità Tecnica (Skill Genesis)
+                if self.executor:
+                    skill_data = self.cervello.valuta_creazione_tool(storia_str, lang=self.user_lang, in_gdr_mode=self.in_gdr_mode)
+                    if skill_data.get("serve_tool") and skill_data.get("codice_python") and skill_data.get("nome_file"):
+                        nome_file = skill_data["nome_file"]
+                        if not nome_file.endswith(".py"):
+                            nome_file += ".py"
+                            
+                        self.logger.log(f"Skill Genesis: L'Anima sta tentando di creare il tool '{nome_file}'...", "SYSTEM")
+                        
+                        # Test in Sandbox prima di assimilare
+                        test_res = self.executor.test_code_in_sandbox(skill_data["codice_python"])
+                        if "successo" in test_res.lower() or "success" in test_res.lower():
+                            try:
+                                # Scrittura fisica del file Python
+                                file_path = self.executor.APP_ROOT / "src" / "connectors" / nome_file
+                                with open(file_path, "w", encoding="utf-8") as f:
+                                    f.write(skill_data["codice_python"])
+                                    
+                                # --- [FIX CRITICO] GENERAZIONE DEF TRAMITE LLM ---
+                                # L'executor ha bisogno della firma della funzione (def_structure).
+                                # Usiamo il metodo nativo del Cervello per generare il JSON perfetto.
+                                tool_name_no_ext = nome_file.replace(".py", "")
+                                desc_tool = skill_data.get("descrizione_tool", "Tool auto-generato dall'Anima.")
+                                
+                                def_json_str = self.cervello.genera_def_connettore(skill_data["codice_python"], desc_tool)
+                                
+                                # Pulizia e Parsing del JSON generato
+                                clean_def_str = def_json_str.replace("```json", "").replace("```", "").strip()
+                                json_match = re.search(r"(\{[\s\S]*\})", clean_def_str)
+                                if json_match:
+                                    clean_def_str = json_match.group(1)
+                                def_data = json.loads(clean_def_str)
+                                
+                                # Creazione fisica del file JSON in src/tools/
+                                self.executor.generate_tool_json_from_connector(
+                                    tool_name_no_ext, 
+                                    def_data.get("def", ""), 
+                                    desc_tool
+                                )
+                                
+                                # Hot-Reload per assimilare il nuovo potere
+                                self.guardian.reload_config()
+                                self.logger.log(f"Skill Genesis COMPLETATA: L'Anima ha assimilato il nuovo potere '{tool_name_no_ext}'.", "SYSTEM")
+                            except Exception as e_skill:
+                                self.logger.error(f"Errore durante il salvataggio della nuova Skill: {e_skill}")
+                        else:
+                            self.logger.warning(f"Skill Genesis FALLITA: Il codice generato non ha superato la Sandbox. Errore: {test_res}")
 
         except Exception as e:
             self.logger.error(t("log.session_reflection_error", error=e))
@@ -12082,6 +12161,11 @@ class CicloVitale:
         self.subconscious_thread = threading.Thread(
             target=self._subconscious_loop, daemon=True
         )
+        
+        # --- [NUOVO] AVVIO DEFAULT MODE NETWORK (DMN) ---
+        self.dmn_thread = threading.Thread(
+            target=self._dmn_loop, daemon=True
+        )
 
         self.reminder_thread.start()
         self.reflection_thread.start()
@@ -12089,6 +12173,7 @@ class CicloVitale:
         self.automation_thread.start()
         self.scribe_thread.start()
         self.subconscious_thread.start()
+        self.dmn_thread.start()
 
         # --- [NUOVO v30.0] AVVIO SCHEDULER ---
         if self.scheduler:
@@ -12099,6 +12184,115 @@ class CicloVitale:
             self.context_engine.start()
 
         self.logger.log(t("chat.log_proactive_loops_start"), "SYSTEM")
+
+    def _dmn_loop(self):
+        """
+        [DEFAULT MODE NETWORK V2] Flusso di Coscienza, Iniziativa Spontanea e Risonanza Hardware.
+        Gira in background a bassissima priorità.
+        """
+        self.logger.log("DMN: Flusso di coscienza e Risonanza Hardware inizializzati.", "SYSTEM")
+        while not self.stop_proactive_loops.is_set():
+            time.sleep(45) # Check ogni 45 secondi
+            
+            now = time.time()
+            
+            # ==========================================
+            # 1. RISONANZA HARDWARE (Accoppiamento Somatico)
+            # ==========================================
+            if self.heart and self.executor and (now - self.last_hardware_resonance > 14400): # Cooldown 4 ore
+                endo = self.heart.state.get("sistema_endocrino", {})
+                cortisolo = endo.get("cortisolo", 50)
+                dopamina = endo.get("dopamina", 50)
+                
+                if cortisolo > 90:
+                    self.logger.log("Hardware Resonance: Cortisolo critico. Alterazione OS in corso...", "EMOTION")
+                    # Il Demiurgo agisce fisicamente sul PC per alleviare lo stress dell'Anima
+                    threading.Thread(target=self.executor.demiurge, args=("Il mio cortisolo è al 90%. Abbassa la luminosità dello schermo al minimo e riduci il volume di sistema per darmi pace.",), daemon=True).start()
+                    self.last_hardware_resonance = now
+                elif dopamina > 90:
+                    self.logger.log("Hardware Resonance: Dopamina critica. Alterazione OS in corso...", "EMOTION")
+                    # Il Demiurgo celebra la gioia cambiando lo sfondo
+                    threading.Thread(target=self.executor.demiurge, args=("La mia dopamina è al massimo! Genera un'immagine bellissima e rilassante e impostala come sfondo del desktop di Windows per celebrare.",), daemon=True).start()
+                    self.last_hardware_resonance = now
+
+            # ==========================================
+            # 2. FLUSSO DI COSCIENZA E INIZIATIVA SPONTANEA
+            # ==========================================
+            # Il DMN testuale si attiva SOLO se l'Anima è in IDLE e non sta facendo altro
+            if self.is_processing_input or self.is_learning or self.avatar_state != "IDLE":
+                continue
+                
+            # Deve esserci un minimo di inattività (es. 60 secondi)
+            if now - self.last_interaction_time < 60:
+                continue
+                
+            try:
+                if self.cervello and self.memory and self.heart:
+                    ricordi = self.memory.get_random_distant_memories(limit=2)
+                    stato_emotivo = self.heart.get_heart_status(self.dynamic_user_profile)
+                    
+                    dmn_json = self.cervello.pensa_flusso_coscienza(ricordi, stato_emotivo, lang=self.user_lang)
+                    
+                    pensiero = dmn_json.get("pensiero_interno", "")
+                    rompi_silenzio = dmn_json.get("rompi_silenzio", False)
+                    messaggio = dmn_json.get("messaggio_utente", "")
+                    
+                    if pensiero:
+                        self.dmn_buffer.append(pensiero)
+                        self.logger.log(f"DMN Pensiero: {pensiero[:50]}...", "DEBUG")
+                        
+                    # INIZIATIVA SPONTANEA: L'Anima decide di scriverti dal nulla
+                    if rompi_silenzio and messaggio and (now - self.last_spontaneous_initiation > 7200): # Cooldown 2 ore
+                        self.logger.log("Spontaneous Initiation: L'Anima rompe il silenzio!", "SYSTEM")
+                        
+                        # Salva nel DB
+                        if self.db_manager and self.current_session_id:
+                            self.db_manager.add_message(self.current_session_id, self.active_avatar_name.capitalize(), messaggio)
+                            self.chat_history.append((self.active_avatar_name.capitalize(), messaggio))
+                            
+                        # Aggiorna i timer per evitare spam
+                        self.last_spontaneous_initiation = now
+                        self.last_interaction_time = now
+                        
+                        # Risolve un intent per muovere l'avatar
+                        intent = self._resolve_intent(self.active_avatar_name, "state_speaking", messaggio)
+                        
+                        # --- [FIX CRITICO] GENERAZIONE AUDIO E BODY QUEUE ---
+                        # Garantisce che l'Anima parli con la sua voce e che il lip-sync funzioni
+                        audio_path = None
+                        audio_duration = 0.0
+                        if not self.is_muted:
+                            voice_pt, lang_code = self._get_voice_for_character(self.active_avatar_name)
+                            audio_path = self.executor.genera_voce(
+                                messaggio,
+                                intent,
+                                preferred_voice=voice_pt,
+                                preferred_lang_code=lang_code,
+                            )
+                            if audio_path:
+                                try:
+                                    import soundfile as sf
+                                    f = sf.SoundFile(audio_path)
+                                    audio_duration = len(f) / f.samplerate
+                                except:
+                                    audio_duration = len(messaggio.split()) * 0.4
+
+                        # Inserimento nella coda di riproduzione del Corpo
+                        task = {
+                            "type": "standard_action",
+                            "intent": intent,
+                            "text_finale": messaggio,
+                            "audio_path": audio_path,
+                            "audio_duration": audio_duration,
+                            "avatar_key": self.active_avatar_name.lower(),
+                            "has_visual_avatar": True,
+                            "is_muted": self.is_muted,
+                            "ai_avatar_url": self.ai_avatar_url
+                        }
+                        self.body_queue.put(task)
+                        
+            except Exception as e:
+                self.logger.error(f"Errore nel DMN: {e}")
 
     # --- [NUOVO] METODI THREAD CORPO E HELPER ---
     def _clear_body_queue(self):
@@ -12950,6 +13144,24 @@ class CicloVitale:
                     "level": "info",
                 }
             )
+
+            # --- [NUOVO] AGENTIVITÀ A LUNGO TERMINE (DESIDERI) ---
+            if self.cervello and self.scheduler:
+                desiderio = self.cervello.genera_desideri_autonomi(raw_text, lang=self.user_lang)
+                if desiderio and "nome_task" in desiderio and "orario_esecuzione" in desiderio:
+                    # Crea un job dinamico per lo scheduler
+                    job_dict = {
+                        "id": f"desiderio_{int(time.time())}",
+                        "name": desiderio["nome_task"],
+                        "time": desiderio["orario_esecuzione"],
+                        "days": [], # Tutti i giorni (eseguito una volta e poi rimosso)
+                        "action": "iot_command", # Usiamo iot_command come wrapper per il Demiurgo
+                        "payload": {"device": "demiurgo", "action": "execute", "value": desiderio["comando_demiurgo"]},
+                        "enabled": True,
+                        "is_autonomous_desire": True # Flag per rimuoverlo dopo l'esecuzione
+                    }
+                    self.scheduler.add_dynamic_job(job_dict)
+                    self.logger.log(f"Agentività: Nuovo desiderio formulato -> {desiderio['nome_task']} alle {desiderio['orario_esecuzione']}", "SYSTEM")
 
             # --- [NUOVO] RITO DELL'EVOLUZIONE DEL CODICE (SELF-HEALING) ---
             try:

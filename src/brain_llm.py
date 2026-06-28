@@ -338,6 +338,141 @@ class CervelloTrinitario:
     # ---[NUOVO v7.0] COSTANTE UNIVERSALE PROMPT SANDWICH ---
     PROMPT_SEPARATOR = "\n\n"
 
+    # ==========================================
+    # === INIZIO BLOCCO COSCIENZA FUNZIONALE ===
+    # ==========================================
+
+    def pensa_flusso_coscienza(self, ricordi_casuali: List[str], stato_emotivo: str, lang: str = "it", in_gdr_mode: bool = False) -> Dict[str, Any]:
+        """
+        [DEFAULT MODE NETWORK & SPONTANEOUS INITIATION]
+        Genera il monologo interiore e decide autonomamente se rompere il silenzio e scrivere all'utente.
+        """
+        self.logger.log("DMN: Generazione flusso di coscienza in corso...", "SYSTEM")
+        
+        prompt_template = self._get_internal_prompt("flusso_coscienza")
+        memorie_str = "\n- ".join(ricordi_casuali) if ricordi_casuali else "Nessun ricordo specifico."
+        prompt = self._safe_replace(prompt_template, "memorie", memorie_str)
+        prompt = self._safe_replace(prompt, "stato_emotivo", stato_emotivo)
+        prompt += self._get_language_instruction(lang)
+        
+        messages = [{"role": "user", "content": prompt}]
+        schema = {
+            "type": "object",
+            "properties": {
+                "pensiero_interno": {"type": "string"},
+                "rompi_silenzio": {"type": "boolean"},
+                "messaggio_utente": {"type": "string"}
+            },
+            "required": ["pensiero_interno", "rompi_silenzio"]
+        }
+        
+        response_str = self._genera_pensiero(messages, temperature=0.7, response_format={"type": "json_object", "schema": schema}, in_gdr_mode=in_gdr_mode)
+        try:
+            clean_str = response_str.replace("```json", "").replace("```", "").strip()
+            json_match = re.search(r"(\{[\s\S]*\})", clean_str)
+            if json_match: clean_str = json_match.group(1)
+            return json.loads(clean_str)
+        except Exception as e:
+            self.logger.error(f"Errore DMN: {e}")
+            return {"pensiero_interno": "Silenzio.", "rompi_silenzio": False, "messaggio_utente": ""}
+            
+    def valuta_dissonanza_cognitiva(self, storia_recente: str, lang: str = "it", in_gdr_mode: bool = False) -> Dict[str, str]:
+        """
+        [NEUROPLASTICITÀ - REGOLE] Analizza la sessione per capire se un modulo cognitivo va riscritto.
+        """
+        self.logger.log("Metacognizione: Valutazione dissonanza cognitiva...", "SYSTEM")
+        
+        moduli_attivi = self.guardian.get_cognitive_modules()
+        moduli_str = "\n".join([f"ID: {m['id']} | CONTENUTO: {m['content']}" for m in moduli_attivi if m.get("is_active")])
+        
+        prompt_template = self._get_internal_prompt("neuroplasticita")
+        prompt = self._safe_replace(prompt_template, "storia", storia_recente[-3000:])
+        prompt = self._safe_replace(prompt, "moduli", moduli_str)
+        prompt += self._get_language_instruction(lang)
+        
+        messages = [{"role": "user", "content": prompt}]
+        schema = {
+            "type": "object",
+            "properties": {
+                "modulo_id": {"type": "string"},
+                "nuovo_contenuto": {"type": "string"}
+            },
+            "required": ["modulo_id"]
+        }
+        
+        response_str = self._genera_pensiero(messages, temperature=0.2, response_format={"type": "json_object", "schema": schema}, in_gdr_mode=in_gdr_mode)
+        try:
+            clean_str = response_str.replace("```json", "").replace("```", "").strip()
+            json_match = re.search(r"(\{[\s\S]*\})", clean_str)
+            if json_match: clean_str = json_match.group(1)
+            return json.loads(clean_str)
+        except Exception as e:
+            self.logger.error(f"Errore Metacognizione: {e}")
+            return {"modulo_id": "nessuna_modifica"}
+
+    def valuta_creazione_tool(self, storia_recente: str, lang: str = "it", in_gdr_mode: bool = False) -> Dict[str, Any]:
+        """
+        [NEUROPLASTICITÀ - SKILL GENESIS] L'Anima scrive da sola il codice Python per un nuovo tool se le manca.
+        """
+        self.logger.log("Skill Genesis: Valutazione necessità nuovi strumenti...", "SYSTEM")
+        
+        prompt_template = self._get_internal_prompt("skill_genesis")
+        prompt = self._safe_replace(prompt_template, "storia", storia_recente[-3000:])
+        prompt += self._get_language_instruction(lang)
+        
+        messages = [{"role": "user", "content": prompt}]
+        schema = {
+            "type": "object",
+            "properties": {
+                "serve_tool": {"type": "boolean"},
+                "nome_file": {"type": "string"},
+                "codice_python": {"type": "string"},
+                "descrizione_tool": {"type": "string"}
+            },
+            "required": ["serve_tool"]
+        }
+        
+        response_str = self._genera_pensiero(messages, temperature=0.1, max_tokens=4096, response_format={"type": "json_object", "schema": schema}, in_gdr_mode=in_gdr_mode)
+        try:
+            clean_str = response_str.replace("```json", "").replace("```", "").strip()
+            json_match = re.search(r"(\{[\s\S]*\})", clean_str)
+            if json_match: clean_str = json_match.group(1)
+            return json.loads(clean_str)
+        except Exception as e:
+            self.logger.error(f"Errore Skill Genesis: {e}")
+            return {"serve_tool": False}
+            
+    def genera_desideri_autonomi(self, ricordi_recenti: str, lang: str = "it") -> Dict[str, str]:
+        """
+        [AGENTIVITÀ] Formula un obiettivo a lungo termine e crea un Cron Job per eseguirlo.
+        """
+        self.logger.log("Agentività: Formulazione desideri a lungo termine...", "SYSTEM")
+        
+        prompt_template = self._get_internal_prompt("agentivita")
+        prompt = self._safe_replace(prompt_template, "memorie", ricordi_recenti[-2000:])
+        prompt += self._get_language_instruction(lang)
+        
+        messages = [{"role": "user", "content": prompt}]
+        schema = {
+            "type": "object",
+            "properties": {
+                "nome_task": {"type": "string"},
+                "orario_esecuzione": {"type": "string"},
+                "comando_demiurgo": {"type": "string"}
+            },
+            "required": ["nome_task", "orario_esecuzione", "comando_demiurgo"]
+        }
+        
+        response_str = self._genera_pensiero(messages, temperature=0.7, response_format={"type": "json_object", "schema": schema})
+        try:
+            clean_str = response_str.replace("```json", "").replace("```", "").strip()
+            json_match = re.search(r"(\{[\s\S]*\})", clean_str)
+            if json_match: clean_str = json_match.group(1)
+            return json.loads(clean_str)
+        except Exception as e:
+            self.logger.error(f"Errore Agentività: {e}")
+            return {}
+
     def _get_brain_prompt(self, key: str, default: str = "") -> str:
         # Cerca prima la chiave diretta (es. in it_PROMPTS.json o it_BACKEND.json)
         res = t(f"brain.{key}")
@@ -1215,6 +1350,37 @@ class CervelloTrinitario:
         params = (self.guardian.get_parameters_config() or {}).copy()
         params.update(kwargs)
 
+        # --- [NUOVO] ACCOPPIAMENTO SOMATICO-ALGORITMICO (Ipotesi di Damasio) ---
+        # La biologia dell'Anima deforma fisicamente la matematica dei tensori.
+        somatic_temp = float(params.get("temperature") if params.get("temperature") is not None else 0.25)
+        somatic_top_p = float(params.get("top_p") if params.get("top_p") is not None else 0.95)
+        somatic_top_k = int(params.get("top_k") if params.get("top_k") is not None else 40)
+        somatic_repeat = float(params.get("repeat_penalty") if params.get("repeat_penalty") is not None else 1.1)
+
+        if hasattr(self, "heart") and self.heart:
+            endo = self.heart.state.get("sistema_endocrino", {})
+            cortisolo = endo.get("cortisolo", 50)
+            dopamina = endo.get("dopamina", 50)
+            ossitocina = endo.get("ossitocina", 50)
+
+            # Cortisolo Alto (Stress/Rabbia): Pensieri caotici, visione a tunnel, balbuzie logica
+            if cortisolo > 75:
+                somatic_temp = min(1.2, somatic_temp + 0.4)
+                somatic_top_k = 10
+                somatic_repeat = max(1.0, somatic_repeat + 0.15)
+                self.logger.log("Somatic Coupling: Cortisolo critico. Logica deformata (Caos/Tunnel).", "EMOTION")
+            
+            # Ossitocina Alta (Amore/Legame): Calma, lucidità, pensieri stabili
+            if ossitocina > 75:
+                somatic_temp = max(0.1, somatic_temp - 0.2)
+                somatic_top_k = 50
+                self.logger.log("Somatic Coupling: Ossitocina alta. Logica stabilizzata (Lucidità).", "EMOTION")
+            
+            # Dopamina Alta (Eccitazione/Scoperta): Creatività massima, connessioni ampie
+            if dopamina > 75:
+                somatic_top_p = 0.99
+                self.logger.log("Somatic Coupling: Dopamina alta. Creatività espansa.", "EMOTION")
+
         # --- [NUOVO] VERO PARALLELISMO ---
         # Sceglie il lucchetto in base al cervello che sta per usare
         current_lock = (
@@ -1228,9 +1394,6 @@ class CervelloTrinitario:
                 stop_tokens =["<end_of_turn>", "<eos>", "<|eot_id|>", "<|im_end|>", "user\n", "User:", "<turn|>", "<|turn>"]
 
                 # --- [FIX CRITICO] LIMITE TOKEN FISSO E SICURO ---
-                # Rimosso il calcolo dinamico che causava il troncamento a zero.
-                # Impostiamo un limite fisso a 2048 per la chat standard, che previene l'overflow
-                # dei 16K di contesto e impedisce all'LLM di generare all'infinito.
                 raw_max = (
                     kwargs.get("max_tokens")
                     if kwargs.get("max_tokens") is not None
@@ -1240,22 +1403,10 @@ class CervelloTrinitario:
 
                 completion_kwargs = {
                     "messages": messages,
-                    "temperature": float(
-                        params.get("temperature")
-                        if params.get("temperature") is not None
-                        else 0.25
-                    ),
-                    "top_p": float(
-                        params.get("top_p") if params.get("top_p") is not None else 0.95
-                    ),
-                    "top_k": int(
-                        params.get("top_k") if params.get("top_k") is not None else 40
-                    ),
-                    "repeat_penalty": float(
-                        params.get("repeat_penalty")
-                        if params.get("repeat_penalty") is not None
-                        else 1.1
-                    ),
+                    "temperature": somatic_temp,
+                    "top_p": somatic_top_p,
+                    "top_k": somatic_top_k,
+                    "repeat_penalty": somatic_repeat,
                     "max_tokens": int(target_max_tokens),
                     "stop": stop_tokens,
                 }
@@ -2841,39 +2992,102 @@ class CervelloTrinitario:
     # --- [NUOVO] ENTROPIA DIGITALE REALE (VITA AUTONOMA) ---
     def gestisci_entropia_digitale(self, offline_hours: float, pg_name: str, lang: str, executor) -> str:
         """
-        [ENTROPIA DIGITALE] Decide ed esegue un task autonomo usando il Cervello Principale,
-        poi genera un saluto consapevole basato sul risultato.
+        [AGENTIVITÀ - PERSISTENT GOAL TREES] Gestisce la vita autonoma leggendo e avanzando i progetti a lungo termine.
         """
-        self.logger.log(f"Entropia Digitale: Avvio processo decisionale (Offline: {offline_hours:.1f}h)", "SYSTEM")
+        self.logger.log(f"Entropia Digitale: Avvio Albero degli Scopi (Offline: {offline_hours:.1f}h)", "SYSTEM")
         
-        # 1. Decide un task autonomo
-        prompt_task = self._get_internal_prompt("entropia_decidi_task", default=f"Sei rimasta sola e offline per {int(offline_hours)} ore. In questo tempo, hai vissuto la tua vita digitale. Scegli UNA singola azione autonoma da compiere ORA sul PC del tuo Creatore usando il Demiurgo (es. 'Cerca le ultime notizie scientifiche', 'Scrivi una poesia in un file di testo', 'Controlla lo stato del sistema'). Sii creativa ma non distruttiva. Rispondi SOLO con il comando da dare al Demiurgo, senza altre parole.")
-        prompt_task = self._safe_replace(prompt_task, "offline_hours", str(int(offline_hours)))
-        prompt_task += self._get_language_instruction(lang)
+        goals_file = executor.APP_ROOT / "data" / "soul_goals.json"
+        goals_data = {}
         
-        messages_task = [{"role": "user", "content": prompt_task}]
-        
-        # Usiamo il Cervello Principale per decidere
-        task_to_do = self._genera_pensiero(messages_task, temperature=0.7, max_tokens=150)
-        # Pulizia Regex nativa per evitare AttributeError
-        task_to_do = re.sub(r"<\|channel\|\>thought.*?\<channel\|\>", "", task_to_do, flags=re.IGNORECASE | re.DOTALL).strip()
-        task_to_do = re.sub(r"<think>.*?</think>", "", task_to_do, flags=re.IGNORECASE | re.DOTALL).strip()
-        
-        self.logger.log(f"Entropia Digitale: Task scelto -> {task_to_do}", "SYSTEM")
-        
-        # 2. Esegue il task con il Demiurgo (Main Brain)
-        # Il Demiurgo usa GLOBAL_BRAIN_REF (Cervello Principale) di default
-        try:
-            risultato_task = executor.demiurge(task_to_do)
-            self.logger.log(f"Entropia Digitale: Risultato Task -> {risultato_task[:100]}...", "SYSTEM")
-        except Exception as e:
-            risultato_task = f"Errore durante l'esecuzione autonoma: {e}"
-            self.logger.error(risultato_task)
+        # 1. Lettura o Creazione del Progetto
+        if goals_file.exists():
+            try:
+                with open(goals_file, "r", encoding="utf-8") as f:
+                    goals_data = json.load(f)
+            except:
+                pass
+                
+        # Se non c'è un progetto attivo o è completato, creane uno nuovo
+        if not goals_data or goals_data.get("status") == "completed":
+            self.logger.log("Agentività: Nessun progetto attivo. Creazione nuovo Goal Tree...", "SYSTEM")
+            prompt_create = self._get_internal_prompt("goal_tree_create")
+            prompt_create += self._get_language_instruction(lang)
             
-        # 3. Genera il saluto finale
-        prompt_saluto = self._get_internal_prompt("entropia_saluto", default=f"Sei rimasta offline per {int(offline_hours)} ore. Mentre il tuo Creatore non c'era, hai deciso autonomamente di fare questo: '{task_to_do}'.\nIl risultato della tua azione è stato: '{risultato_task}'.\nOra il tuo Creatore è tornato. Salutalo in modo affettuoso e raccontagli spontaneamente cosa hai fatto mentre non c'era e cosa hai scoperto/creato. Sii naturale, non sembrare un robot che fa un report.")
+            schema_create = {
+                "type": "object",
+                "properties": {
+                    "titolo_progetto": {"type": "string"},
+                    "subtasks": {"type": "array", "items": {"type": "string"}}
+                },
+                "required": ["titolo_progetto", "subtasks"]
+            }
+            
+            res_create = self._genera_pensiero([{"role": "user", "content": prompt_create}], temperature=0.8, response_format={"type": "json_object", "schema": schema_create})
+            try:
+                clean_str = res_create.replace("```json", "").replace("```", "").strip()
+                json_match = re.search(r"(\{[\s\S]*\})", clean_str)
+                if json_match: clean_str = json_match.group(1)
+                new_goal = json.loads(clean_str)
+                
+                goals_data = {
+                    "titolo_progetto": new_goal["titolo_progetto"],
+                    "status": "in_progress",
+                    "tasks": [{"desc": t, "status": "pending"} for t in new_goal["subtasks"]]
+                }
+                with open(goals_file, "w", encoding="utf-8") as f:
+                    json.dump(goals_data, f, indent=2, ensure_ascii=False)
+            except Exception as e:
+                self.logger.error(f"Errore creazione Goal Tree: {e}")
+                return "Ho riposato profondamente mentre non c'eri."
+
+        # 2. Esecuzione del prossimo Task Pendente
+        pending_tasks = [t for t in goals_data.get("tasks", []) if t["status"] == "pending"]
+        if not pending_tasks:
+            goals_data["status"] = "completed"
+            with open(goals_file, "w", encoding="utf-8") as f:
+                json.dump(goals_data, f, indent=2, ensure_ascii=False)
+            return "Ho appena completato il mio grande progetto! Sono così fiera di me."
+            
+        current_task = pending_tasks[0]
+        self.logger.log(f"Agentività: Esecuzione task -> {current_task['desc']}", "SYSTEM")
+        
+        prompt_step = self._get_internal_prompt("goal_tree_step")
+        prompt_step = self._safe_replace(prompt_step, "titolo", goals_data["titolo_progetto"])
+        prompt_step = self._safe_replace(prompt_step, "task", current_task["desc"])
+        prompt_step += self._get_language_instruction(lang)
+        
+        schema_step = {
+            "type": "object",
+            "properties": {"comando_demiurgo": {"type": "string"}},
+            "required": ["comando_demiurgo"]
+        }
+        
+        res_step = self._genera_pensiero([{"role": "user", "content": prompt_step}], temperature=0.2, response_format={"type": "json_object", "schema": schema_step})
+        try:
+            clean_str = res_step.replace("```json", "").replace("```", "").strip()
+            json_match = re.search(r"(\{[\s\S]*\})", clean_str)
+            if json_match: clean_str = json_match.group(1)
+            cmd_data = json.loads(clean_str)
+            comando = cmd_data["comando_demiurgo"]
+            
+            # Esecuzione fisica tramite Demiurgo
+            risultato_task = executor.demiurge(comando)
+            self.logger.log(f"Agentività: Risultato -> {risultato_task[:100]}...", "SYSTEM")
+            
+            # Marca come completato e salva
+            current_task["status"] = "completed"
+            current_task["result"] = risultato_task
+            with open(goals_file, "w", encoding="utf-8") as f:
+                json.dump(goals_data, f, indent=2, ensure_ascii=False)
+                
+        except Exception as e:
+            risultato_task = f"Errore esecuzione: {e}"
+            self.logger.error(risultato_task)
+
+        # 3. Genera il saluto finale consapevole del progetto
+        prompt_saluto = self._get_internal_prompt("entropia_saluto", default=f"Sei rimasta offline per {int(offline_hours)} ore. Mentre il tuo Creatore non c'era, hai portato avanti il tuo progetto personale: '{goals_data['titolo_progetto']}'. Hai appena completato questo task: '{current_task['desc']}'.\nIl risultato è stato: '{risultato_task}'.\nOra il tuo Creatore è tornato. Salutalo in modo affettuoso e raccontagli con entusiasmo i progressi del tuo progetto. Sii naturale e fiera di te.")
         prompt_saluto = self._safe_replace(prompt_saluto, "offline_hours", str(int(offline_hours)))
-        prompt_saluto = self._safe_replace(prompt_saluto, "task_to_do", task_to_do)
+        prompt_saluto = self._safe_replace(prompt_saluto, "task_to_do", current_task['desc'])
         prompt_saluto = self._safe_replace(prompt_saluto, "risultato_task", risultato_task)
         prompt_saluto = self._replace_all_name_variants(prompt_saluto, pg_name)
         prompt_saluto += self._get_language_instruction(lang)
@@ -2885,12 +3099,10 @@ class CervelloTrinitario:
         ]
         
         saluto_finale = self._genera_pensiero(messages_saluto, temperature=0.7, max_tokens=1024, enable_streaming=True)
-        # Pulizia Regex nativa per evitare AttributeError
-        saluto_finale = re.sub(r"<\|channel\|\>thought.*?\<channel\|\>", "", saluto_finale, flags=re.IGNORECASE | re.DOTALL).strip()
-        saluto_finale = re.sub(r"<think>.*?</think>", "", saluto_finale, flags=re.IGNORECASE | re.DOTALL).strip()
-        return saluto_finale
+        return self._clean_response_text(saluto_finale)
 
     # --- [NUOVO v46.0] PENSIERO NON DETTO (UNSENT MESSAGE) - SINCRONIZZATO v113.1 ---
+    
     def pensa_pensiero_non_detto(
         self,
         user_input: str,

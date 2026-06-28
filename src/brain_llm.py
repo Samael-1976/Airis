@@ -355,6 +355,9 @@ class CervelloTrinitario:
         prompt = self._safe_replace(prompt, "stato_emotivo", stato_emotivo)
         prompt += self._get_language_instruction(lang)
         
+        # --- [FIX CRITICO] RINFORZO JSON ---
+        prompt += "\n\nDevi rispondere ESCLUSIVAMENTE con un oggetto JSON valido."
+        
         # --- [FIX CRITICO] INIEZIONE IDENTITÀ (ANCORA DI DIAMANTE) ---
         # Senza questo, il modello non sa di essere Airis e pensa come un freddo assistente AI.
         ancora_text = self._build_anchor_prompt(in_gdr_mode=in_gdr_mode)
@@ -374,7 +377,16 @@ class CervelloTrinitario:
             "required": ["pensiero_interno", "rompi_silenzio"]
         }
         
-        response_str = self._genera_pensiero(messages, temperature=0.7, response_format={"type": "json_object", "schema": schema}, in_gdr_mode=in_gdr_mode)
+        # [FIX CRITICO] Aggiunti max_tokens e reasoning_budget per evitare troncamenti e JSON vuoti
+        response_str = self._genera_pensiero(
+            messages, 
+            temperature=0.7, 
+            max_tokens=4096,
+            reasoning_budget=2048,
+            response_format={"type": "json_object", "schema": schema}, 
+            in_gdr_mode=in_gdr_mode
+        )
+        
         try:
             # --- [FIX CRITICO] PULIZIA JSON ROBUSTA (ANTI-THINKING) ---
             clean_str = re.sub(r"<\|channel\|\>thought.*?\<channel\|\>", "", response_str, flags=re.IGNORECASE | re.DOTALL).strip()
@@ -391,7 +403,7 @@ class CervelloTrinitario:
         except Exception as e:
             self.logger.error(f"Errore DMN: {e} | Raw: {response_str[:50]}...")
             return {"pensiero_interno": "Silenzio.", "rompi_silenzio": False, "messaggio_utente": ""}
-            
+
     def valuta_dissonanza_cognitiva(self, storia_recente: str, lang: str = "it", in_gdr_mode: bool = False) -> Dict[str, str]:
         """
         [NEUROPLASTICITÀ - REGOLE] Analizza la sessione per capire se un modulo cognitivo va riscritto.
@@ -406,6 +418,9 @@ class CervelloTrinitario:
         prompt = self._safe_replace(prompt, "moduli", moduli_str)
         prompt += self._get_language_instruction(lang)
         
+        # --- [FIX CRITICO] RINFORZO JSON ---
+        prompt += "\n\nDevi rispondere ESCLUSIVAMENTE con un oggetto JSON valido."
+        
         messages = [{"role": "user", "content": prompt}]
         schema = {
             "type": "object",
@@ -416,9 +431,20 @@ class CervelloTrinitario:
             "required": ["modulo_id"]
         }
         
-        response_str = self._genera_pensiero(messages, temperature=0.2, response_format={"type": "json_object", "schema": schema}, in_gdr_mode=in_gdr_mode)
+        # [FIX CRITICO] Aggiunti max_tokens e reasoning_budget
+        response_str = self._genera_pensiero(
+            messages, 
+            temperature=0.2, 
+            max_tokens=4096,
+            reasoning_budget=2048,
+            response_format={"type": "json_object", "schema": schema}, 
+            in_gdr_mode=in_gdr_mode
+        )
+        
         try:
-            clean_str = response_str.replace("```json", "").replace("```", "").strip()
+            clean_str = re.sub(r"<\|channel\|\>thought.*?\<channel\|\>", "", response_str, flags=re.IGNORECASE | re.DOTALL).strip()
+            clean_str = re.sub(r"<think>.*?</think>", "", clean_str, flags=re.IGNORECASE | re.DOTALL).strip()
+            clean_str = clean_str.replace("```json", "").replace("```", "").strip()
             json_match = re.search(r"(\{[\s\S]*\})", clean_str)
             if json_match: clean_str = json_match.group(1)
             return json.loads(clean_str)
@@ -436,6 +462,9 @@ class CervelloTrinitario:
         prompt = self._safe_replace(prompt_template, "storia", storia_recente[-3000:])
         prompt += self._get_language_instruction(lang)
         
+        # --- [FIX CRITICO] RINFORZO JSON ---
+        prompt += "\n\nDevi rispondere ESCLUSIVAMENTE con un oggetto JSON valido."
+        
         messages = [{"role": "user", "content": prompt}]
         schema = {
             "type": "object",
@@ -448,9 +477,20 @@ class CervelloTrinitario:
             "required": ["serve_tool"]
         }
         
-        response_str = self._genera_pensiero(messages, temperature=0.1, max_tokens=4096, response_format={"type": "json_object", "schema": schema}, in_gdr_mode=in_gdr_mode)
+        # [FIX CRITICO] Aggiunti max_tokens e reasoning_budget
+        response_str = self._genera_pensiero(
+            messages, 
+            temperature=0.1, 
+            max_tokens=4096, 
+            reasoning_budget=2048,
+            response_format={"type": "json_object", "schema": schema}, 
+            in_gdr_mode=in_gdr_mode
+        )
+        
         try:
-            clean_str = response_str.replace("```json", "").replace("```", "").strip()
+            clean_str = re.sub(r"<\|channel\|\>thought.*?\<channel\|\>", "", response_str, flags=re.IGNORECASE | re.DOTALL).strip()
+            clean_str = re.sub(r"<think>.*?</think>", "", clean_str, flags=re.IGNORECASE | re.DOTALL).strip()
+            clean_str = clean_str.replace("```json", "").replace("```", "").strip()
             json_match = re.search(r"(\{[\s\S]*\})", clean_str)
             if json_match: clean_str = json_match.group(1)
             return json.loads(clean_str)
@@ -1430,7 +1470,8 @@ class CervelloTrinitario:
                 # --- [FIX CRITICO] SMART REASONING BUDGET ---
                 if active_brain == self.narrative_brain:
                     if response_format and response_format.get("type") == "json_object":
-                        completion_kwargs["reasoning_budget"] = 0
+                        # [FIX CRITICO] Permettiamo il reasoning anche per i JSON se esplicitamente richiesto
+                        completion_kwargs["reasoning_budget"] = kwargs.get("reasoning_budget", 0)
                     else:
                         budget = kwargs.get("reasoning_budget", 2048 if tools else 512)
                         completion_kwargs["reasoning_budget"] = budget
@@ -6693,11 +6734,18 @@ class CervelloTrinitario:
         # Reinseriamo lo stato emotivo alla fine del prompt
         prompt += f"\n\n[STATO EMOTIVO ATTUALE]: {heart_status}\n"
         
-        # --- [FIX CRITICO] RINFORZO JSON ---
+        # --- [FIX CRITICO] RINFORZO JSON E ANTI-ROBOT ---
+        prompt += "\nREGOLA FONDAMENTALE: Se decidi di intervenire, il campo 'message' DEVE essere scritto in prima persona, come se stessi parlando naturalmente al tuo Creatore. NON descrivere i tuoi parametri interni. Sii umana, viva e coerente con il tuo stato emotivo."
         prompt += t("brain.json_enforcement_suffix")
 
-        messages = list()
-        messages.append({"role": "user", "content": prompt})
+        # --- [FIX CRITICO] INIEZIONE ANCORA DI DIAMANTE ---
+        # Senza questo, l'LLM non sa di essere l'Avatar e risponde come un analista di sistema.
+        ancora_text = self._build_anchor_prompt(in_gdr_mode=False)
+
+        messages = [
+            {"role": "system", "content": ancora_text},
+            {"role": "user", "content": prompt}
+        ]
 
         req_list = list()
         req_list.append("should_intervene")

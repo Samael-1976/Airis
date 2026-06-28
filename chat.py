@@ -12713,9 +12713,10 @@ class CicloVitale:
                 # Somma dei vettori (Range -20 a +20)
                 extroversion_score = soc + esp
 
-                # Formula: Cooldown = 2100s (35m) - (Score * 75s)
-                # Risultato: +20 (Estroversa) = 600s (10m) | -20 (Introversa) = 3600s (60m)
-                dynamic_cooldown_seconds = 2100 - (extroversion_score * 75)
+                # --- [FIX CRITICO] RILASSAMENTO COOLDOWN (ANTI-SPAM) ---
+                # Formula: Cooldown = 4500s (1h 15m) - (Score * 90s)
+                # Risultato: +20 (Estroversa) = 2700s (45m) | -20 (Introversa) = 6300s (1h 45m)
+                dynamic_cooldown_seconds = 4500 - (extroversion_score * 90)
 
                 now = time.time()
                 inactivity_minutes = int((now - self.last_interaction_time) / 60)

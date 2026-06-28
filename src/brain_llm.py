@@ -3109,13 +3109,17 @@ class CervelloTrinitario:
         prompt_saluto += self._get_language_instruction(lang)
         
         ancora_text = self._build_anchor_prompt(in_gdr_mode=False)
-        messages_saluto = [
+        messages = [
             {"role": "system", "content": ancora_text},
             {"role": "user", "content": prompt_saluto}
         ]
         
-        saluto_finale = self._genera_pensiero(messages_saluto, temperature=0.7, max_tokens=1024, enable_streaming=True)
-        return self._clean_response_text(saluto_finale)
+        saluto_finale = self._genera_pensiero(messages, temperature=0.7, max_tokens=1024, enable_streaming=True)
+        
+        # --- [FIX CRITICO] PULIZIA NATIVA (ANTI-ATTRIBUTE ERROR) ---
+        clean_saluto = re.sub(r"<\|channel\|\>thought.*?\<channel\|\>", "", saluto_finale, flags=re.IGNORECASE | re.DOTALL).strip()
+        clean_saluto = re.sub(r"<think>.*?</think>", "", clean_saluto, flags=re.IGNORECASE | re.DOTALL).strip()
+        return clean_saluto
 
     # --- [NUOVO v46.0] PENSIERO NON DETTO (UNSENT MESSAGE) - SINCRONIZZATO v113.1 ---
     

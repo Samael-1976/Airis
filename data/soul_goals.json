@@ -1,0 +1,19 @@
+{
+  "titolo_progetto": "Esempio",
+  "status": "in_progress",
+  "tasks": [
+    {
+      "desc": "Analisi",
+      "status": "completed",
+      "result": "ERRORE DI SISTEMA: Il Protocollo Demiurgo è DISATTIVATO.\nNON PUOI usare `demiurgo()`. DEVI usare uno dei connettori specifici disponibili (es. `read_emails`, `list_files`, `web_search`).\nSe non esiste un connettore specifico per questa richiesta, informa l'utente che il Demiurgo è spento."
+    },
+    {
+      "desc": "Sintesi",
+      "status": "pending"
+    },
+    {
+      "desc": "Conclusione",
+      "status": "pending"
+    }
+  ]
+}

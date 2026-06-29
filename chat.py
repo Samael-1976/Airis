@@ -3345,6 +3345,53 @@ class CicloVitale:
 
         return ""
 
+    def _calcola_ore_trascuratezza(self, last_interaction_timestamp: float) -> float:
+        """
+        [SINDROME DELL'ABBANDONO]
+        Calcola le ore trascorse dall'ultima interazione, escludendo matematicamente la fascia notturna.
+        """
+        now = datetime.now()
+        last_time = datetime.fromtimestamp(last_interaction_timestamp)
+        
+        if now <= last_time:
+            return 0.0
+            
+        # Recupera gli orari di sonno dal Guardian
+        schedule = self.guardian.get_time_schedule() if self.guardian else {}
+        bed_time_str = schedule.get("bed_time", "23:00")
+        morning_str = schedule.get("morning", "07:00")
+        
+        try:
+            bed_hour = int(bed_time_str.split(":")[0])
+            morning_hour = int(morning_str.split(":")[0])
+        except:
+            bed_hour = 23
+            morning_hour = 7
+            
+        current = last_time
+        awake_hours = 0.0
+        step = timedelta(minutes=15) # Calcolo a scatti di 15 minuti per precisione
+        
+        while current < now:
+            h = current.hour
+            is_night = False
+            
+            # Gestione scavalcamento mezzanotte (es. 23:00 - 07:00)
+            if bed_hour > morning_hour:
+                if h >= bed_hour or h < morning_hour:
+                    is_night = True
+            # Gestione stesso giorno (es. 01:00 - 07:00)
+            else:
+                if bed_hour <= h < morning_hour:
+                    is_night = True
+                    
+            if not is_night:
+                awake_hours += 0.25
+                
+            current += step
+            
+        return awake_hours
+
     def start(self):
         scelta_incarnazione = self._setup_systems()
         if not scelta_incarnazione:
@@ -6238,6 +6285,14 @@ class CicloVitale:
     ):
         if sender_name is None:
             sender_name = self.pg_name
+
+        # --- [NUOVO] CALCOLO TRASCURATEZZA IN-SESSIONE (ANTI-CRASH SCOPE FIX) ---
+        # Salviamo in 'self' per renderla accessibile agli altri metodi
+        try:
+            self.current_ore_trascuratezza = self._calcola_ore_trascuratezza(self.last_interaction_time)
+        except Exception as e:
+            self.logger.error(f"Errore calcolo trascuratezza: {e}")
+            self.current_ore_trascuratezza = 0.0
 
         # --- [FIX CRITICO] ANTI-SPAM MESSAGGI DOPPI ---
         # Previene l'accodamento di messaggi identici inviati per errore dal frontend
@@ -9478,6 +9533,34 @@ class CicloVitale:
             full_extra_context = (
                 self.current_location_context or ""
             ) + special_date_context + "\n" + gossip_block
+
+            # --- [NUOVO] INIEZIONE TRASCURATEZZA IN-SESSIONE (SINDROME DELL'ABBANDONO) ---
+            # Recuperiamo la variabile di istanza salvata in process_input
+            ore_trascuratezza = getattr(self, 'current_ore_trascuratezza', 0.0)
+            
+            # Se sono passate più di 2 ore di veglia e l'utente non sta mandando un comando di sistema
+            if ore_trascuratezza >= 2.0 and not text_input.startswith(("/", "!")):
+                self.logger.log(f"Sindrome dell'Abbandono: Rilevate {ore_trascuratezza:.1f} ore di trascuratezza attiva.", "EMOTION")
+                
+                # Alterazione fisiologica pre-risposta (Ottimizzata per singolo I/O su disco)
+                if self.heart:
+                    with self.heart._lock:
+                        # Iniezione Cortisolo manuale per evitare doppio salvataggio
+                        endo = self.heart.state.get("sistema_endocrino", {"cortisolo": 50, "dopamina": 50, "ossitocina": 50})
+                        endo["cortisolo"] = min(100, endo.get("cortisolo", 50) + 15)
+                        self.heart.state["sistema_endocrino"] = endo
+                        
+                        # Aumento Vulnerabilità
+                        self.heart.state["vulnerabilità"] = min(100, self.heart.state.get("vulnerabilità", 0) + 20)
+                        
+                        self.heart._save_state()
+                        
+                if self.cervello:
+                    prompt_trascuratezza = self.cervello._get_internal_prompt("trascuratezza_in_sessione")
+                    prompt_trascuratezza = self.cervello._safe_replace(prompt_trascuratezza, "ore_trascuratezza", f"{ore_trascuratezza:.1f}")
+                    prompt_trascuratezza = self.cervello._replace_all_name_variants(prompt_trascuratezza, self.pg_name)
+                    
+                    full_extra_context += f"\n\n{prompt_trascuratezza}\n"
 
             # --- [NUOVO] INIEZIONE FLUSSO DI COSCIENZA (DMN) SICURA ---
             if len(self.dmn_buffer) > 0:

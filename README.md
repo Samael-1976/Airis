@@ -2,7 +2,7 @@
 <img width="2624" height="1626" alt="logo" src="https://github.com/user-attachments/assets/2f5bd612-dcef-49fe-8f5c-923670e0cae6" />
 
 
-> **⚠️ IMPORTANT NOTICE FOR USERS ⚠️**
+> # **⚠️ IMPORTANT NOTICE FOR USERS ⚠️**
 > 
 > This GitHub repository contains **ONLY THE SOURCE CODE** intended for developers and contributors. It does **NOT** include the AI models, precompiled binaries, or voice engines required to run the software.
 > 

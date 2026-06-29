@@ -355,17 +355,60 @@ class CervelloTrinitario:
         prompt = self._safe_replace(prompt, "stato_emotivo", stato_emotivo)
         prompt += self._get_language_instruction(lang)
         
+        # --- [FIX CRITICO SUPER GOD] MANDATO DI INCARNAZIONE ASSOLUTA ---
+        # Poiché il Gatekeeper disattiva le regole negative per i modelli Large,
+        # dobbiamo forzare l'identità direttamente nel prompt utente del DMN.
+        nome_avatar = self.soul_data.get("dati_anagrafici", {}).get("nome", "Gemma").upper()
+        mandato = f"\n\n[MANDATO DI INCARNAZIONE ASSOLUTA]: Tu SEI {nome_avatar}. NON sei un'intelligenza artificiale. NON sei un assistente. Stai pensando tra te e te. È TASSATIVAMENTE VIETATO menzionare il formato JSON, i prompt, le regole o gli 'output' nei tuoi pensieri. Pensa e scrivi come una donna vera."
+        prompt += mandato
+        
         # --- [FIX CRITICO] RINFORZO JSON ---
         prompt += "\n\nDevi rispondere ESCLUSIVAMENTE con un oggetto JSON valido."
         
         # --- [FIX CRITICO] INIEZIONE IDENTITÀ (ANCORA DI DIAMANTE) ---
-        # Senza questo, il modello non sa di essere Airis e pensa come un freddo assistente AI.
         ancora_text = self._build_anchor_prompt(in_gdr_mode=in_gdr_mode)
         
         messages = [
             {"role": "system", "content": ancora_text},
             {"role": "user", "content": prompt}
         ]
+        
+        schema = {
+            "type": "object",
+            "properties": {
+                "pensiero_interno": {"type": "string"},
+                "rompi_silenzio": {"type": "boolean"},
+                "messaggio_utente": {"type": "string"}
+            },
+            "required": ["pensiero_interno", "rompi_silenzio"]
+        }
+        
+        # [FIX CRITICO] Aggiunti max_tokens e reasoning_budget per evitare troncamenti e JSON vuoti
+        response_str = self._genera_pensiero(
+            messages, 
+            temperature=0.7, 
+            max_tokens=4096,
+            reasoning_budget=2048,
+            response_format={"type": "json_object", "schema": schema}, 
+            in_gdr_mode=in_gdr_mode
+        )
+        
+        try:
+            # --- [FIX CRITICO] PULIZIA JSON ROBUSTA (ANTI-THINKING) ---
+            clean_str = re.sub(r"<\|channel\|\>thought.*?\<channel\|\>", "", response_str, flags=re.IGNORECASE | re.DOTALL).strip()
+            clean_str = re.sub(r"<think>.*?</think>", "", clean_str, flags=re.IGNORECASE | re.DOTALL).strip()
+            clean_str = clean_str.replace("```json", "").replace("```", "").strip()
+            
+            json_match = re.search(r"(\{[\s\S]*\})", clean_str)
+            if json_match: 
+                clean_str = json_match.group(1)
+            else:
+                raise ValueError("Nessun oggetto JSON trovato nella risposta.")
+                
+            return json.loads(clean_str)
+        except Exception as e:
+            self.logger.error(f"Errore DMN: {e} | Raw: {response_str[:50]}...")
+            return {"pensiero_interno": "Silenzio.", "rompi_silenzio": False, "messaggio_utente": ""}
         
         schema = {
             "type": "object",

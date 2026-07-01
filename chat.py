@@ -2164,6 +2164,24 @@ class CicloVitale:
         draft_enabled = model_config.get("draft_enabled", False)
         draft_name = model_config.get("active_draft_model", "")
 
+        # --- [FIX CRITICO] SCUDO ARCHITETTURALE MTP (COMPATIBILITÀ MODELLI) ---
+        if draft_model_path and draft_model_path.exists():
+            base_name_lower = model_path.name.lower()
+            draft_name_lower = draft_model_path.name.lower()
+            
+            is_mtp_compatible = True
+            if "gemma" in draft_name_lower and "gemma" not in base_name_lower:
+                is_mtp_compatible = False
+            elif "llama" in draft_name_lower and "llama" not in base_name_lower:
+                is_mtp_compatible = False
+            elif "qwen" in draft_name_lower and "qwen" not in base_name_lower:
+                is_mtp_compatible = False
+                
+            if not is_mtp_compatible:
+                self.logger.warning(f"Modello MTP incompatibile rilevato e bloccato: Base={model_path.name}, MTP={draft_model_path.name}")
+                draft_model_path = None
+                draft_enabled = False
+
         # --- [FIX CRITICO] PRIORITÀ ALLA CONSOLE ---
         # Se l'utente ha scelto il file MTP all'avvio (draft_model_path esiste),
         # lo attiviamo forzatamente, ignorando l'interruttore della UI.

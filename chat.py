@@ -8686,7 +8686,10 @@ class CicloVitale:
                             # Così il PNG successivo saprà se l'attacco di questo PNG è andato a segno!
                             cronaca_turno_corrente += f"--- ESITO AZIONE DI {nome_png.upper()} ---\n{png_sys_res}\n\n"
 
-                    self.execute_gdr_action(nome_png, risposta_grezza, gdr_input)
+                    # ...
+                    # [FIX CRITICO] Passiamo 'presenti' per il contagio emotivo
+                    self.execute_gdr_action(nome_png, risposta_grezza, gdr_input, presenti)
+                    # ...
 
                     # --- [FIX GDR COUNTER] INCREMENTO PER OGNI AZIONE PNG ---
                     self.session_message_counter += 1
@@ -8927,25 +8930,7 @@ class CicloVitale:
                 self.last_sync_save_time = time.time()
 
         finally:
-            # ---[NUOVO] ESECUZIONE AUDIT DIFFERITI IN CODA ---
-            self.defer_audits = False
-            if hasattr(self, "pending_heart_audits") and self.pending_heart_audits:
-                audits_to_run = self.pending_heart_audits.copy()
-                self.pending_heart_audits.clear()
-                
-                def _run_deferred_audits():
-                    self.logger.log(t("chat.log_deferred_audits", count=len(audits_to_run)), "HEART")
-                    for audit_func in audits_to_run:
-                        # --- [FIX CRITICO] ANTI-INGORGO NEURALE ---
-                        # Se l'utente ha inviato un nuovo messaggio, interrompiamo gli audit in coda
-                        # per liberare immediatamente l'LLM e non bloccare la chat.
-                        if self.is_processing_input:
-                            self.logger.log(t("chat.log_suspend_audits"), "HEART")
-                            break
-                        audit_func()
-                        
-                threading.Thread(target=_run_deferred_audits, daemon=True).start()
-
+            # L'audit differito è stato rimosso. Gli audit avvengono in tempo reale.
             self.avatar_bridge.send_payload(
                 {
                     "type": "system_status",
@@ -8957,7 +8942,7 @@ class CicloVitale:
             self.avatar_state = "IDLE"  # Sblocca stato
 
     def execute_gdr_action(
-        self, nome_png: str, risposta_grezza: str, original_input: str
+        self, nome_png: str, risposta_grezza: str, original_input: str, presenti: list = None
     ):
         # --- [FIX] PULIZIA UNDERSCORE NOME PNG ---
         nome_png = nome_png.replace("_", " ")
@@ -9111,13 +9096,10 @@ class CicloVitale:
                 except:
                     audio_duration = len(dialogo.split()) * 0.4
 
-        # --- [FIX BUG 02] SBLOCCO IMMEDIATO UI ---
-        # Notifica al frontend che la generazione è finita prima di gestire la coda video.
         self.avatar_bridge.send_payload(
             {"type": "system_status", "payload": {"thinking": False}}
         )
 
-        # --- [NUOVO] INSERIMENTO NELLA CODA DI RIPRODUZIONE ---
         task = {
             "type": "gdr_action",
             "intent": intent,
@@ -9133,8 +9115,8 @@ class CicloVitale:
         }
         self.body_queue.put(task)
 
-        # --- AUDIT EMOTIVO PNG ---
-        def _async_png_heart_audit():
+        # --- AUDIT EMOTIVO PNG (ESECUZIONE IMMEDIATA E SINCRONA) ---
+        def _sync_png_heart_audit():
             try:
                 effective_root = self._get_effective_rpg_path(
                     self.active_rpg_path, self.user_lang
@@ -9156,17 +9138,19 @@ class CicloVitale:
                     ]
                 )
 
-                # [FIX CACHE] Usa il Labour Brain (270M) per non distruggere la cache del 12B
-                labour_brain = getattr(self.cervello, "labour_brain", None)
-
+                # [FIX INCEPTION] Passiamo testo_pulito invece di risposta_grezza per evitare
+                # che l'LLM legga i tag <think> del PNG e vada in loop infinito.
+                # --- [FIX INCEPTION E IDENTITÀ] ---
+                # Passiamo testo_pulito (senza tag <think>) e il nome del PNG
                 deltas = self.cervello.analizza_impatto_emotivo_scambio(
                     user_input=original_input,
-                    avatar_response=risposta_grezza,
+                    avatar_response=testo_pulito, 
                     current_heart=current_heart_str,
                     pg_name=self.pg_name,
                     lang=self.user_lang,
-                    override_brain=labour_brain,
-                    in_gdr_mode=True # [FIX CRITICO CACHE] Impedisce all'Audit in background di distruggere l'Ancora GDR
+                    override_brain=None, 
+                    in_gdr_mode=True,
+                    character_name=nome_png # <--- NUOVO PARAMETRO
                 )
 
                 if deltas:
@@ -9176,13 +9160,11 @@ class CicloVitale:
                         deltas,
                     )
                     
-                    # --- [NUOVO FASE 1.2] RISONANZA EMOTIVA DI RETE (CONTAGIO) ---
                     updated_heart = self.heart.load_external_heart(scheda_file)
                     new_tension = updated_heart.get("tensione", 50)
                     
-                    if new_tension > 80:
+                    if new_tension > 80 and presenti:
                         self.logger.log(t("chat.log_emotional_contagion_trigger", source=nome_png, tension=new_tension), "HEART")
-                        # Irradiazione ai presenti
                         for altro_png in presenti:
                             altro_nome = altro_png.get("nome")
                             if altro_nome and altro_nome != nome_png:
@@ -9191,16 +9173,15 @@ class CicloVitale:
                                     applied_delta = self.heart.apply_emotional_contagion(altro_file, nome_png, 5)
                                     if applied_delta > 0:
                                         self.logger.log(t("chat.log_contagion_applied", target=altro_nome, delta=applied_delta), "HEART")
-                                        # Notifica UI per l'altro PNG
                                         self.avatar_bridge.send_payload({
                                             "type": "system_status",
-                                            "payload": {"heart_update": True, "png_update": altro_nome},
+                                            "payload": {"heart_update": True, "png_name": altro_nome},
                                         })
 
                     self.avatar_bridge.send_payload(
                         {
                             "type": "system_status",
-                            "payload": {"heart_update": True, "png_update": nome_png},
+                            "payload": {"heart_update": True, "png_name": nome_png},
                         }
                     )
             except Exception as e:
@@ -9208,19 +9189,13 @@ class CicloVitale:
                     t("chat.log.png_heart_audit_error", nome_png=nome_png, e=e)
                 )
 
-        # --- [NUOVO] GESTIONE AUDIT DIFFERITO ---
-        if getattr(self, "defer_audits", False):
-            if not hasattr(self, "pending_heart_audits"):
-                self.pending_heart_audits =[]
-            self.pending_heart_audits.append(_async_png_heart_audit)
-        else:
-            threading.Thread(target=_async_png_heart_audit, daemon=True).start()
+        # Esecuzione immediata e bloccante prima di passare al prossimo PNG
+        _sync_png_heart_audit()
 
-        # ---[FIX v39.6] RIPRESA APPRENDIMENTO GDR ---
         self.pause_learning_event.clear()
         self.logger.log(t("chat.log_gdr_resume_learning"), "SYSTEM")
 
-        self.avatar_state = "IDLE"  # Sblocca stato
+        self.avatar_state = "IDLE"
 
     def handle_standard_command(self, command_input: str):
         print(f"\n{self._get_prompt('gemma_thinking')}{t('chat.obey')}")
@@ -12329,8 +12304,10 @@ class CicloVitale:
             # ==========================================
             # 2. FLUSSO DI COSCIENZA E INIZIATIVA SPONTANEA
             # ==========================================
-            # Il DMN testuale si attiva SOLO se l'Anima è in IDLE e non sta facendo altro
-            if self.is_processing_input or self.is_learning or self.avatar_state != "IDLE":
+            # --- [FIX CRITICO] SCUDO GDR ---
+            # Il DMN testuale si attiva SOLO se l'Anima è in IDLE, non sta facendo altro,
+            # e SOPRATTUTTO se NON siamo in modalità GDR.
+            if self.is_processing_input or self.is_learning or self.avatar_state != "IDLE" or self.in_gdr_mode:
                 continue
                 
             # Deve esserci un minimo di inattività (es. 60 secondi)

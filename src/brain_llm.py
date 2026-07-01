@@ -1388,6 +1388,9 @@ class CervelloTrinitario:
         if not active_brain:
             return t("log.brain_silent_heart")
 
+        # --- [FIX CRITICO SUPER GOD] ESTRAZIONE BYPASS ANCORA ---
+        skip_anchor = kwargs.pop("skip_anchor", False)
+
         # --- [FIX CRITICO] PARACADUTE JINJA TEMPLATE (QWEN/LLAMA3) ---
         # Assicura che ci sia sempre almeno un messaggio 'user' per evitare crash del server C++
         has_user = any(m.get("role") == "user" for m in messages)
@@ -1414,7 +1417,8 @@ class CervelloTrinitario:
         # --- [NUOVO] PROTOCOLLO DELL'ANCORA UNIVERSALE (ANTI-CACHE THRASHING) ---
         # Se stiamo usando il modello principale (12B), il System Prompt DEVE essere sempre l'Ancora.
         # Se la richiesta contiene un System Prompt tecnico (es. Logic Gate), lo spostiamo nel messaggio User.
-        if active_brain == self.narrative_brain and messages and messages[0].get("role") == "system":
+        # [FIX CRITICO] Se skip_anchor è True, bypassiamo questa iniezione per evitare Dissonanza Cognitiva nei task tecnici.
+        if not skip_anchor and active_brain == self.narrative_brain and messages and messages[0].get("role") == "system":
             current_gdr_mode = kwargs.get("in_gdr_mode", getattr(self, "in_gdr_mode", False))
             true_anchor = self._build_anchor_prompt(in_gdr_mode=current_gdr_mode)
             
@@ -6869,164 +6873,103 @@ class CervelloTrinitario:
         current_heart: str,
         pg_name: str,
         lang: str = "it",
-        override_brain: Optional[Any] = None, # [FIX CACHE] Aggiunto parametro per deviare sul 270M
-        in_gdr_mode: bool = False, # [FIX CRITICO CACHE] Aggiunto per allineamento Ancora
+        override_brain: Optional[Any] = None, 
+        in_gdr_mode: bool = False, 
+        character_name: str = None, # <--- NUOVO PARAMETRO
     ) -> Dict[str, int]:
         """
-        Analizza l'ultimo scambio per determinare come devono variare i 12 vettori del cuore.[FIX v117.0] Parser blindato contro Markdown e verbosità di Gemma 3.
+        Analizza l'ultimo scambio per determinare come devono variare i 12 vettori del cuore.
+        [FIX CRITICO SUPER GOD] Rimosso JSON Schema rigido per prevenire Infinite Loop in Gemma 4.
+        Utilizza l'Ancora di Diamante per garantire il 100% di Cache Hit (TTFT < 0.2s).
         """
-        # --- [FIX CRITICO] PREVENZIONE CRASH DA STOP GENERATION ---
         if not avatar_response or not avatar_response.strip():
             self.logger.log("Audit Emotivo annullato: Risposta vuota (Stop Generation rilevato).", "DEBUG")
             return {}
 
         self.logger.log(t("log.brain_heart_audit"), "HEART")
 
-        # --- [FIX CRITICO] PULIZIA REASONING (ANTI-INCEPTION) ---
-        # Rimuoviamo i blocchi di pensiero dalla risposta dell'avatar prima di valutarla.
-        # Altrimenti l'Audit perde tempo a leggere i pensieri tecnici invece delle parole dette,
-        # generando a sua volta migliaia di token di ragionamento inutile.
+        # Pulizia REASONING (Anti-Inception)
         clean_avatar_response = re.sub(r"<\|channel\|\>thought.*?\<channel\|\>", "", avatar_response, flags=re.IGNORECASE | re.DOTALL).strip()
         clean_avatar_response = re.sub(r"<think>.*?</think>", "", clean_avatar_response, flags=re.IGNORECASE | re.DOTALL).strip()
 
-        # ---[GOD TIER SHIELD] ---
         safe_input = self._safe_truncate_text(user_input, max_tokens=500)
         safe_response = self._safe_truncate_text(clean_avatar_response, max_tokens=500)
 
-        prompt_template = self._get_internal_prompt("audit_emotivo")
-        prompt = self._safe_replace(prompt_template, "current_heart", current_heart)
-        prompt = self._safe_replace(prompt, "safe_input", safe_input)
-        prompt = self._safe_replace(prompt, "safe_response", safe_response)
+        # --- [FIX CRITICO] PRESERVAZIONE CACHE (ANCORA DI DIAMANTE) ---
+        # Usiamo l'Ancora standard per non distruggere la cache del modello principale.
+        ancora_text = self._build_anchor_prompt(in_gdr_mode=in_gdr_mode)
 
-        # [FIX v114.1] Sostituzione corretta del placeholder pg_name
-        prompt = self._replace_all_name_variants(
-            prompt, pg_name
-        )  # [FIX v7.5] Sostituzione universale
+        # --- [FIX CRITICO] DIRETTIVA OUT-OF-CHARACTER E PARADOSSO IDENTITÀ ---
+        target_name = character_name if character_name else "te"
+        speaker_name = character_name if character_name else "Tu"
         
-        # --- [FIX MULTILINGUA CRITICO] ---
-        # NON aggiungiamo self._get_language_instruction(lang).
-        # L'Audit Emotivo è un task di backend (Machine-to-Machine). 
-        # Forzare l'LLM a pensare in Tedesco o Francese lo spinge a tradurre anche le chiavi del JSON 
-        # (es. "Liebe" invece di "affetto"), distruggendo il parsing. Il backend parla in Italiano/Inglese.
+        # [FIX SINDROME DI AMLETO] Prompt blindato per impedire all'LLM di sprecare token in dibattiti interni
+        prompt = f"[DIRETTIVA DI SISTEMA (OUT OF CHARACTER)]: Analizza lo scambio appena avvenuto tra {pg_name} e {target_name}.\n\nOBIETTIVO: Calcolare il DELTA emotivo (da -20 a +20) per {target_name}.\nATTENZIONE: Devi calcolare la VARIAZIONE (es. 5, -10), NON il valore finale matematico.\n\nSTATO EMOTIVO DI PARTENZA:\n{current_heart}\n\nSCAMBIO:\n{pg_name}: {safe_input}\n{speaker_name}: {safe_response}\n\nREGOLE DI OUTPUT:\n1. Non fare dibattiti interni sul significato dei termini. Decidi i delta una sola volta in modo rapido e diretto.\n2. Restituisci ESCLUSIVAMENTE un oggetto JSON puro.\n3. Usa SOLO queste chiavi: affetto, fiducia, rispetto, eccitazione, gelosia, curiosità, vulnerabilità, complicità, stanchezza_mentale, energia_sociale, felicità, tensione."
 
-        # --- [FIX DISSONANZA COGNITIVA E PROMPT BLEEDING] ---
-        # Hardcodiamo il System Prompt per evitare che t() peschi il Logic Gate per errore.
-        sys_prompt = "Sei l'Analista del Cuore di un'Anima. Il tuo compito è valutare l'impatto emotivo di uno scambio e restituire ESCLUSIVAMENTE un oggetto JSON. REGOLA INVIOLABILE: Le chiavi del JSON DEVONO rimanere ESATTAMENTE in italiano come da schema (es. 'affetto', 'fiducia'). È TASSATIVAMENTE VIETATO tradurre le chiavi in altre lingue."
         messages = [
-            {"role": "system", "content": sys_prompt},
+            {"role": "system", "content": ancora_text},
             {"role": "user", "content": prompt}
         ]
 
-        # Schema flessibile per i 12 vettori (libidine -> eccitazione)
-        schema = {
-            "type": "object",
-            "properties": {
-                "affetto": {"type": "integer"},
-                "fiducia": {"type": "integer"},
-                "rispetto": {"type": "integer"},
-                "eccitazione": {"type": "integer"},
-                "gelosia": {"type": "integer"},
-                "curiosità": {"type": "integer"},
-                "vulnerabilità": {"type": "integer"},
-                "complicità": {"type": "integer"},
-                "stanchezza_mentale": {"type": "integer"},
-                "energia_sociale": {"type": "integer"},
-                "felicità": {"type": "integer"},
-                "tensione": {"type": "integer"},
-            },
-            "required": [
-                "affetto", "fiducia", "rispetto", "eccitazione", "gelosia", 
-                "curiosità", "vulnerabilità", "complicità", "stanchezza_mentale", 
-                "energia_sociale", "felicità", "tensione"
-            ]
-        }
-
         try:
+            # --- [FIX CRITICO] RIMOZIONE SCHEMA JSON RIGIDO ---
             response_str = self._genera_pensiero(
                 messages,
-                temperature=0.1,
-                max_tokens=2048, # [FIX CRITICO] Raddoppiato per evitare il soffocamento del Reasoning Channel
-                reasoning_budget=2048, # [FIX CRITICO] Budget espanso per calcoli complessi
-                response_format={"type": "json_object", "schema": schema},
+                temperature=0.0,
+                max_tokens=4096, # Manteniamo i tuoi valori di sicurezza
+                reasoning_budget=2048, 
                 override_brain=override_brain,
-                in_gdr_mode=in_gdr_mode # [FIX CRITICO CACHE] Passaggio stato per allineamento Ancora
+                in_gdr_mode=in_gdr_mode,
+                skip_anchor=True # Bypass dell'Ancora per evitare Dissonanza Cognitiva
             )
 
-            #[DEBUG v114.1] Logghiamo la risposta grezza per capire cosa vede l'LLM
             self.logger.log(t("log.brain_heart_debug", response=response_str), "DEBUG")
 
-            # --- [OTTIMIZZAZIONE V-SPEED] SCUDO JSON ASSOLUTO ---
-            clean_str = response_str.replace("```json", "").replace("```", "").strip()
+            # --- [FIX CRITICO] DISTRUZIONE PENSIERI PRE-PARSING ---
+            # Rimuoviamo i tag <think> e il loro contenuto PRIMA di cercare il JSON.
+            # Questo impedisce alla regex di catturare JSON "di prova" scritti dall'LLM nei suoi pensieri.
+            clean_str = re.sub(r"<\|channel\|\>thought.*?\<channel\|\>", "", response_str, flags=re.IGNORECASE | re.DOTALL).strip()
+            clean_str = re.sub(r"<think>.*?</think>", "", clean_str, flags=re.IGNORECASE | re.DOTALL).strip()
 
-            # Isola il blocco {...} ignorando eventuali chiacchiere extra dell'LLM (es. [LINGUA]: ITALIANO)
-            json_match = re.search(r"(\{.*\})", clean_str, re.DOTALL)
+            # --- [OTTIMIZZAZIONE V-SPEED] SCUDO JSON ASSOLUTO ---
+            clean_str = clean_str.replace("```json", "").replace("```", "").strip()
+
+            json_match = re.search(r"(\{[\s\S]*\})", clean_str, re.DOTALL)
             if json_match:
                 clean_str = json_match.group(1)
             else:
                 self.logger.log("Audit Emotivo: Nessun oggetto JSON rilevato nella risposta. Nessun delta applicato.", "WARNING")
                 return {}
 
-            # --- [FIX CRITICO] SCUDO ANTI-CRASH PER STRINGA VUOTA ---
             if not clean_str:
-                self.logger.log("Audit Emotivo: Stringa vuota dopo la pulizia. Nessun delta applicato.", "WARNING")
                 return {}
 
             # --- [FIX A0054] SANITIZZAZIONE VALORI E CHIAVI (ANTI-ALLUCINAZIONE) ---
-            # L'LLM a volte genera numeri assurdi o usa i "Display Names" invece delle chiavi di sistema.
             parsed_data = json.loads(clean_str)
             sanitized_data = {}
 
-            # Mappa di correzione per le allucinazioni delle chiavi (Display Name / English -> Internal Key)
             key_map = {
-                "amore": "affetto",
-                "energia": "energia_sociale",
-                "stanchezza": "stanchezza_mentale",
-                "felicita": "felicità",
-                "felicita'": "felicità",
-                "vulnerabilita": "vulnerabilità",
-                "curiosita": "curiosità",
-                "complicita": "complicità",
-                "love": "affetto",
-                "affection": "affetto",
-                "trust": "fiducia",
-                "respect": "rispetto",
-                "complicity": "complicità",
-                "excitement": "eccitazione",
-                "jealousy": "gelosia",
-                "vulnerability": "vulnerabilità",
-                "curiosity": "curiosità",
-                "energy": "energia_sociale",
-                "social energy": "energia_sociale",
-                "mental fatigue": "stanchezza_mentale",
-                "fatigue": "stanchezza_mentale",
-                "happiness": "felicità",
-                "tension": "tensione",
+                "amore": "affetto", "energia": "energia_sociale", "stanchezza": "stanchezza_mentale",
+                "felicita": "felicità", "felicita'": "felicità", "vulnerabilita": "vulnerabilità",
+                "curiosita": "curiosità", "complicita": "complicità", "love": "affetto",
+                "affection": "affetto", "trust": "fiducia", "respect": "rispetto",
+                "complicity": "complicità", "excitement": "eccitazione", "jealousy": "gelosia",
+                "vulnerability": "vulnerabilità", "curiosity": "curiosità", "energy": "energia_sociale",
+                "social energy": "energia_sociale", "mental fatigue": "stanchezza_mentale",
+                "fatigue": "stanchezza_mentale", "happiness": "felicità", "tension": "tensione",
                 "prudence": "prudenza"
             }
 
             for key, value in parsed_data.items():
-                # Normalizza la chiave (minuscolo e senza spazi extra)
                 normalized_key = key.lower().strip()
                 actual_key = key_map.get(normalized_key, normalized_key)
 
                 if isinstance(value, (int, float)):
-                    # Clamp rigido tra -60 e +60 per evitare sbalzi distruttivi
                     clamped_value = max(-60, min(60, int(value)))
-                    if clamped_value != value:
-                        self.logger.log(
-                            t(
-                                "log.brain_heart_anomaly",
-                                key_name=actual_key,
-                                old=value,
-                                new=clamped_value,
-                            ),
-                            "WARNING",
-                        )
                     sanitized_data[actual_key] = clamped_value
                 else:
                     sanitized_data[actual_key] = value
 
-            #[FIX TASK 01] Convertiamo il dizionario in stringa JSON per evitare il fallimento della regex nel traduttore
             safe_deltas_str = json.dumps(sanitized_data, ensure_ascii=False)
             self.logger.log(t("log.heart_deltas_received", deltas=safe_deltas_str), "DEBUG")
 

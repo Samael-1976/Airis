@@ -258,9 +258,9 @@ AIRIS-PROJECT breaks down language barriers by natively localizing both intellec
 ### Launch the ecosystem in 60 seconds [1]:
 
 ```bash
-# 1. Download the file from: `https://aka.ms/vs/17/release/vc_redist.x64.exe` and intall it
+# 1. Install from utils directory or Download the file from: `https://aka.ms/vs/17/release/vc_redist.x64.exe` and install it
 
-# 2. Install espeak
+# 2. Install Install from utils directory ESpaeak or download it: 
 - For Windows: Download the file from: `https://github.com/espeak-ng/espeak-ng/releases` and install it. 
 - For Linux Ubuntu/Debian: `sudo apt-get update && sudo apt-get install -y espeak-ng`
 - For Mac: `brew install espeak-ng`

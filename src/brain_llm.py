@@ -5426,6 +5426,7 @@ class CervelloTrinitario:
         
         prompt = f"TESTO:\n{testo}"
         prompt += self._get_language_instruction(lang)
+        prompt += "\n\nDevi rispondere ESCLUSIVAMENTE con un oggetto JSON valido."
 
         messages = [
             {"role": "system", "content": sys_prompt},
@@ -5442,18 +5443,23 @@ class CervelloTrinitario:
 
         response_str = self._genera_pensiero(
             messages,
-            temperature=0.2, # [FIX] Alzato leggermente per prevenire incastri sintattici
-            max_tokens=4096, # [FIX CRITICO] Garantisce spazio vitale assoluto all'estrazione
+            temperature=0.1, 
+            max_tokens=1024, # [FIX CRITICO] Guinzaglio corto per evitare loop infiniti (max ~40s)
+            reasoning_budget=512,
             response_format={"type": "json_object", "schema": schema},
-            override_brain=override_brain
+            override_brain=override_brain,
+            skip_anchor=True # [FIX CRITICO] Previene la Dissonanza Cognitiva
         )
 
         if not response_str or not response_str.strip():
-            self.logger.error("GraphRAG: Risposta LLM vuota durante l'estrazione.")
-            return []
+            self.logger.error("Filtro Ingestione: Risposta LLM vuota (Token Exhaustion).")
+            return {"is_relevant": False, "extracted_info": ""} # [FIX CRITICO] Ritorna dict, non list!
 
         try:
-            clean_str = response_str.replace("```json", "").replace("```", "").strip()
+            clean_str = re.sub(r"<\|channel\|\>thought.*?\<channel\|\>", "", response_str, flags=re.IGNORECASE | re.DOTALL).strip()
+            clean_str = re.sub(r"<think>.*?</think>", "", clean_str, flags=re.IGNORECASE | re.DOTALL).strip()
+            clean_str = clean_str.replace("```json", "").replace("```", "").strip()
+            
             json_match = re.search(r"(\{[\s\S]*\})", clean_str)
             if json_match:
                 clean_str = json_match.group(1)
@@ -5472,6 +5478,7 @@ class CervelloTrinitario:
         
         prompt = f"PROFILO ATTUALE:\n{profilo_attuale}\n\nNUOVE INTERAZIONI:\n{storia_recente}"
         prompt += self._get_language_instruction(lang)
+        prompt += "\n\nDevi rispondere ESCLUSIVAMENTE con un oggetto JSON valido."
 
         messages = [
             {"role": "system", "content": sys_prompt},
@@ -5489,13 +5496,19 @@ class CervelloTrinitario:
 
         response_str = self._genera_pensiero(
             messages,
-            temperature=0.3,
+            temperature=0.2,
+            max_tokens=1024,
+            reasoning_budget=512,
             response_format={"type": "json_object", "schema": schema},
-            override_brain=override_brain
+            override_brain=override_brain,
+            skip_anchor=True # [FIX CRITICO] Previene la Dissonanza Cognitiva
         )
 
         try:
-            clean_str = response_str.replace("```json", "").replace("```", "").strip()
+            clean_str = re.sub(r"<\|channel\|\>thought.*?\<channel\|\>", "", response_str, flags=re.IGNORECASE | re.DOTALL).strip()
+            clean_str = re.sub(r"<think>.*?</think>", "", clean_str, flags=re.IGNORECASE | re.DOTALL).strip()
+            clean_str = clean_str.replace("```json", "").replace("```", "").strip()
+            
             json_match = re.search(r"(\{[\s\S]*\})", clean_str)
             if json_match:
                 clean_str = json_match.group(1)
@@ -5514,6 +5527,7 @@ class CervelloTrinitario:
         
         prompt = f"TESTO:\n{testo}"
         prompt += self._get_language_instruction(lang)
+        prompt += "\n\nDevi rispondere ESCLUSIVAMENTE con un oggetto JSON valido."
 
         messages = [
             {"role": "system", "content": sys_prompt},
@@ -5541,12 +5555,22 @@ class CervelloTrinitario:
         response_str = self._genera_pensiero(
             messages,
             temperature=0.1,
+            max_tokens=1024, # [FIX CRITICO] Guinzaglio corto
+            reasoning_budget=512,
             response_format={"type": "json_object", "schema": schema},
-            override_brain=override_brain
+            override_brain=override_brain,
+            skip_anchor=True # [FIX CRITICO] Previene la Dissonanza Cognitiva
         )
 
+        if not response_str or not response_str.strip():
+            self.logger.error("GraphRAG: Risposta LLM vuota durante l'estrazione.")
+            return []
+
         try:
-            clean_str = response_str.replace("```json", "").replace("```", "").strip()
+            clean_str = re.sub(r"<\|channel\|\>thought.*?\<channel\|\>", "", response_str, flags=re.IGNORECASE | re.DOTALL).strip()
+            clean_str = re.sub(r"<think>.*?</think>", "", clean_str, flags=re.IGNORECASE | re.DOTALL).strip()
+            clean_str = clean_str.replace("```json", "").replace("```", "").strip()
+            
             json_match = re.search(r"(\{[\s\S]*\})", clean_str)
             if json_match:
                 clean_str = json_match.group(1)
